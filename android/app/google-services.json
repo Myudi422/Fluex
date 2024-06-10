@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "106648713758",
+    "project_id": "niflex-79a03",
+    "storage_bucket": "niflex-79a03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106648713758:android:6b810dd19a040843510c0f",
+        "android_client_info": {
+          "package_name": "com.ccgmedia.niflex_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106648713758-k04m9gjsvfu73q6ec4e99rbnrse1cj8c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ccgmedia.niflex_app",
+            "certificate_hash": "de8b855454a20de23d671a61857d6fed71ed577f"
+          }
+        },
+        {
+          "client_id": "106648713758-vcrf17j54mlqrd8j4k6r762iun9418er.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ccgmedia.niflex_app",
+            "certificate_hash": "5de231e18c4f81f8ae34c44e4731b3360ad7696e"
+          }
+        },
+        {
+          "client_id": "106648713758-ct5lifhgjbv07kmuht942j6j2v5fdvbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwUZM3N9pbGfA7DxrHTDZL1u038tTeu2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106648713758-ct5lifhgjbv07kmuht942j6j2v5fdvbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
