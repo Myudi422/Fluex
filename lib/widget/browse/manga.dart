@@ -30,7 +30,8 @@ class _MangaPageState extends State<MangaPage> {
     _scrollController.addListener(_scrollListener);
     _fetchUserAccess();
     UnityAdManager.initialize(); // Inisialisasi Unity Ads
-    UnityAdManager.loadInterstitialAd(); // Memuat iklan interstisial saat widget diinisialisasi
+    UnityAdManager
+        .loadInterstitialAd(); // Memuat iklan interstisial saat widget diinisialisasi
   }
 
   @override
@@ -49,9 +50,9 @@ class _MangaPageState extends State<MangaPage> {
     }
   }
 
-
-    Future<void> _fetchUserAccess() async {
-    final apiUrl = "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
+  Future<void> _fetchUserAccess() async {
+    final apiUrl =
+        "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
@@ -63,55 +64,61 @@ class _MangaPageState extends State<MangaPage> {
   }
 
   Future<void> _loadDataAndUpdateComics() async {
-  try {
-    String apiUrl = '$baseUrl?page=$currentPage&telegram_id=${widget.telegramId}';
-    if (searchKeyword.isNotEmpty) {
-      apiUrl = '$baseUrl?search=$searchKeyword&page=$currentPage&telegram_id=${widget.telegramId}';
-    }
-
-    final response = await http.get(
-      Uri.parse(apiUrl),
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-      },
-    );
-
-    if (response.statusCode == 200) {
-      List<dynamic> data = json.decode(response.body);
-      List<Map<String, dynamic>> newComics = List<Map<String, dynamic>>.from(data);
-
-      setState(() {
-        comics.addAll(newComics);
-        isLoading = false;
-        currentPage++;
-      });
-
-      // Load interstitial ad when new data is loaded
-      if (userAccess != 'Premium') {
-        UnityAdManager.loadInterstitialAd();
-        UnityAdManager.showInterstitialAd(
-          onComplete: (placementId) => print('Load Complete $placementId'),
-          onFailed: (String placementId, dynamic error, String message) {
-            // Handle interstitial ad failure
-          },
-        );
+    try {
+      String apiUrl =
+          '$baseUrl?page=$currentPage&telegram_id=${widget.telegramId}';
+      if (searchKeyword.isNotEmpty) {
+        apiUrl =
+            '$baseUrl?search=$searchKeyword&page=$currentPage&telegram_id=${widget.telegramId}';
       }
-    } else {
+
+      final response = await http.get(
+        Uri.parse(apiUrl),
+        headers: {
+          'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        List<dynamic> data = json.decode(response.body);
+        List<Map<String, dynamic>> newComics =
+            List<Map<String, dynamic>>.from(data);
+
+        setState(() {
+          comics.addAll(newComics);
+          isLoading = false;
+          currentPage++;
+        });
+
+        // Load interstitial ad when new data is loaded
+        if (userAccess != 'Premium') {
+          UnityAdManager.loadInterstitialAd();
+          UnityAdManager.showInterstitialAd(
+            onComplete: (placementId) => print('Load Complete $placementId'),
+            onFailed: (String placementId, dynamic error, String message) {
+              // Handle interstitial ad failure
+            },
+          );
+        }
+      } else {
+        setState(() {
+          isLoading = false;
+        });
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      print('Error fetching data: $e');
       setState(() {
         isLoading = false;
       });
-      throw Exception('Failed to load data');
     }
-  } catch (e) {
-    print('Error fetching data: $e');
-    setState(() {
-      isLoading = false;
-    });
   }
-}
 
   void _scrollListener() {
-    if (!isLoading && _scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+    if (!isLoading &&
+        _scrollController.position.pixels ==
+            _scrollController.position.maxScrollExtent) {
       _fetchData();
     }
   }
@@ -165,84 +172,116 @@ class _MangaPageState extends State<MangaPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                  color: Colors.black.withOpacity(0.7),
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8.0),
-                                    topRight: Radius.circular(8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Stack(
+                              children: [
+                                // Full-size image
+                                Positioned.fill(
+                                  child: CachedNetworkImage(
+                                    imageUrl: comics[index]['image'],
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) => Center(
+                                        child: CircularProgressIndicator()),
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
                                   ),
                                 ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      comics[index]['chapter'],
+                                // Gradient overlay for the bottom area
+                                Positioned.fill(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Colors.black54,
+                                          Colors.transparent
+                                        ],
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                        stops: [
+                                          0,
+                                          0.5
+                                        ], // Adjust the stops to control the gradient position
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                // Episode count at the top left
+                                Positioned(
+                                  top: 8.0,
+                                  left: 8.0,
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 6.0, vertical: 2.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black54,
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                    child: Text(
+                                      "Eps: ${comics[index]['chapter']}",
                                       style: TextStyle(
-                                        fontWeight: FontWeight.bold,
                                         color: Colors.white,
+                                        fontSize: 12.0,
                                       ),
-                                      textAlign: TextAlign.start,
                                     ),
-                                    if (comics[index]['title_eps'] != null && comics[index]['title_eps'] != '')
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          borderRadius: BorderRadius.circular(4.0),
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            Transform.scale(
-                                              scale: 0.7,
-                                              child: Icon(
-                                                Icons.history,
-                                                color: Colors.white,
-                                                size: 15.0,
-                                              ),
-                                            ),
-                                            SizedBox(width: 4.0),
-                                            Text(
-                                              comics[index]['title_eps'],
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.white,
-                                                fontSize: 12.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                  ),
+                                ),
+                                // History at the top right
+                                if (comics[index]['title_eps'] != null &&
+                                    comics[index]['title_eps'] != '')
+                                  Positioned(
+                                    top: 8.0,
+                                    right: 8.0,
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 4.0, vertical: 2.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
                                       ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                child: CachedNetworkImage(
-                                  imageUrl: comics[index]['image'],
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-                                  errorWidget: (context, url, error) => Icon(Icons.error),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      comics[index]['title'],
-                                      style: TextStyle(fontWeight: FontWeight.bold),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
+                                      child: Row(
+                                        children: [
+                                          Transform.scale(
+                                            scale: 0.7,
+                                            child: Icon(
+                                              Icons.history,
+                                              color: Colors.white,
+                                              size: 15.0,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4.0),
+                                          Text(
+                                            comics[index]['title_eps'],
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                              fontSize: 12.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ],
+                                  ),
+                                // Title at the bottom
+                                Positioned(
+                                  bottom: 8.0,
+                                  left: 8.0,
+                                  right: 8.0,
+                                  child: Text(
+                                    comics[index]['title'],
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       );

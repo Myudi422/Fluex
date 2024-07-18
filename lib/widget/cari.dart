@@ -24,7 +24,8 @@ class _CariPageState extends State<CariPage> {
       _isLoading = true;
     });
 
-    final response = await http.get(Uri.parse('https://ccgnimex.my.id/v2/android/api_search.php?keyword=$keyword'));
+    final response = await http.get(Uri.parse(
+        'https://ccgnimex.my.id/v2/android/api_search.php?keyword=$keyword'));
 
     setState(() {
       _isLoading = false;
@@ -41,77 +42,83 @@ class _CariPageState extends State<CariPage> {
     }
   }
 
-@override
-Widget build(BuildContext context) {
-  Widget? floatingActionButton; // Declare as nullable
+  @override
+  Widget build(BuildContext context) {
+    Widget? floatingActionButton; // Declare as nullable
 
-
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('Anime Search'),
-    ),
-    body: GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: TextField(
-                  controller: _controller,
-                  decoration: InputDecoration(
-                    hintText: 'Masukkan judul pencarian...',
-                    prefixIcon: Icon(Icons.search),
-                    border: InputBorder.none,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text('Anime Search', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: TextField(
+                    controller: _controller,
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: 'Masukkan judul pencarian...',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      prefixIcon: Icon(Icons.search, color: Colors.white),
+                      border: InputBorder.none,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                _cariData(_controller.text);
-              },
-              child: Text('Cari'),
-            ),
-            SizedBox(height: 16),
-            _isLoading
-                ? _buildShimmerLoading()
-                : _searchResults.isNotEmpty
-                    ? Expanded(
-                        child: GridView.builder(
-                          shrinkWrap: true,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: _calculateCrossAxisCount(context),
-                            crossAxisSpacing: 8.0,
-                            mainAxisSpacing: 8.0,
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  _cariData(_controller.text);
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.grey[850],
+                ),
+                child: Text('Cari', style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 16),
+              _isLoading
+                  ? _buildShimmerLoading()
+                  : _searchResults.isNotEmpty
+                      ? Expanded(
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: _calculateCrossAxisCount(context),
+                              crossAxisSpacing: 8.0,
+                              mainAxisSpacing: 8.0,
+                            ),
+                            itemCount: _searchResults.length,
+                            itemBuilder: (context, index) {
+                              return _buildAnimeCard(_searchResults[index]);
+                            },
                           ),
-                          itemCount: _searchResults.length,
-                          itemBuilder: (context, index) {
-                            return _buildAnimeCard(_searchResults[index]);
-                          },
-                        ),
-                      )
-                    : SizedBox.shrink(),
-          ],
+                        )
+                      : SizedBox.shrink(),
+            ],
+          ),
         ),
       ),
-    ),
-    floatingActionButton: floatingActionButton,
-    floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-  );
-}
-
-
+      floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
 
   Widget _buildAnimeCard(Map<String, dynamic> animeData) {
     return GestureDetector(
@@ -119,6 +126,7 @@ Widget build(BuildContext context) {
         _navigateToAnimeDetail(animeData);
       },
       child: Card(
+        color: Colors.grey[900],
         elevation: 4.0,
         child: Stack(
           fit: StackFit.expand,
@@ -195,7 +203,9 @@ Widget build(BuildContext context) {
 
   String _truncateTitle(String title) {
     const int maxTitleLength = 20;
-    return title.length > maxTitleLength ? '${title.substring(0, maxTitleLength)}...' : title;
+    return title.length > maxTitleLength
+        ? '${title.substring(0, maxTitleLength)}...'
+        : title;
   }
 
   void _navigateToAnimeDetail(Map<String, dynamic> animeData) {

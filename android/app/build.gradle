@@ -50,7 +50,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.ccgmedia.niflex_app"
+        applicationId "com.nextccgmedia.flue"
         minSdkVersion 25 // <-- SEE HERE
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()

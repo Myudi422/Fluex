@@ -16,6 +16,8 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flue/color.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'widget/slider.dart';
+import 'premium.dart';
+import 'package:flutter/services.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -146,6 +148,8 @@ class _MainPageState extends State<MainPage> {
             }
             profilePicture = pathOrUrl.isNotEmpty ? pathOrUrl : 'img/logo.png';
           });
+        } else if (responseData['status'] == 'banned') {
+          _showBannedPopup();
         } else {
           print('Error: ${responseData['message']}');
         }
@@ -155,6 +159,26 @@ class _MainPageState extends State<MainPage> {
     } catch (e) {
       print('Error: $e');
     }
+  }
+
+  void _showBannedPopup() {
+    showDialog(
+      context: context,
+      barrierDismissible:
+          false, // Membuat popup tidak bisa ditutup dengan klik di luar
+      builder: (context) => AlertDialog(
+        title: Text('Pemberitahuan'),
+        content: Text('Anda sudah diblokir, harap pahami itu.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              SystemNavigator.pop(); // Keluar dari aplikasi
+            },
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override

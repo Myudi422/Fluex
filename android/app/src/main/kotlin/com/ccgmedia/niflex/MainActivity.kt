@@ -1,4 +1,4 @@
-package com.ccgmedia.niflex
+package com.nextccgmedia.flue
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -59,50 +59,49 @@ class LoginGoogleWidget extends StatelessWidget {
     return await _auth.signInWithCredential(credential);
   }
 
-Future<void> _processUserData(User? user, BuildContext context) async {
-  if (user != null && user.email != null && user.email!.isNotEmpty) {
-    print("Email dikirim: ${user.email}");
+  Future<void> _processUserData(User? user, BuildContext context) async {
+    if (user != null && user.email != null && user.email!.isNotEmpty) {
+      print("Email dikirim: ${user.email}");
 
-    await _sendUserDataToDatabase(user);
-    await _getUserDataFromDatabase(user, context);
+      await _sendUserDataToDatabase(user);
+      await _getUserDataFromDatabase(user, context);
 
-    // Setel tanda bahwa pengguna sudah login
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('isLoggedIn', true);
+      // Setel tanda bahwa pengguna sudah login
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setBool('isLoggedIn', true);
 
-    // Arahkan ke MainPage
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MainPage(),
-      ),
-    );
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Email pengguna hilang atau tidak valid'),
-        duration: Duration(seconds: 2),
-      ),
-    );
+      // Arahkan ke MainPage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MainPage(),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Email pengguna hilang atau tidak valid'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
   }
-}
 
+  Future<void> _sendUserDataToDatabase(User user) async {
+    final apiUrl = 'https://ccgnimex.my.id/v2/android/api_google.php';
+    try {
+      // Mengonversi user.uid menjadi integer
+      final int telegramId = user.uid.hashCode;
 
-Future<void> _sendUserDataToDatabase(User user) async {
-  final apiUrl = 'https://ccgnimex.my.id/v2/android/api_google.php';
-  try {
-    // Mengonversi user.uid menjadi integer
-    final int telegramId = user.uid.hashCode;
-
-    final response = await http.post(
-      Uri.parse(apiUrl),
-      body: {
-        'telegram_id': telegramId.toString(),
-        'profile_picture': user.photoURL ?? '',
-        'first_name': user.displayName ?? '',
-        'email': user.email ?? '',
-      },
-    );
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        body: {
+          'telegram_id': telegramId.toString(),
+          'profile_picture': user.photoURL ?? '',
+          'first_name': user.displayName ?? '',
+          'email': user.email ?? '',
+        },
+      );
 
       print("API Response (Send to Database): ${response.body}");
 
@@ -134,51 +133,53 @@ Future<void> _sendUserDataToDatabase(User user) async {
   }
 
   Future<void> _getUserDataFromDatabase(User user, BuildContext context) async {
-  final apiUrl = 'https://ccgnimex.my.id/v2/android/api_user.php';
-  try {
-    final response = await http.post(
-      Uri.parse(apiUrl),
-      body: {
-        'email': user.email!,
-        // Add any other parameters needed for user identification
-      },
-    );
+    final apiUrl = 'https://ccgnimex.my.id/v2/android/api_user.php';
+    try {
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        body: {
+          'email': user.email!,
+          // Add any other parameters needed for user identification
+        },
+      );
 
-    print("API Response (Get from Database): ${response.body}");
+      print("API Response (Get from Database): ${response.body}");
 
-    if (response.statusCode == 200) {
-      try {
-        final responseData = json.decode(response.body);
+      if (response.statusCode == 200) {
+        try {
+          final responseData = json.decode(response.body);
 
-        if (responseData['status'] == 'success') {
-          // Save user email in SharedPreferences
-          SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setString('email', user.email!);
+          if (responseData['status'] == 'success') {
+            // Save user email in SharedPreferences
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setString('email', user.email!);
 
-          // Use data from the database as needed
-          final userData = responseData; // Directly access the top-level data
-          print("User data from database: $userData");
+            // Use data from the database as needed
+            final userData = responseData; // Directly access the top-level data
+            print("User data from database: $userData");
 
-          // Update the UI with user data (e.g., navigate to the main page)
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => MainPage(),
-            ),
-          );
-        } else {
-          print("Failed to get user data from database. Message: ${responseData['message']}");
+            // Update the UI with user data (e.g., navigate to the main page)
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(),
+              ),
+            );
+          } else {
+            print(
+                "Failed to get user data from database. Message: ${responseData['message']}");
+          }
+        } catch (e) {
+          print("Error parsing user data from database: $e");
         }
-      } catch (e) {
-        print("Error parsing user data from database: $e");
+      } else {
+        print(
+            "Failed to get user data from database. Status code: ${response.statusCode}");
       }
-    } else {
-      print("Failed to get user data from database. Status code: ${response.statusCode}");
+    } catch (e) {
+      print("Error getting user data from database: $e");
     }
-  } catch (e) {
-    print("Error getting user data from database: $e");
   }
-}
 
   @override
   Widget build(BuildContext context) {
@@ -202,7 +203,7 @@ Future<void> _sendUserDataToDatabase(User user) async {
             ),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.red, // Warna latar belakang tombol
+            backgroundColor: Colors.red, // Warna latar belakang tombol
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8), // Bentuk tepi tombol
             ),

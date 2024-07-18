@@ -5,12 +5,11 @@ import 'package:flue/history_anime.dart';
 import 'package:flue/history_manga.dart';
 import 'package:flue/history_manage.dart';
 
-
 class RiwayatPage extends StatefulWidget {
   final String telegramId;
 
   RiwayatPage({required this.telegramId});
-   
+
   @override
   _RiwayatPageState createState() => _RiwayatPageState();
 }
@@ -53,7 +52,8 @@ class _RiwayatPageState extends State<RiwayatPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          RiwayatManage(telegramId: widget.telegramId), // Add RiwayatManage widget here
+          RiwayatManage(
+              telegramId: widget.telegramId), // Add RiwayatManage widget here
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8),

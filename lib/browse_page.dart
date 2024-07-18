@@ -1,9 +1,11 @@
+// Import necessary packages and widgets
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './widget/browse/anime.dart';
 import './widget/browse/music.dart';
 import './widget/browse/manga.dart';
 import './widget/browse/wallpaper.dart';
+import 'package:flue/color.dart'; // Adjust as per your project structure
 
 class BrowsePage extends StatefulWidget {
   final String telegramId;
@@ -14,7 +16,8 @@ class BrowsePage extends StatefulWidget {
   _BrowsePageState createState() => _BrowsePageState();
 }
 
-class _BrowsePageState extends State<BrowsePage> with AutomaticKeepAliveClientMixin {
+class _BrowsePageState extends State<BrowsePage>
+    with AutomaticKeepAliveClientMixin {
   late PageController _pageController;
   late String currentCategory;
 
@@ -33,6 +36,12 @@ class _BrowsePageState extends State<BrowsePage> with AutomaticKeepAliveClientMi
   }
 
   @override
+  void dispose() {
+    _pageController.dispose(); // Dispose the page controller
+    super.dispose();
+  }
+
+  @override
   bool get wantKeepAlive => true;
 
   @override
@@ -41,7 +50,13 @@ class _BrowsePageState extends State<BrowsePage> with AutomaticKeepAliveClientMi
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Browse"),
+        title: Text(
+          'Browse',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: ColorManager.currentBackgroundColor ??
+            Colors.blue, // Fallback color
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           _buildCategoryDropdown(),
         ],
@@ -65,21 +80,27 @@ class _BrowsePageState extends State<BrowsePage> with AutomaticKeepAliveClientMi
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: DropdownButton<String>(
         value: currentCategory,
+        dropdownColor: ColorManager.currentBackgroundColor ??
+            Colors.blue, // Fallback color
         onChanged: (String? newValue) {
-          setState(() {
-            currentCategory = newValue!;
-            int index = categoryIcons.keys.toList().indexOf(currentCategory);
-            _pageController.animateToPage(index, duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
-          });
+          if (newValue != null) {
+            setState(() {
+              currentCategory = newValue;
+              int index = categoryIcons.keys.toList().indexOf(currentCategory);
+              _pageController.animateToPage(index,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut);
+            });
+          }
         },
         items: categoryIcons.keys.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Row(
               children: [
-                FaIcon(categoryIcons[value], size: 16),
+                FaIcon(categoryIcons[value], size: 16, color: Colors.white),
                 SizedBox(width: 8),
-                Text(value),
+                Text(value, style: TextStyle(color: Colors.white)),
               ],
             ),
           );
@@ -95,9 +116,11 @@ class _BrowsePageState extends State<BrowsePage> with AutomaticKeepAliveClientMi
       case 'Manga':
         return MangaPage(telegramId: widget.telegramId);
       case 'Music':
-        return MusicPage(telegramId: widget.telegramId, key: PageStorageKey<String>('Music'));
+        return MusicPage(
+            telegramId: widget.telegramId,
+            key: PageStorageKey<String>('Music'));
       case 'Wallpaper':
-  return WallpaperPage(telegramId: widget.telegramId);
+        return WallpaperPage(telegramId: widget.telegramId);
       default:
         return Container();
     }

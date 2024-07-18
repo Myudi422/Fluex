@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Import shared_preferences
 import 'login_page.dart';
 import 'welcome.dart';
+import 'dart:io';
 import 'main_page.dart'; // Import MainPage
 
 class SplashScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    checkConnectionAndShowDialog(context);
 
     _animationController = AnimationController(
       vsync: this,
@@ -44,6 +46,33 @@ class _SplashScreenState extends State<SplashScreen>
   Future<bool> _checkInternetConnection() async {
     var connectivityResult = await Connectivity().checkConnectivity();
     return connectivityResult != ConnectivityResult.none;
+  }
+
+  Future<void> checkConnectionAndShowDialog(BuildContext context) async {
+    bool isConnected = await _checkInternetConnection();
+
+    if (!isConnected) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return WillPopScope(
+            onWillPop: () async => false, // Disable back button
+            child: AlertDialog(
+              title: Text("Tidak Terhubung dengan Internet"),
+              content: Text("Mohon periksa koneksi internet Anda."),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    exit(0); // Exit the app
+                  },
+                  child: Text("OK"),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
   }
 
   Future<void> checkAppVersion() async {
@@ -85,7 +114,8 @@ class _SplashScreenState extends State<SplashScreen>
 
         final String latestVersion = data['latest_version'];
         final String changelog = data['changelog']; // Added changelog
-        final bool updateRequired = data['update_required']; // Added updateRequired
+        final bool updateRequired =
+            data['update_required']; // Added updateRequired
 
         print("Latest version from server: $latestVersion");
 
@@ -132,8 +162,7 @@ class _SplashScreenState extends State<SplashScreen>
                   TextButton(
                     onPressed: () async {
                       // Open the URL in the default browser or appropriate app
-                      await _launchURL(
-                          'https://apk.ccgnimex.my.id');
+                      await _launchURL('https://apk.ccgnimex.my.id');
                     },
                     child: Text("Update"),
                   ),
@@ -197,7 +226,6 @@ class _SplashScreenState extends State<SplashScreen>
       print('Could not launch $url');
     }
   }
-
 
   @override
   Widget build(BuildContext context) {

@@ -20,47 +20,47 @@ class RecommendedWidget extends StatefulWidget {
 class _RecommendedWidgetState extends State<RecommendedWidget> {
   List<dynamic> animeList = [];
 
-@override
-Widget build(BuildContext context) {
-  return Container(
-    padding: EdgeInsets.all(8.0),
-    color: ColorManager.currentAccentColor,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                'Rekomendasi Anime',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      color: ColorManager.currentAccentColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Rekomendasi Anime',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: ColorManager.currentPrimaryColor,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(
+                  FontAwesomeIcons.fire,
                   color: ColorManager.currentPrimaryColor,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Icon(
-                FontAwesomeIcons.fire,
-                color: ColorManager.currentPrimaryColor,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 16.0),
-        _buildRecommendedList(),
-      ],
-    ),
-  );
-}
+            ],
+          ),
+          SizedBox(height: 16.0),
+          _buildRecommendedList(),
+        ],
+      ),
+    );
+  }
 
   Widget _buildRecommendedList() {
     return Container(
-      height: 200.0,
+      height: 240.0, // Adjusted height for better visibility
       child: GridView.builder(
         scrollDirection: Axis.horizontal,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -73,7 +73,8 @@ Widget build(BuildContext context) {
           return _buildAnimeCard(
             animeList[index]['judul'],
             animeList[index]['image'],
-            animeList[index]['anime_id'].toString(), // Replace 'anime_id' with the actual key in your API response
+            animeList[index]['anime_id']
+                .toString(), // Replace 'anime_id' with the actual key in your API response
           );
         },
       ),
@@ -81,59 +82,78 @@ Widget build(BuildContext context) {
   }
 
   Widget _buildAnimeCard(String title, String imageUrl, String animeId) {
-  return GestureDetector(
-    onTap: () {
-      int parsedAnimeId = int.tryParse(animeId) ?? 0; // Default to 0 if parsing fails
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => AnimeDetailPage(
-            animeId: parsedAnimeId,
-            telegramId: widget.telegramId,
+    return GestureDetector(
+      onTap: () {
+        int parsedAnimeId =
+            int.tryParse(animeId) ?? 0; // Default to 0 if parsing fails
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimeDetailPage(
+              animeId: parsedAnimeId,
+              telegramId: widget.telegramId,
+            ),
           ),
-        ),
-      );
-    },
-    child: Container(
-      width: 160.0,
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: CachedNetworkImage(
-                imageUrl: imageUrl,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                placeholder: (context, url) => Shimmer.fromColors(
-                  baseColor: Colors.grey[300]!,
-                  highlightColor: Colors.grey[100]!,
-                  child: Container(
-                    color: Colors.white,
+        );
+      },
+      child: Container(
+        width: 160.0,
+        child: ClipRRect(
+          borderRadius:
+              BorderRadius.circular(12.0), // Adjust the radius as needed
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => Shimmer.fromColors(
+                    baseColor: Colors.grey[300]!,
+                    highlightColor: Colors.grey[100]!,
+                    child: Container(
+                      color: Colors.white,
+                    ),
+                  ),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                ),
+              ),
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.black54, Colors.transparent],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
                   ),
                 ),
-                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              Positioned(
+                bottom: 8.0,
+                left: 8.0,
+                right: 8.0,
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Future<List<dynamic>> fetchRecommendedAnime() async {
-    final response = await http.get(Uri.parse('https://ccgnimex.my.id/v2/android/api_rekomendasi.php'));
+    final response = await http.get(
+        Uri.parse('https://ccgnimex.my.id/v2/android/api_rekomendasi.php'));
 
     if (response.statusCode == 200) {
       print(response.body);

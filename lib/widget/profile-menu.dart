@@ -60,10 +60,13 @@ class ProfileMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: Icon(Icons.logout, color: Colors.white),
             onPressed: () {
               _logout(context);
             },
@@ -110,7 +113,7 @@ class ProfileMenu extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: ColorManager.currentHomeColor,
+                      color: Colors.white,
                     ),
                   ),
                   SizedBox(height: 20),
@@ -119,20 +122,27 @@ class ProfileMenu extends StatelessWidget {
                       showModalBottomSheet(
                         context: context,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(20.0)),
                         ),
                         builder: (context) => SubscriptionPage(
                           telegramId: telegramId,
                         ),
                       );
                     },
-                    child: Text('Kelola Langganan Saya'),
-                    style: ElevatedButton.styleFrom(
-                      primary: ColorManager.currentHomeColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        ColorManager.currentHomeColor,
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
                     ),
+                    child: Text('Kelola Langganan Saya',
+                        style:
+                            TextStyle(color: ColorManager.currentPrimaryColor)),
                   ),
                   SizedBox(height: 20),
                 ],
@@ -143,19 +153,19 @@ class ProfileMenu extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: Icon(Icons.info),
+                  icon: Icon(Icons.info, color: Colors.white),
                   onPressed: () {
                     _launchURL('https://www.instagram.com/flue_app');
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.facebook),
+                  icon: Icon(Icons.facebook, color: Colors.white),
                   onPressed: () {
                     _launchURL('https://www.facebook.com/ccgnimex');
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.telegram),
+                  icon: Icon(Icons.telegram, color: Colors.white),
                   onPressed: () {
                     _launchURL('https://t.me/otakuindonew');
                   },
@@ -167,19 +177,22 @@ class ProfileMenu extends StatelessWidget {
               child: ListView(
                 children: <Widget>[
                   ListTile(
-                    leading: Icon(Icons.notifications),
-                    title: Text('Notifikasi'),
+                    leading: Icon(Icons.notifications, color: Colors.white),
+                    title: Text('Notifikasi',
+                        style: TextStyle(color: Colors.white)),
                     onTap: () {
                       _showNotificationOverlay(context);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.extension),
-                    title: Text('Plugin Manager'),
+                    leading: Icon(Icons.extension, color: Colors.white),
+                    title: Text('Plugin Manager',
+                        style: TextStyle(color: Colors.white)),
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ColorPickerWidget()),
+                        MaterialPageRoute(
+                            builder: (context) => ColorPickerWidget()),
                       );
                     },
                   ),
@@ -193,4 +206,3 @@ class ProfileMenu extends StatelessWidget {
     );
   }
 }
-

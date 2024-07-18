@@ -1,11 +1,11 @@
-// login_email.dart
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flue/color.dart';
 
 import 'main_page.dart';
-import 'create.dart';
 
 class LoginEmailWidget extends StatefulWidget {
   @override
@@ -18,100 +18,182 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
   String errorMessage = '';
 
   Future<void> _login() async {
-  final String apiUrl = 'https://ccgnimex.my.id/v2/android/api_login.php';
+    final String apiUrl = 'https://ccgnimex.my.id/v2/android/api_login.php';
 
-  try {
-    final response = await http.post(
-      Uri.parse(apiUrl),
-      body: {
-        'email': emailController.text,
-        'password': passwordController.text,
-      },
-    );
+    try {
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        body: {
+          'email': emailController.text,
+          'password': passwordController.text,
+        },
+      );
 
-    final responseData = json.decode(response.body);
+      final responseData = json.decode(response.body);
 
-    if (response.statusCode == 200) {
-      if (responseData['status'] == 'success') {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        prefs.setBool('isLoggedIn', true);
-        prefs.setString('email', emailController.text);
-        prefs.setString('firstName', responseData['first_name']);
-        prefs.setString('telegram_id', responseData['telegram_id']);
+      if (response.statusCode == 200) {
+        if (responseData['status'] == 'success') {
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          prefs.setBool('isLoggedIn', true);
+          prefs.setString('email', emailController.text);
+          prefs.setString('firstName', responseData['first_name']);
+          prefs.setString('telegram_id', responseData['telegram_id']);
 
-        // Navigate to MainPage and remove the welcome page from the navigation stack
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => MainPage()),
-        );
+          // Navigate to MainPage and remove the welcome page from the navigation stack
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => MainPage()),
+          );
+        } else {
+          setState(() {
+            errorMessage = 'Email atau password salah.';
+          });
+          await _logout();
+        }
       } else {
+        print('Error ${response.statusCode}');
         setState(() {
-          errorMessage = 'Email atau password salah.';
+          errorMessage = 'Terjadi kesalahan pada server.';
         });
-        await _logout();
       }
-    } else {
-      print('Error ${response.statusCode}');
+    } catch (e) {
+      print('Error: $e');
       setState(() {
-        errorMessage = 'Terjadi kesalahan pada server.';
+        errorMessage = 'Terjadi kesalahan. Silakan coba lagi.';
       });
     }
-  } catch (e) {
-    print('Error: $e');
-    setState(() {
-      errorMessage = 'Terjadi kesalahan. Silakan coba lagi.';
-    });
   }
-}
 
   Future<void> _logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.clear();
   }
 
+  void _showLoginDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          backgroundColor: Colors.grey[900],
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Login dengan Email',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 16),
+                TextField(
+                  controller: emailController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    labelStyle: TextStyle(color: Colors.white70),
+                    filled: true,
+                    fillColor: Colors.grey[800],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                TextField(
+                  controller: passwordController,
+                  obscureText: true,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    labelStyle: TextStyle(color: Colors.white70),
+                    filled: true,
+                    fillColor: Colors.grey[800],
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8),
+                if (errorMessage.isNotEmpty)
+                  Text(
+                    errorMessage,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        _login();
+                        Navigator.of(context).pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: ColorManager.currentHomeColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text('Login'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
-@override
-Widget build(BuildContext context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      TextField(
-        controller: emailController,
-        style: TextStyle(color: Color(0xFFD9DADE)),
-        decoration: InputDecoration(
-          labelText: 'Email',
-          labelStyle: TextStyle(color: Color(0xFFD9DADE)),
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: 250, // Set the desired width here
+        child: ElevatedButton.icon(
+          onPressed: _showLoginDialog,
+          icon: FaIcon(
+            FontAwesomeIcons.envelope,
+            color: Colors.white, // Icon color
+          ),
+          label: Text(
+            'Login dengan Email',
+            style: TextStyle(
+              color: Colors.white, // Text color
+              fontSize: 16, // Text size
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.blue), // Background color
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8), // Button shape
+              ),
+            ),
+          ),
         ),
       ),
-      SizedBox(height: 16),
-      TextField(
-        controller: passwordController,
-        obscureText: true,
-        style: TextStyle(color: Color(0xFFD9DADE)),
-        decoration: InputDecoration(
-          labelText: 'Password',
-          labelStyle: TextStyle(color: Color(0xFFD9DADE)),
-        ),
-      ),
-      SizedBox(height: 8),
-      if (errorMessage.isNotEmpty)
-        Text(
-          errorMessage,
-          style: TextStyle(color: Colors.red),
-        ),
-      SizedBox(height: 24),
-      ElevatedButton(
-        onPressed: _login,
-        child: Text('Login'),
-      ),
-      SizedBox(height: 16),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(width: 8),
-        ],
-      ),
-    ],
-  );
-}
+    );
+  }
 }

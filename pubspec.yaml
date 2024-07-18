@@ -66,9 +66,9 @@ dependencies:
   youtube_explode_dart: ^2.1.0
   audio_session:
   flutter_overlay_window: ^0.4.3
+  timeago: ^3.0.2
+  translator: ^1.0.0
   #fijkplayer_update: ^1.1.1
-
-  
 
 dev_dependencies:
   flutter_test:
@@ -94,4 +94,3 @@ flutter:
         - asset: fonts/Satoshi-Italic.ttf
           style: italic
     # Add more variations as needed
-

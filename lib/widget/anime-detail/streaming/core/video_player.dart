@@ -1,18 +1,22 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:video_player/video_player.dart';
 import 'package:floating/floating.dart'; // Import floating package
-
+import 'package:google_mobile_ads/google_mobile_ads.dart'; // Import google_mobile_ads package
 
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
   final bool isFullScreen;
   final Function toggleFullScreen;
+  final String telegramId; // Define telegramId here
 
   VideoPlayerWidget({
     required this.videoPlayerController,
     required this.isFullScreen,
     required this.toggleFullScreen,
+    required this.telegramId, // Initialize telegramId parameter
   });
 
   @override
@@ -23,15 +27,51 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   bool _isVisible = true;
   late Timer _timer;
   bool _isFullScreenLocked = false;
-  bool _controlsVisible = true; // Added variable to track control visibility
+  bool _controlsVisible = true;
   bool _isOriginalAspectRatio = true;
   late final Floating _floating = Floating(); // Initialize Floating instance
+  String userAccess = ''; // Status akses pengguna
+
+  Timer? _lockIconTimer; // Timer for hiding lock icon
+  bool _lockIconVisible = true; // Visibility of lock icon
+
+  RewardedAd? _rewardedAd;
+  bool _hasShownAdInLandscape = false;
+  bool _isAdClosed = false; // Tambahkan deklarasi untuk _isAdClosed
 
   @override
   void initState() {
     super.initState();
     widget.videoPlayerController.addListener(_onVideoControllerUpdate);
     _startTimer();
+    _fetchUserAccess();
+    _loadRewardedAd();
+    _isAdClosed = false; // Inisialisasi flag
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _resetAdStateIfNecessary();
+  }
+
+  void _resetAdStateIfNecessary() {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      _hasShownAdInLandscape = false;
+    }
+  }
+
+  Future<void> _fetchUserAccess() async {
+    final apiUrl =
+        "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
+    final response = await http.get(Uri.parse(apiUrl));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      setState(() {
+        userAccess = data['akses']; // Mendapatkan status akses pengguna
+      });
+    }
   }
 
   void _onVideoControllerUpdate() {
@@ -88,17 +128,19 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   void _onTap() {
     if (!_isFullScreenLocked) {
-      // Toggle visibility of the play/pause button
       setState(() {
         _isVisible = !_isVisible;
-        _controlsVisible = true; // Show controls when play/pause button is pressed
+        _controlsVisible =
+            true; // Show controls when play/pause button is pressed
       });
 
-      // Stop timer if running
       _stopTimer();
-
-      // Play or pause video depending on current status
       _playPause();
+    } else {
+      setState(() {
+        _lockIconVisible = true;
+      });
+      _startLockIconTimer();
     }
   }
 
@@ -106,13 +148,67 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     if (widget.videoPlayerController.value.isPlaying) {
       widget.videoPlayerController.pause();
     } else {
-      widget.videoPlayerController.play();
+      if (userAccess != 'Premium' &&
+          MediaQuery.of(context).orientation == Orientation.landscape &&
+          !_hasShownAdInLandscape) {
+        if (_rewardedAd != null) {
+          _rewardedAd!.show(
+              onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+            _hasShownAdInLandscape = true; // Iklan sudah ditampilkan
+            _isAdClosed = true;
+            _loadRewardedAd();
+            // Tidak memainkan video setelah iklan ditutup
+            setState(() {
+              _isAdClosed = false;
+            });
+          });
+        } else {
+          // Jika iklan tidak tersedia, tetap putar videonya
+          widget.videoPlayerController.play();
+        }
+      } else {
+        widget.videoPlayerController.play();
+      }
     }
+  }
+
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-1587740600496860/9704038856',
+      request: AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (RewardedAd ad) {
+          _rewardedAd = ad;
+        },
+        onAdFailedToLoad: (LoadAdError error) {
+          print('RewardedAd failed to load: $error');
+          _rewardedAd = null;
+        },
+      ),
+    );
   }
 
   void _toggleFullScreenLock() {
     setState(() {
       _isFullScreenLocked = !_isFullScreenLocked;
+    });
+
+    if (_isFullScreenLocked) {
+      _startLockIconTimer();
+    } else {
+      setState(() {
+        _lockIconVisible = true;
+      });
+      _lockIconTimer?.cancel();
+    }
+  }
+
+  void _startLockIconTimer() {
+    _lockIconTimer?.cancel();
+    _lockIconTimer = Timer(Duration(seconds: 3), () {
+      setState(() {
+        _lockIconVisible = false;
+      });
     });
   }
 
@@ -122,28 +218,27 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     });
   }
 
-Future<void> _enablePiP() async {
-  // Check if the video is in fullscreen mode before enabling PiP
-  if (widget.isFullScreen) {
-    // Hide controls when entering PiP mode
-    setState(() {
-      _controlsVisible = false;
-    });
+  Future<void> _enablePiP() async {
+    if (widget.isFullScreen) {
+      setState(() {
+        _controlsVisible = false;
+      });
 
-    final status = await _floating.enable();
-    print('PiP enabled? $status');
+      final status = await _floating.enable();
+      print('PiP enabled? $status');
 
-    // Hide play/pause button and lock icon when entering PiP mode
-    setState(() {
-      _isVisible = false;
-      _isFullScreenLocked = true;
-    });
+      setState(() {
+        _isVisible = false;
+        _isFullScreenLocked = true;
+        _startLockIconTimer();
+      });
+    }
   }
-}
 
   Widget _buildPlayPauseButton() {
-    IconData iconData =
-        widget.videoPlayerController.value.isPlaying ? Icons.pause : Icons.play_arrow;
+    IconData iconData = widget.videoPlayerController.value.isPlaying
+        ? Icons.pause
+        : Icons.play_arrow;
     return _isFullScreenLocked
         ? Container()
         : AnimatedContainer(
@@ -151,8 +246,7 @@ Future<void> _enablePiP() async {
             height: _isVisible ? 60.0 : 0.0,
             width: _isVisible ? 60.0 : 0.0,
             decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(30.0),
+              color: _isVisible ? Colors.black54 : Colors.transparent,
             ),
             child: Center(
               child: IconButton(
@@ -198,26 +292,31 @@ Future<void> _enablePiP() async {
               "$currentTime / $totalTime",
               style: TextStyle(color: Colors.white),
             ),
-Opacity(
-            opacity: MediaQuery.of(context).orientation == Orientation.landscape ? 1.0 : 0.0,
-            child: Row(
-              children: [
-                IconButton(
-                  icon: Icon(
-                    _isOriginalAspectRatio ? Icons.aspect_ratio : Icons.aspect_ratio_outlined,
-                    color: Colors.white,
+            Opacity(
+              opacity:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? 1.0
+                      : 0.0,
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      _isOriginalAspectRatio
+                          ? Icons.aspect_ratio
+                          : Icons.aspect_ratio_outlined,
+                      color: Colors.white,
+                    ),
+                    onPressed: _toggleAspectRatio,
                   ),
-                  onPressed: _toggleAspectRatio,
-                ),
-                IconButton(
-                  icon: Icon(Icons.picture_in_picture, color: Colors.white),
-                  onPressed: () {
-                    _enablePiP();
-                  },
-                ),
-              ],
+                  IconButton(
+                    icon: Icon(Icons.picture_in_picture, color: Colors.white),
+                    onPressed: () {
+                      _enablePiP();
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
             IconButton(
               icon: Icon(Icons.fullscreen, color: Colors.white),
               onPressed: () {
@@ -242,80 +341,99 @@ Opacity(
     );
   }
 
-Widget build(BuildContext context) {
-  return GestureDetector(
-    onTap: _onTap,
-    child: Center(
-      child: OrientationBuilder(
-        builder: (context, orientation) {
-          return widget.videoPlayerController.value.isInitialized
-              ? Stack(
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _onTap,
+      child: Center(
+        child: OrientationBuilder(
+          builder: (context, orientation) {
+            return widget.videoPlayerController.value.isInitialized
+                ? Stack(
+                    children: [
+                      // Video Player
+                      Container(
+                        alignment: Alignment.center,
                         child: AspectRatio(
                           aspectRatio: _isOriginalAspectRatio
                               ? widget.videoPlayerController.value.aspectRatio
                               : orientation == Orientation.landscape
                                   ? MediaQuery.of(context).size.aspectRatio
-                                  : widget.videoPlayerController.value.aspectRatio,
+                                  : widget
+                                      .videoPlayerController.value.aspectRatio,
                           child: VideoPlayer(widget.videoPlayerController),
                         ),
                       ),
-                    if (!_isFullScreenLocked) ...[
+
+                      // Overlay untuk kontrol (play/pause)
+                      if (!_isFullScreenLocked) ...[
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          child: _buildPlayPauseButton(),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: AnimatedOpacity(
+                            opacity: _controlsVisible ? 1.0 : 0.0,
+                            duration: Duration(milliseconds: 600),
+                            child: Column(
+                              children: [
+                                _buildControllerBarOverlay(),
+                                _buildProgressBar(),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+
+                      // Tombol untuk mengunci/membuka fullscreen
                       Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        child: _buildPlayPauseButton(),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
+                        top: 16,
+                        left: 16,
                         child: AnimatedOpacity(
-                          opacity: _controlsVisible ? 1.0 : 0.0,
+                          opacity: _lockIconVisible || !_isFullScreenLocked
+                              ? 1.0
+                              : 0.0,
                           duration: Duration(milliseconds: 600),
-                          child: Column(
-                            children: [
-                              _buildControllerBarOverlay(),
-                              _buildProgressBar(),
-                            ],
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: IconButton(
+                              icon: _isFullScreenLocked
+                                  ? Icon(Icons.lock, color: Colors.white)
+                                  : Icon(Icons.lock_open, color: Colors.white),
+                              onPressed: _toggleFullScreenLock,
+                            ),
                           ),
                         ),
                       ),
                     ],
-                    Positioned(
-                      top: 16,
-                      left: 16,
-                      child: IconButton(
-                        icon: _isFullScreenLocked
-                            ? Icon(Icons.lock, color: Colors.white)
-                            : Icon(Icons.lock_open, color: Colors.white),
-                        onPressed: _toggleFullScreenLock,
-                      ),
+                  )
+                : Container(
+                    height: 240.0,
+                    color: Colors.black,
+                    child: Center(
+                      child: CircularProgressIndicator(),
                     ),
-                  ],
-                )
-              : Container(
-                  height: 240.0,
-                  color: Colors.black,
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-        },
+                  );
+          },
+        ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 
   @override
   void dispose() {
     _timer.cancel();
     _floating.dispose(); // Dispose Floating instance
+    _lockIconTimer?.cancel();
+    _rewardedAd?.dispose(); // Dispose rewarded ad
     super.dispose();
   }
 }
