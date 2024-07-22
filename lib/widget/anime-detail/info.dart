@@ -9,50 +9,61 @@ class InfoWidget extends StatelessWidget {
   final int animeId;
   final String telegramId;
   final Map<String, dynamic> animeData;
-  Map<String, String> availabilityStatusMap = {};
 
   InfoWidget(
       {required this.animeData,
       required this.animeId,
       required this.telegramId});
 
-  Future<Map<String, dynamic>> fetchAvailability(String animeId) async {
+  Future<String> fetchSynopsis(int animeId) async {
     final Uri apiUrl = Uri.parse(
-        'https://ccgnimex.my.id/v2/android/cek.php?anime_id=$animeId');
+        'https://ccgnimex.my.id/v2/android/detail_anime.php?anime_id=$animeId');
+
+    final response = await http.get(apiUrl);
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      return data['sinopsis'] ?? 'No synopsis available';
+    } else {
+      throw Exception('Failed to load synopsis for anime ID: $animeId');
+    }
+  }
+
+  Future<Map<String, dynamic>> fetchRecommendations(int animeId) async {
+    final Uri apiUrl = Uri.parse(
+        'https://ccgnimex.my.id/v2/android/cekv2.php?anime_id=$animeId');
 
     final response = await http.get(apiUrl);
 
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
-      throw Exception(
-          'Failed to load availability data for anime ID: $animeId');
+      throw Exception('Failed to load recommendations for anime ID: $animeId');
     }
   }
 
-  Future<Map<String, dynamic>> _fetchRecommendationAvailability() async {
-    Map<String, dynamic> availabilityData = {};
-
-    try {
-      print('Fetching availability for Anime ID: $animeId');
-
-      final Map<String, dynamic> availabilityResponse =
-          await fetchAvailability(animeId.toString());
-
-      print('Availability Response: $availabilityResponse');
-
-      if (availabilityResponse.containsKey('availability_status')) {
-        availabilityData = availabilityResponse['availability_status'];
-      } else {
-        // Handle the case when availability_status is not found in the response
-        print('Availability status not found in response.');
-      }
-    } catch (e) {
-      print('Error fetching availability - $e');
-      // Handle error, e.g., display a message to the user
-    }
-
-    return availabilityData;
+  Widget _buildSynopsis() {
+    return FutureBuilder<String>(
+      future: fetchSynopsis(animeId),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        } else if (snapshot.hasError) {
+          return Text(
+            'Failed to load synopsis',
+            style: TextStyle(color: Colors.red),
+          );
+        } else {
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              snapshot.data ?? 'No synopsis available',
+              style: TextStyle(color: Colors.white),
+            ),
+          );
+        }
+      },
+    );
   }
 
   @override
@@ -118,8 +129,7 @@ class InfoWidget extends StatelessWidget {
           if (animeData['recommendations']['edges'].isNotEmpty) ...[
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: _buildRecommendationSection(
-                  animeData['recommendations']['edges']),
+              child: _buildRecommendationSection(),
             ),
             SizedBox(height: 20.0),
           ],
@@ -201,167 +211,161 @@ class InfoWidget extends StatelessWidget {
     }).toList();
   }
 
-  Widget _buildSynopsis() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
-      child: Text(
-        animeData['description']!,
-        style: TextStyle(fontSize: 14.0, color: Colors.white70),
-        textAlign: TextAlign.justify,
-      ),
-    );
-  }
+  Widget _buildRecommendationSection() {
+    return FutureBuilder<Map<String, dynamic>>(
+      future: fetchRecommendations(animeId),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        } else if (snapshot.hasError) {
+          return Text(
+            'Failed to load recommendations',
+            style: TextStyle(color: Colors.red),
+          );
+        } else {
+          Map<String, dynamic> availabilityStatus =
+              snapshot.data!['availability_status'];
 
-  Widget _buildRecommendationSection(List<dynamic> recommendations) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 16.0),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0.0),
-          child: Text(
-            'Rekomendasi Terkait',
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        SizedBox(height: 8.0),
-        FutureBuilder(
-          future: _fetchRecommendationAvailability(),
-          builder: (context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
-            } else if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
-            } else {
-              final Map<String, dynamic> availabilityData = snapshot.data!;
-              return Container(
-                height: 150.0,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: recommendations.length,
-                  itemBuilder: (context, index) {
-                    final recommendation = recommendations[index];
-                    final String title = recommendation['node']
-                        ['mediaRecommendation']['title']['romaji'];
-                    final String posterUrl = recommendation['node']
-                        ['mediaRecommendation']['coverImage']['large'];
-                    final String animeId = recommendation['node']
-                            ['mediaRecommendation']['id']
-                        .toString();
-                    final String availabilityStatus =
-                        availabilityData[animeId] ?? 'unknown';
-
-                    return _buildRecommendationItem(
-                        title, posterUrl, availabilityStatus, context, animeId);
-                  },
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 16.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  'Rekomendasi Terkait',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              );
-            }
-          },
-        ),
-      ],
+              ),
+              SizedBox(height: 8.0),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: availabilityStatus.keys.map<Widget>((animeId) {
+                    Map<String, dynamic> recommendationData =
+                        availabilityStatus[animeId];
+                    String title = recommendationData['judul'] ?? '';
+                    String posterUrl = recommendationData['image'] ?? '';
+                    String status = recommendationData['status'] ?? '';
+
+                    if (posterUrl.isNotEmpty &&
+                        title.isNotEmpty &&
+                        status.isNotEmpty) {
+                      return _buildRecommendationItem(
+                          title, posterUrl, status, context, animeId);
+                    } else {
+                      return SizedBox
+                          .shrink(); // Ignore if any of the required fields are empty
+                    }
+                  }).toList(),
+                ),
+              ),
+            ],
+          );
+        }
+      },
     );
   }
 
   Widget _buildRecommendationItem(String title, String posterUrl,
       String availabilityStatus, BuildContext context, String animeId) {
+    Color statusColor =
+        availabilityStatus == 'tersedia' ? Colors.green : Colors.red;
+
     return GestureDetector(
       onTap: () {
-        if (availabilityStatus == 'tersedia') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => AnimeDetailPage(
-                  animeId: int.parse(animeId), telegramId: telegramId),
-            ),
-          );
-        } else {
-          _showNotAvailablePopup(context);
-        }
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AnimeDetailPage(
+                animeId: int.parse(animeId), telegramId: telegramId),
+          ),
+        );
       },
       child: Container(
         width: 120.0,
         margin: EdgeInsets.symmetric(horizontal: 8.0),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Stack(
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: posterUrl,
-                    width: 120.0,
-                    height: 150.0,
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
-                  ),
-                  Positioned.fill(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          colors: [
-                            Colors.black87,
-                            Colors.transparent,
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              top: 8.0,
-              right: 8.0,
-              child: Container(
-                padding: EdgeInsets.all(4.0),
-                decoration: BoxDecoration(
-                  color: Colors.pink, // Background color
-                  borderRadius: BorderRadius.circular(4.0),
-                ),
-                child: Row(
-                  children: [
-                    _getAvailabilityIcon(availabilityStatus),
-                    SizedBox(width: 4.0),
-                    Text(
-                      _getAvailabilityLabel(availabilityStatus),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 11.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 8.0,
-              left: 8.0,
-              right: 8.0,
-              child: Text(
-                title,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, 4),
+              blurRadius: 4.0,
             ),
           ],
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Stack(
+            children: [
+              CachedNetworkImage(
+                imageUrl: posterUrl,
+                width: 120.0,
+                height: 150.0,
+                fit: BoxFit.cover,
+                placeholder: (context, url) =>
+                    Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+              ),
+              Positioned(
+                top: 8.0,
+                right: 8.0,
+                child: Container(
+                  padding: EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                    color: statusColor,
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
+                  child: Text(
+                    availabilityStatus,
+                    style: TextStyle(
+                      fontSize: 10.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0.0,
+                left: 0.0,
+                right: 0.0,
+                child: Container(
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black87.withOpacity(0.6),
+                        Colors.transparent
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 8.0,
+                left: 8.0,
+                right: 8.0,
+                child: Text(
+                  title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -500,12 +504,11 @@ class InfoWidget extends StatelessWidget {
           ? responseData['relation']['prequel']
           : responseData['relation']['sequel'];
       if (relatedAnimeId != null) {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => AnimeDetailPage(
-              animeId:
-                  relatedAnimeId, // No need to provide a default value here
+              animeId: relatedAnimeId,
               telegramId: telegramId ?? '',
             ),
           ),
@@ -514,7 +517,7 @@ class InfoWidget extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-                'Belum Tersedia, silahkan hub admin dichatroom untuk ditambahkan!'),
+                'Belum Tersedia, silahkan hub admin di chatroom untuk ditambahkan!'),
           ),
         );
       }

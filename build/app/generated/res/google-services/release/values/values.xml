@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">106648713758-ct5lifhgjbv07kmuht942j6j2v5fdvbd.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">106648713758</string>
+    <string name="google_api_key" translatable="false">AIzaSyBwUZM3N9pbGfA7DxrHTDZL1u038tTeu2E</string>
+    <string name="google_app_id" translatable="false">1:106648713758:android:744dbf7e169834cd510c0f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBwUZM3N9pbGfA7DxrHTDZL1u038tTeu2E</string>
+    <string name="google_storage_bucket" translatable="false">niflex-79a03.appspot.com</string>
+    <string name="project_id" translatable="false">niflex-79a03</string>
+</resources>

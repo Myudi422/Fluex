@@ -1,0 +1,21 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_overlay_window" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+9-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:2:3-75
+9-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:2:20-72
+10    <uses-permission android:name="android.permission.WAKE_LOCK" />
+10-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:3:3-66
+10-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:3:20-63
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:4:3-76
+11-->C:\Users\Yudi Tolol\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_overlay_window-0.4.3\android\src\main\AndroidManifest.xml:4:20-73
+12
+13</manifest>

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\in_app_purchase_android\\intermediates\\merged_res\\release\\raw\\com_android_billingclient_registration_info.binarypb",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\39d11fdf7dea0d5c665a6f7b4b5adf48\\transformed\\jetified-billing-6.1.0\\res\\raw\\com_android_billingclient_registration_info.binarypb"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\in_app_purchase_android\\intermediates\\merged_res\\release\\raw\\com_android_billingclient_heterodyne_info",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\39d11fdf7dea0d5c665a6f7b4b5adf48\\transformed\\jetified-billing-6.1.0\\res\\raw\\com_android_billingclient_heterodyne_info"
+    }
+]

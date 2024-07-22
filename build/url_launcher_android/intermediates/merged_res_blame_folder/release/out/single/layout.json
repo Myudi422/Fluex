@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\browser_actions_context_menu_row.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7276cb1539639b07f93c4c6b83046815\\transformed\\browser-1.5.0\\res\\layout\\browser_actions_context_menu_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\browser_actions_context_menu_page.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7276cb1539639b07f93c4c6b83046815\\transformed\\browser-1.5.0\\res\\layout\\browser_actions_context_menu_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\notification_action.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\url_launcher_android\\intermediates\\merged_res\\release\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\87ad7c229c5b394289f7d9753c58227e\\transformed\\core-1.10.1\\res\\layout\\notification_template_icon_group.xml"
+    }
+]

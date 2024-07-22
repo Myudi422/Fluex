@@ -5,8 +5,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'main_page.dart';
-import 'package:uuid/uuid.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart'; // Import this package for SystemNavigator
 
 class LoginGoogleWidget extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -64,19 +64,23 @@ class LoginGoogleWidget extends StatelessWidget {
       print("Email dikirim: ${user.email}");
 
       await _sendUserDataToDatabase(user);
-      await _getUserDataFromDatabase(user, context);
+      final isBanned = await _checkIfUserIsBanned(user.email!, context);
 
-      // Setel tanda bahwa pengguna sudah login
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setBool('isLoggedIn', true);
+      if (!isBanned) {
+        // Setel tanda bahwa pengguna sudah login
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setBool('isLoggedIn', true);
+        prefs.setString(
+            'email', user.email!); // Simpan email ke SharedPreferences
 
-      // Arahkan ke MainPage
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MainPage(),
-        ),
-      );
+        // Arahkan ke MainPage
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MainPage(),
+          ),
+        );
+      }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -132,53 +136,54 @@ class LoginGoogleWidget extends StatelessWidget {
     }
   }
 
-  Future<void> _getUserDataFromDatabase(User user, BuildContext context) async {
+  Future<bool> _checkIfUserIsBanned(String email, BuildContext context) async {
     final apiUrl = 'https://ccgnimex.my.id/v2/android/api_user.php';
     try {
       final response = await http.post(
         Uri.parse(apiUrl),
         body: {
-          'email': user.email!,
-          // Add any other parameters needed for user identification
+          'email': email,
         },
       );
 
-      print("API Response (Get from Database): ${response.body}");
+      print("API Response (Check if Banned): ${response.body}");
 
       if (response.statusCode == 200) {
-        try {
-          final responseData = json.decode(response.body);
-
-          if (responseData['status'] == 'success') {
-            // Save user email in SharedPreferences
-            SharedPreferences prefs = await SharedPreferences.getInstance();
-            prefs.setString('email', user.email!);
-
-            // Use data from the database as needed
-            final userData = responseData; // Directly access the top-level data
-            print("User data from database: $userData");
-
-            // Update the UI with user data (e.g., navigate to the main page)
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MainPage(),
-              ),
-            );
-          } else {
-            print(
-                "Failed to get user data from database. Message: ${responseData['message']}");
-          }
-        } catch (e) {
-          print("Error parsing user data from database: $e");
+        final responseData = json.decode(response.body);
+        if (responseData['status'] == 'banned') {
+          _showBannedPopup(context);
+          return true;
         }
       } else {
         print(
-            "Failed to get user data from database. Status code: ${response.statusCode}");
+            "Failed to check if user is banned. Status code: ${response.statusCode}");
       }
     } catch (e) {
-      print("Error getting user data from database: $e");
+      print("Error checking if user is banned: $e");
     }
+    return false;
+  }
+
+  void _showBannedPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible:
+          false, // Membuat popup tidak bisa ditutup dengan klik di luar
+      builder: (context) => AlertDialog(
+        title: Text('Pemberitahuan Untuk Anda!!!'),
+        content: Text(
+            'Anda sudah diblokir, harap pahami itu. silahkan hapus data aplikasi. dan login pakai email yang berbeda.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Close the popup
+              SystemNavigator.pop(); // Keluar dari aplikasi
+            },
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -186,26 +191,34 @@ class LoginGoogleWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton.icon(
-          onPressed: () async {
-            await _loginWithGoogle(context);
-          },
-          icon: FaIcon(
-            FontAwesomeIcons.google,
-            color: Colors.white, // Warna ikon
-          ),
-          label: Text(
-            'Login dengan Google',
-            style: TextStyle(
-              color: Colors.white, // Warna teks
-              fontSize: 16, // Ukuran teks
-              fontWeight: FontWeight.bold,
+        SizedBox(
+          width: MediaQuery.of(context)
+              .size
+              .width, // Set the width to full screen width
+          child: ElevatedButton.icon(
+            onPressed: () async {
+              await _loginWithGoogle(context);
+            },
+            icon: FaIcon(
+              FontAwesomeIcons.google,
+              color: Colors.white, // Icon color
             ),
-          ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red, // Warna latar belakang tombol
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8), // Bentuk tepi tombol
+            label: Text(
+              'Login dengan Google',
+              style: TextStyle(
+                color: Colors.white, // Text color
+                fontSize: 16, // Text size
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  Colors.red), // Background color
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8), // Button shape
+                ),
+              ),
             ),
           ),
         ),

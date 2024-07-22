@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\googleg_standard_color_18.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7cf4ba272fe12560b9f5141847fb12c0\\transformed\\core-1.9.0\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\googleg_disabled_color_18.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\common_full_open_on_phone.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7cf4ba272fe12560b9f5141847fb12c0\\transformed\\core-1.9.0\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7cf4ba272fe12560b9f5141847fb12c0\\transformed\\core-1.9.0\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7cf4ba272fe12560b9f5141847fb12c0\\transformed\\core-1.9.0\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\unity_ads_plugin\\intermediates\\merged_res\\release\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\7cf4ba272fe12560b9f5141847fb12c0\\transformed\\core-1.9.0\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    }
+]

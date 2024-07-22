@@ -61,21 +61,15 @@ class _LoginAllState extends State<LoginAll> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    'img/app.jpg'), // Make sure the image path is correct
-                fit: BoxFit.cover,
-              ),
+          Positioned.fill(
+            child: Image.asset(
+              'img/app.jpg', // Make sure the image path is correct
+              fit: BoxFit.cover,
             ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Expanded(
-                  child:
-                      Container()), // Empty expanded widget to push the content to the bottom
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(20),

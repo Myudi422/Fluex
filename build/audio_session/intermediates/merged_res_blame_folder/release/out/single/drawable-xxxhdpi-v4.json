@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\audio_session\\intermediates\\merged_res\\release\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_skip_to_previous.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_skip_to_previous.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\audio_session\\intermediates\\merged_res\\release\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_skip_to_next.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_skip_to_next.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\audio_session\\intermediates\\merged_res\\release\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_pause.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_pause.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\audio_session\\intermediates\\merged_res\\release\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_music_note.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_music_note.png"
+    },
+    {
+        "merged": "C:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\audio_session\\intermediates\\merged_res\\release\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_play.png",
+        "source": "C:\\Users\\Yudi Tolol\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-xxxhdpi-v4\\media_session_service_notification_ic_play.png"
+    }
+]

@@ -168,27 +168,27 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 250, // Set the desired width here
+        width: MediaQuery.of(context).size.width * 1.0, // 80% lebar layar
         child: ElevatedButton.icon(
           onPressed: _showLoginDialog,
           icon: FaIcon(
             FontAwesomeIcons.envelope,
-            color: Colors.white, // Icon color
+            color: Colors.white, // Warna ikon
           ),
           label: Text(
             'Login dengan Email',
             style: TextStyle(
-              color: Colors.white, // Text color
-              fontSize: 16, // Text size
+              color: Colors.white, // Warna teks
+              fontSize: 16, // Ukuran teks
               fontWeight: FontWeight.bold,
             ),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(
-                Colors.blue), // Background color
+                Colors.blue), // Warna latar belakang
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8), // Button shape
+                borderRadius: BorderRadius.circular(8), // Bentuk tombol
               ),
             ),
           ),
