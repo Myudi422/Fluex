@@ -281,6 +281,12 @@ class _MainPageState extends State<MainPage> {
                     telegramId: telegramId,
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: PremiumWidget(
+                    telegramId: telegramId,
+                  ),
+                ),
                 OngoingTitleWidget(telegramId: telegramId),
                 OngoingAnimeWidget(
                   firstName: firstName,

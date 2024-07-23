@@ -22,7 +22,7 @@ class Warna {
   static const Color primaryColor = Color.fromARGB(255, 254, 61, 126);
   static const Color accentColor = Color.fromARGB(255, 94, 7, 36);
   static const Color homeColor = Color.fromARGB(255, 255, 252, 253);
-  static const Color backgroundColor = Color(0xFF1E2532);
+  static const Color backgroundColor = Color.fromARGB(21, 21, 21, 21);
 }
 
 Future<void> loadColors() async {

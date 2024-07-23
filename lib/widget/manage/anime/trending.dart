@@ -60,7 +60,7 @@ class _RecommendedWidgetState extends State<RecommendedWidget> {
 
   Widget _buildRecommendedList() {
     return Container(
-      height: 240.0, // Adjusted height for better visibility
+      height: 144.0, // Reduced height by 40%
       child: GridView.builder(
         scrollDirection: Axis.horizontal,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -97,7 +97,7 @@ class _RecommendedWidgetState extends State<RecommendedWidget> {
         );
       },
       child: Container(
-        width: 160.0,
+        width: 96.0, // Reduced width by 40%
         child: ClipRRect(
           borderRadius:
               BorderRadius.circular(12.0), // Adjust the radius as needed
@@ -135,7 +135,7 @@ class _RecommendedWidgetState extends State<RecommendedWidget> {
                 child: Text(
                   title,
                   style: TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 9.6, // Reduced font size by 40%
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),

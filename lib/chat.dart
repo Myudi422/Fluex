@@ -159,35 +159,40 @@ Widget build(BuildContext context) {
 }
 
 
-  void sendMessage() async {
-    String message = messageController.text;
-    if (message.isNotEmpty) {
-      await sendChatroomMessage(message);
-      await fetchChatroomMessages();
-      messageController.clear();
-    }
+void sendMessage() async {
+  String message = messageController.text;
+  if (message.isNotEmpty && widget.telegramId != null && widget.telegramId!.isNotEmpty) {
+    await sendChatroomMessage(message);
+    await fetchChatroomMessages();
+    messageController.clear();
+  } else {
+    // Handle the case where telegramId is null or empty
+    // For example, show an error message
+    print('Telegram ID is required to send a message');
   }
+}
 
-  Future<void> sendChatroomMessage(String message) async {
-    final url = 'https://ccgnimex.my.id/v2/android/chat/api.php';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'sender_telegram_id': widget.telegramId ?? '',
-        'message_text': message,
-        'first_name': widget.firstName ?? '',
-        'profile_picture': widget.profilePicture ?? '',
-        'akses': widget.premiumStatus ?? '',
-      }),
-    );
+Future<void> sendChatroomMessage(String message) async {
+  final url = 'https://ccgnimex.my.id/v2/android/chat/api.php';
+  final response = await http.post(
+    Uri.parse(url),
+    headers: {'Content-Type': 'application/json'},
+    body: jsonEncode({
+      'sender_telegram_id': widget.telegramId,
+      'message_text': message,
+      'first_name': widget.firstName ?? '',
+      'profile_picture': widget.profilePicture ?? '',
+      'akses': widget.premiumStatus ?? '',
+    }),
+  );
 
-    if (response.statusCode == 200) {
-      print('Message sent successfully');
-    } else {
-      throw Exception('Failed to send message');
-    }
+  if (response.statusCode == 200) {
+    print('Message sent successfully');
+  } else {
+    throw Exception('Failed to send message');
   }
+}
+
 
   Future<void> fetchChatroomMessages() async {
     final url = 'https://ccgnimex.my.id/v2/android/chat/api.php';
