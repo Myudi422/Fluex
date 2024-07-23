@@ -84,7 +84,8 @@ class Anime {
 }
 
 class ApiService {
-  static const String apiUrl = 'https://ccgnimex.my.id/v2/android/api_browse.php';
+  static const String apiUrl =
+      'https://ccgnimex.my.id/v2/android/api_browse.php';
 
   static Future<List<Anime>> fetchAnimeData() async {
     final response = await http.get(Uri.parse(apiUrl));
@@ -96,6 +97,7 @@ class ApiService {
     }
   }
 }
+
 class AnimePage extends StatefulWidget {
   final String telegramId;
 
@@ -144,8 +146,9 @@ class _AnimePageState extends State<AnimePage> {
     super.dispose();
   }
 
-    Future<void> _fetchUserAccess() async {
-    final apiUrl = "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
+  Future<void> _fetchUserAccess() async {
+    final apiUrl =
+        "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
@@ -155,7 +158,6 @@ class _AnimePageState extends State<AnimePage> {
       });
     }
   }
-
 
   Future<void> fetchData() async {
     try {
@@ -197,7 +199,8 @@ class _AnimePageState extends State<AnimePage> {
         .whereType<String>() // Mengambil hanya nilai bertipe String
         .toList(); // Menggabungkan semua list menjadi satu
 
-    List<String> uniqueValues = List<String>.from(allValues.toSet()); // Mengonversi ke Set kemudian kembali ke List
+    List<String> uniqueValues = List<String>.from(
+        allValues.toSet()); // Mengonversi ke Set kemudian kembali ke List
 
     return uniqueValues;
   }
@@ -207,20 +210,32 @@ class _AnimePageState extends State<AnimePage> {
       filteredAnimeList = animeList
           .where((anime) =>
               (selectedGenres.isEmpty ||
-                  anime.getGenres().any((genre) => selectedGenres.contains(genre))) &&
+                  anime
+                      .getGenres()
+                      .any((genre) => selectedGenres.contains(genre))) &&
               (selectedFormats.isEmpty ||
-                  anime.getFormats().any((format) => selectedFormats.contains(format))) &&
+                  anime
+                      .getFormats()
+                      .any((format) => selectedFormats.contains(format))) &&
               (selectedStatuses.isEmpty ||
-                  anime.getStatuses().any((status) => selectedStatuses.contains(status))) &&
+                  anime
+                      .getStatuses()
+                      .any((status) => selectedStatuses.contains(status))) &&
               (selectedSeasons.isEmpty ||
-                  anime.getSeasons().any((season) => selectedSeasons.contains(season))) &&
-              (searchQuery.isEmpty || anime.title.toLowerCase().contains(searchQuery.toLowerCase())))
+                  anime
+                      .getSeasons()
+                      .any((season) => selectedSeasons.contains(season))) &&
+              (searchQuery.isEmpty ||
+                  anime.title
+                      .toLowerCase()
+                      .contains(searchQuery.toLowerCase())))
           .toList();
 
       // Filter tambahan: Hanya tampilkan anime yang memiliki semua genre yang dipilih
       if (selectedGenres.isNotEmpty) {
         filteredAnimeList = filteredAnimeList
-            .where((anime) => selectedGenres.every((genre) => anime.getGenres().contains(genre)))
+            .where((anime) => selectedGenres
+                .every((genre) => anime.getGenres().contains(genre)))
             .toList();
       }
 
@@ -229,201 +244,226 @@ class _AnimePageState extends State<AnimePage> {
     });
   }
 
-
-  
-
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [ColorManager.currentBackgroundColor],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  ColorManager.currentBackgroundColor,
+                  ColorManager.currentBackgroundColor
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: TextField(
-                          style: TextStyle(color: ColorManager.currentHomeColor),
-                          decoration: InputDecoration(
-                            labelText: 'Search',
-                            labelStyle: TextStyle(color: ColorManager.currentHomeColor),
-                            suffixIcon: Icon(Icons.search, color: ColorManager.currentHomeColor),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: ColorManager.currentHomeColor),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: TextField(
+                            style:
+                                TextStyle(color: ColorManager.currentHomeColor),
+                            decoration: InputDecoration(
+                              labelText: 'Search',
+                              labelStyle: TextStyle(
+                                  color: ColorManager.currentHomeColor),
+                              suffixIcon: Icon(Icons.search,
+                                  color: ColorManager.currentHomeColor),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: ColorManager.currentHomeColor),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: ColorManager.currentHomeColor),
+                              ),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: ColorManager.currentHomeColor),
-                            ),
+                            onChanged: (query) {
+                              setState(() {
+                                searchQuery = query;
+                                filterAnime();
+                              });
+                            },
                           ),
-                          onChanged: (query) {
-                            setState(() {
-                              searchQuery = query;
-                              filterAnime();
-                            });
-                          },
                         ),
                       ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.filter_list, color: ColorManager.currentHomeColor),
-                      onPressed: () {
-                        showFilterDialog(context);
-                      },
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: GridView.builder(
-                  padding: EdgeInsets.all(4.0),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 4.0,
-                    mainAxisSpacing: 4.0,
+                      IconButton(
+                        icon: Icon(Icons.filter_list,
+                            color: ColorManager.currentHomeColor),
+                        onPressed: () {
+                          showFilterDialog(context);
+                        },
+                      ),
+                    ],
                   ),
-                  itemCount: filteredAnimeList.length,
-                  itemBuilder: (context, index) {
-                    final anime = filteredAnimeList[index];
-                    return GestureDetector(
-                      onTap: () async {
-  if (userAccess != 'Premium') {
-    // Jika pengguna memiliki akses Free, tampilkan iklan
-    if (UnityAdManager.isInitialized) {
-      UnityAdManager.showInterstitialAd(
-        onComplete: (String rewardItemKey) {
-          _navigateToAnimeDetail(anime);
-        },
-        onFailed: (String placementId, dynamic error, String message) {
-          _navigateToAnimeDetail(anime);
-        },
-      );
-    } else {
-      print("Unity Ads is not initialized. Please call UnityAdManager.initialize() first.");
-      _navigateToAnimeDetail(anime);
-    }
-  } else {
-    // Jika pengguna memiliki akses Premium, langsung navigasikan ke detail anime
-    _navigateToAnimeDetail(anime);
-  }
-},
-
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0), // Sesuaikan dengan keinginan Anda
-                        child: Card(
-                          elevation: 4.0,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0), // Sesuaikan dengan keinginan Anda
-                            child: Stack(
-                              fit: StackFit.expand,
-                              children: [
-                                CachedNetworkImage(
-                                  imageUrl: anime.imageUrl,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      Center(child: CircularProgressIndicator()),
-                                  errorWidget: (context, url, error) => Icon(Icons.error),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                      colors: [
-                                        Colors.black.withOpacity(1.0),
-                                        Colors.black.withOpacity(0.0),
+                ),
+                Expanded(
+                  child: GridView.builder(
+                    padding: EdgeInsets.all(4.0),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 4.0,
+                      mainAxisSpacing: 4.0,
+                    ),
+                    itemCount: filteredAnimeList.length,
+                    itemBuilder: (context, index) {
+                      final anime = filteredAnimeList[index];
+                      return GestureDetector(
+                        onTap: () async {
+                          if (userAccess != 'Premium') {
+                            // Jika pengguna memiliki akses Free, tampilkan iklan
+                            if (UnityAdManager.isInitialized) {
+                              UnityAdManager.showInterstitialAd(
+                                onComplete: (String rewardItemKey) {
+                                  _navigateToAnimeDetail(anime);
+                                },
+                                onFailed: (String placementId, dynamic error,
+                                    String message) {
+                                  _navigateToAnimeDetail(anime);
+                                },
+                              );
+                            } else {
+                              print(
+                                  "Unity Ads is not initialized. Please call UnityAdManager.initialize() first.");
+                              _navigateToAnimeDetail(anime);
+                            }
+                          } else {
+                            // Jika pengguna memiliki akses Premium, langsung navigasikan ke detail anime
+                            _navigateToAnimeDetail(anime);
+                          }
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Sesuaikan dengan keinginan Anda
+                          child: Card(
+                            elevation: 4.0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                  10.0), // Sesuaikan dengan keinginan Anda
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  CachedNetworkImage(
+                                    imageUrl: anime.imageUrl,
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) => Center(
+                                        child: CircularProgressIndicator()),
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                        colors: [
+                                          Colors.black.withOpacity(1.0),
+                                          Colors.black.withOpacity(0.0),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 10.0,
+                                    left: 6.0,
+                                    right: 6.0,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          anime.title ?? 'Unknown Title',
+                                          style: TextStyle(
+                                              color: ColorManager
+                                                  .currentHomeColor),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                        SizedBox(height: 4.0),
+                                        Row(
+                                          children: [
+                                            ...anime
+                                                .getGenres()
+                                                .take(2)
+                                                .map((genre) {
+                                              return Container(
+                                                margin:
+                                                    EdgeInsets.only(right: 2.0),
+                                                decoration: BoxDecoration(
+                                                  color: ColorManager
+                                                      .currentPrimaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          7.0), // Mengurangi ukuran borderRadius
+                                                ),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 4.0,
+                                                    vertical:
+                                                        4.0), // Mengurangi ukuran padding
+                                                child: Text(
+                                                  genre,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize:
+                                                          10.5), // Mengurangi ukuran font
+                                                ),
+                                              );
+                                            }).toList(),
+                                            if (anime.getGenres().length > 2)
+                                              Container(
+                                                margin:
+                                                    EdgeInsets.only(right: 6.0),
+                                                padding: EdgeInsets.all(
+                                                    4.8), // Mengurangi ukuran padding
+                                                decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: ColorManager
+                                                      .currentPrimaryColor,
+                                                ),
+                                                child: Text(
+                                                  '+${anime.getGenres().length - 2}',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize:
+                                                          10.5), // Mengurangi ukuran font
+                                                ),
+                                              ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
-                                ),
-                                Positioned(
-                                  bottom: 10.0,
-                                  left: 6.0,
-                                  right: 6.0,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        anime.title ?? 'Unknown Title',
-                                        style: TextStyle(color: ColorManager.currentHomeColor),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                      ),
-                                      SizedBox(height: 4.0),
-                                      Row(
-                                        children: [
-                                          ...anime.getGenres().take(2).map((genre) {
-                                            return Container(
-                                              margin: EdgeInsets.only(right: 2.0),
-                                              decoration: BoxDecoration(
-                                                color: ColorManager.currentPrimaryColor,
-                                                borderRadius: BorderRadius.circular(7.0), // Mengurangi ukuran borderRadius
-                                              ),
-                                              padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0), // Mengurangi ukuran padding
-                                              child: Text(
-                                                genre,
-                                                style: TextStyle(color: Colors.white, fontSize: 10.5), // Mengurangi ukuran font
-                                              ),
-                                            );
-                                          }).toList(),
-                                          if (anime.getGenres().length > 2)
-                                            Container(
-                                              margin: EdgeInsets.only(right: 6.0),
-                                              padding: EdgeInsets.all(4.8), // Mengurangi ukuran padding
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                color: ColorManager.currentPrimaryColor,
-                                              ),
-                                              child: Text(
-                                                '+${anime.getGenres().length - 2}',
-                                                style: TextStyle(color: Colors.white, fontSize: 10.5), // Mengurangi ukuran font
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
 
-
-
-
-
-
-void _navigateBack() {
-
-  Navigator.pop(context);
-}
-
+  void _navigateBack() {
+    Navigator.pop(context);
+  }
 
   void _navigateToAnimeDetail(Anime anime) {
     Navigator.push(
@@ -437,7 +477,6 @@ void _navigateBack() {
     );
   }
 
-
   void showFilterDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -449,10 +488,14 @@ void _navigateBack() {
               content: SingleChildScrollView(
                 child: ListBody(
                   children: [
-                    buildFilterChipGroup('Genre', genres, selectedGenres, setState),
-                    buildFilterChipGroup('Format', formats, selectedFormats, setState),
-                    buildFilterChipGroup('Status', statuses, selectedStatuses, setState),
-                    buildFilterChipGroup('Season', seasons, selectedSeasons, setState),
+                    buildFilterChipGroup(
+                        'Genre', genres, selectedGenres, setState),
+                    buildFilterChipGroup(
+                        'Format', formats, selectedFormats, setState),
+                    buildFilterChipGroup(
+                        'Status', statuses, selectedStatuses, setState),
+                    buildFilterChipGroup(
+                        'Season', seasons, selectedSeasons, setState),
                   ],
                 ),
               ),
@@ -478,7 +521,8 @@ void _navigateBack() {
     );
   }
 
-  Widget buildFilterChipGroup(String label, List<String> options, List<String> selectedOptions, StateSetter setState) {
+  Widget buildFilterChipGroup(String label, List<String> options,
+      List<String> selectedOptions, StateSetter setState) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
       child: Column(
@@ -524,10 +568,13 @@ void _navigateBack() {
                       }
                     });
                   },
-                  backgroundColor: selectedOptions.contains(option) ? Colors.blue : null,
+                  backgroundColor:
+                      selectedOptions.contains(option) ? Colors.blue : null,
                   selectedColor: Colors.blue,
                   labelStyle: TextStyle(
-                    color: selectedOptions.contains(option) ? Colors.white : Colors.black,
+                    color: selectedOptions.contains(option)
+                        ? Colors.white
+                        : Colors.black,
                   ),
                 );
               }).toList(),

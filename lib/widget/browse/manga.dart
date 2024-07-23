@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flue/widget/browse/komik-detail.dart';
 import 'package:flue/admob/unity.dart';
+import 'package:flue/color.dart';
 
 class MangaPage extends StatefulWidget {
   final String telegramId;
@@ -147,6 +148,8 @@ class _MangaPageState extends State<MangaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          ColorManager.currentBackgroundColor, // Mengatur latar belakang
       body: Stack(
         children: [
           Padding(
@@ -198,10 +201,7 @@ class _MangaPageState extends State<MangaPage> {
                                         ],
                                         begin: Alignment.bottomCenter,
                                         end: Alignment.topCenter,
-                                        stops: [
-                                          0,
-                                          0.5
-                                        ], // Adjust the stops to control the gradient position
+                                        stops: [0, 0.5],
                                       ),
                                     ),
                                   ),
@@ -297,7 +297,7 @@ class _MangaPageState extends State<MangaPage> {
             right: 0,
             child: Container(
               padding: EdgeInsets.all(8.0),
-              color: Colors.grey[200],
+              color: ColorManager.currentHomeColor,
               child: Row(
                 children: [
                   Expanded(
@@ -305,12 +305,24 @@ class _MangaPageState extends State<MangaPage> {
                       controller: _searchController,
                       decoration: InputDecoration(
                         hintText: 'Cari Manga',
-                        border: OutlineInputBorder(),
+                        hintStyle: TextStyle(
+                            color: ColorManager
+                                .currentBackgroundColor), // Mengatur warna teks hint
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: ColorManager
+                                  .currentBackgroundColor), // Mengatur warna border
+                        ),
                       ),
+                      style: TextStyle(
+                          color: ColorManager
+                              .currentBackgroundColor), // Mengatur warna teks
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.search),
+                    icon: Icon(Icons.search,
+                        color: ColorManager
+                            .currentBackgroundColor), // Mengatur warna ikon
                     onPressed: _performSearch,
                   ),
                 ],

@@ -13,6 +13,7 @@ import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:flue/color.dart';
 
 class Playlist {
   String name;
@@ -366,6 +367,7 @@ class _MusicPageState extends State<MusicPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.currentBackgroundColor,
       body: Column(
         children: [
           Padding(
@@ -379,13 +381,29 @@ class _MusicPageState extends State<MusicPage>
                       controller: searchController,
                       decoration: InputDecoration(
                         hintText: 'Cari Di Youtube',
+                        hintStyle:
+                            TextStyle(color: ColorManager.currentHomeColor),
                         contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                        border: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: ColorManager.currentHomeColor),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: ColorManager.currentHomeColor),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: ColorManager.currentHomeColor),
+                        ),
                       ),
+                      style: TextStyle(color: ColorManager.currentHomeColor),
                     ),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.search),
+                  icon:
+                      Icon(Icons.search, color: ColorManager.currentHomeColor),
                   onPressed: () {
                     setState(() {
                       searchKeyword = searchController.text;
@@ -396,7 +414,8 @@ class _MusicPageState extends State<MusicPage>
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.playlist_play),
+                  icon: Icon(Icons.playlist_play,
+                      color: ColorManager.currentHomeColor),
                   onPressed: () {
                     setState(() {
                       searchKeyword = '';
@@ -407,7 +426,8 @@ class _MusicPageState extends State<MusicPage>
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.offline_pin),
+                  icon: Icon(Icons.offline_pin,
+                      color: ColorManager.currentHomeColor),
                   onPressed: () {
                     setState(() {
                       searchKeyword = '';
@@ -437,12 +457,16 @@ class _MusicPageState extends State<MusicPage>
                           Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: Text('Music'),
+                            child: Text('Music',
+                                style: TextStyle(
+                                    color: ColorManager.currentHomeColor)),
                           ),
                           Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 16.0),
-                            child: Text('Video'),
+                            child: Text('Video',
+                                style: TextStyle(
+                                    color: ColorManager.currentHomeColor)),
                           ),
                         ],
                         isSelected: [isMusicSelected, !isMusicSelected],
@@ -476,9 +500,12 @@ class _MusicPageState extends State<MusicPage>
                                       ? Icons.music_note
                                       : Icons.videocam,
                                   size: 30,
+                                  color: ColorManager.currentHomeColor,
                                 ),
                               ),
-                              title: Text(fileName),
+                              title: Text(fileName,
+                                  style: TextStyle(
+                                      color: ColorManager.currentHomeColor)),
                               trailing: PopupMenuButton<String>(
                                 onSelected: (value) {
                                   if (value == 'delete') {
@@ -488,7 +515,10 @@ class _MusicPageState extends State<MusicPage>
                                 itemBuilder: (context) => [
                                   PopupMenuItem(
                                     value: 'delete',
-                                    child: Text('Delete'),
+                                    child: Text('Delete',
+                                        style: TextStyle(
+                                            color: ColorManager
+                                                .currentBackgroundColor)),
                                   ),
                                 ],
                               ),
@@ -533,11 +563,16 @@ class _MusicPageState extends State<MusicPage>
                                                       Icon(Icons.error),
                                             ),
                                           ),
-                                          title: Text(video.title),
+                                          title: Text(video.title,
+                                              style: TextStyle(
+                                                  color: ColorManager
+                                                      .currentHomeColor)),
                                           trailing: PopupMenuButton<String>(
                                             icon: Icon(
                                               FontAwesomeIcons.ellipsisV,
                                               size: 18,
+                                              color:
+                                                  ColorManager.currentHomeColor,
                                             ),
                                             onSelected: (String result) async {
                                               if (result == 'download') {

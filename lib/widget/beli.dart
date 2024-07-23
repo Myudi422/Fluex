@@ -4,6 +4,7 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shimmer/shimmer.dart';
+import 'package:flue/color.dart';
 
 class SubscriptionPage extends StatefulWidget {
   final String telegramId;
@@ -172,8 +173,12 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     final paddingBottom = mediaQuery.padding.bottom;
 
     return Scaffold(
+      backgroundColor: ColorManager.currentBackgroundColor,
       appBar: AppBar(
-        title: Text('Langganan Saya'),
+        title: Text('Langganan Saya',
+            style: TextStyle(color: ColorManager.currentHomeColor)),
+        backgroundColor: ColorManager.currentBackgroundColor,
+        iconTheme: IconThemeData(color: ColorManager.currentHomeColor),
       ),
       body: _isLoading
           ? _buildLoadingWidget()
@@ -187,13 +192,18 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                     _isPremium
                         ? 'Anda sudah premium'
                         : 'Jadilah Anggota Premium',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: ColorManager.currentHomeColor,
+                    ),
                   ),
                   SizedBox(height: 20),
                   if (_isPremium)
                     Text(
                       'Tanggal Expired: $_expiredDate',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                          fontSize: 18, color: ColorManager.currentHomeColor),
                     ),
                   SizedBox(height: 20),
                   if (!_isPremium)
@@ -202,7 +212,9 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                         Text(
                           'Langganan sekarang untuk menikmati berbagai fitur premium! Hanya Mulai Dari Rp 10.000/bulan, Cukup 1 kali pembelian, jika sudah expired, akan dikembalikan ke status free',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: ColorManager.currentHomeColor),
                         ),
                         SizedBox(height: 20),
                       ],
@@ -213,16 +225,29 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                       Text(
                         'Keuntungan Langganan Premium :',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: ColorManager.currentHomeColor,
+                        ),
                       ),
                       SizedBox(height: 10),
-                      Text('• Bebas Iklan'),
-                      Text('• Badge Premium'),
-                      Text('• Komentar Lebih Dari 1x per Episode'),
-                      Text('• Dan Masih Banyak Lagi'),
+                      Text('• Bebas Iklan',
+                          style:
+                              TextStyle(color: ColorManager.currentHomeColor)),
+                      Text('• Badge Premium',
+                          style:
+                              TextStyle(color: ColorManager.currentHomeColor)),
+                      Text('• Komentar Lebih Dari 1x per Episode',
+                          style:
+                              TextStyle(color: ColorManager.currentHomeColor)),
+                      Text('• Dan Masih Banyak Lagi',
+                          style:
+                              TextStyle(color: ColorManager.currentHomeColor)),
                       SizedBox(height: 5),
                       Text(
-                          'Jika Order Gagal, Silahkan Lapor admin, Mohon untuk tidak curang. akun akan kami banned.'),
+                        'Jika Order Gagal, Silahkan Lapor admin, Mohon untuk tidak curang. akun akan kami banned.',
+                        style: TextStyle(color: ColorManager.currentHomeColor),
+                      ),
                       SizedBox(height: 10),
                     ],
                   ),

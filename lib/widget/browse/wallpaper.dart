@@ -6,13 +6,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'view_wallpaper.dart';
 import 'package:flue/admob/unity.dart';
 import 'package:unity_ads_plugin/unity_ads_plugin.dart';
+import 'package:flue/color.dart';
 
 class WallpaperPage extends StatefulWidget {
   final String telegramId;
 
   WallpaperPage({required this.telegramId});
 
-  
   @override
   _WallpaperPageState createState() => _WallpaperPageState();
 }
@@ -45,7 +45,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
       isLoadingMore = true;
     });
 
-    final apiUrl = "https://ccgnimex.my.id/v2/android/wallpaper/api.php?page=$currentPage";
+    final apiUrl =
+        "https://ccgnimex.my.id/v2/android/wallpaper/api.php?page=$currentPage";
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
@@ -69,7 +70,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+    if (_scrollController.position.pixels ==
+        _scrollController.position.maxScrollExtent) {
       _fetchWallpapers();
     }
   }
@@ -85,7 +87,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
   }
 
   Future<void> _fetchUserAccess() async {
-    final apiUrl = "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
+    final apiUrl =
+        "https://ccgnimex.my.id/v2/android/cek_akses.php?telegram_id=${widget.telegramId}";
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
@@ -125,7 +128,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
   }
 
   void _showInterstitialAd(Map<String, dynamic> wallpaper) {
-    if (userAccess != 'Premium') { // Hanya menampilkan iklan jika pengguna memiliki akses Free
+    if (userAccess != 'Premium') {
+      // Hanya menampilkan iklan jika pengguna memiliki akses Free
       UnityAdManager.showInterstitialAd(
         onComplete: (String placementId) {
           _navigateToViewWallpaper(wallpaper);
@@ -138,7 +142,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
         },
       );
     } else {
-      _navigateToViewWallpaper(wallpaper); // Jika pengguna memiliki akses Premium, langsung tampilkan wallpaper tanpa iklan
+      _navigateToViewWallpaper(
+          wallpaper); // Jika pengguna memiliki akses Premium, langsung tampilkan wallpaper tanpa iklan
     }
   }
 
@@ -149,7 +154,8 @@ class _WallpaperPageState extends State<WallpaperPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ViewWallpaperPage(imageUrl: wallpaper['arturl_ori']),
+        builder: (context) =>
+            ViewWallpaperPage(imageUrl: wallpaper['arturl_ori']),
       ),
     );
   }
@@ -164,17 +170,11 @@ class _WallpaperPageState extends State<WallpaperPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.currentBackgroundColor,
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: searchController,
-              decoration: InputDecoration(
-                hintText: 'Cari Berdasarkan Nama Anime',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
           ),
           Expanded(
             child: StaggeredGridView.countBuilder(
@@ -182,7 +182,7 @@ class _WallpaperPageState extends State<WallpaperPage> {
               crossAxisCount: 4,
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
-              itemCount: filteredWallpapers.length == 0
+              itemCount: filteredWallpapers.isEmpty
                   ? wallpapers.length
                   : filteredWallpapers.length,
               itemBuilder: (BuildContext context, int index) {
