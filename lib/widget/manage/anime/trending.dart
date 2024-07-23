@@ -97,7 +97,7 @@ class _RecommendedWidgetState extends State<RecommendedWidget> {
         );
       },
       child: Container(
-        width: 96.0, // Reduced width by 40%
+        width: 120.0, // Reduced width by 40%
         child: ClipRRect(
           borderRadius:
               BorderRadius.circular(12.0), // Adjust the radius as needed

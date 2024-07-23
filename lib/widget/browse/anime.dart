@@ -240,7 +240,7 @@ Widget build(BuildContext context) {
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [ColorManager.currentPrimaryColor, ColorManager.currentAccentColor],
+              colors: [ColorManager.currentBackgroundColor],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),

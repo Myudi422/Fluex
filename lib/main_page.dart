@@ -228,7 +228,7 @@ class _MainPageState extends State<MainPage> {
             currentIndex: _currentIndex,
             selectedItemColor: ColorManager.currentPrimaryColor,
             unselectedItemColor: ColorManager.currentHomeColor,
-            backgroundColor: ColorManager.currentAccentColor,
+            backgroundColor: ColorManager.currentBackgroundColor,
             elevation: 0,
             items: [
               BottomNavigationBarItem(
