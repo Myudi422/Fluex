@@ -16,20 +16,15 @@ class JadwalPage extends StatefulWidget {
 
 class _JadwalPageState extends State<JadwalPage> {
   Map<String, List<Map<String, dynamic>>> jadwal = {};
-  int currentIndex = 0;
+  late String selectedDay; // Use late initialization for selectedDay
   final PageController _pageController = PageController();
 
   @override
   void initState() {
     super.initState();
-    fetchAllData();
-  }
-
-  Future<void> fetchAllData() async {
-    for (int i = 0; i < 7; i++) {
-      final day = _getDayName(i);
-      await fetchData(day);
-    }
+    final currentDayIndex = DateTime.now().weekday - 1;
+    selectedDay = _getDayName(currentDayIndex);
+    fetchData(selectedDay); // Initial fetch for the current day
   }
 
   Future<void> fetchData(String day) async {
@@ -42,9 +37,12 @@ class _JadwalPageState extends State<JadwalPage> {
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
 
-        setState(() {
-          jadwal[day.toUpperCase()] = List<Map<String, dynamic>>.from(data);
-        });
+        // Check if the received day matches the current selected day
+        if (day == selectedDay) {
+          setState(() {
+            jadwal[day.toUpperCase()] = List<Map<String, dynamic>>.from(data);
+          });
+        }
       } else {
         throw Exception('Failed to load data');
       }
@@ -66,10 +64,6 @@ class _JadwalPageState extends State<JadwalPage> {
     return days[index % 7]; // Use modulo operator to cycle through days
   }
 
-  int _getTodayIndex() {
-    return DateTime.now().weekday % 7;
-  }
-
   IconData _getIconForEpisodeStatus(int epsTerakhir, int latestEpisode) {
     return epsTerakhir == latestEpisode ? Icons.check : Icons.pending;
   }
@@ -78,10 +72,92 @@ class _JadwalPageState extends State<JadwalPage> {
     return epsTerakhir == latestEpisode ? Colors.green : Colors.red;
   }
 
+  void _changeSelectedDay(String newDay) {
+    setState(() {
+      selectedDay = newDay;
+    });
+    // Fetch data if it's not already fetched for the new selected day
+    if (jadwal[newDay.toUpperCase()] == null) {
+      fetchData(newDay);
+    }
+  }
+
+  Future<void> _hapusJadwal(String animeId) async {
+    bool confirmed = await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Konfirmasi"),
+          content: Text("Apakah Anda yakin ingin menghapus jadwal ini?"),
+          actions: <Widget>[
+            TextButton(
+              child: Text("Batal"),
+              onPressed: () {
+                Navigator.of(context).pop(false); // Return false when canceled
+              },
+            ),
+            TextButton(
+              child: Text("Hapus"),
+              onPressed: () {
+                Navigator.of(context).pop(true); // Return true when confirmed
+              },
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirmed == true) {
+      try {
+        final response = await http.post(
+          Uri.parse('https://ccgnimex.my.id/v2/android/jadwal_admin.php'),
+          body: {
+            'telegram_id': widget.telegramId,
+            'anime_id': animeId,
+          },
+        );
+
+        if (response.statusCode == 200) {
+          final jsonResponse = json.decode(response.body);
+          if (jsonResponse['success']) {
+            // Jika penghapusan berhasil, hapus item dari jadwal
+            setState(() {
+              jadwal[selectedDay.toUpperCase]
+                  ?.removeWhere((item) => item['anime_id'] == animeId);
+            });
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(jsonResponse['message']),
+              backgroundColor: Colors.green,
+            ));
+            // Refresh data setelah item dihapus
+            refreshData();
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(jsonResponse['message']),
+              backgroundColor: Colors.red,
+            ));
+          }
+        } else {
+          throw Exception('Failed to delete item');
+        }
+      } catch (e) {
+        print('Error deleting item: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to delete item'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  void refreshData() {
+    fetchData(selectedDay); // Refresh data for the currently selected day
+  }
+
   @override
   Widget build(BuildContext context) {
-    final todayIndex = _getTodayIndex();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -103,17 +179,16 @@ class _JadwalPageState extends State<JadwalPage> {
                 title: Text(
                   day,
                   style: TextStyle(
-                    fontWeight: index == todayIndex
+                    fontWeight: day == selectedDay
                         ? FontWeight.bold
                         : FontWeight.normal,
-                    color: index == todayIndex ? Colors.blue : Colors.white,
+                    color: day == selectedDay
+                        ? ColorManager.currentPrimaryColor
+                        : Colors.white,
                   ),
                 ),
                 onTap: () {
-                  setState(() {
-                    currentIndex = index;
-                    _pageController.jumpToPage(index);
-                  });
+                  _changeSelectedDay(day);
                   Navigator.pop(context);
                 },
               );
@@ -121,109 +196,117 @@ class _JadwalPageState extends State<JadwalPage> {
           ),
         ),
       ),
-      body: PageView.builder(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        itemCount: 7,
-        itemBuilder: (context, index) {
-          final day = _getDayName(index);
-          final animeList = jadwal[day.toUpperCase()] ?? [];
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              ColorManager.currentBackgroundColor,
+              ColorManager.currentPrimaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: jadwal[selectedDay.toUpperCase()] == null ||
+                jadwal[selectedDay.toUpperCase()]!.isEmpty
+            ? Center(child: CircularProgressIndicator())
+            : ListView.builder(
+                itemCount: jadwal[selectedDay.toUpperCase()]!.length,
+                itemBuilder: (context, index) {
+                  final item = jadwal[selectedDay.toUpperCase()]![index];
+                  final jam = item['jam'];
+                  final judul = item['judul'];
+                  final image = item['image'];
+                  final animeId = item['anime_id'];
+                  final epsTerakhir = item['eps_terakhir'];
+                  final latestEpisode = item['latest_airing_episode'];
+                  final eps_anilist = item['eps_anilist'];
 
-          return Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  ColorManager.currentBackgroundColor.withOpacity(0.8),
-                  ColorManager.currentBackgroundColor
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-            child: animeList.isEmpty
-                ? Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                    itemCount: animeList.length,
-                    itemBuilder: (context, index) {
-                      final item = animeList[index];
-                      final jam = item['jam'];
-                      final judul = item['judul'];
-                      final image = item['image'];
-                      final animeId = item['anime_id'];
-                      final epsTerakhir = item['eps_terakhir'];
-                      final latestEpisode = item['latest_airing_episode'];
-                      final eps_anilist = item['eps_anilist'];
-
-                      return Card(
-                        margin: EdgeInsets.all(8.0),
-                        child: ListTile(
-                          onTap: () {
-                            final telegramId = widget.telegramId;
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AnimeDetailPage(
-                                  animeId: int.parse(animeId),
-                                  telegramId: telegramId,
-                                ),
+                  return Dismissible(
+                    key: Key(animeId),
+                    direction: DismissDirection.endToStart,
+                    background: Container(
+                      alignment: Alignment.centerRight,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      color: Colors.red,
+                      child: Icon(Icons.delete, color: Colors.white),
+                    ),
+                    onDismissed: (direction) {
+                      _hapusJadwal(animeId);
+                    },
+                    child: Card(
+                      color: ColorManager.currentBackgroundColor,
+                      margin: EdgeInsets.all(8.0),
+                      child: ListTile(
+                        onTap: () {
+                          final telegramId = widget.telegramId;
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AnimeDetailPage(
+                                animeId: int.parse(animeId),
+                                telegramId: telegramId,
                               ),
-                            );
-                          },
-                          leading: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: CachedNetworkImage(
-                              imageUrl: image,
-                              width: 70,
-                              height: 100,
-                              fit: BoxFit.cover,
                             ),
-                          ),
-                          title: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                '$jam',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                '$judul',
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
-                          ),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                _getIconForEpisodeStatus(
-                                    epsTerakhir, latestEpisode),
-                                color: _getIconColorForEpisodeStatus(
-                                    epsTerakhir, latestEpisode),
-                              ),
-                              SizedBox(width: 8),
-                              Text(
-                                latestEpisode == 0
-                                    ? 'Eps: $epsTerakhir/Tamat($eps_anilist)'
-                                    : 'Eps: $epsTerakhir/$latestEpisode',
-                                style: TextStyle(
-                                  color: _getIconColorForEpisodeStatus(
-                                      epsTerakhir, latestEpisode),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                          );
+                        },
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: CachedNetworkImage(
+                            imageUrl: image,
+                            width: 70,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                Center(child: CircularProgressIndicator()),
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.error),
                           ),
                         ),
-                      );
-                    },
-                  ),
-          );
-        },
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '$jam',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              '$judul',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              _getIconForEpisodeStatus(
+                                  epsTerakhir, latestEpisode),
+                              color: _getIconColorForEpisodeStatus(
+                                  epsTerakhir, latestEpisode),
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              latestEpisode == 0
+                                  ? 'Eps: $epsTerakhir/Tamat($eps_anilist)'
+                                  : 'Eps: $epsTerakhir/$latestEpisode',
+                              style: TextStyle(
+                                color: _getIconColorForEpisodeStatus(
+                                    epsTerakhir, latestEpisode),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
       ),
     );
   }

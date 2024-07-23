@@ -2,7 +2,7 @@
     name="release"
     package="com.nextccgmedia.flue"
     minSdkVersion="25"
-    targetSdkVersion="35"
+    targetSdkVersion="34"
     shrinking="true"
     mergedManifest="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
     manifestMergeReport="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\app\outputs\logs\manifest-merger-release-report.txt"

@@ -10305,7 +10305,6 @@ androidx.fragment.app.Fragment:
     static final int VIEW_CREATED
     public void <init>(int)
     java.lang.String generateActivityResultKey()
-    public final android.os.Bundle getArguments()
     public androidx.lifecycle.ViewModelProvider$Factory getDefaultViewModelProviderFactory()
     public final androidx.fragment.app.FragmentManager getFragmentManager()
     public final int getId()
@@ -27972,7 +27971,6 @@ com.ryanheise.audioservice.AudioServiceConfig:
     private static final java.lang.String KEY_BROWSABLE_ROOT_EXTRAS
     private static final java.lang.String KEY_NOTIFICATION_COLOR
     private static final java.lang.String SHARED_PREFERENCES_NAME
-com.ryanheise.audioservice.AudioServiceFragmentActivity
 com.ryanheise.audioservice.AudioServicePlugin$AudioHandlerInterface:
     private static final int SILENCE_SAMPLE_RATE
     public void onPlayMediaItem(android.support.v4.media.MediaMetadataCompat)
@@ -27981,7 +27979,6 @@ com.ryanheise.audioservice.AudioServicePlugin:
     private static final java.lang.String CHANNEL_CLIENT
     private static final java.lang.String CHANNEL_HANDLER
     static com.ryanheise.audioservice.AudioServicePlugin$AudioHandlerInterface audioHandlerInterface()
-    public static java.lang.String getFlutterEngineId()
     private static java.util.List mediaItems2raw(java.util.List)
     private static java.util.List queue2raw(java.util.List)
     public static void setFlutterEngineId(java.lang.String)
@@ -33565,7 +33562,6 @@ io.flutter.embedding.android.FlutterActivity:
     public static io.flutter.embedding.android.FlutterActivity$CachedEngineIntentBuilder withCachedEngine(java.lang.String)
     public static io.flutter.embedding.android.FlutterActivity$NewEngineIntentBuilder withNewEngine()
     public static io.flutter.embedding.android.FlutterActivity$NewEngineInGroupIntentBuilder withNewEngineInGroup(java.lang.String)
-io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$DelegateFactory
 io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$Host:
     public abstract io.flutter.embedding.android.ExclusiveAppComponent getExclusiveAppComponent()
     public abstract void updateSystemUiOverlays()
@@ -33575,19 +33571,47 @@ io.flutter.embedding.android.FlutterActivityAndFragmentDelegate:
     private static final java.lang.String PLUGINS_RESTORATION_BUNDLE_KEY
     private static final java.lang.String TAG
 io.flutter.embedding.android.FlutterActivityLaunchConfigs
-io.flutter.embedding.android.FlutterEngineConfigurator
-io.flutter.embedding.android.FlutterEngineProvider
-io.flutter.embedding.android.FlutterFragment$1
-io.flutter.embedding.android.FlutterFragment$2
 io.flutter.embedding.android.FlutterFragment$ActivityCallThrough
-io.flutter.embedding.android.FlutterFragment$CachedEngineFragmentBuilder
-io.flutter.embedding.android.FlutterFragment$NewEngineFragmentBuilder
-io.flutter.embedding.android.FlutterFragment$NewEngineInGroupFragmentBuilder
-io.flutter.embedding.android.FlutterFragment
+io.flutter.embedding.android.FlutterFragment$CachedEngineFragmentBuilder:
+    public io.flutter.embedding.android.FlutterFragment$CachedEngineFragmentBuilder shouldAutomaticallyHandleOnBackPressed(boolean)
+io.flutter.embedding.android.FlutterFragment$NewEngineFragmentBuilder:
+    public void <init>(java.lang.Class)
+    public io.flutter.embedding.android.FlutterFragment$NewEngineFragmentBuilder shouldAutomaticallyHandleOnBackPressed(boolean)
+io.flutter.embedding.android.FlutterFragment$NewEngineInGroupFragmentBuilder:
+    public io.flutter.embedding.android.FlutterFragment$NewEngineInGroupFragmentBuilder shouldAutomaticallyHandleOnBackPressed(boolean)
+io.flutter.embedding.android.FlutterFragment:
+    protected static final java.lang.String ARG_APP_BUNDLE_PATH
+    protected static final java.lang.String ARG_CACHED_ENGINE_GROUP_ID
+    protected static final java.lang.String ARG_CACHED_ENGINE_ID
+    protected static final java.lang.String ARG_DART_ENTRYPOINT
+    protected static final java.lang.String ARG_DART_ENTRYPOINT_ARGS
+    protected static final java.lang.String ARG_DART_ENTRYPOINT_URI
+    protected static final java.lang.String ARG_DESTROY_ENGINE_WITH_FRAGMENT
+    protected static final java.lang.String ARG_ENABLE_STATE_RESTORATION
+    protected static final java.lang.String ARG_FLUTTERVIEW_RENDER_MODE
+    protected static final java.lang.String ARG_FLUTTERVIEW_TRANSPARENCY_MODE
+    protected static final java.lang.String ARG_FLUTTER_INITIALIZATION_ARGS
+    protected static final java.lang.String ARG_HANDLE_DEEPLINKING
+    protected static final java.lang.String ARG_INITIAL_ROUTE
+    protected static final java.lang.String ARG_SHOULD_ATTACH_ENGINE_TO_ACTIVITY
+    protected static final java.lang.String ARG_SHOULD_AUTOMATICALLY_HANDLE_ON_BACK_PRESSED
+    protected static final java.lang.String ARG_SHOULD_DELAY_FIRST_ANDROID_VIEW_DRAW
+    private static final java.lang.String TAG
+    public static io.flutter.embedding.android.FlutterFragment createDefault()
+    public io.flutter.embedding.android.ExclusiveAppComponent getExclusiveAppComponent()
+    void setDelegateFactory(io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$DelegateFactory)
+    public void updateSystemUiOverlays()
 io.flutter.embedding.android.FlutterFragmentActivity$CachedEngineIntentBuilder
 io.flutter.embedding.android.FlutterFragmentActivity$NewEngineInGroupIntentBuilder
 io.flutter.embedding.android.FlutterFragmentActivity$NewEngineIntentBuilder
-io.flutter.embedding.android.FlutterFragmentActivity
+io.flutter.embedding.android.FlutterFragmentActivity:
+    private static final java.lang.String TAG
+    private static final java.lang.String TAG_FLUTTER_FRAGMENT
+    public static android.content.Intent createDefaultIntent(android.content.Context)
+    protected io.flutter.embedding.engine.FlutterEngine getFlutterEngine()
+    public static io.flutter.embedding.android.FlutterFragmentActivity$CachedEngineIntentBuilder withCachedEngine(java.lang.String)
+    public static io.flutter.embedding.android.FlutterFragmentActivity$NewEngineIntentBuilder withNewEngine()
+    public static io.flutter.embedding.android.FlutterFragmentActivity$NewEngineInGroupIntentBuilder withNewEngineInGroup(java.lang.String)
 io.flutter.embedding.android.FlutterImageView:
     private static final java.lang.String TAG
     public void <init>(android.content.Context)
@@ -33744,7 +33768,6 @@ io.flutter.embedding.engine.FlutterShellArgs:
     public static final java.lang.String ARG_VERBOSE_LOGGING
     public static final java.lang.String ARG_VM_SERVICE_PORT
     public void <init>(java.util.Set)
-    public void <init>(java.lang.String[])
     public void add(java.lang.String)
     public void remove(java.lang.String)
 io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger:

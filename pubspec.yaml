@@ -59,15 +59,16 @@ dependencies:
   flutter_svg: ^2.0.9
   photo_view:
   firebase_messaging: ^14.7.10
-  open_file: ^3.1.1
-  just_audio: ^0.9.36
-  just_audio_background: ^0.0.1-beta.11
-  audio_service: ^0.18.0
-  youtube_explode_dart: ^2.1.0
+  open_file: ^3.3.2
+  just_audio: ^0.9.39
+  just_audio_background: ^0.0.1-beta.13
+  audio_service: ^0.18.15
+  youtube_explode_dart: ^2.2.1
   audio_session:
   flutter_overlay_window: ^0.4.3
   timeago: ^3.0.2
   translator: ^1.0.0
+  collection: ^1.18.0
   #fijkplayer_update: ^1.1.1
 
 dev_dependencies:

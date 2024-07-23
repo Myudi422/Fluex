@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:31:4-102:19
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:32:4-103:19
 MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:15:5-48:19
 MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:15:5-48:19
 MERGED from [:firebase_auth] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-15:19
@@ -110,32 +110,32 @@ MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Yudi Tolol\.gradle\cache
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\62f4dedb6088d6e7a8cd8ff32c9ebc68\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\62f4dedb6088d6e7a8cd8ff32c9ebc68\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 	android:requestLegacyExternalStorage
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:34:9-52
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:35:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\87ad7c229c5b394289f7d9753c58227e\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:32:9-29
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:33:9-29
 	android:icon
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:35:9-43
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:36:9-43
 	android:name
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:33:9-42
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:34:9-42
 provider#vn.hunghd.flutterdownloader.DownloadedFileProvider
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:77:10-88:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:78:10-89:12
 	android:grantUriPermissions
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:81:5-39
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:82:5-39
 	android:authorities
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:79:5-71
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:80:5-71
 	android:exported
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:80:5-29
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:81:5-29
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:78:5-70
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:79:5-70
 manifest
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
 MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-50:12
 MERGED from [:firebase_auth] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_auth\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-17:12
@@ -280,20 +280,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Yudi Tolol\.gradle\caches\tran
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dbc516ce047ce872cee3099e27276cf9\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\62f4dedb6088d6e7a8cd8ff32c9ebc68\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:2:1-21:12
 MERGED from [org.chromium.net:cronet-api:72.3626.96] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
-INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
+INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
 	package
 		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:2:5-36
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-103:12
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:1-104:12
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -395,66 +395,70 @@ MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\cache
 MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cd574302edab9bad1eac5934d8e4bef0\transformed\work-runtime-2.7.1\AndroidManifest.xml:28:5-77
 	android:name
 		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:22:22-74
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:25:5-79
-MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-79
-MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-79
-MERGED from [:connectivity_plus] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\connectivity_plus\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
-MERGED from [:connectivity_plus] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\connectivity_plus\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
-MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:8:5-79
-MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:8:5-79
-MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fcf507bed380eefdf70237cf04c05b05\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fcf507bed380eefdf70237cf04c05b05\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\3806bb48d2d6ab783ceb1f2350e74aaf\transformed\jetified-firebase-messaging-23.4.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\3806bb48d2d6ab783ceb1f2350e74aaf\transformed\jetified-firebase-messaging-23.4.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\66fe64389598d62aa288f5ddc2d9ab9f\transformed\jetified-firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\66fe64389598d62aa288f5ddc2d9ab9f\transformed\jetified-firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bcca354cae91622e1fa764881a6120d4\transformed\jetified-firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
-MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bcca354cae91622e1fa764881a6120d4\transformed\jetified-firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:25:5-79
-MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cd574302edab9bad1eac5934d8e4bef0\transformed\work-runtime-2.7.1\AndroidManifest.xml:26:5-79
-MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cd574302edab9bad1eac5934d8e4bef0\transformed\work-runtime-2.7.1\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a809a1b1b328e48d852fe4661d15bae2\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a809a1b1b328e48d852fe4661d15bae2\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\14b7b16a185b448ee57ef7b71e9897a3\transformed\jetified-play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\14b7b16a185b448ee57ef7b71e9897a3\transformed\jetified-play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\806b786c7a85cc659801009504df2121\transformed\jetified-play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\806b786c7a85cc659801009504df2121\transformed\jetified-play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2609c19b0d627a8bad16bb84786ba5fa\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2609c19b0d627a8bad16bb84786ba5fa\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\aff4b8cc6a192d2c3a93f1084b3fe1c8\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\aff4b8cc6a192d2c3a93f1084b3fe1c8\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
-MERGED from [org.chromium.net:cronet-api:72.3626.96] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\AndroidManifest.xml:20:5-78
-MERGED from [org.chromium.net:cronet-api:72.3626.96] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\AndroidManifest.xml:20:5-78
+uses-permission#android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:23:5-91
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:25:22-76
-uses-permission#com.google.android.gms.permission.AD_ID
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:26:5-78
-MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:10:5-79
-MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:10:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:27:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8864cc622bb1cb48829514f9e37a8cf0\transformed\jetified-play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8864cc622bb1cb48829514f9e37a8cf0\transformed\jetified-play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:26:5-79
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:23:22-89
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:26:5-79
+MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-79
+MERGED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-79
+MERGED from [:connectivity_plus] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\connectivity_plus\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+MERGED from [:connectivity_plus] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\connectivity_plus\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:8:5-79
+MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:8:5-79
+MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fcf507bed380eefdf70237cf04c05b05\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:21.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fcf507bed380eefdf70237cf04c05b05\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\3806bb48d2d6ab783ceb1f2350e74aaf\transformed\jetified-firebase-messaging-23.4.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.4.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\3806bb48d2d6ab783ceb1f2350e74aaf\transformed\jetified-firebase-messaging-23.4.0\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\66fe64389598d62aa288f5ddc2d9ab9f\transformed\jetified-firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\66fe64389598d62aa288f5ddc2d9ab9f\transformed\jetified-firebase-auth-22.3.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bcca354cae91622e1fa764881a6120d4\transformed\jetified-firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bcca354cae91622e1fa764881a6120d4\transformed\jetified-firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:25:5-79
+MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cd574302edab9bad1eac5934d8e4bef0\transformed\work-runtime-2.7.1\AndroidManifest.xml:26:5-79
+MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cd574302edab9bad1eac5934d8e4bef0\transformed\work-runtime-2.7.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a809a1b1b328e48d852fe4661d15bae2\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a809a1b1b328e48d852fe4661d15bae2\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\14b7b16a185b448ee57ef7b71e9897a3\transformed\jetified-play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\14b7b16a185b448ee57ef7b71e9897a3\transformed\jetified-play-services-measurement-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\806b786c7a85cc659801009504df2121\transformed\jetified-play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\806b786c7a85cc659801009504df2121\transformed\jetified-play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2609c19b0d627a8bad16bb84786ba5fa\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2609c19b0d627a8bad16bb84786ba5fa\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\aff4b8cc6a192d2c3a93f1084b3fe1c8\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\aff4b8cc6a192d2c3a93f1084b3fe1c8\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.19.1] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1\AndroidManifest.xml:24:5-79
+MERGED from [org.chromium.net:cronet-api:72.3626.96] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\AndroidManifest.xml:20:5-78
+MERGED from [org.chromium.net:cronet-api:72.3626.96] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\AndroidManifest.xml:20:5-78
 	android:name
 		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:26:22-76
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:27:5-78
+MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:10:5-79
+MERGED from [com.unity3d.ads:unity-ads:4.10.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\88f5782ca509c26163abe834840497a8\transformed\jetified-play-services-measurement-api-21.5.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:22.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fd635a78e28741eaf71db1d792778932\transformed\jetified-play-services-measurement-impl-21.5.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8864cc622bb1cb48829514f9e37a8cf0\transformed\jetified-play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8864cc622bb1cb48829514f9e37a8cf0\transformed\jetified-play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] C:\Users\Yudi Tolol\.gradle\caches\transforms-3\83f0cfa917b7e48859ee79dcf48d9f66\transformed\jetified-play-services-measurement-sdk-api-21.5.0\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:27:22-76
 uses-sdk
 INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
@@ -760,89 +764,89 @@ INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\Andr
 		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml
 activity#com.ryanheise.audioservice.AudioServiceActivity
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:36:9-55:20
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:37:9-56:20
 	android:launchMode
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:38:13-43
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:39:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:41:13-47
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:42:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:43:13-55
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:44:13-55
 	android:exported
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:37:13-36
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:38:13-36
 	android:supportsPictureInPicture
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:42:13-52
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:43:13-52
 	android:configChanges
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:40:13-163
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:41:13-163
 	android:theme
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:39:13-47
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:40:13-47
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:36:19-81
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:37:19-81
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:51:21-54:29
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:52:21-55:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:52:17-68
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:53:17-68
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:52:25-66
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:53:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:53:17-76
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:54:17-76
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:53:27-74
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:54:27-74
 service#com.ryanheise.audioservice.AudioService
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:58:9-65:19
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:59:9-66:19
 	android:exported
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:61:13-36
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:62:13-36
 	android:foregroundServiceType
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:60:13-58
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:61:13-58
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:59:13-67
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:60:13-67
 intent-filter#action:name:android.media.browse.MediaBrowserService
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:62:13-64:29
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:63:13-65:29
 action#android.media.browse.MediaBrowserService
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:63:17-83
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:64:17-83
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:63:25-80
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:64:25-80
 receiver#com.ryanheise.audioservice.MediaButtonReceiver
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:67:9-73:20
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:68:9-74:20
 	android:exported
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:69:13-36
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:70:13-36
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:68:13-74
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:69:13-74
 intent-filter#action:name:android.intent.action.MEDIA_BUTTON
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:70:13-72:29
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:71:13-73:29
 action#android.intent.action.MEDIA_BUTTON
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:71:17-77
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:72:17-77
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:71:25-74
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:72:25-74
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:82:5-84:49
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:83:5-85:49
 	android:resource
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:84:9-47
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:85:9-47
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:83:9-59
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:84:9-59
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:85:9-87:54
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:86:9-88:54
 	android:resource
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:87:7-51
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:88:7-51
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:86:7-77
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:87:7-77
 meta-data#flutterEmbedding
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:92:9-94:33
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:93:9-95:33
 	android:value
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:94:13-30
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:95:13-30
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:93:13-44
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:94:13-44
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:95:9-97:65
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:96:9-98:65
 	android:value
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:97:9-63
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:98:9-63
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:96:9-65
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:97:9-65
 meta-data#com.android.vending.billing.InAppBillingService.BIND
-ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:98:9-100:51
+ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:99:9-101:51
 	android:value
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:100:13-48
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:101:13-48
 	android:name
-		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:99:13-80
+		ADDED from C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android\app\src\main\AndroidManifest.xml:100:13-80
 uses-permission#android.permission.POST_NOTIFICATIONS
 ADDED from [:firebase_messaging] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\firebase_messaging\intermediates\merged_manifest\release\AndroidManifest.xml:13:5-77
 MERGED from [:flutter_downloader] C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\flutter_downloader\intermediates\merged_manifest\release\AndroidManifest.xml:16:5-77

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:cached_network_image/cached_network_image.dart';
 
 class KomenPage extends StatefulWidget {
   final int episodeNumber;
@@ -19,6 +20,7 @@ class KomenPage extends StatefulWidget {
 }
 
 class _KomenPageState extends State<KomenPage> {
+  String _profilePictureUrl = ''; // Store profile picture URL
   List comments = [];
   TextEditingController _controller = TextEditingController();
   String _sortOrder = 'Terbaru';
@@ -27,6 +29,28 @@ class _KomenPageState extends State<KomenPage> {
   void initState() {
     super.initState();
     fetchComments();
+    fetchUserProfile();
+  }
+
+  fetchUserProfile() async {
+    try {
+      var response = await http.get(Uri.parse(
+          'https://ccgnimex.my.id/v2/android/api_user.php?telegram_id=${widget.telegramId}'));
+      if (response.statusCode == 200) {
+        var jsonResponse = json.decode(response.body);
+        if (jsonResponse['status'] == 'success') {
+          setState(() {
+            _profilePictureUrl = jsonResponse['profile_picture'];
+          });
+        } else {
+          print("Error fetching user profile: ${jsonResponse['status']}");
+        }
+      } else {
+        print("Error fetching user profile: ${response.statusCode}");
+      }
+    } catch (e) {
+      print("Fetch User Profile Error: $e");
+    }
   }
 
   fetchComments() async {
@@ -44,7 +68,7 @@ class _KomenPageState extends State<KomenPage> {
           print("Error: Expected a list but got ${jsonResponse.runtimeType}");
         }
       } else {
-        print("Error: ${response.body}");
+        print("Error fetching comments: ${response.body}");
       }
     } catch (e) {
       print("Fetch Comments Error: $e");
@@ -66,10 +90,49 @@ class _KomenPageState extends State<KomenPage> {
         _controller.clear();
         fetchComments();
       } else {
-        print("Error: ${response.body}");
+        print("Error posting comment: ${response.body}");
       }
     } catch (e) {
       print("Post Comment Error: $e");
+    }
+  }
+
+  deleteComment(String commentId, String telegramId) async {
+    try {
+      var response = await http.delete(
+        Uri.parse('https://ccgnimex.my.id/v2/android/komen/delete_coment.php'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'id': commentId,
+          'telegram_id': telegramId,
+        }),
+      );
+      if (response.statusCode == 200) {
+        var jsonResponse = json.decode(response.body);
+        if (jsonResponse['success'] != null) {
+          fetchComments(); // Refresh comments after deletion
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Comment deleted successfully')),
+          );
+        } else {
+          print("Error deleting comment: ${jsonResponse['error']}");
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Error: ${jsonResponse['error']}')),
+          );
+        }
+      } else {
+        print("Error deleting comment: ${response.body}");
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: ${response.body}')),
+        );
+      }
+    } catch (e) {
+      print("Delete Comment Error: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Delete Comment Error: $e')),
+      );
     }
   }
 
@@ -80,7 +143,8 @@ class _KomenPageState extends State<KomenPage> {
         locale: 'id', allowFromNow: true, clock: now);
   }
 
-  void _showBottomSheet(BuildContext context) {
+  void _showBottomSheet(
+      BuildContext context, String commentId, String telegramId) {
     showModalBottomSheet(
       context: context,
       builder: (context) {
@@ -111,6 +175,18 @@ class _KomenPageState extends State<KomenPage> {
                     Navigator.pop(context);
                   },
                 ),
+                if (telegramId ==
+                    widget.telegramId) // Check if telegramId matches
+                  ListTile(
+                    leading: Icon(Icons.delete, color: Colors.red),
+                    title: Text('Hapus Komentar',
+                        style: TextStyle(color: Colors.red)),
+                    onTap: () {
+                      // Handle Delete Comment action
+                      deleteComment(commentId, telegramId);
+                      Navigator.pop(context);
+                    },
+                  ),
                 SizedBox(height: 10.0),
               ],
             ),
@@ -150,8 +226,10 @@ class _KomenPageState extends State<KomenPage> {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://example.com/path/to/profile/picture'), // Placeholder profile picture URL
+                  backgroundImage: _profilePictureUrl.isNotEmpty
+                      ? CachedNetworkImageProvider(_profilePictureUrl)
+                      : AssetImage('assets/placeholder_image.png')
+                          as ImageProvider,
                 ),
                 SizedBox(width: 10),
                 Expanded(
@@ -232,8 +310,8 @@ class _KomenPageState extends State<KomenPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CircleAvatar(
-                              backgroundImage:
-                                  NetworkImage(comment['profile_picture']),
+                              backgroundImage: CachedNetworkImageProvider(
+                                  comment['profile_picture']),
                             ),
                             SizedBox(width: 10),
                             Expanded(
@@ -263,7 +341,10 @@ class _KomenPageState extends State<KomenPage> {
                             IconButton(
                               icon: Icon(Icons.more_vert, color: Colors.white),
                               onPressed: () {
-                                _showBottomSheet(context);
+                                _showBottomSheet(
+                                    context,
+                                    comment['id'].toString(),
+                                    comment['telegram_id']);
                               },
                             ),
                           ],

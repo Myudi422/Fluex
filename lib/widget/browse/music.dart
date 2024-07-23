@@ -10,7 +10,9 @@ import 'dart:convert';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
-
+import 'package:collection/collection.dart';
+import 'package:open_file/open_file.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class Playlist {
   String name;
@@ -42,7 +44,8 @@ class MusicPage extends StatefulWidget {
   _MusicPageState createState() => _MusicPageState();
 }
 
-class _MusicPageState extends State<MusicPage> with AutomaticKeepAliveClientMixin {
+class _MusicPageState extends State<MusicPage>
+    with AutomaticKeepAliveClientMixin {
   late AudioPlayer _audioPlayer;
   bool isMusicPlaying = false;
   Duration? _duration;
@@ -50,6 +53,8 @@ class _MusicPageState extends State<MusicPage> with AutomaticKeepAliveClientMixi
   bool isLoading = true;
   bool isPlayerExpanded = false;
   bool isPlayerVisible = true;
+  bool isOfflineMode = false;
+  bool isMusicSelected = true;
   List<Video> videos = [];
   int currentVideoIndex = 0;
   bool isLoadingVideos = true;
@@ -60,8 +65,10 @@ class _MusicPageState extends State<MusicPage> with AutomaticKeepAliveClientMixi
   int selectedPlaylistIndex = -1;
   TextEditingController? playlistNameController;
   List<Playlist> playlists = [];
+  List<FileSystemEntity> localFiles = [];
+  final String folderPath = '/storage/emulated/0/Download/Flue';
 
- @override
+  @override
   bool get wantKeepAlive => true; // Ensure this is set to true
   void initState() {
     super.initState();
@@ -125,8 +132,8 @@ class _MusicPageState extends State<MusicPage> with AutomaticKeepAliveClientMixi
 
   Future<void> _loadPlaylists() async {
     try {
-      final response = await http.get(
-          Uri.parse('https://ccgnimex.my.id/v2/android/music/my.php?telegram_id=${widget.telegramId}'));
+      final response = await http.get(Uri.parse(
+          'https://ccgnimex.my.id/v2/android/music/my.php?telegram_id=${widget.telegramId}'));
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
@@ -199,148 +206,162 @@ class _MusicPageState extends State<MusicPage> with AutomaticKeepAliveClientMixi
     });
   }
 
-Widget _buildPlaylistSection() {
-  List<Color> cardColors = [
-    Colors.blue,
-    Colors.green,
-    Colors.orange,
-    Colors.purple,
-    // Add more colors as needed
-  ];
+  Widget _buildPlaylistSection() {
+    List<Color> cardColors = [
+      Colors.blue,
+      Colors.green,
+      Colors.orange,
+      Colors.purple,
+      // Add more colors as needed
+    ];
 
-  final double containerWidth = playlists.length <= 2 ? 250.0 : 120.0;
+    final double containerWidth = playlists.length <= 2 ? 250.0 : 120.0;
 
-  if (playlists.isEmpty) {
-    // Hide the widget if there are no playlists
-    return Container();
-  }
+    if (playlists.isEmpty) {
+      // Hide the widget if there are no playlists
+      return Container();
+    }
 
-  return Container(
-    margin: EdgeInsets.symmetric(vertical: 16.0),
-    height: 40,
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: playlists.length,
-      itemBuilder: (context, index) {
-        final playlist = playlists[index];
-        final currentColor = cardColors[index % cardColors.length];
-        final isSelected = index == selectedPlaylistIndex;
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 16.0),
+      height: 40,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: playlists.length,
+        itemBuilder: (context, index) {
+          final playlist = playlists[index];
+          final currentColor = cardColors[index % cardColors.length];
+          final isSelected = index == selectedPlaylistIndex;
 
-        return Padding(
-          padding: const EdgeInsets.only(left: 4.0, right: 4.0),
-          child: Material(
-            borderRadius: BorderRadius.circular(16.0),
-            color: isSelected ? Colors.grey : Colors.transparent,
-            child: InkWell(
+          return Padding(
+            padding: const EdgeInsets.only(left: 4.0, right: 4.0),
+            child: Material(
               borderRadius: BorderRadius.circular(16.0),
-              onTap: () {
-                _playPlaylist(playlist);
-                setState(() {
-                  selectedPlaylistIndex = index;
-                });
-              },
-              onLongPress: () {
-                // Tambahkan pemanggilan fungsi penghapus playlist di sini
-                _showDeleteConfirmationDialog(playlist);
-              },
-              child: Container(
-                width: containerWidth,
-                height: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16.0),
-                  border: Border.all(
-                    color: isSelected ? Colors.white : currentColor,
-                  ),
-                ),
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    FaIcon(
-                      FontAwesomeIcons.music,
+              color: isSelected ? Colors.grey : Colors.transparent,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16.0),
+                onTap: () {
+                  _playPlaylist(playlist);
+                  setState(() {
+                    selectedPlaylistIndex = index;
+                  });
+                },
+                onLongPress: () {
+                  // Tambahkan pemanggilan fungsi penghapus playlist di sini
+                  _showDeleteConfirmationDialog(playlist);
+                },
+                child: Container(
+                  width: containerWidth,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16.0),
+                    border: Border.all(
                       color: isSelected ? Colors.white : currentColor,
-                      size: 20.0,
                     ),
-                    SizedBox(width: 4.0),
-                    FittedBox(
-                      child: Text(
-                        playlist.name,
-                        style: TextStyle(
-                          color: isSelected ? Colors.white : currentColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14.0,
+                  ),
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(
+                        FontAwesomeIcons.music,
+                        color: isSelected ? Colors.white : currentColor,
+                        size: 20.0,
+                      ),
+                      SizedBox(width: 4.0),
+                      FittedBox(
+                        child: Text(
+                          playlist.name,
+                          style: TextStyle(
+                            color: isSelected ? Colors.white : currentColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.0,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
+          );
+        },
+      ),
+    );
+  }
+
+  Future<void> _showDeleteConfirmationDialog(Playlist playlist) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Hapus Playlist'),
+          content:
+              Text('Anda yakin ingin menghapus playlist "${playlist.name}"?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Tutup dialog
+              },
+              child: Text('Batal'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Tutup dialog
+                // Panggil fungsi penghapus playlist di sini
+                _deletePlaylist(playlist);
+              },
+              child: Text('Hapus'),
+            ),
+          ],
         );
       },
-    ),
-  );
-}
-
-Future<void> _showDeleteConfirmationDialog(Playlist playlist) async {
-  return showDialog<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Hapus Playlist'),
-        content: Text('Anda yakin ingin menghapus playlist "${playlist.name}"?'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(); // Tutup dialog
-            },
-            child: Text('Batal'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(); // Tutup dialog
-              // Panggil fungsi penghapus playlist di sini
-              _deletePlaylist(playlist);
-            },
-            child: Text('Hapus'),
-          ),
-        ],
-      );
-    },
-  );
-}
-
-
+    );
+  }
 
 // Update the _deletePlaylist function
-Future<void> _deletePlaylist(Playlist playlist) async {
-  try {
-    // Send HTTP request to the PHP API to delete the specific playlist
-    final response = await http.post(
-      Uri.parse('https://ccgnimex.my.id/v2/android/music/hapus.php'),
-      body: {
-        'telegram_id': widget.telegramId,
-        'playlist_name': playlist.name,
-      },
-    );
+  Future<void> _deletePlaylist(Playlist playlist) async {
+    try {
+      // Send HTTP request to the PHP API to delete the specific playlist
+      final response = await http.post(
+        Uri.parse('https://ccgnimex.my.id/v2/android/music/hapus.php'),
+        body: {
+          'telegram_id': widget.telegramId,
+          'playlist_name': playlist.name,
+        },
+      );
 
-    if (response.statusCode == 200) {
-      // Successfully deleted the specific playlist
-      final result = jsonDecode(response.body)['message'];
-      print(result);
+      if (response.statusCode == 200) {
+        // Successfully deleted the specific playlist
+        final result = jsonDecode(response.body)['message'];
+        print(result);
 
-      // Reload playlists to update the UI
-      _loadPlaylists();
-    } else {
-      // Failed to delete the specific playlist
-      print('Failed to delete the playlist.');
+        // Reload playlists to update the UI
+        _loadPlaylists();
+      } else {
+        // Failed to delete the specific playlist
+        print('Failed to delete the playlist.');
+      }
+    } catch (e) {
+      print('Error deleting the playlist: $e');
     }
-  } catch (e) {
-    print('Error deleting the playlist: $e');
   }
-}
 
+  Future<void> _loadLocalFiles() async {
+    final directory = Directory(folderPath);
+    setState(() {
+      localFiles = directory.listSync().where((file) {
+        return file.path.endsWith('.mp3') || file.path.endsWith('.mp4');
+      }).toList();
+    });
+  }
+
+  void _offlinemode() {
+    setState(() {
+      isOfflineMode = true;
+    });
+    _loadLocalFiles();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -348,7 +369,7 @@ Future<void> _deletePlaylist(Playlist playlist) async {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
             child: Row(
               children: [
                 Expanded(
@@ -357,7 +378,8 @@ Future<void> _deletePlaylist(Playlist playlist) async {
                     child: TextField(
                       controller: searchController,
                       decoration: InputDecoration(
-                        hintText: 'Search YouTube',
+                        hintText: 'Cari Di Youtube',
+                        contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
                       ),
                     ),
                   ),
@@ -368,6 +390,7 @@ Future<void> _deletePlaylist(Playlist playlist) async {
                     setState(() {
                       searchKeyword = searchController.text;
                       isSearching = true;
+                      isOfflineMode = false;
                     });
                     _loadVideos();
                   },
@@ -378,85 +401,188 @@ Future<void> _deletePlaylist(Playlist playlist) async {
                     setState(() {
                       searchKeyword = '';
                       isSearching = false;
+                      isOfflineMode = false;
                     });
                     _loadVideos();
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.offline_pin),
+                  onPressed: () {
+                    setState(() {
+                      searchKeyword = '';
+                      isSearching = false;
+                      isOfflineMode = true;
+                    });
+                    _offlinemode();
                   },
                 ),
               ],
             ),
           ),
           Expanded(
-            child: isLoadingVideos
-                ? Center(child: CircularProgressIndicator())
-                : Column(
-                    children: [
-                      if (isPlayerExpanded) _buildMusicPlayer(),
-                      _buildPlaylistSection(),
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: videos.length,
+            child: Column(
+              children: [
+                if (isOfflineMode)
+                  Container(
+                    width: double.infinity,
+                    child: Center(
+                      child: ToggleButtons(
+                        constraints: BoxConstraints(
+                          minWidth:
+                              (MediaQuery.of(context).size.width - 32) / 2,
+                          minHeight: 40.0,
+                        ),
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text('Music'),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text('Video'),
+                          ),
+                        ],
+                        isSelected: [isMusicSelected, !isMusicSelected],
+                        onPressed: (index) {
+                          setState(() {
+                            isMusicSelected = index == 0;
+                          });
+                          _loadLocalFiles();
+                        },
+                      ),
+                    ),
+                  ),
+                Expanded(
+                  child: isOfflineMode
+                      ? ListView.builder(
+                          itemCount: localFiles.length,
                           itemBuilder: (context, index) {
-                            final video = videos[index];
-                            return Container(
-                              color: currentVideoIndex == index
-                                  ? Color.fromARGB(255, 242, 168, 189)
-                                  : null,
-                              child: ListTile(
-                                onTap: () => _handleVideoTap(video),
-                                leading: Hero(
-                                  tag: 'thumbnail_${video.id}',
-                                  child: CachedNetworkImage(
-                                    imageUrl: video.thumbnails.mediumResUrl,
-                                    placeholder: (context, url) =>
-                                        CircularProgressIndicator(),
-                                    errorWidget: (context, url, error) =>
-                                        Icon(Icons.error),
-                                  ),
+                            final file = localFiles[index];
+                            final fileName = file.path.split('/').last;
+                            final fileExtension = file.path.split('.').last;
+                            return ListTile(
+                              leading: Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
-                                title: Text(video.title),
-                                trailing: PopupMenuButton<String>(
-                                  icon: Icon(
-                                    FontAwesomeIcons.ellipsisV,
-                                    size: 18,
-                                  ),
-                                  onSelected: (String result) async {
-                                    if (result == 'download') {
-                                      await _downloadVideo(video);
-                                    } else if (result == 'addToPlaylist') {
-                                      await _addToPlaylist(video);
-                                    }
-                                  },
-                                  itemBuilder: (BuildContext context) =>
-                                      <PopupMenuEntry<String>>[
-                                    const PopupMenuItem<String>(
-                                      value: 'download',
-                                      child: ListTile(
-                                        leading: Icon(Icons.download),
-                                        title: Text('Unduh'),
-                                      ),
-                                    ),
-                                    const PopupMenuItem<String>(
-                                      value: 'addToPlaylist',
-                                      child: ListTile(
-                                        leading: Icon(Icons.playlist_add),
-                                        title: Text('Tambahkan ke Playlist'),
-                                      ),
-                                    ),
-                                  ],
+                                child: Icon(
+                                  fileExtension == 'mp3'
+                                      ? Icons.music_note
+                                      : Icons.videocam,
+                                  size: 30,
                                 ),
                               ),
+                              title: Text(fileName),
+                              trailing: PopupMenuButton<String>(
+                                onSelected: (value) {
+                                  if (value == 'delete') {
+                                    _deleteFile(file);
+                                  }
+                                },
+                                itemBuilder: (context) => [
+                                  PopupMenuItem(
+                                    value: 'delete',
+                                    child: Text('Delete'),
+                                  ),
+                                ],
+                              ),
+                              onTap: () {
+                                if (fileExtension == 'mp3') {
+                                  _audioPlayer.setFilePath(file.path).then((_) {
+                                    _audioPlayer.play();
+                                  });
+                                } else if (fileExtension == 'mp4') {
+                                  OpenFile.open(file.path);
+                                }
+                              },
                             );
                           },
-                        ),
-                      ),
-                    ],
-                  ),
+                        )
+                      : isLoadingVideos
+                          ? Center(child: CircularProgressIndicator())
+                          : Column(
+                              children: [
+                                if (isPlayerExpanded) _buildMusicPlayer(),
+                                _buildPlaylistSection(),
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: videos.length,
+                                    itemBuilder: (context, index) {
+                                      final video = videos[index];
+                                      return Container(
+                                        color: currentVideoIndex == index
+                                            ? Color.fromARGB(255, 242, 168, 189)
+                                            : null,
+                                        child: ListTile(
+                                          onTap: () => _handleVideoTap(video),
+                                          leading: Hero(
+                                            tag: 'thumbnail_${video.id}',
+                                            child: CachedNetworkImage(
+                                              imageUrl:
+                                                  video.thumbnails.mediumResUrl,
+                                              placeholder: (context, url) =>
+                                                  CircularProgressIndicator(),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Icon(Icons.error),
+                                            ),
+                                          ),
+                                          title: Text(video.title),
+                                          trailing: PopupMenuButton<String>(
+                                            icon: Icon(
+                                              FontAwesomeIcons.ellipsisV,
+                                              size: 18,
+                                            ),
+                                            onSelected: (String result) async {
+                                              if (result == 'download') {
+                                                await _downloadVideo(video);
+                                              } else if (result ==
+                                                  'addToPlaylist') {
+                                                await _addToPlaylist(video);
+                                              }
+                                            },
+                                            itemBuilder:
+                                                (BuildContext context) =>
+                                                    <PopupMenuEntry<String>>[
+                                              const PopupMenuItem<String>(
+                                                value: 'download',
+                                                child: ListTile(
+                                                  leading: Icon(Icons.download),
+                                                  title: Text('Unduh'),
+                                                ),
+                                              ),
+                                              const PopupMenuItem<String>(
+                                                value: 'addToPlaylist',
+                                                child: ListTile(
+                                                  leading:
+                                                      Icon(Icons.playlist_add),
+                                                  title: Text(
+                                                      'Tambahkan ke Playlist'),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
-
 
   Future<String> getVideoStreamUrl(Video video) async {
     final yt = YoutubeExplode();
@@ -486,7 +612,8 @@ Future<void> _deletePlaylist(Playlist playlist) async {
 
       setState(() {
         isLoading = true;
-        userSelectedIndex = selectedVideoIndex; // Simpan urutan pilihan pengguna
+        userSelectedIndex =
+            selectedVideoIndex; // Simpan urutan pilihan pengguna
         currentVideoIndex = userSelectedIndex; // Perbarui currentVideoIndex
       });
 
@@ -550,30 +677,30 @@ Future<void> _deletePlaylist(Playlist playlist) async {
       return videos.length - 1;
     }
   }
-Future<void> _playNextVideo() async {
-  int nextIndex = _calculateNextIndex();
 
-  if (nextIndex < videos.length) {
-    setState(() {
-      currentVideoIndex = nextIndex;
-      userSelectedIndex = currentVideoIndex; // Update userSelectedIndex
-    });
+  Future<void> _playNextVideo() async {
+    int nextIndex = _calculateNextIndex();
 
-    await _updateAudioPlayer(videos[currentVideoIndex]);
-  } else {
-    // Jika sudah di akhir playlist, stop pemutaran
-    if (currentVideoIndex < videos.length) {
+    if (nextIndex < videos.length) {
       setState(() {
-        currentVideoIndex = videos.length; // Menandakan playlist telah selesai
+        currentVideoIndex = nextIndex;
         userSelectedIndex = currentVideoIndex; // Update userSelectedIndex
       });
 
-      await _stopAudioPlayer();
+      await _updateAudioPlayer(videos[currentVideoIndex]);
+    } else {
+      // Jika sudah di akhir playlist, stop pemutaran
+      if (currentVideoIndex < videos.length) {
+        setState(() {
+          currentVideoIndex =
+              videos.length; // Menandakan playlist telah selesai
+          userSelectedIndex = currentVideoIndex; // Update userSelectedIndex
+        });
+
+        await _stopAudioPlayer();
+      }
     }
   }
-}
-
-
 
   int _calculateNextIndex() {
     int nextIndex = currentVideoIndex + 1;
@@ -651,8 +778,7 @@ Future<void> _playNextVideo() async {
     }
   }
 
-
-    Widget _buildMusicPlayer() {
+  Widget _buildMusicPlayer() {
     return StreamBuilder<PlayerState>(
       stream: _audioPlayer.playerStateStream,
       builder: (context, snapshot) {
@@ -703,7 +829,10 @@ Future<void> _playNextVideo() async {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: CachedNetworkImageProvider(
-                                    videos[currentVideoIndex]?.thumbnails.mediumResUrl ?? '',
+                                    videos[currentVideoIndex]
+                                            ?.thumbnails
+                                            .mediumResUrl ??
+                                        '',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
@@ -738,7 +867,8 @@ Future<void> _playNextVideo() async {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    videos[currentVideoIndex]?.title ?? 'Song Title',
+                                    videos[currentVideoIndex]?.title ??
+                                        'Song Title',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14,
@@ -746,7 +876,8 @@ Future<void> _playNextVideo() async {
                                     ),
                                   ),
                                   Text(
-                                    videos[currentVideoIndex]?.author ?? 'Artist Name',
+                                    videos[currentVideoIndex]?.author ??
+                                        'Artist Name',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.grey[600],
@@ -772,7 +903,8 @@ Future<void> _playNextVideo() async {
                                   min: 0.0,
                                   max: _duration!.inMilliseconds.toDouble(),
                                   onChanged: (value) {
-                                    _audioPlayer.seek(Duration(milliseconds: value.toInt()));
+                                    _audioPlayer.seek(
+                                        Duration(milliseconds: value.toInt()));
                                   },
                                 ),
                               ),
@@ -807,173 +939,226 @@ Future<void> _playNextVideo() async {
     );
   }
 
-Future<void> _downloadVideo(Video video) async {
-  final resolution = await _showResolutionSelectionDialog();
-  if (resolution == null) {
-    // User canceled resolution selection
-    return;
+  Future<List<MuxedStreamInfo>> getAvailableMuxedStreamInfo(Video video) async {
+    final yt = YoutubeExplode();
+    var manifest = await yt.videos.streamsClient.getManifest(video.id);
+    yt.close();
+    return manifest.muxed.toList();
   }
 
-  final type = await _showTypeSelectionDialog();
-  if (type == null) {
-    // User canceled type selection
-    return;
+  Future<List<AudioOnlyStreamInfo>> getAvailableAudioStreamInfo(
+      Video video) async {
+    final yt = YoutubeExplode();
+    var manifest = await yt.videos.streamsClient.getManifest(video.id);
+    yt.close();
+    return manifest.audioOnly.toList();
   }
 
-  try {
-    // Get the external storage directory
-    Directory? externalDir = await getExternalStorageDirectory();
+  Future<MuxedStreamInfo?> getMuxedStreamInfo(
+      Video video, String resolution, String type) async {
+    var availableStreams = await getAvailableMuxedStreamInfo(video);
+    return availableStreams.firstWhereOrNull(
+      (stream) =>
+          stream.videoQualityLabel == resolution &&
+          stream.container.name == type,
+    );
+  }
 
-    if (externalDir == null) {
-      _showSnackBar('Error: Unable to access external storage');
+  Future<AudioOnlyStreamInfo?> getAudioStreamInfo(
+      Video video, String type) async {
+    var availableStreams = await getAvailableAudioStreamInfo(video);
+    return availableStreams.firstWhereOrNull(
+      (stream) => stream.container.name == type,
+    );
+  }
+
+  Future<void> _downloadVideo(Video video) async {
+    final muxedStreams = await getAvailableMuxedStreamInfo(video);
+    final audioStreams = await getAvailableAudioStreamInfo(video);
+
+    // Menggabungkan resolusi dan tipe untuk muxed dan audio
+    final muxedOptions = muxedStreams
+        .map((stream) =>
+            '${stream.videoQualityLabel} - ${stream.container.name.toUpperCase()}')
+        .toSet()
+        .toList();
+    final audioOptions = audioStreams
+        .map((stream) => 'AUDIO - ${stream.container.name.toUpperCase()}')
+        .toSet()
+        .toList();
+
+    final options = muxedOptions + audioOptions;
+
+    final selectedOption = await _showOptionSelectionDialog(options);
+    if (selectedOption == null) {
+      // User canceled selection
       return;
     }
 
-    final downloadDir = "${externalDir.path}/Download/Niflex";
+    if (selectedOption.startsWith('AUDIO')) {
+      final type = selectedOption.split(' - ')[1].toLowerCase();
+      try {
+        // Tentukan path penyimpanan
+        String downloadPath = '/storage/emulated/0/Download/Flue';
 
-    final taskId = await FlutterDownloader.enqueue(
-      url: await getVideoStreamUrl(video), // Use the video stream URL
-      savedDir: downloadDir,
-      fileName: 'video_${video.id}_$resolution.$type',
-      showNotification: true,
-      openFileFromNotification: true,
+        // Buat direktori "Download/Flue" jika belum ada
+        Directory downloadDir = Directory(downloadPath);
+        if (!downloadDir.existsSync()) {
+          downloadDir.createSync(recursive: true);
+        }
+
+        // Mulai unduhan dengan menggunakan path penyimpanan
+        final streamInfo = await getAudioStreamInfo(video, type);
+        final taskId = await FlutterDownloader.enqueue(
+          url: streamInfo!.url.toString(), // Use the audio stream URL
+          savedDir: downloadPath,
+          fileName: 'audio_${video.id}.mp3',
+          showNotification: true,
+          openFileFromNotification: true,
+          requiresStorageNotLow: true,
+        );
+
+        FlutterDownloader.registerCallback((id, status, progress) {
+          // Handle download progress or completion here
+          // Optionally, update UI or state
+        });
+
+        _showSnackBar('Download started');
+      } catch (error) {
+        print('Error downloading audio: $error');
+        _showSnackBar('Failed to start download');
+      }
+    } else {
+      final parts = selectedOption.split(' - ');
+      final resolution = parts[0];
+      final type = parts[1].toLowerCase();
+
+      try {
+        // Tentukan path penyimpanan
+        String downloadPath = '/storage/emulated/0/Download/Flue';
+
+        // Buat direktori "Download/Flue" jika belum ada
+        Directory downloadDir = Directory(downloadPath);
+        if (!downloadDir.existsSync()) {
+          downloadDir.createSync(recursive: true);
+        }
+
+        // Mulai unduhan dengan menggunakan path penyimpanan
+        final streamInfo = await getMuxedStreamInfo(video, resolution, type);
+        final taskId = await FlutterDownloader.enqueue(
+          url: streamInfo!.url.toString(), // Use the video stream URL
+          savedDir: downloadPath,
+          fileName: 'video_${video.id}_$resolution.$type',
+          showNotification: true,
+          openFileFromNotification: true,
+          requiresStorageNotLow: true,
+        );
+
+        FlutterDownloader.registerCallback((id, status, progress) {
+          // Handle download progress or completion here
+          // Optionally, update UI or state
+        });
+
+        _showSnackBar('Download started');
+      } catch (error) {
+        print('Error downloading video: $error');
+        _showSnackBar('Failed to start download');
+      }
+    }
+  }
+
+  Future<String?> _showOptionSelectionDialog(List<String> options) async {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Select Resolution and Type'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: options
+                .map((option) => ListTile(
+                      title: Text(option),
+                      onTap: () => Navigator.pop(context, option),
+                    ))
+                .toList(),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showSnackBar(String message) {
+    final context = GlobalKey<ScaffoldState>().currentContext!;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
+  Future<void> _addToPlaylist(Video video) async {
+    // Retrieve existing playlists from the API
+    List<String> existingPlaylists = await _getExistingPlaylists();
+
+    String? playlistName =
+        await _showPlaylistSelectionDialog(existingPlaylists);
+
+    if (playlistName == null) {
+      // Handle the case when the user cancels playlist selection
+      return;
+    }
+
+    // Save necessary information to variables
+    String youtubeLink = "https://www.youtube.com/watch?v=${video.id}";
+
+    // Send HTTP request to the PHP API to add the video to the selected playlist
+    final response = await http.post(
+      Uri.parse('https://ccgnimex.my.id/v2/android/music/api.php'),
+      body: {
+        'telegram_id': widget.telegramId,
+        'playlist_name': playlistName,
+        'video_link': youtubeLink,
+      },
     );
 
-    FlutterDownloader.registerCallback((id, status, progress) {
-      // Handle download progress or completion here
-    });
+    if (response.statusCode == 200) {
+      // Successfully added video to the playlist
+      final result = jsonDecode(response.body)['result'];
+      print(result);
 
-    _showSnackBar('Download started');
-  } catch (error) {
-    print('Error downloading video: $error');
-    _showSnackBar('Failed to start download');
+      // Show success message
+      _showSnackBar("Video Sudah ditambahkan ke Playlist");
+
+      // Reload playlists to update the UI
+      _loadPlaylists();
+    } else {
+      // Failed to add video to the playlist
+      print('Failed to add video to the playlist.');
+
+      // Show error message
+      _showSnackBar("Video gagal ditambahkan ke Playlist");
+    }
   }
-}
-
-Future<String?> _showResolutionSelectionDialog() async {
-  return showDialog<String>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Select Resolution'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: Text('720p'),
-              onTap: () => Navigator.pop(context, '720p'),
-            ),
-            ListTile(
-              title: Text('1080p'),
-              onTap: () => Navigator.pop(context, '1080p'),
-            ),
-            // Add more resolution options as needed
-          ],
-        ),
-      );
-    },
-  );
-}
-
-Future<String?> _showTypeSelectionDialog() async {
-  return showDialog<String>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Select Type'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              title: Text('mp4'),
-              onTap: () => Navigator.pop(context, 'mp4'),
-            ),
-            ListTile(
-              title: Text('webm'),
-              onTap: () => Navigator.pop(context, 'webm'),
-            ),
-            ListTile(
-              title: Text('mp3'), // Add mp3 option
-              onTap: () => Navigator.pop(context, 'mp3'),
-            ),
-            // Add more type options as needed
-          ],
-        ),
-      );
-    },
-  );
-}
-
-Future<void> _addToPlaylist(Video video) async {
-  // Retrieve existing playlists from the API
-  List<String> existingPlaylists = await _getExistingPlaylists();
-
-  String? playlistName = await _showPlaylistSelectionDialog(existingPlaylists);
-
-  if (playlistName == null) {
-    // Handle the case when the user cancels playlist selection
-    return;
-  }
-
-  // Save necessary information to variables
-  String youtubeLink = "https://www.youtube.com/watch?v=${video.id}";
-
-  // Send HTTP request to the PHP API to add the video to the selected playlist
-  final response = await http.post(
-    Uri.parse('https://ccgnimex.my.id/v2/android/music/api.php'),
-    body: {
-      'telegram_id': widget.telegramId,
-      'playlist_name': playlistName,
-      'video_link': youtubeLink,
-    },
-  );
-
- if (response.statusCode == 200) {
-    // Successfully added video to the playlist
-    final result = jsonDecode(response.body)['result'];
-    print(result);
-    
-    // Show success message
-    _showSnackBar("Video Sudah ditambahkan ke Playlist");
-
-    // Reload playlists to update the UI
-    _loadPlaylists();
-  } else {
-    // Failed to add video to the playlist
-    print('Failed to add video to the playlist.');
-    
-    // Show error message
-    _showSnackBar("Video gagal ditambahkan ke Playlist");
-  }
-}
 
 // Function to show a snackbar at the bottom of the screen
-void _showSnackBar(String message) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(message),
-      duration: Duration(seconds: 3),
-    ),
-  );
-}
 
 // Fungsi untuk menampilkan dialog atau formulir meminta nama playlist dari pengguna
-Future<List<String>> _getExistingPlaylists() async {
-  // Send HTTP request to the PHP API to retrieve existing playlists
-  final response = await http.get(
-    Uri.parse('https://ccgnimex.my.id/v2/android/music/playlist.php?telegram_id=${widget.telegramId}'),
-  );
+  Future<List<String>> _getExistingPlaylists() async {
+    // Send HTTP request to the PHP API to retrieve existing playlists
+    final response = await http.get(
+      Uri.parse(
+          'https://ccgnimex.my.id/v2/android/music/my.php?telegram_id=${widget.telegramId}'),
+    );
 
-  if (response.statusCode == 200) {
-    // Successfully retrieved existing playlists
-    final playlists = jsonDecode(response.body)['playlists'];
-    return List<String>.from(playlists.map((playlist) => playlist['playlist_name']));
-  } else {
-    // Failed to retrieve existing playlists
-    print('Failed to retrieve existing playlists.');
-    return [];
+    if (response.statusCode == 200) {
+      // Successfully retrieved existing playlists
+      final playlists = jsonDecode(response.body)['playlists'];
+      return List<String>.from(
+          playlists.map((playlist) => playlist['playlist_name']));
+    } else {
+      // Failed to retrieve existing playlists
+      print('Failed to retrieve existing playlists.');
+      return [];
+    }
   }
-}
 
   Future<String?> _getPlaylistNameFromUser() async {
     TextEditingController playlistNameController = TextEditingController();
@@ -989,13 +1174,15 @@ Future<List<String>> _getExistingPlaylists() async {
           ),
           actions: <Widget>[
             TextButton(
-              onPressed: () => Navigator.pop(context, null), // Dismiss dialog with null result
+              onPressed: () => Navigator.pop(
+                  context, null), // Dismiss dialog with null result
               child: Text('Batal'),
             ),
             TextButton(
               onPressed: () {
                 String playlistName = playlistNameController.text.trim();
-                Navigator.pop(context, playlistName.isNotEmpty ? playlistName : null);
+                Navigator.pop(
+                    context, playlistName.isNotEmpty ? playlistName : null);
               },
               child: Text('OK'),
             ),
@@ -1004,41 +1191,44 @@ Future<List<String>> _getExistingPlaylists() async {
       },
     );
   }
-  
 
-Future<String?> _showPlaylistSelectionDialog(List<String> existingPlaylists) async {
-  // If there are no existing playlists, default to showing the new playlist input
-  if (existingPlaylists.isEmpty) {
-    return await _getPlaylistNameFromUser();  // Await the result here
+  Future<String?> _showPlaylistSelectionDialog(
+      List<String> existingPlaylists) async {
+    // If there are no existing playlists, default to showing the new playlist input
+    if (existingPlaylists.isEmpty) {
+      return await _getPlaylistNameFromUser(); // Await the result here
+    }
+
+    // Show a dialog with existing playlists as options
+    return await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Pilih Playlist'),
+          content: Column(
+            children: [
+              for (String playlist in existingPlaylists)
+                ListTile(
+                  title: Text(playlist),
+                  onTap: () => Navigator.pop(context, playlist),
+                ),
+              Divider(),
+              ListTile(
+                title: Text('Buat Playlist Baru'),
+                onTap: () async {
+                  String? newPlaylist = await _getPlaylistNameFromUser();
+                  Navigator.pop(context, newPlaylist);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
-  // Show a dialog with existing playlists as options
-  return await showDialog<String>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Pilih Playlist'),
-        content: Column(
-          children: [
-            for (String playlist in existingPlaylists)
-              ListTile(
-                title: Text(playlist),
-                onTap: () => Navigator.pop(context, playlist),
-              ),
-            Divider(),
-            ListTile(
-              title: Text('Buat Playlist Baru'),
-              onTap: () async {
-                String? newPlaylist = await _getPlaylistNameFromUser();
-                Navigator.pop(context, newPlaylist);
-              },
-            ),
-          ],
-        ),
-      );
-    },
-  );
+  void _deleteFile(FileSystemEntity file) {
+    file.delete();
+    _loadLocalFiles();
+  }
 }
-
-}
-
