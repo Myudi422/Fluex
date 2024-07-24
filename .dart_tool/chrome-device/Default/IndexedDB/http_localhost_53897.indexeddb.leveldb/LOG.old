@@ -1,0 +1,25 @@
+2024/07/24-16:19:03.987 45f4 Reusing MANIFEST C:\Users\YUDITO~1\AppData\Local\Temp\flutter_tools.73db168f\flutter_tools_chrome_device.78925943\Default\IndexedDB\http_localhost_53897.indexeddb.leveldb/MANIFEST-000001
+2024/07/24-16:19:03.987 45f4 Recovering log #47
+2024/07/24-16:19:03.988 45f4 Reusing old log C:\Users\YUDITO~1\AppData\Local\Temp\flutter_tools.73db168f\flutter_tools_chrome_device.78925943\Default\IndexedDB\http_localhost_53897.indexeddb.leveldb/000047.log 
+2024/07/24-16:19:03.988 45f4 Delete type=2 #45
+2024/07/24-16:19:04.022 2944 Level-0 table #52: started
+2024/07/24-16:19:04.026 2944 Level-0 table #52: 833 bytes OK
+2024/07/24-16:19:04.028 2944 Delete type=0 #47
+2024/07/24-16:19:04.029 3ac8 Manual compaction at level-0 from '\x00\x14\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at '\x00\x14\x00\x00\x05' @ 520 : 1
+2024/07/24-16:19:04.029 3ac8 Compacting 1@0 + 1@1 files
+2024/07/24-16:19:04.031 3ac8 Generated table #53@0: 74 keys, 1685 bytes
+2024/07/24-16:19:04.031 3ac8 Compacted 1@0 + 1@1 files => 1685 bytes
+2024/07/24-16:19:04.032 3ac8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/24-16:19:04.032 3ac8 Delete type=2 #52
+2024/07/24-16:19:04.033 8d4 Manual compaction at level-0 from '\x00\x14\x00\x00\x05' @ 520 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/24-16:20:15.431 2944 Level-0 table #55: started
+2024/07/24-16:20:15.489 2944 Level-0 table #55: 770 bytes OK
+2024/07/24-16:20:15.520 2944 Delete type=2 #49
+2024/07/24-16:20:15.520 2944 Delete type=0 #51
+2024/07/24-16:20:15.520 8d4 Manual compaction at level-0 from '\x00\x15\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x16\x00\x00\x00' @ 0 : 0; will stop at '\x00\x15\x00\x00\x05' @ 553 : 1
+2024/07/24-16:20:15.521 8d4 Compacting 1@0 + 1@1 files
+2024/07/24-16:20:15.551 8d4 Generated table #56@0: 78 keys, 1605 bytes
+2024/07/24-16:20:15.551 8d4 Compacted 1@0 + 1@1 files => 1605 bytes
+2024/07/24-16:20:15.580 8d4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/24-16:20:15.580 8d4 Delete type=2 #55
+2024/07/24-16:20:15.581 8d4 Manual compaction at level-0 from '\x00\x15\x00\x00\x05' @ 553 : 1 .. '\x00\x16\x00\x00\x00' @ 0 : 0; will stop at (end)

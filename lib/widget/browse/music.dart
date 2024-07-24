@@ -565,7 +565,7 @@ class _MusicPageState extends State<MusicPage>
                                       final video = videos[index];
                                       return Container(
                                         color: currentVideoIndex == index
-                                            ? Color.fromARGB(255, 242, 168, 189)
+                                            ? ColorManager.currentPrimaryColor
                                             : null,
                                         child: ListTile(
                                           onTap: () => _handleVideoTap(video),
