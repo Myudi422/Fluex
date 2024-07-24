@@ -400,13 +400,16 @@ class _StreamingWidgetState extends State<StreamingWidget>
     });
 
     if (_isFullScreen) {
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+      // Aktifkan mode fullscreen dengan menyembunyikan status bar dan navigasi bar
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive, overlays: []);
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.landscapeLeft,
         DeviceOrientation.landscapeRight,
       ]);
     } else {
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      // Kembalikan UI sistem ke mode edge-to-edge
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge,
+          overlays: SystemUiOverlay.values);
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
         DeviceOrientation.portraitDown,

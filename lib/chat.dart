@@ -112,6 +112,9 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                           ),
+                          style: TextStyle(
+                              color: ColorManager
+                                  .currentHomeColor), // Mengatur warna teks yang diketik
                         ),
                       ),
                       SizedBox(width: 8.0),
