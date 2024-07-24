@@ -3,8 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flue/widget/anime-detail.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:flue/admob/unity.dart';
+import 'package:flue/admob/googlads.dart';
 import 'package:flue/color.dart';
 
 class Anime {
@@ -125,7 +124,6 @@ class _AnimePageState extends State<AnimePage> {
   String searchQuery = ''; // Added for search functionality
   String userAccess = '';
 
-  InterstitialAd? _interstitialAd;
   bool _isInterstitialAdReady = false; // Add this line
 
   @override
@@ -138,7 +136,7 @@ class _AnimePageState extends State<AnimePage> {
     fetchData();
 
     // Initialize the interstitial ad
-    UnityAdManager.loadInterstitialAd();
+    AdManager().loadInterstitialAd();
   }
 
   @override
@@ -171,9 +169,6 @@ class _AnimePageState extends State<AnimePage> {
         statuses = extractUniqueValues('status');
         seasons = extractUniqueValues('season');
       });
-
-      // Load interstitial ad after fetching new data
-      UnityAdManager.loadInterstitialAd();
     } catch (e) {
       throw Exception('Failed to load anime data');
     }
@@ -238,9 +233,6 @@ class _AnimePageState extends State<AnimePage> {
                 .every((genre) => anime.getGenres().contains(genre)))
             .toList();
       }
-
-      // Load interstitial ad after filtering anime
-      UnityAdManager.loadInterstitialAd();
     });
   }
 
@@ -323,21 +315,14 @@ class _AnimePageState extends State<AnimePage> {
                         onTap: () async {
                           if (userAccess != 'Premium') {
                             // Jika pengguna memiliki akses Free, tampilkan iklan
-                            if (UnityAdManager.isInitialized) {
-                              UnityAdManager.showInterstitialAd(
-                                onComplete: (String rewardItemKey) {
-                                  _navigateToAnimeDetail(anime);
-                                },
-                                onFailed: (String placementId, dynamic error,
-                                    String message) {
-                                  _navigateToAnimeDetail(anime);
-                                },
-                              );
-                            } else {
-                              print(
-                                  "Unity Ads is not initialized. Please call UnityAdManager.initialize() first.");
-                              _navigateToAnimeDetail(anime);
-                            }
+                            AdManager().showInterstitialAd(
+                              onAdDismissed: () {
+                                _navigateToAnimeDetail(anime);
+                              },
+                              onAdFailed: () {
+                                _navigateToAnimeDetail(anime);
+                              },
+                            );
                           } else {
                             // Jika pengguna memiliki akses Premium, langsung navigasikan ke detail anime
                             _navigateToAnimeDetail(anime);

@@ -8,7 +8,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flue/color.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flue/admob/unity.dart';
+import 'package:flue/admob/googlads.dart';
 
 class DownloadPage extends StatefulWidget {
   final Map<String, dynamic> animeData;
@@ -37,11 +37,12 @@ class _DownloadPageState extends State<DownloadPage> {
   void initState() {
     super.initState();
     animeDetails = fetchAnimeDetails(widget.animeId);
-    UnityAdManager.initialize(); // Initialize Unity Ads
+    AdManager().loadInterstitialAd(); // Initialize Unity Ads
   }
 
   Future<Map<String, dynamic>> fetchAnimeDetails(int animeId) async {
-    final response = await http.get(Uri.parse('https://ccgnimex.my.id/v2/android/detail_anime.php?anime_id=$animeId'));
+    final response = await http.get(Uri.parse(
+        'https://ccgnimex.my.id/v2/android/detail_anime.php?anime_id=$animeId'));
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -222,7 +223,7 @@ class _DownloadPageState extends State<DownloadPage> {
               onPressed: () {
                 Navigator.of(context).pop();
                 _showInterstitialAdOrDownload(context);
-                UnityAdManager.loadInterstitialAd(); // Load the interstitial ad
+                AdManager().loadInterstitialAd(); // Load the interstitial ad
               },
               child: Text(
                 'Lihat Iklan',
@@ -308,22 +309,22 @@ class _DownloadPageState extends State<DownloadPage> {
     );
   }
 
-void _showInterstitialAdOrDownload(BuildContext context) {
-  UnityAdManager.showInterstitialAd(
-    onComplete: (String placementId) { // Add the expected String parameter
-      _startDownload(context);
-    },
-    onFailed: (String placementId, dynamic error, String message) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Unity Ads failed to show: $error - $message. Continuing with download.'),
-        ),
-      );
-      _startDownload(context);
-    },
-  );
-}
-
+  void _showInterstitialAdOrDownload(BuildContext context) {
+    AdManager().showInterstitialAd(
+      onAdDismissed: () {
+        _startDownload(context);
+      },
+      onAdFailed: (String placementId, dynamic error, String message) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+                'Ad failed to show: $error - $message. Continuing with download.'),
+          ),
+        );
+        _startDownload(context);
+      },
+    );
+  }
 
   void _requestPermissionsAndDownload(BuildContext context) async {
     var status = await Permission.storage.status;
@@ -386,7 +387,8 @@ void _showInterstitialAdOrDownload(BuildContext context) {
       final taskId = await FlutterDownloader.enqueue(
         url: widget.videoUrl,
         savedDir: downloadPath,
-        fileName: 'Flue - ${widget.animeData['title']['romaji']} - Episode_${widget.episodeNumber.toString()}.mp4',
+        fileName:
+            'Flue - ${widget.animeData['title']['romaji']} - Episode_${widget.episodeNumber.toString()}.mp4',
         showNotification: true,
         openFileFromNotification: true,
         requiresStorageNotLow: true,

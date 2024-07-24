@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flue',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: ColorManager.currentPrimaryColor),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: ColorManager.currentPrimaryColor),
         fontFamily: 'Satoshi',
       ),
       home: SplashScreen(),

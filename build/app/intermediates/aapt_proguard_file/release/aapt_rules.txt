@@ -45,11 +45,6 @@
 -keep class com.ryanheise.audioservice.AudioService { <init>(); }
 -keep class com.ryanheise.audioservice.AudioServiceActivity { <init>(); }
 -keep class com.ryanheise.audioservice.MediaButtonReceiver { <init>(); }
--keep class com.unity3d.ads.adplayer.FullScreenWebViewDisplay { <init>(); }
--keep class com.unity3d.services.ads.adunit.AdUnitActivity { <init>(); }
--keep class com.unity3d.services.ads.adunit.AdUnitSoftwareActivity { <init>(); }
--keep class com.unity3d.services.ads.adunit.AdUnitTransparentActivity { <init>(); }
--keep class com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity { <init>(); }
 -keep class io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService { <init>(); }
 -keep class io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider { <init>(); }
 -keep class io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver { <init>(); }
@@ -104,15 +99,7 @@
 
 -keep class androidx.core.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }
 
--keep class androidx.recyclerview.widget.RecyclerView { <init>(android.content.Context, android.util.AttributeSet); }
-
 -keep class com.google.android.ads.nativetemplates.TemplateView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.exoplayer2.ui.AspectRatioFrameLayout { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.exoplayer2.ui.SubtitleView { <init>(android.content.Context, android.util.AttributeSet); }
-
--keep class com.google.android.exoplayer2.ui.TrackSelectionView { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class com.google.android.gms.ads.nativead.MediaView { <init>(android.content.Context, android.util.AttributeSet); }
 

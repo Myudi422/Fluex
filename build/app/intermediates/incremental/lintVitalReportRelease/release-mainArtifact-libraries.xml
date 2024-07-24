@@ -95,10 +95,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android@@:shared_preferences_android::release"
-      jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\shared_preferences_android\.transforms\7749de0fb3cca2ce921725be8d541f2c\transformed\out\jars\classes.jar"
-      resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
-      folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\shared_preferences_android\.transforms\7749de0fb3cca2ce921725be8d541f2c\transformed\out"
+      name="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android@@:just_audio::release"
+      jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\just_audio\.transforms\be4ce4f9ad3b092a8de5429771b414aa\transformed\out\jars\classes.jar"
+      resolved="com.ryanheise.just_audio:just_audio:unspecified"
+      folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\just_audio\.transforms\be4ce4f9ad3b092a8de5429771b414aa\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -108,10 +108,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android@@:just_audio::release"
-      jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\just_audio\.transforms\be4ce4f9ad3b092a8de5429771b414aa\transformed\out\jars\classes.jar"
-      resolved="com.ryanheise.just_audio:just_audio:unspecified"
-      folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\just_audio\.transforms\be4ce4f9ad3b092a8de5429771b414aa\transformed\out"
+      name="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android@@:shared_preferences_android::release"
+      jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\shared_preferences_android\.transforms\7749de0fb3cca2ce921725be8d541f2c\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
+      folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\shared_preferences_android\.transforms\7749de0fb3cca2ce921725be8d541f2c\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -177,19 +177,6 @@
       jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\video_player_android\.transforms\be168dcfeb8149128f8f9eba89bc74e7\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.videoplayer:video_player_android:unspecified"
       folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\video_player_android\.transforms\be168dcfeb8149128f8f9eba89bc74e7\transformed\out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\android@@:unity_ads_plugin::release"
-      jars="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\unity_ads_plugin\.transforms\10f2df90098becbe181bc3f026073625\transformed\out\jars\classes.jar"
-      resolved="com.rebeloid.unity_ads:unity_ads_plugin:unspecified"
-      folder="C:\Users\Yudi Tolol\Downloads\FLUE\Fluex\build\unity_ads_plugin\.transforms\10f2df90098becbe181bc3f026073625\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -433,32 +420,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.unity3d.ads:unity-ads:4.10.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\classes.jar;C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\libs\omsdk-android-1.4.9-release.jar;C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\libs\unity-scaradapter-2000.jar;C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\libs\unity-scaradapter-2100.jar;C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\libs\unity-scaradapter-2300.jar;C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0\jars\libs\unity-scaradapter-common.jar"
-      resolved="com.unity3d.ads:unity-ads:4.10.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f1bb7fe5c6f58b5f7cab091d17708689\transformed\jetified-unity-ads-4.10.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.activity:activity-ktx:1.7.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\95c31f5ef813e2d9e6e2c2d993926cb4\transformed\jetified-activity-ktx-1.7.1\jars\classes.jar"
-      resolved="androidx.activity:activity-ktx:1.7.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\95c31f5ef813e2d9e6e2c2d993926cb4\transformed\jetified-activity-ktx-1.7.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad\3c9a34a1ffaa848dd4569b483fcf5041eb3021d7\flutter_embedding_release-1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad.jar"
       resolved="io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"/>
@@ -606,19 +567,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-cronet:18.0.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\9d5301d88d0a236c0c96d54d2219791b\transformed\jetified-play-services-cronet-18.0.1\jars\classes.jar"
-      resolved="com.google.android.gms:play-services-cronet:18.0.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\9d5301d88d0a236c0c96d54d2219791b\transformed\jetified-play-services-cronet-18.0.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="com.google.android.gms:play-services-base:18.0.1@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\caeb06f341f8144860e89620d6514062\transformed\jetified-play-services-base-18.0.1\jars\classes.jar"
       resolved="com.google.android.gms:play-services-base:18.0.1"
@@ -710,45 +658,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.exoplayer:exoplayer:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bb15db306f586e645c71ea54b7f82718\transformed\jetified-exoplayer-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bb15db306f586e645c71ea54b7f82718\transformed\jetified-exoplayer-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-ui:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dad38bd421e03a34bf47ee85b2a2e7f7\transformed\jetified-exoplayer-ui-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-ui:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dad38bd421e03a34bf47ee85b2a2e7f7\transformed\jetified-exoplayer-ui-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media:media:1.6.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0\jars\classes.jar"
-      resolved="androidx.media:media:1.6.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.loader:loader:1.0.0@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\c99a0a17cbbbe788cd704bb1675117e4\transformed\loader-1.0.0\jars\classes.jar"
       resolved="androidx.loader:loader:1.0.0"
@@ -762,10 +671,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.work:work-runtime-ktx:2.7.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\70ae07ea516296ea341b793c7b796de0\transformed\work-runtime-ktx-2.7.0\jars\classes.jar"
-      resolved="androidx.work:work-runtime-ktx:2.7.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\70ae07ea516296ea341b793c7b796de0\transformed\work-runtime-ktx-2.7.0"
+      name="androidx.viewpager:viewpager:1.0.0@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28b89a87199e244c948f91311d47e677\transformed\viewpager-1.0.0\jars\classes.jar"
+      resolved="androidx.viewpager:viewpager:1.0.0"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28b89a87199e244c948f91311d47e677\transformed\viewpager-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -814,19 +723,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b31efa9fe7d2eef1687b0cddfe42f20c\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2\jars\classes.jar"
-      resolved="androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b31efa9fe7d2eef1687b0cddfe42f20c\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\019ed31a279e85941ac14af7ac898d99\transformed\lifecycle-viewmodel-2.6.2\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-viewmodel:2.6.2"
@@ -857,32 +753,6 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b5afebf2b72612932d921106c39ab1a7\transformed\jetified-core-ktx-1.10.1\jars\classes.jar"
       resolved="androidx.core:core-ktx:1.10.1"
       folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b5afebf2b72612932d921106c39ab1a7\transformed\jetified-core-ktx-1.10.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.webkit:webkit:1.7.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a7d6657cc92bbc92f5ca8bf897da186f\transformed\webkit-1.7.0\jars\classes.jar"
-      resolved="androidx.webkit:webkit:1.7.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a7d6657cc92bbc92f5ca8bf897da186f\transformed\webkit-1.7.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.viewpager:viewpager:1.0.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28b89a87199e244c948f91311d47e677\transformed\viewpager-1.0.0\jars\classes.jar"
-      resolved="androidx.viewpager:viewpager:1.0.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28b89a87199e244c948f91311d47e677\transformed\viewpager-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -939,32 +809,6 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common\2.6.2\10f354fdb64868baecd67128560c5a0d6312c495\lifecycle-common-2.6.2.jar"
       resolved="androidx.lifecycle:lifecycle-common:2.6.2"/>
   <library
-      name="androidx.lifecycle:lifecycle-process:2.6.2@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a54531db9c4b00f18444cf92c34e8b2b\transformed\jetified-lifecycle-process-2.6.2\jars\classes.jar"
-      resolved="androidx.lifecycle:lifecycle-process:2.6.2"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a54531db9c4b00f18444cf92c34e8b2b\transformed\jetified-lifecycle-process-2.6.2"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.lifecycle:lifecycle-runtime-ktx:2.6.2@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\300317b05ea258df7c762195063e90e3\transformed\jetified-lifecycle-runtime-ktx-2.6.2\jars\classes.jar"
-      resolved="androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\300317b05ea258df7c762195063e90e3\transformed\jetified-lifecycle-runtime-ktx-2.6.2"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.window:window-java:1.0.0-beta04@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\ea93c24b37ecc09f694b93f299252c23\transformed\jetified-window-java-1.0.0-beta04\jars\classes.jar"
       resolved="androidx.window:window-java:1.0.0-beta04"
@@ -994,23 +838,6 @@
       name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\1.7.1\c2d86b569f10b7fc7e28d3f50c0eed97897d77a7\kotlinx-coroutines-android-1.7.1.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"/>
-  <library
-      name="androidx.datastore:datastore:1.0.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\045b4e471229b82e07f3559e6aba5fcf\transformed\jetified-datastore-1.0.0\jars\classes.jar"
-      resolved="androidx.datastore:datastore:1.0.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\045b4e471229b82e07f3559e6aba5fcf\transformed\jetified-datastore-1.0.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.datastore:datastore-core:1.0.0@jar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\androidx.datastore\datastore-core\1.0.0\91b04fb657294e2906d95dce6a9e5a851f6125c1\datastore-core-1.0.0.jar"
-      resolved="androidx.datastore:datastore-core:1.0.0"/>
   <library
       name="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.7.1\63a0779cf668e2a47d13fda7c3b0c4f8dc7762f4\kotlinx-coroutines-core-jvm-1.7.1.jar"
@@ -1085,10 +912,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.activity:activity:1.7.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\925084292f58d405c759a1fd3e7ca56c\transformed\jetified-activity-1.7.1\jars\classes.jar"
-      resolved="androidx.activity:activity:1.7.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\925084292f58d405c759a1fd3e7ca56c\transformed\jetified-activity-1.7.1"
+      name="androidx.activity:activity:1.6.0@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\1068125661f1032f405c16ed39d25b57\transformed\jetified-activity-1.6.0\jars\classes.jar"
+      resolved="androidx.activity:activity:1.6.0"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\1068125661f1032f405c16ed39d25b57\transformed\jetified-activity-1.6.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1102,27 +929,10 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.8.22\b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1\kotlin-stdlib-jdk8-1.8.22.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"/>
   <library
-      name="com.google.protobuf:protobuf-kotlin-lite:3.21.12@jar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-kotlin-lite\3.21.12\bd73231ecb5e38b7f3b0e42fda59c7314dd2fb54\protobuf-kotlin-lite-3.21.12.jar"
-      resolved="com.google.protobuf:protobuf-kotlin-lite:3.21.12"/>
-  <library
       name="androidx.annotation:annotation-experimental:1.3.0@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\59a6cd8b5de5b8b10e380cc64961501a\transformed\jetified-annotation-experimental-1.3.0\jars\classes.jar"
       resolved="androidx.annotation:annotation-experimental:1.3.0"
       folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\59a6cd8b5de5b8b10e380cc64961501a\transformed\jetified-annotation-experimental-1.3.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.savedstate:savedstate-ktx:1.2.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f2f8ca5c006f697340caaa4d2dd9d3bc\transformed\jetified-savedstate-ktx-1.2.1\jars\classes.jar"
-      resolved="androidx.savedstate:savedstate-ktx:1.2.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f2f8ca5c006f697340caaa4d2dd9d3bc\transformed\jetified-savedstate-ktx-1.2.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1307,32 +1117,6 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.9.21\2d2c2b1d441e48ed37383e42f133339691436425\kotlin-stdlib-jdk7-1.9.21.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21"/>
   <library
-      name="com.google.android.exoplayer:exoplayer-core:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-core:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\968cf2d6c1295a02325d706f7df75178\transformed\jetified-exoplayer-core-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-dash:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bd7ab5bb08220c8ad78ef8a8c9cc3c66\transformed\jetified-exoplayer-dash-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-dash:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bd7ab5bb08220c8ad78ef8a8c9cc3c66\transformed\jetified-exoplayer-dash-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.multidex:multidex:2.0.0@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dbc516ce047ce872cee3099e27276cf9\transformed\multidex-2.0.0\jars\classes.jar"
       resolved="androidx.multidex:multidex:2.0.0"
@@ -1353,19 +1137,6 @@
       name="org.jetbrains:annotations:23.0.0@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\23.0.0\8cc20c07506ec18e0834947b84a864bfc094484e\annotations-23.0.0.jar"
       resolved="org.jetbrains:annotations:23.0.0"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-common:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-common:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\26fb81ba1f417bf3177382452335c517\transformed\jetified-exoplayer-common-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
   <library
       name="com.google.guava:guava:32.0.1-android@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\32.0.1-android\d3fe54a75aeaca33fc562a2a9c1dc181e54cc5e9\guava-32.0.1-android.jar"
@@ -1433,135 +1204,6 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\62f4dedb6088d6e7a8cd8ff32c9ebc68\transformed\jetified-core-common-2.0.3\jars\classes.jar"
       resolved="com.google.android.play:core-common:2.0.3"
       folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\62f4dedb6088d6e7a8cd8ff32c9ebc68\transformed\jetified-core-common-2.0.3"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-container:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cdb397eb970c9a38b1d43f20fed0bfbd\transformed\jetified-exoplayer-container-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-container:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\cdb397eb970c9a38b1d43f20fed0bfbd\transformed\jetified-exoplayer-container-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-datasource:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\c5dd7130a85c1aa8a6c9adb918f8e7ba\transformed\jetified-exoplayer-datasource-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-datasource:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\c5dd7130a85c1aa8a6c9adb918f8e7ba\transformed\jetified-exoplayer-datasource-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-database:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\6e351214ef1144856f5aafa48b8fe266\transformed\jetified-exoplayer-database-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-database:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\6e351214ef1144856f5aafa48b8fe266\transformed\jetified-exoplayer-database-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-decoder:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e2c0cc630faadb312426afdefc1db099\transformed\jetified-exoplayer-decoder-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-decoder:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e2c0cc630faadb312426afdefc1db099\transformed\jetified-exoplayer-decoder-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-extractor:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8503b7a496ca42e427c0c55890a6db83\transformed\jetified-exoplayer-extractor-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-extractor:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\8503b7a496ca42e427c0c55890a6db83\transformed\jetified-exoplayer-extractor-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-hls:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\d19119a0fc0c11517be0eb7cd9735bf5\transformed\jetified-exoplayer-hls-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-hls:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\d19119a0fc0c11517be0eb7cd9735bf5\transformed\jetified-exoplayer-hls-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-smoothstreaming:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bdd016f5e7ee3599cbb49bece0c19772\transformed\jetified-exoplayer-smoothstreaming-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-smoothstreaming:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\bdd016f5e7ee3599cbb49bece0c19772\transformed\jetified-exoplayer-smoothstreaming-2.19.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.squareup.okhttp3:okhttp:3.14.9@jar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.14.9\3e6d101343c7ea687cd593e4990f73b25c878383\okhttp-3.14.9.jar"
-      resolved="com.squareup.okhttp3:okhttp:3.14.9"/>
-  <library
-      name="com.squareup.okio:okio:1.17.2@jar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.17.2\78c7820b205002da4d2d137f6f312bd64b3d6049\okio-1.17.2.jar"
-      resolved="com.squareup.okio:okio:1.17.2"/>
-  <library
-      name="com.google.protobuf:protobuf-javalite:3.21.12@jar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-javalite\3.21.12\e450dd89f2b4f79af08a9cb8ccbe62b25b1e7be8\protobuf-javalite-3.21.12.jar"
-      resolved="com.google.protobuf:protobuf-javalite:3.21.12"/>
-  <library
-      name="org.chromium.net:cronet-api:72.3626.96@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96\jars\classes.jar"
-      resolved="org.chromium.net:cronet-api:72.3626.96"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5ed810d8eb4bd42aac5c37305b6df3ea\transformed\jetified-cronet-api-72.3626.96"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.google.android.exoplayer:exoplayer-rtsp:2.19.1@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\6314db27db0c0823751ba3961e8555ad\transformed\jetified-exoplayer-rtsp-2.19.1\jars\classes.jar"
-      resolved="com.google.android.exoplayer:exoplayer-rtsp:2.19.1"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\6314db27db0c0823751ba3961e8555ad\transformed\jetified-exoplayer-rtsp-2.19.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1649,6 +1291,71 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.media:media:1.6.0@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0\jars\classes.jar"
+      resolved="androidx.media:media:1.6.0"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-dash:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fdc51162b2e69d254145eb06989bd67a\transformed\jetified-exoplayer-dash-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-dash:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\fdc51162b2e69d254145eb06989bd67a\transformed\jetified-exoplayer-dash-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-hls:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\0dce94dc8b9887288485a9d7faefa417\transformed\jetified-exoplayer-hls-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-hls:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\0dce94dc8b9887288485a9d7faefa417\transformed\jetified-exoplayer-hls-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\96bc1c604860cea052abf27d640f5ba9\transformed\jetified-exoplayer-smoothstreaming-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\96bc1c604860cea052abf27d640f5ba9\transformed\jetified-exoplayer-smoothstreaming-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-core:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\241197ff5bfcc03fad5a75d281c02f42\transformed\jetified-exoplayer-core-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-core:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\241197ff5bfcc03fad5a75d281c02f42\transformed\jetified-exoplayer-core-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.swiperefreshlayout:swiperefreshlayout:1.1.0@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\5f651e21b78a6b2ad6be732a8e2e7077\transformed\swiperefreshlayout-1.1.0\jars\classes.jar"
       resolved="androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
@@ -1666,6 +1373,19 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f39973a1aad98c4c669e9104b8a2e66a\transformed\constraintlayout-2.1.4\jars\classes.jar"
       resolved="androidx.constraintlayout:constraintlayout:2.1.4"
       folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\f39973a1aad98c4c669e9104b8a2e66a\transformed\constraintlayout-2.1.4"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.webkit:webkit:1.7.0@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a7d6657cc92bbc92f5ca8bf897da186f\transformed\webkit-1.7.0\jars\classes.jar"
+      resolved="androidx.webkit:webkit:1.7.0"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a7d6657cc92bbc92f5ca8bf897da186f\transformed\webkit-1.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1818,32 +1538,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.recyclerview:recyclerview:1.3.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b6c7f67c02b1dc5686212354087c93ce\transformed\recyclerview-1.3.0\jars\classes.jar"
-      resolved="androidx.recyclerview:recyclerview:1.3.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\b6c7f67c02b1dc5686212354087c93ce\transformed\recyclerview-1.3.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.customview:customview-poolingcontainer:1.0.0@aar"
-      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28a0e3d2dd4de15fe81a262e884e1a3c\transformed\jetified-customview-poolingcontainer-1.0.0\jars\classes.jar"
-      resolved="androidx.customview:customview-poolingcontainer:1.0.0"
-      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\28a0e3d2dd4de15fe81a262e884e1a3c\transformed\jetified-customview-poolingcontainer-1.0.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.drawerlayout:drawerlayout:1.0.0@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\3c009f10632f080cb61e3477719d11e6\transformed\drawerlayout-1.0.0\jars\classes.jar"
       resolved="androidx.drawerlayout:drawerlayout:1.0.0"
@@ -1909,6 +1603,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.lifecycle:lifecycle-process:2.6.2@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a54531db9c4b00f18444cf92c34e8b2b\transformed\jetified-lifecycle-process-2.6.2\jars\classes.jar"
+      resolved="androidx.lifecycle:lifecycle-process:2.6.2"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a54531db9c4b00f18444cf92c34e8b2b\transformed\jetified-lifecycle-process-2.6.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="com.google.firebase:firebase-datatransport:18.1.7@aar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\0408dfafb2d6fc38f31283d6860789b6\transformed\jetified-firebase-datatransport-18.1.7\jars\classes.jar"
       resolved="com.google.firebase:firebase-datatransport:18.1.7"
@@ -1926,6 +1633,71 @@
       jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dd79a24f665edfc1c05f9d6fd8a0c69e\transformed\jetified-profileinstaller-1.3.0\jars\classes.jar"
       resolved="androidx.profileinstaller:profileinstaller:1.3.0"
       folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\dd79a24f665edfc1c05f9d6fd8a0c69e\transformed\jetified-profileinstaller-1.3.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-datasource:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2a29be9868818a4d14de5202ffecdb7a\transformed\jetified-exoplayer-datasource-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-datasource:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\2a29be9868818a4d14de5202ffecdb7a\transformed\jetified-exoplayer-datasource-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-extractor:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\39f04e31b68426823e2209a0da799895\transformed\jetified-exoplayer-extractor-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-extractor:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\39f04e31b68426823e2209a0da799895\transformed\jetified-exoplayer-extractor-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-decoder:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a43fc563100f79fcee7b891ef9768a5a\transformed\jetified-exoplayer-decoder-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-decoder:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\a43fc563100f79fcee7b891ef9768a5a\transformed\jetified-exoplayer-decoder-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-database:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\c7fcd4db37deab54cc6d6189b5103d45\transformed\jetified-exoplayer-database-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-database:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\c7fcd4db37deab54cc6d6189b5103d45\transformed\jetified-exoplayer-database-2.18.7"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.exoplayer:exoplayer-common:2.18.7@aar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\d6ef08e094f9cd8e2b65b8d6985bc18a\transformed\jetified-exoplayer-common-2.18.7\jars\classes.jar"
+      resolved="com.google.android.exoplayer:exoplayer-common:2.18.7"
+      folder="C:\Users\Yudi Tolol\.gradle\caches\transforms-3\d6ef08e094f9cd8e2b65b8d6985bc18a\transformed\jetified-exoplayer-common-2.18.7"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -2007,6 +1779,14 @@
       name="androidx.room:room-common:2.2.5@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\androidx.room\room-common\2.2.5\f5e3b73a0c2ab5e276e26868e4ce3542baede207\room-common-2.2.5.jar"
       resolved="androidx.room:room-common:2.2.5"/>
+  <library
+      name="com.squareup.okhttp3:okhttp:3.14.9@jar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.14.9\3e6d101343c7ea687cd593e4990f73b25c878383\okhttp-3.14.9.jar"
+      resolved="com.squareup.okhttp3:okhttp:3.14.9"/>
+  <library
+      name="com.squareup.okio:okio:1.17.2@jar"
+      jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.17.2\78c7820b205002da4d2d137f6f312bd64b3d6049\okio-1.17.2.jar"
+      resolved="com.squareup.okio:okio:1.17.2"/>
   <library
       name="androidx.constraintlayout:constraintlayout-core:1.0.4@jar"
       jars="C:\Users\Yudi Tolol\.gradle\caches\modules-2\files-2.1\androidx.constraintlayout\constraintlayout-core\1.0.4\29cdbe03ded6b0980f63fa5da2579a430e911c40\constraintlayout-core-1.0.4.jar"

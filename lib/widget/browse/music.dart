@@ -99,35 +99,53 @@ class _MusicPageState extends State<MusicPage>
 
   Future<void> _loadVideos() async {
     try {
-      final yt = YoutubeExplode();
+      final String apiUrl =
+          'https://ccgnimex.my.id/v2/android/music/homepage.php';
 
-      if (!isSearching) {
-        final playlistId = 'PLu9P-zUH90FfbIRHBR3gH34KisjHepg2H';
-        videos = await yt.playlists.getVideos(playlistId).toList();
+      // Kirim request ke API untuk mendapatkan playlistId
+      final response = await http.post(Uri.parse(apiUrl));
+
+      if (response.statusCode == 200) {
+        // Parsing JSON response untuk mendapatkan playlistId
+        final Map<String, dynamic> responseData = json.decode(response.body);
+        final String playlistId = responseData['playlistId'];
+
+        // Menggunakan YoutubeExplode untuk mengambil video dari playlistId
+        final yt = YoutubeExplode();
+
+        if (!isSearching) {
+          videos = await yt.playlists.getVideos(playlistId).toList();
+        }
+
+        if (searchKeyword.isNotEmpty) {
+          final searchResults = await yt.search.getVideos(searchKeyword);
+          videos = searchResults.where((video) {
+            return (video.duration?.inMinutes ?? 0) <= 20;
+          }).toList();
+        }
+
+        if (currentVideoIndex >= videos.length) {
+          currentVideoIndex = 0;
+        }
+
+        setState(() {
+          isLoadingVideos = false;
+        });
+
+        yt.close();
+      } else {
+        setState(() {
+          isLoadingVideos = false;
+          videos = [];
+        });
+        print('Failed to load playlistId. Status code: ${response.statusCode}');
       }
-
-      if (searchKeyword.isNotEmpty) {
-        final searchResults = await yt.search.getVideos(searchKeyword);
-        videos = searchResults.where((video) {
-          return (video.duration?.inMinutes ?? 0) <= 20;
-        }).toList();
-      }
-
-      if (currentVideoIndex >= videos.length) {
-        currentVideoIndex = 0;
-      }
-
-      setState(() {
-        isLoadingVideos = false;
-      });
-
-      yt.close();
     } catch (e) {
       setState(() {
         isLoadingVideos = false;
         videos = [];
       });
-      print("Error loading videos: $e");
+      print('Error loading playlistId: $e');
     }
   }
 

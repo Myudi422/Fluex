@@ -25,55 +25,58 @@ class _GenreListState extends State<GenreList> {
   }
 
   Future<void> fetchGenres() async {
-  try {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    // Cek apakah data genre sudah disimpan lokal
-    if (prefs.containsKey('genres')) {
-      final List<String> storedGenres =
-          List<String>.from(jsonDecode(prefs.getString('genres')!));
-      setState(() {
-        genres = storedGenres;
-        isLoading = false;
-      });
-    } else {
-      final response = await http.post(
-        Uri.parse('https://graphql.anilist.co'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'query': '''
-            query {
-              GenreCollection
-            }
-          '''
-        }),
-      );
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        final List<dynamic> genreList = data['data']['GenreCollection'];
-
-        // Filter genre "Hentai"
-        final filteredGenres = genreList.cast<String>().where((genre) => genre != "Hentai").toList();
-
+      // Cek apakah data genre sudah disimpan lokal
+      if (prefs.containsKey('genres')) {
+        final List<String> storedGenres =
+            List<String>.from(jsonDecode(prefs.getString('genres')!));
         setState(() {
-          genres = filteredGenres;
+          genres = storedGenres;
           isLoading = false;
         });
-
-        // Simpan data genre ke lokal storage
-        prefs.setString('genres', jsonEncode(genres));
       } else {
-        throw Exception('Failed to load genres');
+        final response = await http.post(
+          Uri.parse('https://graphql.anilist.co'),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({
+            'query': '''
+              query {
+                GenreCollection
+              }
+            '''
+          }),
+        );
+
+        if (response.statusCode == 200) {
+          final data = jsonDecode(response.body);
+          final List<dynamic> genreList = data['data']['GenreCollection'];
+
+          // Filter genre "Hentai"
+          final filteredGenres = genreList
+              .cast<String>()
+              .where((genre) => genre != "Hentai")
+              .toList();
+
+          setState(() {
+            genres = filteredGenres;
+            isLoading = false;
+          });
+
+          // Simpan data genre ke lokal storage
+          prefs.setString('genres', jsonEncode(genres));
+        } else {
+          throw Exception('Failed to load genres');
+        }
       }
+    } catch (e) {
+      print('Error: $e');
+      setState(() {
+        isLoading = false;
+      });
     }
-  } catch (e) {
-    print('Error: $e');
-    setState(() {
-      isLoading = false;
-    });
   }
-}
 
   @override
   Widget build(BuildContext context) {
@@ -90,29 +93,66 @@ class _GenreListState extends State<GenreList> {
                   child: Text('No genres available'),
                 )
               : Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: genres
-                        .map((genre) => _buildGenreItem(genre))
-                        .toList(),
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: genres
+                          .map((genre) => _buildGenreItem(genre))
+                          .toList(),
+                    ),
                   ),
                 ),
-              ),
     );
   }
 
   Widget _buildGenreItem(String genre) {
     return GestureDetector(
       onTap: () {
-        // Navigate to the list of anime for the selected genre
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => AnimeListPage(selectedGenre: genre, telegramId: widget.telegramId),
-          ),
-        );
+        if (genre == "Ecchi") {
+          // Tampilkan popup peringatan "18+"
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text("Peringatan"),
+                content: Text(
+                    "Genre ini mengandung konten 18+. Apakah Anda ingin melanjutkan?"),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text("Tidak"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AnimeListPage(
+                              selectedGenre: genre,
+                              telegramId: widget.telegramId);
+                        },
+                      );
+                    },
+                    child: Text("Ya"),
+                  ),
+                ],
+              );
+            },
+          );
+        } else {
+          // Tampilkan Modal Bottom Sheet untuk genre lain
+          showModalBottomSheet(
+            context: context,
+            builder: (BuildContext context) {
+              return AnimeListPage(
+                  selectedGenre: genre, telegramId: widget.telegramId);
+            },
+          );
+        }
       },
       child: Container(
         margin: EdgeInsets.only(right: 8.0),
@@ -123,7 +163,8 @@ class _GenreListState extends State<GenreList> {
         ),
         child: Text(
           genre,
-          style: TextStyle(fontSize: 14.0, color: ColorManager.currentHomeColor),
+          style:
+              TextStyle(fontSize: 14.0, color: ColorManager.currentHomeColor),
         ),
       ),
     );

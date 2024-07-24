@@ -1,11 +1,10 @@
 import 'dart:convert';
+import 'package:flue/admob/googlads.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:http/http.dart' as http;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'view_wallpaper.dart';
-import 'package:flue/admob/unity.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 import 'package:flue/color.dart';
 
 class WallpaperPage extends StatefulWidget {
@@ -34,6 +33,7 @@ class _WallpaperPageState extends State<WallpaperPage> {
     _fetchWallpapers();
     searchController.addListener(_onSearchChanged);
     _fetchUserAccess(); // Panggil fungsi untuk memeriksa akses pengguna
+    AdManager().loadInterstitialAd(); // Load ad at the beginning
   }
 
   Future<void> _fetchWallpapers() async {
@@ -65,7 +65,7 @@ class _WallpaperPageState extends State<WallpaperPage> {
       });
 
       // Load interstitial ad after fetching new wallpapers
-      UnityAdManager.loadInterstitialAd();
+      AdManager().loadInterstitialAd();
     }
   }
 
@@ -100,7 +100,7 @@ class _WallpaperPageState extends State<WallpaperPage> {
   }
 
   Widget _buildWallpaperItem(int index) {
-    final wallpaper = filteredWallpapers.length == 0
+    final wallpaper = filteredWallpapers.isEmpty
         ? wallpapers[index]
         : filteredWallpapers[index];
     final imageUrl = wallpaper['arturl_md'];
@@ -129,28 +129,29 @@ class _WallpaperPageState extends State<WallpaperPage> {
 
   void _showInterstitialAd(Map<String, dynamic> wallpaper) {
     if (userAccess != 'Premium') {
-      // Hanya menampilkan iklan jika pengguna memiliki akses Free
-      UnityAdManager.showInterstitialAd(
-        onComplete: (String placementId) {
-          _navigateToViewWallpaper(wallpaper);
-        },
-        onFailed: (String placementId, dynamic error, String message) {
-          // Handle the error here if needed
-          print('Interstitial ad failed to load: $error, $message');
-          // Navigate to the wallpaper view page regardless of the error
-          _navigateToViewWallpaper(wallpaper);
-        },
-      );
+      // Only show ads if the user has Free access
+      if (AdManager().isInterstitialAdReady) {
+        AdManager().showInterstitialAd(
+          onAdDismissed: () {
+            _navigateToViewWallpaper(wallpaper);
+          },
+          onAdFailed: () {
+            // Handle the error here if needed
+            print('Interstitial ad failed to load');
+            _navigateToViewWallpaper(wallpaper);
+          },
+        );
+      } else {
+        // Ad is not ready, navigate directly
+        _navigateToViewWallpaper(wallpaper);
+      }
     } else {
       _navigateToViewWallpaper(
-          wallpaper); // Jika pengguna memiliki akses Premium, langsung tampilkan wallpaper tanpa iklan
+          wallpaper); // If the user has Premium access, show the wallpaper directly without ads
     }
   }
 
   void _navigateToViewWallpaper(Map<String, dynamic> wallpaper) {
-    // Reset interstitial ad status
-    UnityAdManager.loadInterstitialAd();
-
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -175,6 +176,14 @@ class _WallpaperPageState extends State<WallpaperPage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: searchController,
+              decoration: InputDecoration(
+                hintText: 'Search wallpapers...',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.search),
+              ),
+            ),
           ),
           Expanded(
             child: StaggeredGridView.countBuilder(

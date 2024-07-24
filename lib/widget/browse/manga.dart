@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flue/widget/browse/komik-detail.dart';
-import 'package:flue/admob/unity.dart';
+import 'package:flue/admob/googlads.dart';
 import 'package:flue/color.dart';
 
 class MangaPage extends StatefulWidget {
@@ -27,11 +27,11 @@ class _MangaPageState extends State<MangaPage> {
   @override
   void initState() {
     super.initState();
-    _fetchData();
+    _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
+    _fetchData();
     _fetchUserAccess();
-    UnityAdManager.initialize(); // Inisialisasi Unity Ads
-    UnityAdManager
+    AdManager()
         .loadInterstitialAd(); // Memuat iklan interstisial saat widget diinisialisasi
   }
 
@@ -91,17 +91,6 @@ class _MangaPageState extends State<MangaPage> {
           isLoading = false;
           currentPage++;
         });
-
-        // Load interstitial ad when new data is loaded
-        if (userAccess != 'Premium') {
-          UnityAdManager.loadInterstitialAd();
-          UnityAdManager.showInterstitialAd(
-            onComplete: (placementId) => print('Load Complete $placementId'),
-            onFailed: (String placementId, dynamic error, String message) {
-              // Handle interstitial ad failure
-            },
-          );
-        }
       } else {
         setState(() {
           isLoading = false;
@@ -168,7 +157,20 @@ class _MangaPageState extends State<MangaPage> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          _navigateToMangaDetail(comics[index]['url']);
+                          if (userAccess != 'Premium') {
+                            // Jika pengguna memiliki akses Free, tampilkan iklan
+                            AdManager().showInterstitialAd(
+                              onAdDismissed: () {
+                                _navigateToMangaDetail(comics[index]['url']);
+                              },
+                              onAdFailed: () {
+                                _navigateToMangaDetail(comics[index]['url']);
+                              },
+                            );
+                          } else {
+                            // Jika pengguna memiliki akses Premium, langsung navigasikan ke detail manga
+                            _navigateToMangaDetail(comics[index]['url']);
+                          }
                         },
                         child: Card(
                           elevation: 2.0,
@@ -297,7 +299,7 @@ class _MangaPageState extends State<MangaPage> {
             right: 0,
             child: Container(
               padding: EdgeInsets.all(8.0),
-              color: ColorManager.currentHomeColor,
+              color: ColorManager.currentBackgroundColor,
               child: Row(
                 children: [
                   Expanded(
@@ -307,22 +309,22 @@ class _MangaPageState extends State<MangaPage> {
                         hintText: 'Cari Manga',
                         hintStyle: TextStyle(
                             color: ColorManager
-                                .currentBackgroundColor), // Mengatur warna teks hint
+                                .currentHomeColor), // Mengatur warna teks hint
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
                               color: ColorManager
-                                  .currentBackgroundColor), // Mengatur warna border
+                                  .currentHomeColor), // Mengatur warna border
                         ),
                       ),
                       style: TextStyle(
                           color: ColorManager
-                              .currentBackgroundColor), // Mengatur warna teks
+                              .currentHomeColor), // Mengatur warna teks
                     ),
                   ),
                   IconButton(
                     icon: Icon(Icons.search,
                         color: ColorManager
-                            .currentBackgroundColor), // Mengatur warna ikon
+                            .currentHomeColor), // Mengatur warna ikon
                     onPressed: _performSearch,
                   ),
                 ],

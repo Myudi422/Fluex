@@ -131,8 +131,8 @@ class _AnimeListPageState extends State<AnimeListPage> {
               child: Container(
                 padding: EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
-                  color: Colors.black
-                      .withOpacity(0.4), // Transparent black background
+                  color: ColorManager
+                      .currentBackgroundColor, // Transparent black background
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
