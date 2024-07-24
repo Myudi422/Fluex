@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flue/color.dart';
+import 'package:flutter/services.dart'; // Import this package for SystemNavigator
 
 import 'main_page.dart';
 
@@ -33,13 +34,21 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
 
       if (response.statusCode == 200) {
         if (responseData['status'] == 'success') {
+          // Cek apakah pengguna diblokir
+          bool isBanned =
+              await _checkIfUserIsBanned(emailController.text, context);
+          if (isBanned) {
+            await _logout(); // Logout jika diblokir
+            return; // Hentikan eksekusi lebih lanjut
+          }
+
           SharedPreferences prefs = await SharedPreferences.getInstance();
           prefs.setBool('isLoggedIn', true);
           prefs.setString('email', emailController.text);
           prefs.setString('firstName', responseData['first_name']);
           prefs.setString('telegram_id', responseData['telegram_id']);
 
-          // Navigate to MainPage and remove the welcome page from the navigation stack
+          // Navigasi ke MainPage dan hapus halaman login dari stack
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => MainPage()),
@@ -62,6 +71,56 @@ class _LoginEmailWidgetState extends State<LoginEmailWidget> {
         errorMessage = 'Terjadi kesalahan. Silakan coba lagi.';
       });
     }
+  }
+
+  Future<bool> _checkIfUserIsBanned(String email, BuildContext context) async {
+    final apiUrl = 'https://ccgnimex.my.id/v2/android/api_user.php';
+    try {
+      final response = await http.post(
+        Uri.parse(apiUrl),
+        body: {
+          'email': email,
+        },
+      );
+
+      print("API Response (Check if Banned): ${response.body}");
+
+      if (response.statusCode == 200) {
+        final responseData = json.decode(response.body);
+        if (responseData['status'] == 'banned') {
+          _showBannedPopup(context);
+          return true;
+        }
+      } else {
+        print(
+            "Failed to check if user is banned. Status code: ${response.statusCode}");
+      }
+    } catch (e) {
+      print("Error checking if user is banned: $e");
+    }
+    return false;
+  }
+
+  void _showBannedPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible:
+          false, // Membuat popup tidak bisa ditutup dengan klik di luar
+      builder: (context) => AlertDialog(
+        title: Text('Pemberitahuan Untuk Anda!!!'),
+        content: Text(
+            'Anda sudah diblokir, harap pahami itu. Silahkan hapus data aplikasi dan login menggunakan email yang berbeda.'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(); // Tutup popup
+              SystemNavigator.pop(); // Keluar dari aplikasi
+            },
+            child: Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _logout() async {

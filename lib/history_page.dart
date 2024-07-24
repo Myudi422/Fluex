@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart'; // Tambahkan ini
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flue/history_anime.dart';
 import 'package:flue/history_manga.dart';
 import 'package:flue/history_manage.dart';
+import 'package:flue/color.dart';
 
 class RiwayatPage extends StatefulWidget {
   final String telegramId;
@@ -44,11 +45,18 @@ class _RiwayatPageState extends State<RiwayatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Riwayat Anda"),
+        title: Text(
+          "Riwayat Anda",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: ColorManager.currentBackgroundColor,
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           _buildCategoryDropdown(),
         ],
       ),
+      backgroundColor: ColorManager
+          .currentBackgroundColor, // Menambahkan background hitam pada Scaffold
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -69,6 +77,8 @@ class _RiwayatPageState extends State<RiwayatPage> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: DropdownButton<String>(
+        dropdownColor:
+            ColorManager.currentBackgroundColor, // Background dropdown hitam
         value: currentCategory,
         onChanged: (String? newValue) {
           setState(() {
@@ -81,9 +91,11 @@ class _RiwayatPageState extends State<RiwayatPage> {
             value: value,
             child: Row(
               children: [
-                FaIcon(categoryIcons[value], size: 16),
+                FaIcon(categoryIcons[value],
+                    size: 16, color: Colors.white), // Icon putih
                 SizedBox(width: 8),
-                Text(value),
+                Text(value,
+                    style: TextStyle(color: Colors.white)), // Text putih
               ],
             ),
           );
@@ -95,9 +107,21 @@ class _RiwayatPageState extends State<RiwayatPage> {
   Widget _buildCategoryPage(String category) {
     switch (category) {
       case 'Anime':
-        return HistoryPage(telegramId: widget.telegramId);
+        return ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
+          child: HistoryPage(telegramId: widget.telegramId),
+        );
       case 'Manga':
-        return MangaHistoryPage(telegramId: widget.telegramId);
+        return ClipRRect(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+          ),
+          child: MangaHistoryPage(telegramId: widget.telegramId),
+        );
       default:
         return Container();
     }

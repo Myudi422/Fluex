@@ -16,7 +16,10 @@ class RiwayatManage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         gradient: LinearGradient(
-          colors: [ColorManager.currentPrimaryColor, ColorManager.currentPrimaryColor],
+          colors: [
+            ColorManager.currentPrimaryColor,
+            ColorManager.currentPrimaryColor
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -29,7 +32,9 @@ class RiwayatManage extends StatelessWidget {
                 // Navigasi ke halaman FavoritWidget saat grid pertama diklik
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FavoritWidget(telegramId: telegramId)),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          FavoritWidget(telegramId: telegramId)),
                 );
               },
               child: Stack(
@@ -58,7 +63,10 @@ class RiwayatManage extends StatelessWidget {
                         Flexible(
                           child: Text(
                             'Favorit Saya',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ColorManager.currentHomeColor),
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: ColorManager.currentHomeColor),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
@@ -75,7 +83,9 @@ class RiwayatManage extends StatelessWidget {
                           // Navigasi ke halaman FavoritWidget saat grid pertama diklik
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => FavoritWidget(telegramId: telegramId)),
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    FavoritWidget(telegramId: telegramId)),
                           );
                         },
                       ),
@@ -92,7 +102,11 @@ class RiwayatManage extends StatelessWidget {
                 // Menampilkan Snackbar karena fitur belum tersedia
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Fitur belum tersedia, sedang dalam pengembangan.'),
+                    content: Text(
+                        'Fitur belum tersedia, sedang dalam pengembangan.'),
+                    backgroundColor: ColorManager
+                        .currentBackgroundColor, // Background snackbar hitam
+                    behavior: SnackBarBehavior.floating,
                   ),
                 );
               },
@@ -122,7 +136,10 @@ class RiwayatManage extends StatelessWidget {
                         Flexible(
                           child: Text(
                             'Download Saya',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ColorManager.currentHomeColor),
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: ColorManager.currentHomeColor),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
@@ -139,7 +156,11 @@ class RiwayatManage extends StatelessWidget {
                           // Menampilkan Snackbar karena fitur belum tersedia
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text('Fitur belum tersedia, sedang dalam pengembangan.'),
+                              content: Text(
+                                  'Fitur belum tersedia, sedang dalam pengembangan.'),
+                              backgroundColor: ColorManager
+                                  .currentBackgroundColor, // Background snackbar hitam
+                              behavior: SnackBarBehavior.floating,
                             ),
                           );
                         },

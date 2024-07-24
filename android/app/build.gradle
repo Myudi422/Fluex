@@ -13,7 +13,7 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '31'
+    flutterVersionCode = '45'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
@@ -67,6 +67,10 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            // Enable Proguard obfuscation
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }

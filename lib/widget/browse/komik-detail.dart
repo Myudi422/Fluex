@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flue/color.dart'; // Import ColorManager
 import 'package:flue/widget/browse/baca.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -98,11 +99,19 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(mangaDetails['title'] ?? 'Manga Detail'),
+        title: Text(
+          mangaDetails['title'] ?? 'Manga Detail',
+          style: TextStyle(color: ColorManager.currentHomeColor),
+        ),
+        backgroundColor: ColorManager.currentBackgroundColor,
+        iconTheme: IconThemeData(color: ColorManager.currentHomeColor),
       ),
+      backgroundColor: ColorManager.currentBackgroundColor,
       body: isLoading
           ? Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                color: ColorManager.currentHomeColor,
+              ),
             )
           : _buildMangaDetail(),
     );
@@ -132,33 +141,42 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
           ),
           SizedBox(height: 16.0),
           Text(
-            mangaDetails['title'],
-            style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+            mangaDetails['title'] ?? 'Unknown Title',
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+              color: ColorManager.currentHomeColor,
+            ),
           ),
           SizedBox(height: 8.0),
           Text(
             'Genres: ${mangaDetails['genres'].join(', ')}',
-            style: TextStyle(fontSize: 16.0),
+            style:
+                TextStyle(fontSize: 16.0, color: ColorManager.currentHomeColor),
           ),
           SizedBox(height: 8.0),
           Row(
             children: [
-              Icon(FontAwesomeIcons.info, size: 16.0),
+              Icon(FontAwesomeIcons.info,
+                  size: 16.0, color: ColorManager.currentHomeColor),
               SizedBox(width: 8.0),
               Text(
                 'Status: ${mangaDetails['status']}',
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(
+                    fontSize: 16.0, color: ColorManager.currentHomeColor),
               ),
             ],
           ),
           SizedBox(height: 8.0),
           Row(
             children: [
-              Icon(FontAwesomeIcons.star, size: 16.0),
+              Icon(FontAwesomeIcons.star,
+                  size: 16.0, color: ColorManager.currentHomeColor),
               SizedBox(width: 8.0),
               Text(
                 'Rating: ${mangaDetails['rating']['percent']} (${mangaDetails['rating']['value']})',
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(
+                    fontSize: 16.0, color: ColorManager.currentHomeColor),
               ),
             ],
           ),
@@ -166,12 +184,13 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
           Container(
             padding: EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: Colors.grey[200],
+              color: ColorManager.currentAccentColor,
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Text(
               'Description: ${mangaDetails['description']}',
-              style: TextStyle(fontSize: 16.0),
+              style: TextStyle(
+                  fontSize: 16.0, color: ColorManager.currentHomeColor),
             ),
           ),
           SizedBox(height: 16.0),
@@ -185,7 +204,7 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.grey[200],
+        color: ColorManager.currentAccentColor,
         borderRadius: BorderRadius.circular(8.0),
       ),
       height: 300.0,
@@ -194,7 +213,11 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
         children: [
           Text(
             'Episodes:',
-            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: ColorManager.currentHomeColor,
+            ),
           ),
           SizedBox(height: 8.0),
           Expanded(
@@ -205,7 +228,8 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
                 return ListTile(
                   title: Text(
                     mangaDetails['episodes'][index]['title'],
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(
+                        fontSize: 16.0, color: ColorManager.currentHomeColor),
                   ),
                   onTap: () {
                     setState(() {
@@ -230,6 +254,8 @@ class _MangaDetailPageState extends State<MangaDetailPage> {
                       });
                       _saveCheckedEpisode(index, checkedEpisodes[index]);
                     },
+                    checkColor: ColorManager.currentBackgroundColor,
+                    activeColor: ColorManager.currentHomeColor,
                   ),
                 );
               },

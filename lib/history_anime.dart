@@ -34,7 +34,8 @@ class _HistoryPageState extends State<HistoryPage> {
 
   void _scrollListener() {
     if (!isEndOfList &&
-        _scrollController.offset >= _scrollController.position.maxScrollExtent &&
+        _scrollController.offset >=
+            _scrollController.position.maxScrollExtent &&
         !_scrollController.position.outOfRange) {
       currentPage++;
       fetchAnimeHistory();
@@ -79,7 +80,8 @@ class _HistoryPageState extends State<HistoryPage> {
           });
         }
       } else {
-        print('Gagal mengambil riwayat anime. Kode status: ${response.statusCode}');
+        print(
+            'Gagal mengambil riwayat anime. Kode status: ${response.statusCode}');
         setState(() {
           isLoading = false;
           isError = true;
@@ -125,7 +127,21 @@ class _HistoryPageState extends State<HistoryPage> {
   }
 
   String _getMonthName(int month) {
-    const monthNames = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+    const monthNames = [
+      '',
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agu',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des'
+    ];
     return monthNames[month];
   }
 
@@ -137,24 +153,28 @@ class _HistoryPageState extends State<HistoryPage> {
   }
 
   int _calculateItemCount() {
-    return isEndOfList ? groupedAnimeHistory.length : groupedAnimeHistory.length + 1;
+    return isEndOfList
+        ? groupedAnimeHistory.length
+        : groupedAnimeHistory.length + 1;
   }
 
   Widget _buildLoadingIndicator() {
-if (isError) {
-return Center(
-child: Text('Riwayat Sudah Habis.',
-style: TextStyle(color: ColorManager.currentHomeColor),
-),
-);
-} else {
-return Center(
-child: CircularProgressIndicator(
-valueColor: AlwaysStoppedAnimation<Color>(ColorManager.currentPrimaryColor),
-),
-);
-}
-}
+    if (isError) {
+      return Center(
+        child: Text(
+          'Riwayat Sudah Habis.',
+          style: TextStyle(color: ColorManager.currentHomeColor),
+        ),
+      );
+    } else {
+      return Center(
+        child: CircularProgressIndicator(
+          valueColor:
+              AlwaysStoppedAnimation<Color>(ColorManager.currentPrimaryColor),
+        ),
+      );
+    }
+  }
 
   Widget _buildShimmerList() {
     return Shimmer.fromColors(
@@ -226,24 +246,27 @@ valueColor: AlwaysStoppedAnimation<Color>(ColorManager.currentPrimaryColor),
     );
   }
 
- @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [ColorManager.currentPrimaryColor, ColorManager.currentAccentColor],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              ColorManager.currentPrimaryColor,
+              ColorManager.currentAccentColor
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10.0), // Adjust the radius as needed
+            topRight: Radius.circular(10.0), // Adjust the radius as needed
+          ),
         ),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10.0), // Adjust the radius as needed
-          topRight: Radius.circular(10.0), // Adjust the radius as needed
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
             child: isLoading
                 ? _buildShimmerList()
                 : groupedAnimeHistory.isEmpty
@@ -251,7 +274,8 @@ Widget build(BuildContext context) {
                     : NotificationListener<ScrollNotification>(
                         onNotification: (scrollInfo) {
                           if (!isEndOfList &&
-                              scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
+                              scrollInfo.metrics.pixels ==
+                                  scrollInfo.metrics.maxScrollExtent) {
                             currentPage++;
                             fetchAnimeHistory();
                           }
@@ -264,30 +288,33 @@ Widget build(BuildContext context) {
                             if (index == _calculateItemCount() - 1) {
                               return _buildLoadingIndicator();
                             }
-                            final date = groupedAnimeHistory.keys.elementAt(index);
+                            final date =
+                                groupedAnimeHistory.keys.elementAt(index);
                             final animeList = groupedAnimeHistory[date];
 
                             return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-  padding: const EdgeInsets.all(8.0),
-  child: Text(
-    date,
-    style: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.bold,
-      color: ColorManager.currentHomeColor,
-    ),
-  ),
-),
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    date,
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorManager.currentHomeColor,
+                                    ),
+                                  ),
+                                ),
                                 ListView.builder(
                                   shrinkWrap: true,
                                   physics: NeverScrollableScrollPhysics(),
                                   itemCount: animeList!.length,
                                   itemBuilder: (context, index) {
                                     final anime = animeList[index];
-                                    return AnimeHistoryItem(anime: anime, telegramId: widget.telegramId);
+                                    return AnimeHistoryItem(
+                                        anime: anime,
+                                        telegramId: widget.telegramId);
                                   },
                                 ),
                               ],
@@ -319,7 +346,8 @@ class AnimeHistoryItem extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) => AnimeDetailPage(
-                animeId: int.parse(anime['anime_id'].toString()), // Convert anime_id to int
+                animeId: int.parse(
+                    anime['anime_id'].toString()), // Convert anime_id to int
                 telegramId: telegramId,
               ),
             ),
@@ -346,7 +374,8 @@ class AnimeHistoryItem extends StatelessWidget {
                   children: [
                     Text(
                       anime['judul'],
-                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 20.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
                     Text(

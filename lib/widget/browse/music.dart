@@ -1065,7 +1065,7 @@ class _MusicPageState extends State<MusicPage>
         final taskId = await FlutterDownloader.enqueue(
           url: streamInfo!.url.toString(), // Use the audio stream URL
           savedDir: downloadPath,
-          fileName: 'audio_${video.id}.mp3',
+          fileName: 'Flue - ${video.title} - Audio.mp3',
           showNotification: true,
           openFileFromNotification: true,
           requiresStorageNotLow: true,
@@ -1101,7 +1101,7 @@ class _MusicPageState extends State<MusicPage>
         final taskId = await FlutterDownloader.enqueue(
           url: streamInfo!.url.toString(), // Use the video stream URL
           savedDir: downloadPath,
-          fileName: 'video_${video.id}_$resolution.$type',
+          fileName: 'Flue - ${video.title} - Video.$type',
           showNotification: true,
           openFileFromNotification: true,
           requiresStorageNotLow: true,
