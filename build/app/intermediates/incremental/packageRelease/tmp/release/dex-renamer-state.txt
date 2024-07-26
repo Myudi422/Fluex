@@ -1,4 +1,4 @@
-#Thu Jul 25 05:40:26 WIB 2024
+#Fri Jul 26 12:56:49 WIB 2024
 base.0=C\:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 base.1=C\:\\Users\\Yudi Tolol\\Downloads\\FLUE\\Fluex\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes2.dex
 path.0=classes.dex

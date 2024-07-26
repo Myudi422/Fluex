@@ -1140,13 +1140,6 @@ class _MusicPageState extends State<MusicPage>
     );
   }
 
-  void _showSnackBar(String message) {
-    final context = GlobalKey<ScaffoldState>().currentContext!;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
-  }
-
   Future<void> _addToPlaylist(Video video) async {
     // Retrieve existing playlists from the API
     List<String> existingPlaylists = await _getExistingPlaylists();
@@ -1192,13 +1185,21 @@ class _MusicPageState extends State<MusicPage>
   }
 
 // Function to show a snackbar at the bottom of the screen
+  void _showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: Duration(seconds: 3),
+      ),
+    );
+  }
 
 // Fungsi untuk menampilkan dialog atau formulir meminta nama playlist dari pengguna
   Future<List<String>> _getExistingPlaylists() async {
     // Send HTTP request to the PHP API to retrieve existing playlists
     final response = await http.get(
       Uri.parse(
-          'https://ccgnimex.my.id/v2/android/music/my.php?telegram_id=${widget.telegramId}'),
+          'https://ccgnimex.my.id/v2/android/music/playlist.php?telegram_id=${widget.telegramId}'),
     );
 
     if (response.statusCode == 200) {

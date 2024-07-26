@@ -267,7 +267,7 @@ class _AnimePageState extends State<AnimePage> {
                             style:
                                 TextStyle(color: ColorManager.currentHomeColor),
                             decoration: InputDecoration(
-                              labelText: 'Search',
+                              labelText: 'Cari Anime...',
                               labelStyle: TextStyle(
                                   color: ColorManager.currentHomeColor),
                               suffixIcon: Icon(Icons.search,
