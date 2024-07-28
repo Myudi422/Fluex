@@ -130,6 +130,7 @@ class _StreamingWidgetState extends State<StreamingWidget>
 
   @override
   Widget build(BuildContext context) {
+    // Enable immersive sticky mode for full-screen
     SystemChrome.setEnabledSystemUIMode(
       _isFullScreen ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
     );
@@ -143,21 +144,16 @@ class _StreamingWidgetState extends State<StreamingWidget>
         _sendVideoTimeToServer();
         return true;
       },
-      child: SafeArea(
-        left: false,
-        right: false,
-        bottom: false,
-        child: Scaffold(
-          backgroundColor: ColorManager.currentBackgroundColor,
-          body: OrientationBuilder(
-            builder: (context, orientation) {
-              if (orientation == Orientation.portrait) {
-                return _buildPortraitLayout();
-              } else {
-                return _buildLandscapeLayout();
-              }
-            },
-          ),
+      child: Scaffold(
+        backgroundColor: ColorManager.currentBackgroundColor,
+        body: OrientationBuilder(
+          builder: (context, orientation) {
+            if (orientation == Orientation.portrait) {
+              return _buildPortraitLayout();
+            } else {
+              return _buildLandscapeLayout();
+            }
+          },
         ),
       ),
     );

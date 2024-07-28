@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:video_player/video_player.dart';
 import 'package:floating/floating.dart'; // Import floating package
 import 'package:google_mobile_ads/google_mobile_ads.dart'; // Import google_mobile_ads package
+import 'package:flue/color.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
@@ -28,6 +29,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   late Timer _timer;
   bool _isFullScreenLocked = false;
   bool _controlsVisible = true;
+  bool _skipOpeningVisible = true;
+  double _skipOpeningOpacity = 1.0;
   bool _isOriginalAspectRatio = true;
   late final Floating _floating = Floating(); // Initialize Floating instance
   String userAccess = ''; // Status akses pengguna
@@ -103,6 +106,29 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     setState(() {
       _isVisible = true;
     });
+    _startTimer();
+  }
+
+  void _skipOpening() {
+    setState(() {
+      _skipOpeningOpacity = 0.0;
+    });
+    Future.delayed(Duration(milliseconds: 300), () {
+      setState(() {
+        _skipOpeningVisible = false;
+      });
+    });
+
+    Duration newPosition;
+    if (widget.videoPlayerController.value.isPlaying) {
+      newPosition =
+          widget.videoPlayerController.value.position + Duration(seconds: 90);
+    } else {
+      newPosition =
+          widget.videoPlayerController.value.position + Duration(seconds: 90);
+    }
+
+    widget.videoPlayerController.seekTo(newPosition);
     _startTimer();
   }
 
@@ -218,6 +244,12 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     });
   }
 
+  void _showComingSoonMessage() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Fitur akan hadir')),
+    );
+  }
+
   Future<void> _enablePiP() async {
     if (widget.isFullScreen) {
       setState(() {
@@ -265,6 +297,9 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     Duration position = widget.videoPlayerController.value.position;
     Duration duration = widget.videoPlayerController.value.duration;
 
+    bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
     String currentTime =
         "${position.inMinutes.remainder(60).toString().padLeft(2, '0')}:${(position.inSeconds.remainder(60)).toString().padLeft(2, '0')}";
     String totalTime =
@@ -287,17 +322,43 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               icon: Icon(Icons.forward_10, color: Colors.white),
               onPressed: () => _skipVideo(true),
             ),
+            if (_skipOpeningVisible)
+              GestureDetector(
+                onTap: _skipOpening,
+                child: AnimatedOpacity(
+                  opacity: _skipOpeningOpacity,
+                  duration: Duration(milliseconds: 300),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal:
+                            8.0), // Padding to add space around the container
+                    decoration: BoxDecoration(
+                      color: ColorManager.currentPrimaryColor.withOpacity(0.6),
+                      borderRadius:
+                          BorderRadius.circular(4.0), // Rounded corners
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.fast_forward, color: Colors.white),
+                        SizedBox(
+                            width:
+                                4.0), // Add some space between the icon and text
+                        Text(
+                          "Skip Opening",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             Expanded(child: Container()), // Spacer
             Text(
               "$currentTime / $totalTime",
               style: TextStyle(color: Colors.white),
             ),
-            Opacity(
-              opacity:
-                  MediaQuery.of(context).orientation == Orientation.landscape
-                      ? 1.0
-                      : 0.0,
-              child: Row(
+            if (isLandscape)
+              Row(
                 children: [
                   IconButton(
                     icon: Icon(
@@ -310,13 +371,46 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   ),
                   IconButton(
                     icon: Icon(Icons.picture_in_picture, color: Colors.white),
-                    onPressed: () {
-                      _enablePiP();
-                    },
+                    onPressed: _enablePiP,
                   ),
                 ],
               ),
+            PopupMenuButton<String>(
+              icon: Icon(Icons.more_vert, color: Colors.white),
+              onSelected: (String result) {
+                switch (result) {
+                  case 'edit_video':
+                  case 'cast':
+                  case 'search_op_song':
+                    _showComingSoonMessage();
+                    break;
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: 'edit_video',
+                  child: ListTile(
+                    leading: Icon(Icons.edit, color: Colors.black),
+                    title: Text('Edit Video'),
+                  ),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'cast',
+                  child: ListTile(
+                    leading: Icon(Icons.cast, color: Colors.black),
+                    title: Text('Cast'),
+                  ),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'search_op_song',
+                  child: ListTile(
+                    leading: Icon(Icons.music_note, color: Colors.black),
+                    title: Text('Search OP & ED Song'),
+                  ),
+                ),
+              ],
             ),
+
             IconButton(
               icon: Icon(Icons.fullscreen, color: Colors.white),
               onPressed: () {

@@ -9,6 +9,7 @@ import 'package:flue/color.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flue/admob/googlads.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DownloadPage extends StatefulWidget {
   final Map<String, dynamic> animeData;
@@ -41,13 +42,22 @@ class _DownloadPageState extends State<DownloadPage> {
   }
 
   Future<Map<String, dynamic>> fetchAnimeDetails(int animeId) async {
-    final response = await http.get(Uri.parse(
-        'https://ccgnimex.my.id/v2/android/detail_anime.php?anime_id=$animeId'));
+    final prefs = await SharedPreferences.getInstance();
+    final storedSynopsis = prefs.getString('anime_synopsis_$animeId');
 
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+    if (storedSynopsis != null) {
+      return {'sinopsis': storedSynopsis};
     } else {
-      throw Exception('Failed to load anime details');
+      final response = await http.get(Uri.parse(
+          'https://ccgnimex.my.id/v2/android/detail_anime.php?anime_id=$animeId'));
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        await prefs.setString('anime_synopsis_$animeId', data['sinopsis']);
+        return data;
+      } else {
+        throw Exception('Failed to load anime details');
+      }
     }
   }
 
