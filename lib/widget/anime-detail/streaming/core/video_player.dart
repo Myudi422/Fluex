@@ -6,6 +6,7 @@ import 'package:video_player/video_player.dart';
 import 'package:floating/floating.dart'; // Import floating package
 import 'package:google_mobile_ads/google_mobile_ads.dart'; // Import google_mobile_ads package
 import 'package:flue/color.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
@@ -41,6 +42,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   RewardedAd? _rewardedAd;
   bool _hasShownAdInLandscape = false;
   bool _isAdClosed = false; // Tambahkan deklarasi untuk _isAdClosed
+  bool _autoSwitchEpisodes = false;
+  bool _showMyPoint =
+      false; // Tambahkan variabel untuk mengontrol visibilitas poin
+  final int _point = 123;
+  final String _name = "Rizki Wahyudi..";
+  final String _time = "02:22 AM";
+  final String _duration = "00:20:40";
 
   @override
   void initState() {
@@ -74,6 +82,17 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       setState(() {
         userAccess = data['akses']; // Mendapatkan status akses pengguna
       });
+    }
+  }
+
+  void _toggleAutoSwitchEpisodes() {
+    setState(() {
+      _autoSwitchEpisodes = !_autoSwitchEpisodes;
+    });
+
+    if (_autoSwitchEpisodes) {
+      // Implement logic to auto switch to the next episode
+      // For example, you might want to set up a listener to automatically move to the next episode when the current one finishes.
     }
   }
 
@@ -323,35 +342,37 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               onPressed: () => _skipVideo(true),
             ),
             if (_skipOpeningVisible)
-              GestureDetector(
-                onTap: _skipOpening,
-                child: AnimatedOpacity(
-                  opacity: _skipOpeningOpacity,
-                  duration: Duration(milliseconds: 300),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal:
-                            8.0), // Padding to add space around the container
-                    decoration: BoxDecoration(
-                      color: ColorManager.currentPrimaryColor.withOpacity(0.6),
-                      borderRadius:
-                          BorderRadius.circular(4.0), // Rounded corners
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.fast_forward, color: Colors.white),
-                        SizedBox(
-                            width:
-                                4.0), // Add some space between the icon and text
-                        Text(
-                          "Skip Opening",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
+              if (isLandscape)
+                GestureDetector(
+                  onTap: _skipOpening,
+                  child: AnimatedOpacity(
+                    opacity: _skipOpeningOpacity,
+                    duration: Duration(milliseconds: 300),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal:
+                              8.0), // Padding to add space around the container
+                      decoration: BoxDecoration(
+                        color:
+                            ColorManager.currentPrimaryColor.withOpacity(0.6),
+                        borderRadius:
+                            BorderRadius.circular(4.0), // Rounded corners
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.fast_forward, color: Colors.white),
+                          SizedBox(
+                              width:
+                                  4.0), // Add some space between the icon and text
+                          Text(
+                            "Skip Opening",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
             Expanded(child: Container()), // Spacer
             Text(
               "$currentTime / $totalTime",
@@ -379,19 +400,31 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               icon: Icon(Icons.more_vert, color: Colors.white),
               onSelected: (String result) {
                 switch (result) {
-                  case 'edit_video':
+                  case 'auto_switch_eps':
+                    _toggleAutoSwitchEpisodes();
+                    break;
                   case 'cast':
                   case 'search_op_song':
                     _showComingSoonMessage();
                     break;
+                  case 'show_my_point':
+                    setState(() {
+                      _showMyPoint = !_showMyPoint;
+                    });
+                    break;
                 }
               },
               itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                const PopupMenuItem<String>(
-                  value: 'edit_video',
+                PopupMenuItem<String>(
+                  value: 'auto_switch_eps',
                   child: ListTile(
-                    leading: Icon(Icons.edit, color: Colors.black),
-                    title: Text('Edit Video'),
+                    leading: Icon(
+                      _autoSwitchEpisodes
+                          ? Icons.switch_video
+                          : Icons.switch_video_outlined,
+                      color: Colors.black,
+                    ),
+                    title: Text('Auto Switch EPS'),
                   ),
                 ),
                 const PopupMenuItem<String>(
@@ -406,6 +439,17 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   child: ListTile(
                     leading: Icon(Icons.music_note, color: Colors.black),
                     title: Text('Search OP & ED Song'),
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'show_my_point',
+                  child: ListTile(
+                    leading: Icon(
+                        _showMyPoint
+                            ? Icons.check_box
+                            : Icons.check_box_outline_blank,
+                        color: Colors.black),
+                    title: Text('Show My Point'),
                   ),
                 ),
               ],
@@ -428,7 +472,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       widget.videoPlayerController,
       allowScrubbing: true,
       colors: VideoProgressColors(
-        playedColor: Colors.red,
+        playedColor: ColorManager.currentPrimaryColor,
         bufferedColor: Colors.grey,
         backgroundColor: Colors.black,
       ),
@@ -495,7 +539,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                           duration: Duration(milliseconds: 600),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.black54,
+                              color: ColorManager.currentPrimaryColor
+                                  .withOpacity(0.2),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: IconButton(
@@ -507,6 +552,89 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                           ),
                         ),
                       ),
+
+                      // Tampilkan Poin jika diaktifkan
+                      if (_showMyPoint)
+                        Positioned(
+                          top: 16,
+                          right: 16,
+                          child: Container(
+                            padding: EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Colors.brown.withOpacity(0.8),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.circleUser,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Expanded(
+                                      child: Text(
+                                        _name,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          FontAwesomeIcons.clock,
+                                          color: Colors.white,
+                                          size: 12.0,
+                                        ),
+                                        SizedBox(width: 4.0),
+                                        Text(
+                                          _duration,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12.0,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  _time,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                                SizedBox(height: 8.0),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.star,
+                                      color: Colors.white,
+                                      size: 16.0,
+                                    ),
+                                    SizedBox(width: 4.0),
+                                    Text(
+                                      '#$_point+',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                     ],
                   )
                 : Container(
