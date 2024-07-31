@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\google_mobile_ads\\intermediates\\merged_res\\release\\xml\\gma_ad_services_config.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\8ff8dc23981cb9ee43522dc3e3f56d82\\transformed\\jetified-play-services-ads-lite-22.5.0\\res\\xml\\gma_ad_services_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\google_mobile_ads\\intermediates\\merged_res\\release\\xml\\image_share_filepaths.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\54a28d39579907f6f39005a77af22f80\\transformed\\browser-1.4.0\\res\\xml\\image_share_filepaths.xml"
+    }
+]

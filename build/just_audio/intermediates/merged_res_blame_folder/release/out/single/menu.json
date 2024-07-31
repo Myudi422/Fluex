@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\just_audio\\intermediates\\merged_res\\release\\menu\\example_menu2.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\a29d24607ea701995c4117d8c7244674\\transformed\\core-1.7.0\\res\\menu\\example_menu2.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\just_audio\\intermediates\\merged_res\\release\\menu\\example_menu.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\a29d24607ea701995c4117d8c7244674\\transformed\\core-1.7.0\\res\\menu\\example_menu.xml"
+    }
+]

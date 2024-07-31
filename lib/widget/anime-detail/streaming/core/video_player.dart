@@ -7,6 +7,9 @@ import 'package:floating/floating.dart'; // Import floating package
 import 'package:google_mobile_ads/google_mobile_ads.dart'; // Import google_mobile_ads package
 import 'package:flue/color.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:async';
 
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
@@ -46,9 +49,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   bool _showMyPoint =
       false; // Tambahkan variabel untuk mengontrol visibilitas poin
   final int _point = 123;
-  final String _name = "Rizki Wahyudi..";
-  final String _time = "02:22 AM";
-  final String _duration = "00:20:40";
+  String _currentTime = '';
+  String _profilePictureUrl = '';
+  String _userName = 'Rizki Wahyudi';
+  String _watchTime = '00:20:40'; // Waktu tonton sebagai sample
+  String _profileImage = '/mnt/data/image.png'; // Path ke image profile
 
   @override
   void initState() {
@@ -56,8 +61,36 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     widget.videoPlayerController.addListener(_onVideoControllerUpdate);
     _startTimer();
     _fetchUserAccess();
+    _startsTimer();
     _loadRewardedAd();
-    _isAdClosed = false; // Inisialisasi flag
+    _isAdClosed = false;
+    _currentTime = _formatCurrentTime();
+    // Inisialisasi flag
+  }
+
+  void _startsTimer() {
+    _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      setState(() {
+        _currentTime = _formatCurrentTime();
+      });
+    });
+  }
+
+  String _formatCurrentTime() {
+    return DateFormat('HH:mm').format(DateTime.now());
+  }
+
+  IconData _getTimeIcon() {
+    final hour = DateTime.now().hour;
+    if (hour >= 5 && hour < 12) {
+      return Icons.wb_sunny; // Morning
+    } else if (hour >= 12 && hour < 17) {
+      return Icons.wb_sunny_outlined; // Afternoon
+    } else if (hour >= 17 && hour < 20) {
+      return Icons.wb_twighlight; // Evening
+    } else {
+      return Icons.nightlight_round; // Night
+    }
   }
 
   @override
@@ -81,7 +114,12 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       final Map<String, dynamic> data = json.decode(response.body);
       setState(() {
         userAccess = data['akses']; // Mendapatkan status akses pengguna
+        _profilePictureUrl =
+            data['profile_picture']; // Mendapatkan URL gambar profil
       });
+    } else {
+      // Tangani kasus ketika status kode bukan 200
+      print('Failed to load user access');
     }
   }
 
@@ -553,86 +591,133 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                         ),
                       ),
 
-                      // Tampilkan Poin jika diaktifkan
                       if (_showMyPoint)
                         Positioned(
                           top: 16,
                           right: 16,
-                          child: Container(
-                            padding: EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                              color: Colors.brown.withOpacity(0.8),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(5.6), // 30% smaller
+                                decoration: BoxDecoration(
+                                  color: ColorManager.currentPrimaryColor
+                                      .withOpacity(0.6),
+                                  borderRadius:
+                                      BorderRadius.circular(5.6), // 30% smaller
+                                ),
+                                child: Row(
                                   children: [
-                                    Icon(
-                                      FontAwesomeIcons.circleUser,
-                                      color: Colors.white,
+                                    CircleAvatar(
+                                      backgroundImage: _profilePictureUrl
+                                              .isNotEmpty
+                                          ? CachedNetworkImageProvider(
+                                              _profilePictureUrl)
+                                          : AssetImage(
+                                                  'assets/placeholder_image.png')
+                                              as ImageProvider,
+                                      radius: 11.2, // 30% smaller
                                     ),
-                                    SizedBox(width: 8.0),
-                                    Expanded(
-                                      child: Text(
-                                        _name,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16.0,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    SizedBox(width: 8.0),
-                                    Row(
+                                    SizedBox(width: 5.6), // 30% smaller
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Icon(
-                                          FontAwesomeIcons.clock,
-                                          color: Colors.white,
-                                          size: 12.0,
-                                        ),
-                                        SizedBox(width: 4.0),
                                         Text(
-                                          _duration,
+                                          _userName,
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 12.0,
+                                            fontSize: 11.2, // 30% smaller
+                                            fontWeight: FontWeight.bold,
                                           ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(Icons.timer,
+                                                color: Colors.white,
+                                                size: 11.2), // 30% smaller
+                                            SizedBox(width: 2.8), // 30% smaller
+                                            Text(
+                                              _watchTime,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 9.8, // 30% smaller
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 8.0),
-                                Text(
-                                  _time,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14.0,
+                              ),
+                              SizedBox(height: 5.6), // 30% smaller
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(8), // 30% smaller
+                                    decoration: BoxDecoration(
+                                      color: ColorManager.currentPrimaryColor
+                                          .withOpacity(0.6),
+                                      borderRadius: BorderRadius.circular(
+                                          5.6), // 30% smaller
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          _getTimeIcon(),
+                                          color: Colors.white,
+                                          size: 11.0, // 30% smaller
+                                        ),
+                                        SizedBox(width: 2.0), // 30% smaller
+                                        AnimatedSwitcher(
+                                          duration: Duration(seconds: 1),
+                                          transitionBuilder: (Widget child,
+                                              Animation<double> animation) {
+                                            return ScaleTransition(
+                                                child: child, scale: animation);
+                                          },
+                                          child: Text(
+                                            _currentTime,
+                                            key: ValueKey<String>(_currentTime),
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 8, // 30% smaller
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(height: 8.0),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      FontAwesomeIcons.star,
-                                      color: Colors.white,
-                                      size: 16.0,
+                                  SizedBox(width: 5.6), // 30% smaller
+                                  Container(
+                                    padding: EdgeInsets.all(5.6), // 30% smaller
+                                    decoration: BoxDecoration(
+                                      color: ColorManager.currentPrimaryColor
+                                          .withOpacity(0.6),
+                                      borderRadius: BorderRadius.circular(
+                                          5.6), // 30% smaller
                                     ),
-                                    SizedBox(width: 4.0),
-                                    Text(
-                                      '#$_point+',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.0,
-                                      ),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.leaderboard,
+                                            color: Colors.amber,
+                                            size: 16.8), // 30% smaller
+                                        SizedBox(width: 2.8), // 30% smaller
+                                        Text(
+                                          '#$_point+',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 8, // 30% smaller
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                     ],

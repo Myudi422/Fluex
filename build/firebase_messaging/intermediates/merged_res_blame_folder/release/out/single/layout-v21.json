@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\firebase_messaging\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\firebase_messaging\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\firebase_messaging\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\firebase_messaging\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    }
+]

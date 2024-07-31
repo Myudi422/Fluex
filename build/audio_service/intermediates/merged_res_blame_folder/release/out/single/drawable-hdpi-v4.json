@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_stop.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_stop.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_fast_rewind.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_fast_rewind.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\media_session_service_notification_ic_skip_to_next.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-hdpi-v4\\media_session_service_notification_ic_skip_to_next.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_fast_forward.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_fast_forward.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_skip_next.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_skip_next.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_pause.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_pause.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\media_session_service_notification_ic_skip_to_previous.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-hdpi-v4\\media_session_service_notification_ic_skip_to_previous.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\media_session_service_notification_ic_play.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-hdpi-v4\\media_session_service_notification_ic_play.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_skip_previous.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_skip_previous.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\audio_service_play_arrow.png",
+        "source": "C:\\Users\\admin\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\audio_service-0.18.15\\android\\src\\main\\res\\drawable-hdpi\\audio_service_play_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\media_session_service_notification_ic_pause.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-hdpi-v4\\media_session_service_notification_ic_pause.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\audio_service\\intermediates\\merged_res\\release\\drawable-hdpi-v4\\media_session_service_notification_ic_music_note.png",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\80eec6459abee07ec81ce69178aa2cfe\\transformed\\jetified-media2-session-1.2.1\\res\\drawable-hdpi-v4\\media_session_service_notification_ic_music_note.png"
+    }
+]

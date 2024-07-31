@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_player_android\\intermediates\\merged_res\\release\\values-kk\\values-kk.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\241197ff5bfcc03fad5a75d281c02f42\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,120,184,252,316,401,488,585,681",
+                        "endColumns": "64,63,67,63,84,86,96,95,77",
+                        "endOffsets": "115,179,247,311,396,483,580,676,754"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\a29d24607ea701995c4117d8c7244674\\transformed\\core-1.7.0\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "759",
+                        "endColumns": "100",
+                        "endOffsets": "855"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_player_android\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-kk\\values-kk.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\241197ff5bfcc03fad5a75d281c02f42\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,120,184,252,316,401,488,585,681",
+                        "endColumns": "64,63,67,63,84,86,96,95,77",
+                        "endOffsets": "115,179,247,311,396,483,580,676,754"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\a29d24607ea701995c4117d8c7244674\\transformed\\core-1.7.0\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "759",
+                        "endColumns": "100",
+                        "endOffsets": "855"
+                    }
+                }
+            ]
+        }
+    ]
+}
