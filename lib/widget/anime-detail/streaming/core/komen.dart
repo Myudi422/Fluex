@@ -218,7 +218,7 @@ class _KomenPageState extends State<KomenPage> {
               padding: EdgeInsets.all(8.0),
               color: Colors.grey[200],
               child: Text(
-                "Jangan lupa untuk membuat komentar yang sopan dan santun dan mengikuti Aturan Komunitas kami",
+                "Jangan lupa untuk membuat komentar yang sopan dan santun dan mengikuti Aturan Komunitas kami.",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ),

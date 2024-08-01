@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\flutter"
+export "FLUTTER_ROOT=C:\Users\admin\.shorebird\bin\cache\flutter\771d07b2cf97cf107bae6eeedcf41bdc9db772fa"
 export "FLUTTER_APPLICATION_PATH=C:\Users\admin\Downloads\Fluex"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"

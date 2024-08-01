@@ -1,0 +1,1 @@
+ C:\\Users\\admin\\Downloads\\Fluex\\.dart_tool\\flutter_build\\2ce902b98670d66379ee4f786eafa366\\native_assets.yaml: 

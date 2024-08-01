@@ -420,9 +420,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad\3c9a34a1ffaa848dd4569b483fcf5041eb3021d7\flutter_embedding_release-1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad.jar"
-      resolved="io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"/>
+      name="io.flutter:flutter_embedding_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-e898854017610e9803e97d0847cc84c7da6822e0\75700e7d4b015750c34237d17e16f233c361b880\flutter_embedding_release-1.0.0-e898854017610e9803e97d0847cc84c7da6822e0.jar"
+      resolved="io.flutter:flutter_embedding_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"/>
   <library
       name="com.google.android.gms:play-services-ads-lite:22.5.0@aar"
       jars="C:\Users\admin\.gradle\caches\transforms-3\8ff8dc23981cb9ee43522dc3e3f56d82\transformed\jetified-play-services-ads-lite-22.5.0\jars\classes.jar"
@@ -1130,9 +1130,17 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_release\1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad\666908769339a27774ac74732b82a3ab7cf237c0\arm64_v8a_release-1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad.jar"
-      resolved="io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"/>
+      name="io.flutter:armeabi_v7a_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-e898854017610e9803e97d0847cc84c7da6822e0\4ef4a54092cfec700fd528e2733acbfe406d5f18\armeabi_v7a_release-1.0.0-e898854017610e9803e97d0847cc84c7da6822e0.jar"
+      resolved="io.flutter:armeabi_v7a_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"/>
+  <library
+      name="io.flutter:arm64_v8a_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_release\1.0.0-e898854017610e9803e97d0847cc84c7da6822e0\7bf53adc127d01e8c62320dc40356e31453efe63\arm64_v8a_release-1.0.0-e898854017610e9803e97d0847cc84c7da6822e0.jar"
+      resolved="io.flutter:arm64_v8a_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"/>
+  <library
+      name="io.flutter:x86_64_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-e898854017610e9803e97d0847cc84c7da6822e0\c462eb4e05001d78c66db4fc60c93d4fcd4965d7\x86_64_release-1.0.0-e898854017610e9803e97d0847cc84c7da6822e0.jar"
+      resolved="io.flutter:x86_64_release:1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"/>
   <library
       name="org.jetbrains:annotations:23.0.0@jar"
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\23.0.0\8cc20c07506ec18e0834947b84a864bfc094484e\annotations-23.0.0.jar"

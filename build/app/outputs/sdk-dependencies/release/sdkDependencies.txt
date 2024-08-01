@@ -1100,10 +1100,10 @@ library {
   maven_library {
     groupId: "io.flutter"
     artifactId: "flutter_embedding_release"
-    version: "1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"
+    version: "1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"
   }
   digests {
-    sha256: "\274\320@%\336\243C\206_d\320:\017\365Ve\364\377; \265\250iP!\027\305\023[^\203\212"
+    sha256: "mp\241\2639\273\367m\221,\233@\252H\273\031\332\346\023\256\217\305\222\234A\005\266\333*htX"
   }
   repo_index {
     value: 2
@@ -1688,11 +1688,37 @@ library {
 library {
   maven_library {
     groupId: "io.flutter"
-    artifactId: "arm64_v8a_release"
-    version: "1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"
+    artifactId: "armeabi_v7a_release"
+    version: "1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"
   }
   digests {
-    sha256: "1\243R\005\217\\\267\001\233eXS4\220\321\354uL\v&\237\335F\001/\3108\352\025\375L\212"
+    sha256: "\241\312e\273\327\217\231\257\244\343\211\020\327\234\031=\033\242\274:Q\371kf\'^a\250\340N\233\240"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "io.flutter"
+    artifactId: "arm64_v8a_release"
+    version: "1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"
+  }
+  digests {
+    sha256: "\254u\347\357\232\372u\356Yx\223{.#\214!\226\262zg\310\260^\307\233w\332?dp\222\312"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "io.flutter"
+    artifactId: "x86_64_release"
+    version: "1.0.0-e898854017610e9803e97d0847cc84c7da6822e0"
+  }
+  digests {
+    sha256: "~\003V\245\214\235\370\216\033\352\356\352\244\262|\031M\025y\263~v\343\226s\242\265\331\203\315\237\221"
   }
   repo_index {
     value: 2
@@ -1700,7 +1726,7 @@ library {
 }
 library {
   digests {
-    sha256: "e\273\365\206#B\362\210\323\253\322/\233\365-\347\340\202\247Y\206R\337\225\206\323ue\245\017\004\212"
+    sha256: "i\333L\276\251H\f\363\234Pp\317\202H=\006:`\315(\303\322\351\346c\3130c\234e\017\243"
   }
 }
 library_dependencies {
@@ -2686,6 +2712,8 @@ module_dependencies {
   dependency_index: 86
   dependency_index: 139
   dependency_index: 140
+  dependency_index: 141
+  dependency_index: 142
   dependency_index: 63
   dependency_index: 4
   dependency_index: 91
@@ -2715,7 +2743,7 @@ module_dependencies {
   dependency_index: 122
   dependency_index: 41
   dependency_index: 83
-  dependency_index: 141
+  dependency_index: 143
 }
 repositories {
   maven_repo {
@@ -2729,7 +2757,7 @@ repositories {
 }
 repositories {
   maven_repo {
-    url: "https://storage.googleapis.com/download.flutter.io"
+    url: "https://download.shorebird.dev/download.flutter.io"
   }
 }
 repositories {

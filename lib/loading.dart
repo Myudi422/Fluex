@@ -120,7 +120,7 @@ class _SplashScreenState extends State<SplashScreen>
         print("Latest version from server: $latestVersion");
 
         final String currentVersion =
-            '1.3.0'; // Replace with your actual app version
+            '1.3.1'; // Replace with your actual app version
         print("Current app version: $currentVersion");
 
         if (updateRequired && currentVersion != latestVersion) {

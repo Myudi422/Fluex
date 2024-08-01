@@ -9,7 +9,7 @@ import 'package:flue/color.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart'; // Import SharedPreferences
 
 class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
@@ -51,9 +51,10 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   final int _point = 123;
   String _currentTime = '';
   String _profilePictureUrl = '';
-  String _userName = 'Rizki Wahyudi';
-  String _watchTime = '00:20:40'; // Waktu tonton sebagai sample
-  String _profileImage = '/mnt/data/image.png'; // Path ke image profile
+  String _userName = '';
+  Duration _watchDuration = Duration();
+  String _watchTime =
+      '00:00:00'; // Initial watch time // Waktu tonton sebagai sample
 
   @override
   void initState() {
@@ -65,7 +66,44 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     _loadRewardedAd();
     _isAdClosed = false;
     _currentTime = _formatCurrentTime();
+    _loadWatchDuration();
     // Inisialisasi flag
+  }
+
+  void _startWatchTimer() {
+    _timer?.cancel(); // Cancel any existing timer
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        _watchDuration += Duration(seconds: 1);
+        _watchTime = _formatDuration(_watchDuration);
+        _saveWatchDuration();
+      });
+    });
+  }
+
+  void _stopWatchTimer() {
+    _timer?.cancel(); // Cancel the timer
+  }
+
+  Future<void> _loadWatchDuration() async {
+    final prefs = await SharedPreferences.getInstance();
+    final seconds = prefs.getInt('watchDuration') ?? 0;
+    setState(() {
+      _watchDuration = Duration(seconds: seconds);
+      _watchTime = _formatDuration(_watchDuration);
+    });
+  }
+
+  Future<void> _saveWatchDuration() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('watchDuration', _watchDuration.inSeconds);
+  }
+
+  String _formatDuration(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, "0");
+    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
+    return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
   }
 
   void _startsTimer() {
@@ -114,8 +152,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       final Map<String, dynamic> data = json.decode(response.body);
       setState(() {
         userAccess = data['akses']; // Mendapatkan status akses pengguna
-        _profilePictureUrl =
-            data['profile_picture']; // Mendapatkan URL gambar profil
+        _profilePictureUrl = data['profile_picture'];
+        _userName = data['first_name']; // Mendapatkan URL gambar profil
       });
     } else {
       // Tangani kasus ketika status kode bukan 200
@@ -230,6 +268,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   void _playPause() {
     if (widget.videoPlayerController.value.isPlaying) {
       widget.videoPlayerController.pause();
+      _stopWatchTimer(); // Stop the timer when the video is paused
     } else {
       if (userAccess != 'Premium' &&
           MediaQuery.of(context).orientation == Orientation.landscape &&
@@ -237,20 +276,20 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         if (_rewardedAd != null) {
           _rewardedAd!.show(
               onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-            _hasShownAdInLandscape = true; // Iklan sudah ditampilkan
+            _hasShownAdInLandscape = true; // Ad has been shown
             _isAdClosed = true;
             _loadRewardedAd();
-            // Tidak memainkan video setelah iklan ditutup
             setState(() {
               _isAdClosed = false;
             });
           });
         } else {
-          // Jika iklan tidak tersedia, tetap putar videonya
           widget.videoPlayerController.play();
+          _startWatchTimer(); // Start the timer when the video starts playing
         }
       } else {
         widget.videoPlayerController.play();
+        _startWatchTimer(); // Start the timer when the video starts playing
       }
     }
   }
@@ -487,7 +526,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                             ? Icons.check_box
                             : Icons.check_box_outline_blank,
                         color: Colors.black),
-                    title: Text('Show My Point'),
+                    title: Text('Statistik Saya'),
                   ),
                 ),
               ],
