@@ -5,7 +5,7 @@
     targetSdkVersion="35"
     shrinking="true"
     mergedManifest="C:\Users\admin\Downloads\Fluex\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
-    proguardFiles="C:\Users\admin\Downloads\Fluex\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.1.2;C:\Users\admin\.shorebird\bin\cache\flutter\771d07b2cf97cf107bae6eeedcf41bdc9db772fa\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro;C:\Users\admin\Downloads\Fluex\build\app\intermediates\default_proguard_files\global\proguard-android-optimize.txt-7.1.2;proguard-rules.pro"
+    proguardFiles="C:\Users\admin\Downloads\Fluex\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.1.2;C:\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro;C:\Users\admin\Downloads\Fluex\build\app\intermediates\default_proguard_files\global\proguard-android-optimize.txt-7.1.2;proguard-rules.pro"
     partialResultsDir="C:\Users\admin\Downloads\Fluex\build\app\intermediates\lint_vital_partial_results\release\out">
   <buildFeatures
       namespacing="REQUIRED"/>

@@ -31,6 +31,7 @@ class VideoPlayerWidget extends StatefulWidget {
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   bool _isVisible = true;
   late Timer _timer;
+  late Timer _timers;
   bool _isFullScreenLocked = false;
   bool _controlsVisible = true;
   bool _skipOpeningVisible = true;
@@ -61,23 +62,44 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     super.initState();
     widget.videoPlayerController.addListener(_onVideoControllerUpdate);
     _startTimer();
+    _startWatchTimer();
     _fetchUserAccess();
     _startsTimer();
     _loadRewardedAd();
     _isAdClosed = false;
     _currentTime = _formatCurrentTime();
     _loadWatchDuration();
+    _loadShowMyPoint();
     // Inisialisasi flag
   }
 
+  void _loadShowMyPoint() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _showMyPoint = prefs.getBool('showMyPoint') ?? false;
+    });
+  }
+
+  void _toggleShowMyPoint() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _showMyPoint = !_showMyPoint;
+      prefs.setBool('showMyPoint', _showMyPoint);
+    });
+  }
+
   void _startWatchTimer() {
-    _timer?.cancel(); // Cancel any existing timer
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        _watchDuration += Duration(seconds: 1);
-        _watchTime = _formatDuration(_watchDuration);
-        _saveWatchDuration();
-      });
+      if (widget.videoPlayerController.value.isPlaying) {
+        setState(() {
+          _watchDuration += Duration(seconds: 1);
+          _watchTime = _formatDuration(_watchDuration);
+          _saveWatchDuration();
+        });
+      } else {
+        _stopWatchTimer(); // Stop the timer if the video is paused
+        _sendWatchDuration(); // Save the watch duration when the video is paused
+      }
     });
   }
 
@@ -106,10 +128,26 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
   }
 
+  Future<void> _sendWatchDuration() async {
+    final response = await http.post(
+      Uri.parse('https://ccgnimex.my.id/v2/android/save_duration.php'),
+      body: {
+        'telegram_id': widget.telegramId,
+        'watch_duration': _watchTime,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      print('Watch duration updated successfully.');
+    } else {
+      print('Failed to update watch duration.');
+    }
+  }
+
   void _startsTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+    _timers = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        _currentTime = _formatCurrentTime();
+        _currentTime = DateFormat('HH:mm').format(DateTime.now());
       });
     });
   }
@@ -159,6 +197,15 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       // Tangani kasus ketika status kode bukan 200
       print('Failed to load user access');
     }
+  }
+
+  // Fungsi untuk memotong nama pengguna jika lebih dari 11 karakter
+  String _truncateUserName(String name) {
+    final maxLength = 10;
+    final truncated =
+        name.length > maxLength ? '${name.substring(0, maxLength - 1)}…' : name;
+    // Padding dengan spasi agar panjang total menjadi 13 karakter
+    return truncated.padRight(13);
   }
 
   void _toggleAutoSwitchEpisodes() {
@@ -267,8 +314,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
   void _playPause() {
     if (widget.videoPlayerController.value.isPlaying) {
-      widget.videoPlayerController.pause();
-      _stopWatchTimer(); // Stop the timer when the video is paused
+      widget.videoPlayerController
+          .pause(); // Stop the timer when the video is paused
     } else {
       if (userAccess != 'Premium' &&
           MediaQuery.of(context).orientation == Orientation.landscape &&
@@ -485,9 +532,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     _showComingSoonMessage();
                     break;
                   case 'show_my_point':
-                    setState(() {
-                      _showMyPoint = !_showMyPoint;
-                    });
+                    _toggleShowMyPoint();
                     break;
                 }
               },
@@ -522,10 +567,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   value: 'show_my_point',
                   child: ListTile(
                     leading: Icon(
-                        _showMyPoint
-                            ? Icons.check_box
-                            : Icons.check_box_outline_blank,
-                        color: Colors.black),
+                      _showMyPoint
+                          ? Icons.check_box
+                          : Icons.check_box_outline_blank,
+                      color: Colors.black,
+                    ),
                     title: Text('Statistik Saya'),
                   ),
                 ),
@@ -662,7 +708,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          _userName,
+                                          _truncateUserName(_userName),
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 11.2, // 30% smaller
