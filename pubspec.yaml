@@ -68,6 +68,7 @@ dependencies:
   timeago: ^3.0.2
   translator: ^1.0.0
   collection: ^1.18.0
+  flutter_chrome_cast: ^0.0.10
   #fijkplayer_update: ^1.1.1
 
 dev_dependencies:
@@ -95,3 +96,8 @@ flutter:
         - asset: fonts/Satoshi-Italic.ttf
           style: italic
     # Add more variations as needed
+  plugin:
+    platforms:
+      android:
+        package: com.felnanuke.google_cast
+        pluginClass: GoogleCastPlugin

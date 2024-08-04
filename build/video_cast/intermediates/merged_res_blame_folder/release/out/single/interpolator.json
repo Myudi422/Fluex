@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_1.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\fast_out_slow_in.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\fast_out_slow_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\mr_linear_out_slow_in.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\b3cb237a5852e360b51e31abe4c66bc8\\transformed\\mediarouter-1.3.0\\res\\interpolator\\mr_linear_out_slow_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\mr_fast_out_slow_in.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\b3cb237a5852e360b51e31abe4c66bc8\\transformed\\mediarouter-1.3.0\\res\\interpolator\\mr_fast_out_slow_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_radio_to_off_mtrl_animation_interpolator_0.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_radio_to_off_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_0.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\interpolator\\btn_radio_to_on_mtrl_animation_interpolator_0.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\interpolator\\btn_radio_to_on_mtrl_animation_interpolator_0.xml"
+    }
+]

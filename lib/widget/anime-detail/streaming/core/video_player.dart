@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:flutter_chrome_cast/lib.dart';
+import 'package:flutter_chrome_cast/widgets/mini_controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -15,14 +18,18 @@ class VideoPlayerWidget extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
   final bool isFullScreen;
   final Function toggleFullScreen;
-  final String telegramId; // Define telegramId here
+  final String telegramId;
+  final int episodeNumber;
+  final int animeId; // Define telegramId here
 
-  VideoPlayerWidget({
-    required this.videoPlayerController,
-    required this.isFullScreen,
-    required this.toggleFullScreen,
-    required this.telegramId, // Initialize telegramId parameter
-  });
+  VideoPlayerWidget(
+      {required this.videoPlayerController,
+      required this.isFullScreen,
+      required this.toggleFullScreen,
+      required this.telegramId,
+      required this.episodeNumber,
+      required this.animeId // Initialize telegramId parameter
+      });
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
@@ -32,6 +39,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   bool _isVisible = true;
   late Timer _timer;
   late Timer _timers;
+  late Timer _timerr;
+  bool _isTimerRunning = false; // Tambahkan variabel ini
   bool _isFullScreenLocked = false;
   bool _controlsVisible = true;
   bool _skipOpeningVisible = true;
@@ -55,22 +64,138 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   String _userName = '';
   Duration _watchDuration = Duration();
   String _watchTime =
-      '00:00:00'; // Initial watch time // Waktu tonton sebagai sample
+      ''; // Initialize with an empty string or a placeholder value
+  int _peringkat = -1;
+  String? _videoUrl;
 
   @override
   void initState() {
     super.initState();
     widget.videoPlayerController.addListener(_onVideoControllerUpdate);
     _startTimer();
-    _startWatchTimer();
+    _loadWatchDuration(); // Load watch duration from SharedPreferences
     _fetchUserAccess();
+    _startWatchTimer(); // Fetch user access details including watch time from server
     _startsTimer();
     _loadRewardedAd();
     _isAdClosed = false;
     _currentTime = _formatCurrentTime();
-    _loadWatchDuration();
     _loadShowMyPoint();
+    _fetchVideoUrl();
+    _initGoogleCast();
     // Inisialisasi flag
+  }
+
+  Future<void> _initGoogleCast() async {
+    const appId = GoogleCastDiscoveryCriteria.kDefaultApplicationId;
+    GoogleCastOptions? options;
+    if (Platform.isIOS) {
+      options = IOSGoogleCastOptions(
+        GoogleCastDiscoveryCriteriaInitialize.initWithApplicationID(appId),
+      );
+    } else if (Platform.isAndroid) {
+      options = GoogleCastOptionsAndroid(appId: appId);
+    }
+    GoogleCastContext.instance.setSharedInstanceWithOptions(options!);
+  }
+
+  Future<void> _fetchVideoUrl() async {
+    final response = await http.get(Uri.parse(
+      'https://ccgnimex.my.id/v2/android/api_resolusi.php?anime_id=${widget.animeId}&episode_number=${widget.episodeNumber}',
+    ));
+
+    if (response.statusCode == 200) {
+      final List<dynamic> data = json.decode(response.body);
+      final hdVideo = data.firstWhere(
+        (item) => item['resolusi'] == 'HD',
+        orElse: () => data.first,
+      );
+      setState(() {
+        _videoUrl = hdVideo['video_url'];
+      });
+    } else {
+      // Handle error
+    }
+  }
+
+  void _cast() async {
+    if (_videoUrl == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('URL video tidak tersedia')),
+      );
+      return;
+    }
+
+    // Mulai penemuan perangkat untuk mendapatkan daftar perangkat
+    GoogleCastDiscoveryManager.instance.startDiscovery();
+
+    final devices =
+        await GoogleCastDiscoveryManager.instance.devicesStream.first;
+
+    final device = await showDialog<GoogleCastDevice>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Pilih perangkat Cast'),
+          content: Container(
+            width: double.maxFinite,
+            child: ListView.builder(
+              itemCount: devices.length,
+              itemBuilder: (context, index) {
+                final device = devices[index];
+                return ListTile(
+                  title: Text(device.friendlyName),
+                  subtitle: Text(device.modelName ?? ''),
+                  onTap: () => Navigator.pop(context, device),
+                );
+              },
+            ),
+          ),
+        );
+      },
+    );
+
+    // Hentikan penemuan setelah mendapatkan daftar perangkat
+    GoogleCastDiscoveryManager.instance.stopDiscovery();
+
+    if (device != null) {
+      // Mulai sesi dengan perangkat yang dipilih
+      try {
+        await GoogleCastSessionManager.instance.startSessionWithDevice(device);
+
+        // Muat dan putar media di perangkat yang dipilih
+        final mediaInfo = GoogleCastMediaInformation(
+          contentId: '',
+          streamType: CastMediaStreamType.BUFFERED,
+          contentUrl: Uri.parse(_videoUrl!),
+          contentType: 'video/mp4',
+          metadata: GoogleCastMovieMediaMetadata(
+            title: 'Judul Video',
+            images: [
+              GoogleCastImage(
+                  url: Uri.parse(
+                      'https://i.pinimg.com/564x/0a/64/83/0a6483c8ed077a393f1904377efd54b2.jpg'))
+            ],
+          ),
+        );
+
+        await GoogleCastRemoteMediaClient.instance
+            .loadMedia(mediaInfo, autoPlay: true);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Casting ke ${device.friendlyName} dimulai')),
+        );
+      } catch (error) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Gagal memulai sesi cast: $error')),
+        );
+        print("Error starting cast session: $error");
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Tidak ada perangkat yang dipilih')),
+      );
+    }
   }
 
   void _loadShowMyPoint() async {
@@ -89,7 +214,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   }
 
   void _startWatchTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _isTimerRunning = true; // Tandai timer sedang berjalan
+    _timerr = Timer.periodic(Duration(seconds: 1), (timer) {
       if (widget.videoPlayerController.value.isPlaying) {
         setState(() {
           _watchDuration += Duration(seconds: 1);
@@ -104,7 +230,10 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   }
 
   void _stopWatchTimer() {
-    _timer?.cancel(); // Cancel the timer
+    if (_timerr != null) {
+      _timerr.cancel(); // Cancel the timer
+      _isTimerRunning = false; // Tandai timer tidak aktif
+    }
   }
 
   Future<void> _loadWatchDuration() async {
@@ -178,6 +307,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   void _resetAdStateIfNecessary() {
     if (MediaQuery.of(context).orientation == Orientation.portrait) {
       _hasShownAdInLandscape = false;
+      _saveWatchDuration();
     }
   }
 
@@ -189,13 +319,33 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = json.decode(response.body);
       setState(() {
-        userAccess = data['akses']; // Mendapatkan status akses pengguna
+        userAccess = data['akses'];
         _profilePictureUrl = data['profile_picture'];
-        _userName = data['first_name']; // Mendapatkan URL gambar profil
+        _userName = data['first_name'];
+        if (data['ditonton'] != null && data['ditonton'] != '') {
+          if (_watchDuration.inSeconds == 0) {
+            // Hanya perbarui jika watchDuration masih 0
+            _watchDuration = _parseDuration(data['ditonton']);
+            _watchTime = _formatDuration(_watchDuration);
+            _saveWatchDuration(); // Simpan durasi yang diambil dari server
+          }
+        }
+        _peringkat = data['peringkat'] ?? -1;
       });
     } else {
-      // Tangani kasus ketika status kode bukan 200
-      print('Failed to load user access');
+      print('Gagal memuat akses pengguna');
+    }
+  }
+
+  Duration _parseDuration(String watchTime) {
+    final parts = watchTime.split(':');
+    if (parts.length == 3) {
+      final hours = int.parse(parts[0]);
+      final minutes = int.parse(parts[1]);
+      final seconds = int.parse(parts[2]);
+      return Duration(hours: hours, minutes: minutes, seconds: seconds);
+    } else {
+      return Duration.zero;
     }
   }
 
@@ -316,6 +466,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     if (widget.videoPlayerController.value.isPlaying) {
       widget.videoPlayerController
           .pause(); // Stop the timer when the video is paused
+      _stopWatchTimer(); // Hentikan timer saat video dihentikan
     } else {
       if (userAccess != 'Premium' &&
           MediaQuery.of(context).orientation == Orientation.landscape &&
@@ -332,11 +483,15 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           });
         } else {
           widget.videoPlayerController.play();
-          _startWatchTimer(); // Start the timer when the video starts playing
+          if (!_isTimerRunning) {
+            _startWatchTimer(); // Mulai timer hanya jika belum ada timer aktif
+          }
         }
       } else {
         widget.videoPlayerController.play();
-        _startWatchTimer(); // Start the timer when the video starts playing
+        if (!_isTimerRunning) {
+          _startWatchTimer(); // Mulai timer hanya jika belum ada timer aktif
+        }
       }
     }
   }
@@ -424,13 +579,20 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               color: _isVisible ? Colors.black54 : Colors.transparent,
             ),
             child: Center(
-              child: IconButton(
-                icon: Icon(
-                  iconData,
-                  size: 40,
-                  color: Colors.white,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: ColorManager.currentPrimaryColor.withOpacity(0.6),
+                  shape: BoxShape.circle,
                 ),
-                onPressed: _playPause,
+                padding: EdgeInsets.all(8.0), // Adjust padding as needed
+                child: IconButton(
+                  icon: Icon(
+                    iconData,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                  onPressed: _playPause,
+                ),
               ),
             ),
           );
@@ -528,6 +690,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     _toggleAutoSwitchEpisodes();
                     break;
                   case 'cast':
+                    _cast();
+                    break;
                   case 'search_op_song':
                     _showComingSoonMessage();
                     break;
@@ -549,14 +713,14 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     title: Text('Auto Switch EPS'),
                   ),
                 ),
-                const PopupMenuItem<String>(
+                PopupMenuItem<String>(
                   value: 'cast',
                   child: ListTile(
                     leading: Icon(Icons.cast, color: Colors.black),
                     title: Text('Cast'),
                   ),
                 ),
-                const PopupMenuItem<String>(
+                PopupMenuItem<String>(
                   value: 'search_op_song',
                   child: ListTile(
                     leading: Icon(Icons.music_note, color: Colors.black),
@@ -663,7 +827,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: ColorManager.currentPrimaryColor
-                                  .withOpacity(0.2),
+                                  .withOpacity(0.4),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: IconButton(
@@ -686,7 +850,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                 padding: EdgeInsets.all(5.6), // 30% smaller
                                 decoration: BoxDecoration(
                                   color: ColorManager.currentPrimaryColor
-                                      .withOpacity(0.6),
+                                      .withOpacity(0.4),
                                   borderRadius:
                                       BorderRadius.circular(5.6), // 30% smaller
                                 ),
@@ -717,7 +881,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.timer,
+                                            Icon(Icons.remove_red_eye,
                                                 color: Colors.white,
                                                 size: 11.2), // 30% smaller
                                             SizedBox(width: 2.8), // 30% smaller
@@ -742,7 +906,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                     padding: EdgeInsets.all(8), // 30% smaller
                                     decoration: BoxDecoration(
                                       color: ColorManager.currentPrimaryColor
-                                          .withOpacity(0.6),
+                                          .withOpacity(0.4),
                                       borderRadius: BorderRadius.circular(
                                           5.6), // 30% smaller
                                     ),
@@ -779,7 +943,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                     padding: EdgeInsets.all(5.6), // 30% smaller
                                     decoration: BoxDecoration(
                                       color: ColorManager.currentPrimaryColor
-                                          .withOpacity(0.6),
+                                          .withOpacity(0.4),
                                       borderRadius: BorderRadius.circular(
                                           5.6), // 30% smaller
                                     ),
@@ -790,7 +954,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                                             size: 16.8), // 30% smaller
                                         SizedBox(width: 2.8), // 30% smaller
                                         Text(
-                                          '#$_point+',
+                                          '#$_peringkat', // Convert int to String using interpolation
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 8, // 30% smaller
@@ -823,9 +987,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void dispose() {
     _timer.cancel();
+    _timerr.cancel();
     _floating.dispose(); // Dispose Floating instance
     _lockIconTimer?.cancel();
     _rewardedAd?.dispose(); // Dispose rewarded ad
+    _saveWatchDuration();
     super.dispose();
   }
 }

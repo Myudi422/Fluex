@@ -83,6 +83,10 @@
     <meta-data
         android:name="android.support.FILE_PROVIDER_PATHS"
         android:resource="@xml/provider_paths"/>
+     <meta-data
+           android:name=
+               "com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+           android:value="GoogleCastOptionsProvider" />
         <meta-data
       android:name="com.google.firebase.messaging.default_notification_icon"
       android:resource="@drawable/ic_notification" />

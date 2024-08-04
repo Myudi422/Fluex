@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\7ce096d9cc9941f853fd24928e831099\\transformed\\core-1.6.0\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\abc_list_divider_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_edit_text_material.xml"
+    }
+]

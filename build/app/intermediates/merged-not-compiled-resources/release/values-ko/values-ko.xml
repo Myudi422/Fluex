@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"수신 전화"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"진행 중인 통화"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"수신 전화 검사 중"</string>
+    <string name="cast_ad_label">광고</string>
+    <string name="cast_casting_to_device">%1$s(으)로 전송</string>
+    <string name="cast_closed_captions">자막</string>
+    <string name="cast_closed_captions_unavailable">자막 사용 불가</string>
+    <string name="cast_connecting_to_device">%1$s에 연결 중</string>
+    <string name="cast_disconnect">연결 해제</string>
+    <string name="cast_dynamic_group_name_format">%1$s 외 %2$d대</string>
+    <string name="cast_expanded_controller_ad_image_description">Cast 수신기에서 광고를 재생할 때 이미지가 표시됨</string>
+    <string name="cast_expanded_controller_ad_in_progress">광고 진행 중…</string>
+    <string name="cast_expanded_controller_background_image">앨범아트</string>
+    <string name="cast_expanded_controller_live_head_description">현재 위치는 실시간 스트림의 시작 부분입니다.</string>
+    <string name="cast_expanded_controller_live_stream_indicator">실시간 스트림</string>
+    <string name="cast_expanded_controller_loading">로드 중…</string>
+    <string name="cast_expanded_controller_skip_ad_label">광고 건너뛰기</string>
+    <string name="cast_expanded_controller_skip_ad_text">%1$d 후에 광고를 건너뛸 수 있습니다…</string>
+    <string name="cast_forward">앞으로</string>
+    <string name="cast_forward_10">10초 앞으로</string>
+    <string name="cast_forward_30">30초 앞으로</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">실시간</string>
+    <string name="cast_mute">음소거</string>
+    <string name="cast_notification_connected_message">%1$s에 연결됨</string>
+    <string name="cast_notification_connecting_message">%1$s에 연결 중</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">연결 해제</string>
+    <string name="cast_pause">일시중지</string>
+    <string name="cast_play">재생</string>
+    <string name="cast_rewind">되감기</string>
+    <string name="cast_rewind_10">10초 되감기</string>
+    <string name="cast_rewind_30">30초 되감기</string>
+    <string name="cast_seek_bar">재생 시크바</string>
+    <string name="cast_skip_next">다음 항목으로 건너뛰기</string>
+    <string name="cast_skip_prev">이전 항목으로 건너뛰기</string>
+    <string name="cast_stop">중지</string>
+    <string name="cast_stop_live_stream">실시간 스트리밍 중지</string>
+    <string name="cast_tracks_chooser_dialog_audio">오디오</string>
+    <string name="cast_tracks_chooser_dialog_cancel">취소</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">자막</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">트랙 %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">없음</string>
+    <string name="cast_tracks_chooser_dialog_ok">확인</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">자막</string>
+    <string name="cast_unmute">음소거 해제</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">사용 설정</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play 서비스를 사용하도록 설정해야 %1$s이(가) 작동합니다.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play 서비스 사용</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"링크 복사"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"브라우저에서 열기"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"링크 공유"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"전송 방법 알아보기"</string>
+    <string name="media_notification_channel_name">전송</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"전송"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"전송 버튼입니다. 기기가 연결되었습니다"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"전송 버튼입니다. 기기 연결 중입니다"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"전송 버튼입니다. 기기가 연결 해제되었습니다"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"사용할 수 있는 정보 없음"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"기기 검색 중…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"기기를 찾는 중"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"전송 대상"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"자세히 알아보기"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"다른 기기가 이 자동차와 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"다른 기기가 이 휴대전화와 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"다른 기기가 이 태블릿과 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"다른 기기가 이 TV와 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"다른 기기가 이 기기와 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"다른 기기가 이 시계와 동일한 Wi-Fi 네트워크에 연결되어 있어야 합니다."</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"사용 가능한 기기 없음"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"앨범아트"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"화면 전송 중"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"닫기"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"접기"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"연결 해제"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"펼치기"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"사용할 수 있는 정보 없음"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"선택된 미디어 없음"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"일시중지"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"재생"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"중지"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"전송 중지"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"볼륨 슬라이더"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"그룹"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"기기 추가"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"그룹에서 재생"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"시스템"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"기기"</string>
     <string name="native_body">본문</string>
     <string name="native_headline">광고 제목</string>
     <string name="native_media_view">미디어 보기</string>

@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"שיחה נכנסת"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"שיחה פעילה"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"סינון שיחה נכנסת"</string>
+    <string name="cast_ad_label">מודעה</string>
+    <string name="cast_casting_to_device">מעביר אל %1$s</string>
+    <string name="cast_closed_captions">כתוביות</string>
+    <string name="cast_closed_captions_unavailable">הכתוביות אינן זמינות</string>
+    <string name="cast_connecting_to_device">מתחבר אל %1$s</string>
+    <string name="cast_disconnect">נתק</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">‏התמונה מוצגת בזמן שמקלט Cast מפעיל מודעה</string>
+    <string name="cast_expanded_controller_ad_in_progress">מודעה בתהליך...</string>
+    <string name="cast_expanded_controller_background_image">עטיפת אלבום</string>
+    <string name="cast_expanded_controller_live_head_description">המיקום הנוכחי בראש הסטרימינג בשידור חי</string>
+    <string name="cast_expanded_controller_live_stream_indicator">זרם בשידור חי</string>
+    <string name="cast_expanded_controller_loading">טוען…</string>
+    <string name="cast_expanded_controller_skip_ad_label">דילוג על המודעה</string>
+    <string name="cast_expanded_controller_skip_ad_text">ניתן יהיה לדלג על המודעה בעוד %1$d…</string>
+    <string name="cast_forward">העבר</string>
+    <string name="cast_forward_10">העבר עשר שניות קדימה</string>
+    <string name="cast_forward_30">העבר 30 שניות קדימה</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">שידור חי</string>
+    <string name="cast_mute">השתק</string>
+    <string name="cast_notification_connected_message">מחובר אל %1$s</string>
+    <string name="cast_notification_connecting_message">מתחבר אל %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">נתק</string>
+    <string name="cast_pause">השהה</string>
+    <string name="cast_play">הפעל</string>
+    <string name="cast_rewind">העבר לאחור</string>
+    <string name="cast_rewind_10">העבר עשר שניות לאחור</string>
+    <string name="cast_rewind_30">העבר 30 שניות לאחור</string>
+    <string name="cast_seek_bar">פקד חיפוש הפעלה</string>
+    <string name="cast_skip_next">אפשר לדלג אל הפריט הבא</string>
+    <string name="cast_skip_prev">אפשר לדלג אל הפריט הקודם</string>
+    <string name="cast_stop">עצור</string>
+    <string name="cast_stop_live_stream">עצור סטרימינג בשידור חי</string>
+    <string name="cast_tracks_chooser_dialog_audio">אודיו</string>
+    <string name="cast_tracks_chooser_dialog_cancel">ביטול</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">כתוביות</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">רצועה %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">אף אחת</string>
+    <string name="cast_tracks_chooser_dialog_ok">אישור</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">כתוביות</string>
+    <string name="cast_unmute">ביטול השתקה</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">הפעל</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">‏האפליקציה %1$s לא תפעל אם לא תפעיל את שירותי Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">‏הפעל את שירותי Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"העתקת הקישור"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"פתיחה בדפדפן"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"לשיתוף הקישור"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"‏איך להעביר (cast)"</string>
+    <string name="media_notification_channel_name">‏העברה (Cast)</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"‏העברה (cast)"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"‏העברה (cast). מחובר"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"‏העברה (cast). מתבצעת התחברות"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"‏העברה (cast). אין חיבור"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"אין מידע זמין"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"מתבצע חיפוש מכשירים…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"מתבצע חיפוש מכשירים"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"העברה אל"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"מידע נוסף"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"‏מוודאים שהמכשיר השני והרכב מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"‏מוודאים שהמכשיר השני והטלפון מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"‏מוודאים שהמכשיר השני והטאבלט מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"‏מוודאים שהמכשיר השני והטלוויזיה מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"‏מוודאים ששני המכשירים מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"‏מוודאים שהמכשיר השני והשעון מחוברים לאותה רשת Wi-Fi"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"אין מכשירים זמינים"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"עטיפת אלבום"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"העברת מסך מתבצעת"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"סגירה"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"כיווץ"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"ניתוק"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"הרחבה"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"אין מידע זמין"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"לא נבחרה מדיה"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"השהיה"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"הפעלה"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"הפסקה"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"עצירת העברה"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"מחוון עוצמת קול"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"קבוצה"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"הוספת מכשיר"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"הפעלה בקבוצה"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"מערכת"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"מכשירים"</string>
     <string name="native_body">גוף המודעה</string>
     <string name="native_headline">כותרת</string>
     <string name="native_media_view">תצוגת המדיה</string>

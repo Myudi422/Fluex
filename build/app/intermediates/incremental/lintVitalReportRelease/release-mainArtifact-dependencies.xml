@@ -1,6 +1,6 @@
 <dependencies>
   <compile
-      roots="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\admin\Downloads\Fluex\android@@:firebase_messaging::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_auth::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_core::release,C:\Users\admin\Downloads\Fluex\android@@:audio_service::release,C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release,C:\Users\admin\Downloads\Fluex\android@@:wakelock::release,C:\Users\admin\Downloads\Fluex\android@@:just_audio::release,C:\Users\admin\Downloads\Fluex\android@@:shared_preferences_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_inappwebview::release,C:\Users\admin\Downloads\Fluex\android@@:google_mobile_ads::release,C:\Users\admin\Downloads\Fluex\android@@:floating::release,C:\Users\admin\Downloads\Fluex\android@@:fluttertoast::release,C:\Users\admin\Downloads\Fluex\android@@:video_player_android::release,C:\Users\admin\Downloads\Fluex\android@@:sqflite::release,C:\Users\admin\Downloads\Fluex\android@@:url_launcher_android::release,C:\Users\admin\Downloads\Fluex\android@@:google_sign_in_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_downloader::release,C:\Users\admin\Downloads\Fluex\android@@:connectivity_plus::release,C:\Users\admin\Downloads\Fluex\android@@:webview_flutter_android::release,C:\Users\admin\Downloads\Fluex\android@@:permission_handler_android::release,C:\Users\admin\Downloads\Fluex\android@@:in_app_purchase_android::release,C:\Users\admin\Downloads\Fluex\android@@:open_file::release,C:\Users\admin\Downloads\Fluex\android@@:audio_session::release,com.google.android.gms:play-services-ads:22.5.0@aar,com.google.firebase:firebase-analytics:21.5.0@aar,com.google.android.gms:play-services-measurement:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk:21.5.0@aar,com.google.android.gms:play-services-measurement-impl:21.5.0@aar,androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,com.android.billingclient:billing:6.1.0@aar,io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.google.android.gms:play-services-ads-lite:22.5.0@aar,com.google.android.gms:play-services-measurement-api:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk-api:21.5.0@aar,com.google.android.play:integrity:1.3.0@aar,com.google.android.ump:user-messaging-platform:2.1.0@aar,com.google.android.gms:play-services-ads-identifier:18.0.0@aar,com.google.android.gms:play-services-measurement-base:21.5.0@aar,com.google.android.gms:play-services-stats:17.0.2@aar,com.google.android.gms:play-services-ads-base:22.5.0@aar,com.google.android.gms:play-services-appset:16.0.1@aar,com.google.android.gms:play-services-location:19.0.0@aar,com.google.android.gms:play-services-base:18.0.1@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-common:20.4.2@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.browser:browser:1.5.0@aar,androidx.loader:loader:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.work:work-runtime:2.7.1@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.core:core-ktx:1.10.1@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.lifecycle:lifecycle-common:2.6.2@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-basement:18.2.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.6.0@aar,androidx.activity:activity:1.6.0@aar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,androidx.annotation:annotation-experimental:1.3.0@aar,androidx.savedstate:savedstate:1.2.1@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,com.google.android.datatransport:transport-api:3.1.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.print:print:1.0.0@aar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.firebase:firebase-encoders:17.0.0@jar,com.google.firebase:firebase-components:17.1.5@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.annotation:annotation-jvm:1.7.1@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21@jar,androidx.multidex:multidex:2.0.0@aar,io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,org.jetbrains:annotations:23.0.0@jar,com.google.guava:guava:32.0.1-android@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,androidx.startup:startup-runtime:1.1.1@aar,androidx.tracing:tracing:1.0.0@aar,com.google.guava:failureaccess:1.0.1@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-qual:3.33.0@jar,com.google.errorprone:error_prone_annotations:2.18.0@jar,com.google.j2objc:j2objc-annotations:2.8@jar,com.google.firebase:firebase-annotations:16.2.0@jar,javax.inject:javax.inject:1@jar,com.google.android.play:core-common:2.0.3@aar">
+      roots="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\admin\Downloads\Fluex\android@@:firebase_messaging::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_auth::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_core::release,C:\Users\admin\Downloads\Fluex\android@@:audio_service::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_chrome_cast::release,C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release,C:\Users\admin\Downloads\Fluex\android@@:video_cast::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release,C:\Users\admin\Downloads\Fluex\android@@:wakelock::release,C:\Users\admin\Downloads\Fluex\android@@:just_audio::release,C:\Users\admin\Downloads\Fluex\android@@:shared_preferences_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_inappwebview::release,C:\Users\admin\Downloads\Fluex\android@@:google_mobile_ads::release,C:\Users\admin\Downloads\Fluex\android@@:floating::release,C:\Users\admin\Downloads\Fluex\android@@:fluttertoast::release,C:\Users\admin\Downloads\Fluex\android@@:video_player_android::release,C:\Users\admin\Downloads\Fluex\android@@:sqflite::release,C:\Users\admin\Downloads\Fluex\android@@:url_launcher_android::release,C:\Users\admin\Downloads\Fluex\android@@:google_sign_in_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_downloader::release,C:\Users\admin\Downloads\Fluex\android@@:connectivity_plus::release,C:\Users\admin\Downloads\Fluex\android@@:webview_flutter_android::release,C:\Users\admin\Downloads\Fluex\android@@:permission_handler_android::release,C:\Users\admin\Downloads\Fluex\android@@:in_app_purchase_android::release,C:\Users\admin\Downloads\Fluex\android@@:open_file::release,C:\Users\admin\Downloads\Fluex\android@@:audio_session::release,com.google.android.gms:play-services-ads:22.5.0@aar,com.google.firebase:firebase-analytics:21.5.0@aar,com.google.android.gms:play-services-measurement:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk:21.5.0@aar,com.google.android.gms:play-services-measurement-impl:21.5.0@aar,androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,com.android.billingclient:billing:6.1.0@aar,androidx.appcompat:appcompat:1.6.1@aar,com.google.android.gms:play-services-cast-framework:21.5.0@aar,io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.google.android.gms:play-services-ads-lite:22.5.0@aar,com.google.android.gms:play-services-measurement-api:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk-api:21.5.0@aar,com.google.android.play:integrity:1.3.0@aar,com.google.android.gms:play-services-cast-tv:21.1.0@aar,com.google.android.gms:play-services-cast:21.5.0@aar,com.google.android.ump:user-messaging-platform:2.1.0@aar,com.google.android.gms:play-services-ads-identifier:18.0.0@aar,com.google.android.gms:play-services-measurement-base:21.5.0@aar,com.google.android.gms:play-services-stats:17.0.2@aar,com.google.android.gms:play-services-ads-base:22.5.0@aar,com.google.android.gms:play-services-appset:16.0.1@aar,com.google.android.gms:play-services-location:19.0.0@aar,com.google.android.gms:play-services-flags:18.1.0@aar,com.google.android.gms:play-services-base:18.5.0@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-common:20.4.2@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.browser:browser:1.5.0@aar,androidx.mediarouter:mediarouter:1.6.0-beta01@aar,androidx.mediarouter:mediarouter:1.6.0-beta01@aar,androidx.media:media:1.6.0@aar,androidx.media:media:1.6.0@aar,androidx.appcompat:appcompat-resources:1.6.1@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.loader:loader:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.work:work-runtime:2.7.1@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.core:core-ktx:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.lifecycle:lifecycle-common:2.6.2@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar,com.google.android.gms:play-services-tasks:18.2.0@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-basement:18.4.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.6.0@aar,androidx.activity:activity:1.6.0@aar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,androidx.savedstate:savedstate:1.2.1@aar,androidx.annotation:annotation-experimental:1.3.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,com.google.android.datatransport:transport-api:3.1.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.print:print:1.0.0@aar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.firebase:firebase-encoders:17.0.0@jar,com.google.firebase:firebase-components:17.1.5@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.annotation:annotation-jvm:1.7.1@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21@jar,androidx.multidex:multidex:2.0.0@aar,io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,org.jetbrains:annotations:23.0.0@jar,com.google.guava:guava:32.0.1-android@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,androidx.startup:startup-runtime:1.1.1@aar,androidx.tracing:tracing:1.0.0@aar,com.google.guava:failureaccess:1.0.1@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-qual:3.33.0@jar,com.google.errorprone:error_prone_annotations:2.18.0@jar,com.google.j2objc:j2objc-annotations:2.8@jar,com.google.firebase:firebase-annotations:16.2.0@jar,javax.inject:javax.inject:1@jar,com.google.android.play:core-common:2.0.3@aar,com.google.code.gson:gson:2.8.1@jar">
     <dependency
         name="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"/>
     <dependency
@@ -16,8 +16,14 @@
         name="C:\Users\admin\Downloads\Fluex\android@@:audio_service::release"
         simpleName="com.ryanheise.audioservice:audio_service"/>
     <dependency
+        name="C:\Users\admin\Downloads\Fluex\android@@:flutter_chrome_cast::release"
+        simpleName="com.felnanuke.google_cast:flutter_chrome_cast"/>
+    <dependency
         name="C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release"
         simpleName="io.flutter.plugins.pathprovider:path_provider_android"/>
+    <dependency
+        name="C:\Users\admin\Downloads\Fluex\android@@:video_cast::release"
+        simpleName="com.videocast.video_cast:video_cast"/>
     <dependency
         name="C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release"
         simpleName="com.example.flutter_overlay_window:flutter_overlay_window"/>
@@ -92,6 +98,10 @@
     <dependency
         name="com.android.billingclient:billing:6.1.0@aar"/>
     <dependency
+        name="androidx.appcompat:appcompat:1.6.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-cast-framework:21.5.0@aar"/>
+    <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"/>
     <dependency
         name="com.google.android.gms:play-services-ads-lite:22.5.0@aar"/>
@@ -101,6 +111,10 @@
         name="com.google.android.gms:play-services-measurement-sdk-api:21.5.0@aar"/>
     <dependency
         name="com.google.android.play:integrity:1.3.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-cast-tv:21.1.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-cast:21.5.0@aar"/>
     <dependency
         name="com.google.android.ump:user-messaging-platform:2.1.0@aar"/>
     <dependency
@@ -116,7 +130,9 @@
     <dependency
         name="com.google.android.gms:play-services-location:19.0.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-base:18.0.1@aar"/>
+        name="com.google.android.gms:play-services-flags:18.1.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-base:18.5.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-installations:17.2.0@aar"/>
     <dependency
@@ -130,9 +146,25 @@
     <dependency
         name="androidx.browser:browser:1.5.0@aar"/>
     <dependency
+        name="androidx.mediarouter:mediarouter:1.6.0-beta01@aar"/>
+    <dependency
+        name="androidx.media:media:1.6.0@aar"/>
+    <dependency
+        name="androidx.appcompat:appcompat-resources:1.6.1@aar"/>
+    <dependency
+        name="androidx.drawerlayout:drawerlayout:1.0.0@aar"/>
+    <dependency
+        name="androidx.recyclerview:recyclerview:1.1.0@aar"/>
+    <dependency
         name="androidx.loader:loader:1.0.0@aar"/>
     <dependency
+        name="androidx.vectordrawable:vectordrawable-animated:1.1.0@aar"/>
+    <dependency
+        name="androidx.vectordrawable:vectordrawable:1.1.0@aar"/>
+    <dependency
         name="androidx.viewpager:viewpager:1.0.0@aar"/>
+    <dependency
+        name="androidx.customview:customview:1.0.0@aar"/>
     <dependency
         name="androidx.work:work-runtime:2.7.1@aar"/>
     <dependency
@@ -145,8 +177,6 @@
         name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar"/>
     <dependency
         name="androidx.core:core-ktx:1.10.1@aar"/>
-    <dependency
-        name="androidx.customview:customview:1.0.0@aar"/>
     <dependency
         name="androidx.core:core:1.10.1@aar"/>
     <dependency
@@ -166,13 +196,13 @@
     <dependency
         name="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar"/>
     <dependency
-        name="com.google.android.gms:play-services-tasks:18.0.2@aar"/>
+        name="com.google.android.gms:play-services-tasks:18.2.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-places-placereport:17.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-basement:18.2.0@aar"/>
+        name="com.google.android.gms:play-services-basement:18.4.0@aar"/>
     <dependency
         name="androidx.fragment:fragment:1.3.6@aar"/>
     <dependency
@@ -180,9 +210,9 @@
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar"/>
     <dependency
-        name="androidx.annotation:annotation-experimental:1.3.0@aar"/>
-    <dependency
         name="androidx.savedstate:savedstate:1.2.1@aar"/>
+    <dependency
+        name="androidx.annotation:annotation-experimental:1.3.0@aar"/>
     <dependency
         name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"/>
     <dependency
@@ -193,6 +223,10 @@
         name="com.google.android.datatransport:transport-runtime:3.1.8@aar"/>
     <dependency
         name="com.google.android.datatransport:transport-api:3.1.0@aar"/>
+    <dependency
+        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
+    <dependency
+        name="androidx.concurrent:concurrent-futures:1.1.0@jar"/>
     <dependency
         name="androidx.documentfile:documentfile:1.0.0@aar"/>
     <dependency
@@ -212,7 +246,7 @@
     <dependency
         name="androidx.arch.core:core-common:2.2.0@jar"/>
     <dependency
-        name="androidx.concurrent:concurrent-futures:1.1.0@jar"/>
+        name="androidx.interpolator:interpolator:1.0.0@aar"/>
     <dependency
         name="androidx.annotation:annotation-jvm:1.7.1@jar"/>
     <dependency
@@ -249,9 +283,11 @@
         name="javax.inject:javax.inject:1@jar"/>
     <dependency
         name="com.google.android.play:core-common:2.0.3@aar"/>
+    <dependency
+        name="com.google.code.gson:gson:2.8.1@jar"/>
   </compile>
   <package
-      roots="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\admin\Downloads\Fluex\android@@:firebase_messaging::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_auth::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_core::release,C:\Users\admin\Downloads\Fluex\android@@:audio_service::release,C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release,C:\Users\admin\Downloads\Fluex\android@@:wakelock::release,C:\Users\admin\Downloads\Fluex\android@@:just_audio::release,C:\Users\admin\Downloads\Fluex\android@@:shared_preferences_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_inappwebview::release,C:\Users\admin\Downloads\Fluex\android@@:google_mobile_ads::release,C:\Users\admin\Downloads\Fluex\android@@:floating::release,C:\Users\admin\Downloads\Fluex\android@@:fluttertoast::release,C:\Users\admin\Downloads\Fluex\android@@:video_player_android::release,C:\Users\admin\Downloads\Fluex\android@@:sqflite::release,C:\Users\admin\Downloads\Fluex\android@@:url_launcher_android::release,C:\Users\admin\Downloads\Fluex\android@@:google_sign_in_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_downloader::release,C:\Users\admin\Downloads\Fluex\android@@:connectivity_plus::release,C:\Users\admin\Downloads\Fluex\android@@:webview_flutter_android::release,C:\Users\admin\Downloads\Fluex\android@@:permission_handler_android::release,C:\Users\admin\Downloads\Fluex\android@@:in_app_purchase_android::release,C:\Users\admin\Downloads\Fluex\android@@:open_file::release,C:\Users\admin\Downloads\Fluex\android@@:audio_session::release,com.google.firebase:firebase-iid:21.1.0@aar,com.google.firebase:firebase-messaging:23.4.0@aar,com.google.firebase:firebase-auth:22.3.0@aar,com.google.firebase:firebase-analytics:21.5.0@aar,com.google.android.gms:play-services-measurement-api:21.5.0@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-common:20.4.2@aar,io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.google.android.gms:play-services-ads:22.5.0@aar,androidx.media2:media2-session:1.2.1@aar,androidx.media2:media2-common:1.2.1@aar,androidx.media:media:1.6.0@aar,com.google.android.exoplayer:exoplayer-dash:2.18.7@aar,com.google.android.exoplayer:exoplayer-hls:2.18.7@aar,com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7@aar,com.google.android.exoplayer:exoplayer-core:2.18.7@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.1.0@aar,androidx.constraintlayout:constraintlayout:2.1.4@aar,androidx.browser:browser:1.5.0@aar,androidx.browser:browser:1.5.0@aar,com.google.android.gms:play-services-ads-lite:22.5.0@aar,androidx.work:work-runtime:2.7.1@aar,androidx.webkit:webkit:1.7.0@aar,androidx.appcompat:appcompat-resources:1.6.1@aar,androidx.appcompat:appcompat:1.6.1@aar,com.android.billingclient:billing:6.1.0@aar,com.google.android.recaptcha:recaptcha:18.1.2@aar,com.google.android.play:integrity:1.3.0@aar,com.google.android.ump:user-messaging-platform:2.1.0@aar,com.google.android.gms:play-services-auth:20.7.0@aar,com.google.android.gms:play-services-ads-base:22.5.0@aar,com.google.android.gms:play-services-measurement:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk:21.5.0@aar,com.google.android.gms:play-services-measurement-impl:21.5.0@aar,com.google.android.gms:play-services-ads-identifier:18.0.0@aar,com.google.android.gms:play-services-appset:16.0.1@aar,com.google.android.gms:play-services-location:19.0.0@aar,com.google.android.gms:play-services-auth-api-phone:18.0.1@aar,com.google.android.gms:play-services-auth-base:18.0.4@aar,com.google.android.gms:play-services-fido:20.0.1@aar,com.google.firebase:firebase-appcheck-interop:17.0.0@aar,com.google.android.gms:play-services-base:18.0.1@aar,com.google.firebase:firebase-iid-interop:17.1.0@aar,com.google.android.gms:play-services-cloud-messaging:17.1.0@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,androidx.window:window-java:1.0.0-beta04@aar,com.google.android.gms:play-services-stats:17.0.2@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.6.0@aar,androidx.activity:activity:1.6.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-service:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.savedstate:savedstate:1.2.1@aar,androidx.lifecycle:lifecycle-common:2.6.2@jar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:21.5.0@aar,com.google.android.gms:play-services-measurement-base:21.5.0@aar,com.google.android.gms:play-services-basement:18.2.0@aar,androidx.core:core-ktx:1.10.1@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.emoji2:emoji2-views-helper:1.2.0@aar,androidx.emoji2:emoji2:1.2.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-process:2.6.2@aar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,androidx.annotation:annotation-experimental:1.3.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,com.google.firebase:firebase-datatransport:18.1.7@aar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,androidx.profileinstaller:profileinstaller:1.3.0@aar,androidx.startup:startup-runtime:1.1.1@aar,androidx.tracing:tracing:1.0.0@aar,com.google.firebase:firebase-components:17.1.5@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.android.exoplayer:exoplayer-datasource:2.18.7@aar,com.google.android.exoplayer:exoplayer-extractor:2.18.7@aar,com.google.android.exoplayer:exoplayer-decoder:2.18.7@aar,com.google.android.exoplayer:exoplayer-database:2.18.7@aar,com.google.android.exoplayer:exoplayer-common:2.18.7@aar,androidx.interpolator:interpolator:1.0.0@aar,com.google.android.datatransport:transport-api:3.1.0@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders:17.0.0@jar,androidx.room:room-runtime:2.2.5@aar,androidx.sqlite:sqlite-framework:2.1.0@aar,androidx.sqlite:sqlite:2.1.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.room:room-common:2.2.5@jar,androidx.annotation:annotation-jvm:1.7.1@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21@jar,androidx.multidex:multidex:2.0.0@aar,io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.squareup.okhttp3:okhttp:3.14.9@jar,com.google.guava:guava:32.0.1-android@jar,com.google.errorprone:error_prone_annotations:2.18.0@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.android.play:core-common:2.0.3@aar,com.google.firebase:firebase-annotations:16.2.0@jar,com.squareup.okio:okio:1.17.2@jar,androidx.constraintlayout:constraintlayout-core:1.0.4@jar,com.google.guava:failureaccess:1.0.1@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-qual:3.33.0@jar,com.google.j2objc:j2objc-annotations:2.8@jar,org.jetbrains:annotations:23.0.0@jar,javax.inject:javax.inject:1@jar">
+      roots="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\admin\Downloads\Fluex\android@@:firebase_messaging::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_auth::release,C:\Users\admin\Downloads\Fluex\android@@:firebase_core::release,C:\Users\admin\Downloads\Fluex\android@@:audio_service::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_chrome_cast::release,C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release,C:\Users\admin\Downloads\Fluex\android@@:video_cast::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release,C:\Users\admin\Downloads\Fluex\android@@:wakelock::release,C:\Users\admin\Downloads\Fluex\android@@:just_audio::release,C:\Users\admin\Downloads\Fluex\android@@:shared_preferences_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_inappwebview::release,C:\Users\admin\Downloads\Fluex\android@@:google_mobile_ads::release,C:\Users\admin\Downloads\Fluex\android@@:floating::release,C:\Users\admin\Downloads\Fluex\android@@:fluttertoast::release,C:\Users\admin\Downloads\Fluex\android@@:video_player_android::release,C:\Users\admin\Downloads\Fluex\android@@:sqflite::release,C:\Users\admin\Downloads\Fluex\android@@:url_launcher_android::release,C:\Users\admin\Downloads\Fluex\android@@:google_sign_in_android::release,C:\Users\admin\Downloads\Fluex\android@@:flutter_downloader::release,C:\Users\admin\Downloads\Fluex\android@@:connectivity_plus::release,C:\Users\admin\Downloads\Fluex\android@@:webview_flutter_android::release,C:\Users\admin\Downloads\Fluex\android@@:permission_handler_android::release,C:\Users\admin\Downloads\Fluex\android@@:in_app_purchase_android::release,C:\Users\admin\Downloads\Fluex\android@@:open_file::release,C:\Users\admin\Downloads\Fluex\android@@:audio_session::release,com.google.firebase:firebase-iid:21.1.0@aar,com.google.firebase:firebase-messaging:23.4.0@aar,com.google.firebase:firebase-auth:22.3.0@aar,com.google.firebase:firebase-analytics:21.5.0@aar,com.google.android.gms:play-services-measurement-api:21.5.0@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-common:20.4.2@aar,io.flutter:flutter_embedding_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.google.android.gms:play-services-ads:22.5.0@aar,com.google.android.gms:play-services-cast-tv:21.1.0@aar,com.google.android.exoplayer:extension-cast:2.17.1@aar,com.google.android.gms:play-services-cast-framework:21.5.0@aar,com.google.android.gms:play-services-cast:21.5.0@aar,androidx.mediarouter:mediarouter:1.6.0-beta01@aar,androidx.mediarouter:mediarouter:1.6.0-beta01@aar,androidx.media2:media2-session:1.2.1@aar,androidx.media2:media2-common:1.2.1@aar,androidx.media:media:1.6.0@aar,androidx.media:media:1.6.0@aar,com.google.android.exoplayer:exoplayer-dash:2.18.7@aar,com.google.android.exoplayer:exoplayer-hls:2.18.7@aar,com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7@aar,com.google.android.exoplayer:exoplayer-core:2.18.7@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.1.0@aar,androidx.constraintlayout:constraintlayout:2.1.4@aar,androidx.browser:browser:1.5.0@aar,androidx.browser:browser:1.5.0@aar,com.google.android.gms:play-services-ads-lite:22.5.0@aar,androidx.work:work-runtime:2.7.1@aar,androidx.webkit:webkit:1.7.0@aar,androidx.appcompat:appcompat-resources:1.6.1@aar,androidx.appcompat:appcompat:1.6.1@aar,androidx.appcompat:appcompat:1.6.1@aar,com.android.billingclient:billing:6.1.0@aar,com.google.android.gms:play-services-auth:20.7.0@aar,com.google.android.gms:play-services-appset:16.0.1@aar,com.google.android.gms:play-services-location:19.0.0@aar,com.google.android.gms:play-services-flags:18.1.0@aar,com.google.android.gms:play-services-auth-api-phone:18.0.1@aar,com.google.android.gms:play-services-auth-base:18.0.4@aar,com.google.android.gms:play-services-fido:20.0.1@aar,com.google.firebase:firebase-appcheck-interop:17.0.0@aar,com.google.android.gms:play-services-base:18.5.0@aar,com.google.android.recaptcha:recaptcha:18.1.2@aar,com.google.android.play:integrity:1.3.0@aar,com.google.android.ump:user-messaging-platform:2.1.0@aar,com.google.android.gms:play-services-ads-base:22.5.0@aar,com.google.android.gms:play-services-measurement:21.5.0@aar,com.google.android.gms:play-services-measurement-sdk:21.5.0@aar,com.google.android.gms:play-services-measurement-impl:21.5.0@aar,com.google.android.gms:play-services-ads-identifier:18.0.0@aar,com.google.firebase:firebase-iid-interop:17.1.0@aar,com.google.android.gms:play-services-cloud-messaging:17.1.0@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05@aar,androidx.window:window-java:1.0.0-beta04@aar,com.google.android.gms:play-services-stats:17.0.2@aar,androidx.palette:palette:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.6.0@aar,androidx.activity:activity:1.6.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2@aar,androidx.lifecycle:lifecycle-livedata-core:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-viewmodel:2.6.2@aar,androidx.lifecycle:lifecycle-service:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-livedata:2.6.2@aar,androidx.lifecycle:lifecycle-common-java8:2.6.2@jar,androidx.savedstate:savedstate:1.2.1@aar,androidx.lifecycle:lifecycle-common:2.6.2@jar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar,com.google.android.gms:play-services-tasks:18.2.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:21.5.0@aar,com.google.android.gms:play-services-measurement-base:21.5.0@aar,com.google.android.gms:play-services-basement:18.4.0@aar,androidx.core:core-ktx:1.10.1@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.emoji2:emoji2-views-helper:1.2.0@aar,androidx.emoji2:emoji2:1.2.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.lifecycle:lifecycle-runtime:2.6.2@aar,androidx.lifecycle:lifecycle-process:2.6.2@aar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,androidx.annotation:annotation-experimental:1.3.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,com.google.firebase:firebase-datatransport:18.1.7@aar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,androidx.profileinstaller:profileinstaller:1.3.0@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.startup:startup-runtime:1.1.1@aar,androidx.tracing:tracing:1.0.0@aar,com.google.firebase:firebase-components:17.1.5@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.android.exoplayer:exoplayer-datasource:2.18.7@aar,com.google.android.exoplayer:exoplayer-extractor:2.18.7@aar,com.google.android.exoplayer:exoplayer-decoder:2.18.7@aar,com.google.android.exoplayer:exoplayer-database:2.18.7@aar,com.google.android.exoplayer:exoplayer-common:2.18.7@aar,androidx.interpolator:interpolator:1.0.0@aar,com.google.android.datatransport:transport-api:3.1.0@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders:17.0.0@jar,androidx.room:room-runtime:2.2.5@aar,androidx.sqlite:sqlite-framework:2.1.0@aar,androidx.sqlite:sqlite:2.1.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.1@jar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-runtime:2.2.0@aar,androidx.arch.core:core-common:2.2.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.room:room-common:2.2.5@jar,androidx.annotation:annotation-jvm:1.7.1@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21@jar,androidx.multidex:multidex:2.0.0@aar,io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar,com.google.code.gson:gson:2.8.1@jar,com.squareup.okhttp3:okhttp:3.14.9@jar,com.google.guava:guava:32.0.1-android@jar,com.google.errorprone:error_prone_annotations:2.18.0@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.android.play:core-common:2.0.3@aar,com.google.firebase:firebase-annotations:16.2.0@jar,com.squareup.okio:okio:1.17.2@jar,androidx.constraintlayout:constraintlayout-core:1.0.4@jar,com.google.guava:failureaccess:1.0.1@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-qual:3.33.0@jar,com.google.j2objc:j2objc-annotations:2.8@jar,org.jetbrains:annotations:23.0.0@jar,javax.inject:javax.inject:1@jar">
     <dependency
         name="__local_aars__:C:\Users\admin\Downloads\Fluex\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"/>
     <dependency
@@ -267,8 +303,14 @@
         name="C:\Users\admin\Downloads\Fluex\android@@:audio_service::release"
         simpleName="com.ryanheise.audioservice:audio_service"/>
     <dependency
+        name="C:\Users\admin\Downloads\Fluex\android@@:flutter_chrome_cast::release"
+        simpleName="com.felnanuke.google_cast:flutter_chrome_cast"/>
+    <dependency
         name="C:\Users\admin\Downloads\Fluex\android@@:path_provider_android::release"
         simpleName="io.flutter.plugins.pathprovider:path_provider_android"/>
+    <dependency
+        name="C:\Users\admin\Downloads\Fluex\android@@:video_cast::release"
+        simpleName="com.videocast.video_cast:video_cast"/>
     <dependency
         name="C:\Users\admin\Downloads\Fluex\android@@:flutter_overlay_window::release"
         simpleName="com.example.flutter_overlay_window:flutter_overlay_window"/>
@@ -349,6 +391,16 @@
     <dependency
         name="com.google.android.gms:play-services-ads:22.5.0@aar"/>
     <dependency
+        name="com.google.android.gms:play-services-cast-tv:21.1.0@aar"/>
+    <dependency
+        name="com.google.android.exoplayer:extension-cast:2.17.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-cast-framework:21.5.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-cast:21.5.0@aar"/>
+    <dependency
+        name="androidx.mediarouter:mediarouter:1.6.0-beta01@aar"/>
+    <dependency
         name="androidx.media2:media2-session:1.2.1@aar"/>
     <dependency
         name="androidx.media2:media2-common:1.2.1@aar"/>
@@ -381,13 +433,29 @@
     <dependency
         name="com.android.billingclient:billing:6.1.0@aar"/>
     <dependency
+        name="com.google.android.gms:play-services-auth:20.7.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-appset:16.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-location:19.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-flags:18.1.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-api-phone:18.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-base:18.0.4@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-fido:20.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-interop:17.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-base:18.5.0@aar"/>
+    <dependency
         name="com.google.android.recaptcha:recaptcha:18.1.2@aar"/>
     <dependency
         name="com.google.android.play:integrity:1.3.0@aar"/>
     <dependency
         name="com.google.android.ump:user-messaging-platform:2.1.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-auth:20.7.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-ads-base:22.5.0@aar"/>
     <dependency
@@ -398,20 +466,6 @@
         name="com.google.android.gms:play-services-measurement-impl:21.5.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-ads-identifier:18.0.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-appset:16.0.1@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-location:19.0.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-auth-api-phone:18.0.1@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-auth-base:18.0.4@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-fido:20.0.1@aar"/>
-    <dependency
-        name="com.google.firebase:firebase-appcheck-interop:17.0.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-base:18.0.1@aar"/>
     <dependency
         name="com.google.firebase:firebase-iid-interop:17.1.0@aar"/>
     <dependency
@@ -426,6 +480,8 @@
         name="androidx.window:window-java:1.0.0-beta04@aar"/>
     <dependency
         name="com.google.android.gms:play-services-stats:17.0.2@aar"/>
+    <dependency
+        name="androidx.palette:palette:1.0.0@aar"/>
     <dependency
         name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"/>
     <dependency
@@ -459,7 +515,7 @@
     <dependency
         name="org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.1@jar"/>
     <dependency
-        name="com.google.android.gms:play-services-tasks:18.0.2@aar"/>
+        name="com.google.android.gms:play-services-tasks:18.2.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"/>
     <dependency
@@ -469,7 +525,7 @@
     <dependency
         name="com.google.android.gms:play-services-measurement-base:21.5.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-basement:18.2.0@aar"/>
+        name="com.google.android.gms:play-services-basement:18.4.0@aar"/>
     <dependency
         name="androidx.core:core-ktx:1.10.1@aar"/>
     <dependency
@@ -478,6 +534,8 @@
         name="androidx.emoji2:emoji2-views-helper:1.2.0@aar"/>
     <dependency
         name="androidx.emoji2:emoji2:1.2.0@aar"/>
+    <dependency
+        name="androidx.recyclerview:recyclerview:1.1.0@aar"/>
     <dependency
         name="androidx.viewpager:viewpager:1.0.0@aar"/>
     <dependency
@@ -507,13 +565,13 @@
     <dependency
         name="androidx.profileinstaller:profileinstaller:1.3.0@aar"/>
     <dependency
+        name="androidx.concurrent:concurrent-futures:1.1.0@jar"/>
+    <dependency
         name="androidx.startup:startup-runtime:1.1.1@aar"/>
     <dependency
         name="androidx.tracing:tracing:1.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-components:17.1.5@aar"/>
-    <dependency
-        name="androidx.concurrent:concurrent-futures:1.1.0@jar"/>
     <dependency
         name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"/>
     <dependency
@@ -568,6 +626,8 @@
         name="androidx.multidex:multidex:2.0.0@aar"/>
     <dependency
         name="io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"/>
+    <dependency
+        name="com.google.code.gson:gson:2.8.1@jar"/>
     <dependency
         name="com.squareup.okhttp3:okhttp:3.14.9@jar"/>
     <dependency

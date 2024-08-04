@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Panggilan masuk"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Panggilan sedang berlangsung"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Menyaring panggilan masuk"</string>
+    <string name="cast_ad_label">Iklan</string>
+    <string name="cast_casting_to_device">Mentransmisi ke %1$s</string>
+    <string name="cast_closed_captions">Teks tertutup</string>
+    <string name="cast_closed_captions_unavailable">Teks tertutup tidak tersedia</string>
+    <string name="cast_connecting_to_device">Menghubungkan ke %1$s</string>
+    <string name="cast_disconnect">Putuskan koneksi</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Gambar ditampilkan saat penerima transmisi memutar iklan</string>
+    <string name="cast_expanded_controller_ad_in_progress">Iklan sedang berlangsung…</string>
+    <string name="cast_expanded_controller_background_image">Sampul album</string>
+    <string name="cast_expanded_controller_live_head_description">Posisi saat ini ada di awal live stream</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Streaming Langsug</string>
+    <string name="cast_expanded_controller_loading">Memuat...</string>
+    <string name="cast_expanded_controller_skip_ad_label">Lewati Iklan</string>
+    <string name="cast_expanded_controller_skip_ad_text">Anda dapat melewati iklan dalam %1$d…</string>
+    <string name="cast_forward">Maju</string>
+    <string name="cast_forward_10">Maju sepuluh detik</string>
+    <string name="cast_forward_30">Maju tiga puluh detik</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">LIVE</string>
+    <string name="cast_mute">Bisukan</string>
+    <string name="cast_notification_connected_message">Terhubung ke %1$s</string>
+    <string name="cast_notification_connecting_message">Menghubungkan ke %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Putuskan koneksi</string>
+    <string name="cast_pause">Jeda</string>
+    <string name="cast_play">Putar</string>
+    <string name="cast_rewind">Putar Mundur</string>
+    <string name="cast_rewind_10">Putar mundur sepuluh detik</string>
+    <string name="cast_rewind_30">Putar mundur tiga puluh detik</string>
+    <string name="cast_seek_bar">Kontrol pencari pemutaran</string>
+    <string name="cast_skip_next">Lewati ke item berikutnya</string>
+    <string name="cast_skip_prev">Lewati ke item sebelumnya</string>
+    <string name="cast_stop">Berhenti</string>
+    <string name="cast_stop_live_stream">Berhenti streaming langsung</string>
+    <string name="cast_tracks_chooser_dialog_audio">Audio</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Batal</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Teks Tertutup</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Lacak %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Tidak ada</string>
+    <string name="cast_tracks_chooser_dialog_ok">Oke</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Subtitel</string>
+    <string name="cast_unmute">Suarakan</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktifkan</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s tidak akan berfungsi jika layanan Google Play tidak diaktifkan.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktifkan layanan Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Salin link"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Buka di browser"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Bagikan link"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Pelajari cara melakukan transmisi"</string>
+    <string name="media_notification_channel_name">Cast</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Transmisikan"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Transmisikan. Terhubung"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Transmisikan. Menghubungkan"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Transmisikan. Terputus"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Info tidak tersedia"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Mencari perangkat..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Mencari perangkat"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Transmisikan ke"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Pelajari lebih lanjut"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan mobil ini"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan ponsel ini"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan tablet ini"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan TV ini"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan perangkat ini"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Pastikan perangkat lainnya berada di jaringan Wi-Fi yang sama dengan smartwatch ini"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Perangkat tidak tersedia"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Sampul album"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Melakukan cast layar"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Tutup"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Ciutkan"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Putuskan koneksi"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Luaskan"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Tidak ada info yang tersedia"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Tidak ada media yang dipilih"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Jeda"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Putar"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Berhenti"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Hentikan transmisi"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Pengatur volume"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Grup"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Tambahkan perangkat"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Putar di grup"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Sistem"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Perangkat"</string>
     <string name="native_body">Isi</string>
     <string name="native_headline">Judul</string>
     <string name="native_media_view">Tampilan Media</string>

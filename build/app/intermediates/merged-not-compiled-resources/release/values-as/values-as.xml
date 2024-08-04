@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"অন্তৰ্গামী কল"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"চলি থকা কল"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"এটা অন্তৰ্গামী কলৰ পৰীক্ষা কৰি থকা হৈছে"</string>
+    <string name="cast_ad_label">বিজ্ঞাপন</string>
+    <string name="cast_casting_to_device">%1$s লৈ কাষ্ট কৰি থকা হৈছে</string>
+    <string name="cast_closed_captions">ছাব-টাইটেল</string>
+    <string name="cast_closed_captions_unavailable">ছাব-টাইটেল উপলব্ধ নহয়</string>
+    <string name="cast_connecting_to_device">%1$sৰ সৈতে সংযোগ কৰি থকা হৈছে</string>
+    <string name="cast_disconnect">সংযোগ বিচ্ছিন্ন কৰক</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">কাষ্ট ৰিচিভাৰে বিজ্ঞাপন এটা প্লে\' কৰি থকা অৱস্থাত ছবিখন দেখুওৱা হ’ল</string>
+    <string name="cast_expanded_controller_ad_in_progress">বিজ্ঞাপন চলি আছে…</string>
+    <string name="cast_expanded_controller_background_image">এলবাম আৰ্ট</string>
+    <string name="cast_expanded_controller_live_head_description">বৰ্তমানৰ স্থান লাইভ ষ্ট্রীমৰ শীৰ্ষত</string>
+    <string name="cast_expanded_controller_live_stream_indicator">লাইভ ষ্ট্ৰীম</string>
+    <string name="cast_expanded_controller_loading">ল\'ড হৈ আছে…</string>
+    <string name="cast_expanded_controller_skip_ad_label">বিজ্ঞাপন এৰি যাওক</string>
+    <string name="cast_expanded_controller_skip_ad_text">আপুনি বিজ্ঞাপনটো %1$dত এৰি যাব পাৰিব…</string>
+    <string name="cast_forward">ফৰৱাৰ্ড কৰক</string>
+    <string name="cast_forward_10">দহ ছেকেণ্ড ফৰৱাৰ্ড কৰক</string>
+    <string name="cast_forward_30">ত্ৰিশ ছেকেণ্ড ফৰৱাৰ্ড কৰক</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">লাইভ</string>
+    <string name="cast_mute">মিউট কৰক</string>
+    <string name="cast_notification_connected_message">%1$s লৈ সংযোগ কৰা হ’ল</string>
+    <string name="cast_notification_connecting_message">%1$s লৈ সংযোগ কৰি থকা হৈছে</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">সংযোগ বিচ্ছিন্ন কৰক</string>
+    <string name="cast_pause">পজ কৰক</string>
+    <string name="cast_play">প্লে কৰক</string>
+    <string name="cast_rewind">ৰিৱাইণ্ড কৰক</string>
+    <string name="cast_rewind_10">দহ ছেকেণ্ড ৰিৱাইণ্ড কৰক</string>
+    <string name="cast_rewind_30">ত্ৰিশ ছেকেণ্ড ৰিৱাইণ্ড কৰক</string>
+    <string name="cast_seek_bar">প্লেবেকৰ নিয়ন্ত্ৰণ</string>
+    <string name="cast_skip_next">পৰৱৰ্তী বস্তুটোলৈ যাওক</string>
+    <string name="cast_skip_prev">পূৰ্বৱৰ্তী বস্তুটোলৈ যাওক</string>
+    <string name="cast_stop">বন্ধ কৰক</string>
+    <string name="cast_stop_live_stream">লাইভ ষ্ট্ৰীম বন্ধ কৰক</string>
+    <string name="cast_tracks_chooser_dialog_audio">অডিঅ’</string>
+    <string name="cast_tracks_chooser_dialog_cancel">বাতিল কৰক</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">ছাব-টাইটেল</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">%1$d ট্ৰেক কৰক</string>
+    <string name="cast_tracks_chooser_dialog_none">একো নাই</string>
+    <string name="cast_tracks_chooser_dialog_ok">ঠিক আছে</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">ছাবটাইটেলসমূহ</string>
+    <string name="cast_unmute">আনমিউট কৰক</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">সক্ষম কৰক</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">আপুনি Google Play সেৱাবোৰ সক্ষম নকৰালৈকে %1$sএ কাম নকৰিব।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google প্লে সেৱাসক্ষম কৰক</string>
@@ -57,6 +100,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"লিংক প্ৰতিলিপি কৰক"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"ব্ৰাউজাৰত খোলক"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"লিংক শ্বেয়াৰ কৰক"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"কেনেকৈ কাষ্ট কৰিব লাগে জানক"</string>
+    <string name="media_notification_channel_name">কাষ্ট কৰক</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"কাষ্ট কৰক"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"কাষ্ট কৰক। সংযুক্ত হৈ আছে"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"কাষ্ট কৰক। সংযোগ কৰি থকা হৈছে"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"কাষ্ট কৰক। সংযোগ বিচ্ছিন্ন হৈ আছে"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"কোনো তথ্য নাই"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"ডিভাইচ বিচাৰি থকা হৈছে..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"ডিভাইচ বিচাৰি থকা হৈছে"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"ইয়াত কাষ্ট কৰক"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"অধিক জানক"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"আনটো ডিভাইচ এই গাড়ীখনৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"আনটো ডিভাইচ এই ফ’নটোৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"আনটো ডিভাইচ এই টেবলেটটোৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"আনটো ডিভাইচ এই টিভিটোৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"আনটো ডিভাইচ এই ডিভাইচটোৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"আনটো ডিভাইচ এই ঘড়ীটোৰ সৈতে একেটা ৱাই-ফাই নেটৱৰ্কতে থকাটো নিশ্চিত কৰক"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"কোনো ডিভাইচ উপলব্ধ নহয়"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"এলবাম আৰ্ট"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"স্ক্ৰীন কাষ্ট কৰি থকা হৈছে"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"বন্ধ কৰক"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"সংকুচিত কৰক"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"বিচ্ছিন্ন কৰক"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"বিস্তাৰ কৰক"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"কোনো তথ্য নাই"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"কোনো মিডিয়া বাছনি কৰা হোৱা নাই"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"পজ কৰক"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"প্লে কৰক"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"ৰখাওক"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"কাষ্ট কৰা বন্ধ কৰক"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"ধ্বনি শ্লাইডাৰ"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"গোট"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"কোনো এটা ডিভাইচ যোগ কৰক"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"কোনো এটা গোটত প্লে’ কৰক"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"ছিষ্টেম"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"ডিভাইচসমূহ"</string>
     <string name="native_body">মূল অংশ</string>
     <string name="native_headline">শিৰোনাম</string>
     <string name="native_media_view">মিডিয়া ভিউ</string>

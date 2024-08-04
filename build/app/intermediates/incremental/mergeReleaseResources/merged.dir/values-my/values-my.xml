@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"အဝင်ခေါ်ဆိုမှု"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"လက်ရှိခေါ်ဆိုမှု"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"အဝင်ခေါ်ဆိုမှုကို စစ်ဆေးနေသည်"</string>
+    <string name="cast_ad_label">Ad</string>
+    <string name="cast_casting_to_device">%1$s သို့ကာစ်တ်လုပ်နေသည်</string>
+    <string name="cast_closed_captions">စာတန်းထိုးများ</string>
+    <string name="cast_closed_captions_unavailable">စာတန်းထိုး မရနိုင်ပါ</string>
+    <string name="cast_connecting_to_device">%1$s နှင့် ချိတ်ဆက်နေပါသည်</string>
+    <string name="cast_disconnect">ဆက်သွယ်မှုဖြုတ်ပါ</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">ကာ့စ်လက်ခံကိရိယာက ကြော်ငြာဖွင့်နေစဉ် ပြသသော ပုံ</string>
+    <string name="cast_expanded_controller_ad_in_progress">Ad လုပ်ဆောင်နေဆဲ…</string>
+    <string name="cast_expanded_controller_background_image">အယ်လ်ဘမ်ပုံ</string>
+    <string name="cast_expanded_controller_live_head_description">လက်ရှိနေရာသည် တိုက်ရိုက်လွှင့်ခြင်း၏ အစပိုင်းဖြစ်သည်</string>
+    <string name="cast_expanded_controller_live_stream_indicator">တိုက်ရိုက်ထုတ်လွှင့်မှု</string>
+    <string name="cast_expanded_controller_loading">ဖွင့်နေသည်…</string>
+    <string name="cast_expanded_controller_skip_ad_label">ကြော်ငြာကို ကျော်ရန်</string>
+    <string name="cast_expanded_controller_skip_ad_text">ကြော်ငြာကို %1$d တွင် ကျော်နိုင်သည်…</string>
+    <string name="cast_forward">အရှေ့သို့ရစ်ပါ</string>
+    <string name="cast_forward_10">အရှေ့သို့ ဆယ်စက္ကန့် ရစ်ပါ</string>
+    <string name="cast_forward_30">အရှေ့သို့ စက္ကန့်သုံးဆယ် ရစ်ပါ</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">တိုက်ရိုက်လွှင့်ခြင်း</string>
+    <string name="cast_mute">အသံပိတ်ပါ</string>
+    <string name="cast_notification_connected_message">%1$s သို့ ချိတ်ဆက်ပြီးပါပြီ</string>
+    <string name="cast_notification_connecting_message">%1$s သို့ချိတ်ဆက်နေသည်</string>
+    <string name="cast_notification_default_channel_name">ကာစ်လုပ်ခြင်း</string>
+    <string name="cast_notification_disconnect">ချိတ်ဆက်မှုဖြုတ်ပါ</string>
+    <string name="cast_pause">ခဏရပ်ပါ</string>
+    <string name="cast_play">ဖွင့်ပါ</string>
+    <string name="cast_rewind">အနောက်သို့ရစ်ပါ</string>
+    <string name="cast_rewind_10">အနောက်သို့ ဆယ်စက္ကန့် ပြန်ရစ်ပါ</string>
+    <string name="cast_rewind_30">အနောက်သို့ စက္ကန့်သုံးဆယ် ပြန်ရစ်ပါ</string>
+    <string name="cast_seek_bar">ဖွင့်ခြင်းဆိုင်ရာ ရှာဖွေခြင်း ထိန်းချုပ်မှု</string>
+    <string name="cast_skip_next">နောက်တစ်ခုသို့ ကျော်ပါ</string>
+    <string name="cast_skip_prev">ပြီးခဲ့သည့်တစ်ခုသို့ ပြန်သွားပါ</string>
+    <string name="cast_stop">ရပ်ပါ</string>
+    <string name="cast_stop_live_stream">တိုက်ရိုက်ထုတ်လွှင့်ခြင်းကို ရပ်ပါ</string>
+    <string name="cast_tracks_chooser_dialog_audio">အသံ</string>
+    <string name="cast_tracks_chooser_dialog_cancel">မလုပ်တော့</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">စာတန်းထိုးများ</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">အပုဒ်ရေ %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">မရှိပါ</string>
+    <string name="cast_tracks_chooser_dialog_ok">OK</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">စာတန်းထိုးများ</string>
+    <string name="cast_unmute">အသံပြန်ဖွင့်ပါ</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ဖွင့်ရန်</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play ဝန်ဆောင်မှုများကို မဖွင့်သ၍ %1$s သည်အလုပ်လုပ်မည်မဟုတ်ပါ။</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play ဝန်ဆောင်မှုများ ဖွင့်ရန်</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"လင့်ခ်ကို ကူးယူရန်"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"ဘရောင်ဇာတွင် ဖွင့်ရန်"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"လင့်ခ်ကို မျှဝေရန်"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"ကာစ်လုပ်ပုံကို လေ့လာရန်"</string>
+    <string name="media_notification_channel_name">ကာစ်လုပ်ရန်</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Cast"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Cast. ချိတ်ဆက်ထားသည်"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Cast. ချိတ်ဆက်နေသည်"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Cast. ချိတ်ဆက်မထားပါ"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"အချက်အလက် မရရှိနိုင်ပါ"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"စက်များကို ရှာနေသည်..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"စက်များကို ရှာနေသည်"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"ဤစက်သို့ ကာစ်လုပ်ရန်"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"ပိုမိုလေ့လာရန်"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"အခြားစက်သည် ဤကားနှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"အခြားစက်သည် ဤဖုန်းနှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"အခြားစက်သည် ဤတက်ဘလက်နှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"အခြားစက်သည် ဤ tv နှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"အခြားစက်သည် ဤစက်နှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"အခြားစက်သည် ဤနာရီနှင့် Wi-Fi ကွန်ရက်တစ်ခုတည်းတွင် ရှိနေကြောင်း သေချာပါစေ"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"စက်များ မရနိုင်ပါ"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"အယ်လ်ဘမ်ပုံ"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"ကာစ်တ်လုပ်သည့် မျက်နှာပြင်"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"ပိတ်ရန်"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"လျှော့ပြရန်"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"ချိတ်ဆက်မှု ဖြုတ်ရန်"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"ချဲ့ရန်"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"အချက်အလက် မရရှိနိုင်ပါ"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"မီဒီယာ ရွေးမထားပါ"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"ခဏရပ်ရန်"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"ကစားရန်"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"ရပ်ရန်"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"ကာစ် ရပ်ရန်"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"အသံအတိုးအကျယ်ချိန်သည့် ရွှေ့တုံး"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"အဖွဲ့"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"စက်ပစ္စည်း ထည့်ခြင်း"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"အုပ်စုလိုက် ဖွင့်ခြင်း"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"စနစ်"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"စက်များ"</string>
     <string name="native_body">စာကိုယ်</string>
     <string name="native_headline">ခေါင်းစဉ်</string>
     <string name="native_media_view">မီဒီယာမြင်ကွင်း</string>

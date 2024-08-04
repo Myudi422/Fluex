@@ -299,7 +299,9 @@ class _StreamingWidgetState extends State<StreamingWidget>
         videoPlayerController: _videoPlayerController,
         isFullScreen: _isFullScreen,
         toggleFullScreen: _toggleFullScreen,
-        telegramId: widget.telegramId, // Pass telegramId here
+        telegramId: widget.telegramId,
+        episodeNumber: widget.episodeNumber,
+        animeId: widget.animeId, // Pass telegramId here
       );
     } else {
       double shimmerHeight = MediaQuery.of(context).size.height * 0.25;

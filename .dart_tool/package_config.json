@@ -344,6 +344,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_chrome_cast",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_chrome_cast-0.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_colorpicker",
       "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_colorpicker-1.0.3",
       "packageUri": "lib/",
@@ -813,37 +819,37 @@
     },
     {
       "name": "permission_handler",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler-11.1.0",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler-11.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
     {
       "name": "permission_handler_android",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_android-12.0.1",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_android-12.0.7",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
     {
       "name": "permission_handler_apple",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_apple-9.2.0",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_apple-9.4.5",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
     {
       "name": "permission_handler_html",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_html-0.1.0+2",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_html-0.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "permission_handler_platform_interface",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_platform_interface-4.0.2",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_platform_interface-4.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "permission_handler_windows",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_windows-0.2.0",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/permission_handler_windows-0.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -1316,7 +1322,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2024-08-02T03:24:21.854066Z",
+  "generated": "2024-08-04T10:01:50.371265Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }

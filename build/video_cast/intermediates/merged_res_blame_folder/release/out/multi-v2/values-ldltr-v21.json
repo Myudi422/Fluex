@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}

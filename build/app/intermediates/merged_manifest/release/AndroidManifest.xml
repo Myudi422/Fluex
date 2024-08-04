@@ -36,6 +36,9 @@
         <intent>
             <action android:name="android.intent.action.VIEW" />
         </intent>
+
+        <package android:name="com.google.android.gms.policy_cast_dynamite" />
+
         <intent>
             <action android:name="android.media.browse.MediaBrowserService" />
         </intent>
@@ -124,6 +127,9 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
+            <meta-data
+                android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+                android:value="GoogleCastOptionsProvider" />
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
                 android:resource="@drawable/ic_notification" />
@@ -334,7 +340,19 @@
             android:authorities="com.nextccgmedia.flue.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
-            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+            android:initOrder="100" />
+
+        <service
+            android:name="com.google.android.gms.cast.tv.internal.CastTvHostService"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.cast.framework.ReconnectionService"
+            android:exported="false" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
@@ -495,6 +513,11 @@
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
 
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
             android:enabled="true"
@@ -510,11 +533,6 @@
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <uses-library
             android:name="android.ext.adservices"

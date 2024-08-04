@@ -42,6 +42,12 @@
 @import firebase_messaging;
 #endif
 
+#if __has_include(<flutter_chrome_cast/GoogleCastPlugin.h>)
+#import <flutter_chrome_cast/GoogleCastPlugin.h>
+#else
+@import flutter_chrome_cast;
+#endif
+
 #if __has_include(<flutter_downloader/FlutterDownloaderPlugin.h>)
 #import <flutter_downloader/FlutterDownloaderPlugin.h>
 #else
@@ -147,6 +153,7 @@
   [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [FLTFirebaseMessagingPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseMessagingPlugin"]];
+  [GoogleCastPlugin registerWithRegistrar:[registry registrarForPlugin:@"GoogleCastPlugin"]];
   [FlutterDownloaderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterDownloaderPlugin"]];
   [InAppWebViewFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"InAppWebViewFlutterPlugin"]];
   [FluttertoastPlugin registerWithRegistrar:[registry registrarForPlugin:@"FluttertoastPlugin"]];

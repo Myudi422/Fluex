@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Gaunamasis skambutis"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Vykstantis skambutis"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Gaunamojo skambučio tikrinimas"</string>
+    <string name="cast_ad_label">Skelbimas</string>
+    <string name="cast_casting_to_device">Perduodama į „%1$s“</string>
+    <string name="cast_closed_captions">Subtitrai</string>
+    <string name="cast_closed_captions_unavailable">Subtitrai nepasiekiami</string>
+    <string name="cast_connecting_to_device">Prisijungiama prie „%1$s“</string>
+    <string name="cast_disconnect">Atjungti</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Vaizdas, rodomas, kol „Cast“ imtuvas leidžia skelbimą</string>
+    <string name="cast_expanded_controller_ad_in_progress">Skelbimas apdorojamas…</string>
+    <string name="cast_expanded_controller_background_image">Albumo viršelis</string>
+    <string name="cast_expanded_controller_live_head_description">Dabartinė pozicija yra tiesioginio srauto viršuje</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Tiesioginė transliacija</string>
+    <string name="cast_expanded_controller_loading">Įkeliama…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Praleisti skelbimą</string>
+    <string name="cast_expanded_controller_skip_ad_text">Skelbimą galėsite praleisti po %1$d…</string>
+    <string name="cast_forward">Pirmyn</string>
+    <string name="cast_forward_10">Pirmyn dešimt sekundžių</string>
+    <string name="cast_forward_30">Pirmyn trisdešimt sekundžių</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">TIESIOGIAI</string>
+    <string name="cast_mute">Nutildyti</string>
+    <string name="cast_notification_connected_message">Prisijungta prie „%1$s“</string>
+    <string name="cast_notification_connecting_message">Prisijungiama prie „%1$s“</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Atsijungti</string>
+    <string name="cast_pause">Pristabdyti</string>
+    <string name="cast_play">Leisti</string>
+    <string name="cast_rewind">Atsukti atgal</string>
+    <string name="cast_rewind_10">Atsukti dešimt sekundžių atgal</string>
+    <string name="cast_rewind_30">Atsukti trisdešimt sekundžių atgal</string>
+    <string name="cast_seek_bar">Atkūrimo paieškos valdiklis</string>
+    <string name="cast_skip_next">Pereiti prie kito elemento</string>
+    <string name="cast_skip_prev">Pereiti prie ankstesnio elemento</string>
+    <string name="cast_stop">Sustabdyti</string>
+    <string name="cast_stop_live_stream">Sustabdyti tiesioginį srautą</string>
+    <string name="cast_tracks_chooser_dialog_audio">Garsas</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Atšaukti</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Subtitrai</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">%1$d takelis</string>
+    <string name="cast_tracks_chooser_dialog_none">Nėra</string>
+    <string name="cast_tracks_chooser_dialog_ok">Gerai</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Subtitrai</string>
+    <string name="cast_unmute">Įjungti garsą</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Įgalinti</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">„%1$s“ neveiks, jei neįgalinsite „Google Play“ paslaugų.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Įgalinkite „Google Play“ paslaugas</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopijuoti nuorodą"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Atidaryti naršyklėje"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Bendrinti nuorodą"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Sužinokite, kaip perduoti"</string>
+    <string name="media_notification_channel_name">Cast</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Perduoti"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Perduoti. Prisijungta"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Perduoti. Prisijungiama"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Perduoti. Atsijungta"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Nėra jokios informacijos"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Ieškoma įrenginių..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Randami įrenginiai"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Perduoti į"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Sužinokite daugiau"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis automobilis"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis telefonas"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis planšetinis kompiuteris"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis televizorius"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis įrenginys"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Patikrinkite, ar kitas įrenginys prijungtas prie to paties „Wi-Fi“ tinklo kaip šis laikrodis"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Nėra jokių pasiekiamų įrenginių"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Albumo viršelis"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Perduodamas ekranas"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Uždaryti"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Sutraukti"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Atjungti"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Išskleisti"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Informacija nepasiekiama"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Nepasirinkta jokios medijos"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Pristabdyti"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Leisti"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Sustabdyti"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Sustabdyti perdavimą"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Garsumo šliaužiklis"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Grupė"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Įrenginio pridėjimas"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Leidimas grupėje"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Sistema"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Įrenginiai"</string>
     <string name="native_body">Tekstas</string>
     <string name="native_headline">Antraštė</string>
     <string name="native_media_view">Medijos rodinys</string>

@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Příchozí hovor"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Probíhající hovor"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Prověřování příchozího hovoru"</string>
+    <string name="cast_ad_label">Reklama</string>
+    <string name="cast_casting_to_device">Odesílání do zařízení %1$s</string>
+    <string name="cast_closed_captions">Skryté titulky</string>
+    <string name="cast_closed_captions_unavailable">Skryté titulky nejsou k dispozici</string>
+    <string name="cast_connecting_to_device">Připojování k zařízení %1$s</string>
+    <string name="cast_disconnect">Odpojit</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Obrázek, který se zobrazí, když přijímač odesílaného obsahu bude přehrávat reklamu</string>
+    <string name="cast_expanded_controller_ad_in_progress">Zobrazená reklama…</string>
+    <string name="cast_expanded_controller_background_image">Obal alba</string>
+    <string name="cast_expanded_controller_live_head_description">Aktuální pozice je v čele přímého přenosu</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Přímý přenos</string>
+    <string name="cast_expanded_controller_loading">Načítání…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Přeskočit reklamu</string>
+    <string name="cast_expanded_controller_skip_ad_text">Reklamu můžete přeskočit za %1$d…</string>
+    <string name="cast_forward">Přetočit vpřed</string>
+    <string name="cast_forward_10">Přetočit o 10 sekund vpřed</string>
+    <string name="cast_forward_30">Přetočit o 30 sekund vpřed</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">ŽIVĚ</string>
+    <string name="cast_mute">Ztlumit</string>
+    <string name="cast_notification_connected_message">Připojeno k obrazovce %1$s</string>
+    <string name="cast_notification_connecting_message">Připojování k obrazovce %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Odpojit</string>
+    <string name="cast_pause">Pozastavit</string>
+    <string name="cast_play">Přehrát</string>
+    <string name="cast_rewind">Přetočit zpět</string>
+    <string name="cast_rewind_10">Přetočit o 10 sekund zpět</string>
+    <string name="cast_rewind_30">Přetočit o 10 sekund zpět</string>
+    <string name="cast_seek_bar">Posuvník přehrávání</string>
+    <string name="cast_skip_next">Přejít na další položku</string>
+    <string name="cast_skip_prev">Přejít na předchozí položku</string>
+    <string name="cast_stop">Zastavit</string>
+    <string name="cast_stop_live_stream">Zastavit přímý přenos</string>
+    <string name="cast_tracks_chooser_dialog_audio">Zvuk</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Zrušit</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Skryté titulky</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Stopa %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Žádné</string>
+    <string name="cast_tracks_chooser_dialog_ok">OK</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Titulky</string>
+    <string name="cast_unmute">Zapnout zvuk</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Povolit</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Ke spuštění aplikace %1$s je třeba aktivovat služby Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Aktivace služeb Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopírovat odkaz"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Otevřít v prohlížeči"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Sdílet odkaz"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Podívejte se, jak na to"</string>
+    <string name="media_notification_channel_name">Cast</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Odeslat"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Odeslat. Propojeno"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Odeslat. Připojování"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Odeslat. Odpojeno"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Nejsou k dispozici žádné informace"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Hledání zařízení…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Hledání zařízení"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Odeslat do zařízení"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Další informace"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako toto auto"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako tento telefon"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako tento tablet"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako tuto televizi"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako toto zařízení"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Připojte druhé zařízení ke stejné síti Wi-Fi, jako tyto hodinky"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Nejsou k dispozici žádná zařízení"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Obal alba"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Odesílání obsahu obrazovky"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Zavřít"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Sbalit"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Odpojit"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Rozbalit"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Nejsou k dispozici žádné informace"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Není vybrán žádný mediální obsah"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Pozastavit"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Přehrát"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Zastavit"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Zastavit odesílání"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Posuvník hlasitosti"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Skupina"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Přidání zařízení"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Přehrávání ve skupině"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Systém"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Zařízení"</string>
     <string name="native_body">Text</string>
     <string name="native_headline">Nadpis</string>
     <string name="native_media_view">Zobrazení mediálního souboru</string>

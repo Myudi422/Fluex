@@ -34,7 +34,50 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"आगमन कल"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"भइरहेको कल"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"आगमन कल जाँचिँदै छ"</string>
-    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">सक्रिय गर्नुहोस्</string>
+    <string name="cast_ad_label">विज्ञापन</string>
+    <string name="cast_casting_to_device">%1$s मा Cast गर्दै</string>
+    <string name="cast_closed_captions">उपशीर्षकहरू</string>
+    <string name="cast_closed_captions_unavailable">उपशीर्षकहरू उपलब्ध छैनन्</string>
+    <string name="cast_connecting_to_device">%1$s मा जडान गर्दै</string>
+    <string name="cast_disconnect">विच्छेद गर्नुहोस्</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">cast रिसिभरले कुनै विज्ञापन प्ले गरिरहेको बेला छवि प्रदर्शन गरिन्छ</string>
+    <string name="cast_expanded_controller_ad_in_progress">विज्ञापन जारी छ…</string>
+    <string name="cast_expanded_controller_background_image">एल्बम आर्ट</string>
+    <string name="cast_expanded_controller_live_head_description">वर्तमान स्थिति लाइभ स्ट्रिमको शीर्षमा छ</string>
+    <string name="cast_expanded_controller_live_stream_indicator">लाइभ स्ट्रिम</string>
+    <string name="cast_expanded_controller_loading">लोड गर्दैछ…</string>
+    <string name="cast_expanded_controller_skip_ad_label">विज्ञापन छाड्नुहोस्</string>
+    <string name="cast_expanded_controller_skip_ad_text">तपाईं %1$d पछि विज्ञापन छाड्न सक्नुहुन्छ…</string>
+    <string name="cast_forward">फर्वार्ड गर्नुहोस्</string>
+    <string name="cast_forward_10">दश सेकेन्ड फर्वार्ड गर्नुहोस्</string>
+    <string name="cast_forward_30">तीस सेकेन्ड फर्वार्ड गर्नुहोस्</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">लाइभ</string>
+    <string name="cast_mute">म्यूट गर्नुहोस्</string>
+    <string name="cast_notification_connected_message">%1$s मा कनेक्ट गरियो</string>
+    <string name="cast_notification_connecting_message">%1$s मा जडान गर्दै</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">विच्छेद गर्नुहोस्</string>
+    <string name="cast_pause">पज गर्नुहोस्</string>
+    <string name="cast_play">प्ले गर्नुहोस्</string>
+    <string name="cast_rewind">रिवाइन्ड गर्नुहोस्</string>
+    <string name="cast_rewind_10">दश सेकेन्ड रिवाइन्ड गर्नुहोस्</string>
+    <string name="cast_rewind_30">तीस सेकेन्ड रिवाइन्ड गर्नुहोस्</string>
+    <string name="cast_seek_bar">प्लेब्याकको खोजको लागि नियन्त्रण</string>
+    <string name="cast_skip_next">अर्को वस्तुमा जानुहोस्</string>
+    <string name="cast_skip_prev">अघिल्लो वस्तुमा जानुहोस्</string>
+    <string name="cast_stop">रोक्नुहोस्</string>
+    <string name="cast_stop_live_stream">लाइभ स्ट्रिमलाई रोक्नुहोस्</string>
+    <string name="cast_tracks_chooser_dialog_audio">अडियो</string>
+    <string name="cast_tracks_chooser_dialog_cancel">रद्द गर्नुहोस्</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">उपशीर्षकहरू</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">ट्र्याक %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">कुनै पनि छैन</string>
+    <string name="cast_tracks_chooser_dialog_ok">ठिक छ</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">उपशीर्षकहरू</string>
+    <string name="cast_unmute">अनम्यूट गर्नुहोस्</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">अन गर्नुहोस्</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s ले तपाईँले Google Play सेवाहरू सक्षम नगरेसम्म काम गर्दैन।</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play सेवाहरू सक्षम पार्नुहोस्</string>
     <string msgid="7153882981874058840" name="common_google_play_services_install_button">स्थापना गर्नुहोस्</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"लिंक प्रतिलिपि गर्नुहोस्"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"ब्राउजरमा खोल्नुहोस्"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"लिंक सेयर गर्नुहोस्"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"कास्ट गर्ने तरिका सिक्नुहोस्"</string>
+    <string name="media_notification_channel_name">कास्ट गर्नुहोस्</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"कास्ट गर्नुहोस्"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"कास्ट गर्नुहोस्। कनेक्ट गरियो"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"कास्ट गर्नुहोस्। कनेक्ट गरिँदै छ"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"कास्ट गर्नुहोस्। डिस्कनेक्ट गरियो"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"कुनै पनि जानकारी उपलब्ध छैन"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"डिभाइसहरू खोजिँदै छ…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"यन्त्रहरू पत्ता लगाइँदै छ"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"यसमा Cast गर्नुहोस्"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"थप जान्नुहोस्"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"यो कार जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"यो फोन जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"यो ट्याब्लेट जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"यो टिभी जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"यो डिभाइस जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"यो स्मार्ट वाच जुन Wi-Fi नेटवर्कमा कनेक्ट गरिएको छ अर्को डिभाइस पनि उही नेटवर्कमा कनेक्ट गरिएको छ भन्ने कुरा सुनिश्चित गर्नुहोस्"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"कुनै पनि डिभाइस उपलब्ध छैन"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"एल्बम आर्ट"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"स्क्रिन Cast गरिँदै छ"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"बन्द गर्नुहोस्"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"संक्षिप्त गर्नुहोस्"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"विच्छेद गर्नुहोस्"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"विस्तृत गर्नुहोस्"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"कुनै पनि जानकारी उपलब्ध छैन"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"कुनै पनि मिडिया चयन गरिएन"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"पज गर्नुहोस्‌"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"खेल्नुहोस्"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"रोक्नुहोस्"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"casting रोक्नुहोस्"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"भोल्युमको स्लाइडर"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"समूह"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"डिभाइस थप्नुहोस्"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"कुनै समूहमा प्ले गर्नुहोस्"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"प्रणाली"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"यन्त्रहरू"</string>
     <string name="native_body">मुख्य भाग</string>
     <string name="native_headline">शीर्षक</string>
     <string name="native_media_view">मिडिया दृश्य</string>

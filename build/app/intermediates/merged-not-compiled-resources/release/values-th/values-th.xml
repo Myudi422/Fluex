@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"สายเรียกเข้า"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"สายที่สนทนาอยู่"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"กำลังสกรีนสายเรียกเข้า"</string>
+    <string name="cast_ad_label">โฆษณา</string>
+    <string name="cast_casting_to_device">กำลังแคสต์ไปยัง %1$s</string>
+    <string name="cast_closed_captions">คำบรรยายแทนเสียง</string>
+    <string name="cast_closed_captions_unavailable">คำบรรยายแทนเสียงไม่พร้อมใช้งาน</string>
+    <string name="cast_connecting_to_device">กำลังเชื่อมต่อ %1$s</string>
+    <string name="cast_disconnect">ยกเลิกการเชื่อมต่อ</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">ภาพที่แสดงขณะที่เครื่องรับการแคสต์กำลังเล่นโฆษณา</string>
+    <string name="cast_expanded_controller_ad_in_progress">โฆษณาอยู่ระหว่างดำเนินการ...</string>
+    <string name="cast_expanded_controller_background_image">ปกอัลบั้ม</string>
+    <string name="cast_expanded_controller_live_head_description">ตำแหน่งปัจจุบันอยู่ที่ส่วนบนของสตรีมแบบสด</string>
+    <string name="cast_expanded_controller_live_stream_indicator">การสตรีมแบบสด</string>
+    <string name="cast_expanded_controller_loading">กำลังโหลด…</string>
+    <string name="cast_expanded_controller_skip_ad_label">ข้ามโฆษณา</string>
+    <string name="cast_expanded_controller_skip_ad_text">คุณข้ามโฆษณานี้ได้ใน %1$d…</string>
+    <string name="cast_forward">กรอไปข้างหน้า</string>
+    <string name="cast_forward_10">กรอไปข้างหน้า 10 วินาที</string>
+    <string name="cast_forward_30">กรอไปข้างหน้า 30 วินาที</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">สด</string>
+    <string name="cast_mute">ปิดเสียง</string>
+    <string name="cast_notification_connected_message">เชื่อมต่อ %1$s แล้ว</string>
+    <string name="cast_notification_connecting_message">กำลังเชื่อมต่อ %1$s</string>
+    <string name="cast_notification_default_channel_name">แคสต์</string>
+    <string name="cast_notification_disconnect">ยกเลิกการเชื่อมต่อ</string>
+    <string name="cast_pause">หยุดชั่วคราว</string>
+    <string name="cast_play">เล่น</string>
+    <string name="cast_rewind">กรอกลับ</string>
+    <string name="cast_rewind_10">กรอกลับ 10 วินาที</string>
+    <string name="cast_rewind_30">กรอกลับ 30 วินาที</string>
+    <string name="cast_seek_bar">ตัวควบคุมการค้นหาในการเล่น</string>
+    <string name="cast_skip_next">ข้ามไปยังรายการถัดไป</string>
+    <string name="cast_skip_prev">ข้ามไปยังรายการก่อนหน้า</string>
+    <string name="cast_stop">หยุด</string>
+    <string name="cast_stop_live_stream">หยุดการสตรีมแบบสด</string>
+    <string name="cast_tracks_chooser_dialog_audio">เสียง</string>
+    <string name="cast_tracks_chooser_dialog_cancel">ยกเลิก</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">คำบรรยายแทนเสียง</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">ติดตาม %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">ไม่มี</string>
+    <string name="cast_tracks_chooser_dialog_ok">ตกลง</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">คำบรรยาย</string>
+    <string name="cast_unmute">เปิดเสียง</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">เปิดใช้</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s จะไม่ทำงานจนกว่าคุณจะเปิดใช้บริการ Google Play</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">เปิดใช้บริการ Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"คัดลอกลิงก์"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"เปิดในเบราว์เซอร์"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"แชร์ลิงก์"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"ดูวิธีแคสต์"</string>
+    <string name="media_notification_channel_name">แคสต์</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"แคสต์"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"แคสต์ เชื่อมต่อแล้ว"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"แคสต์ กำลังเชื่อมต่อ"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"แคสต์ เลิกเชื่อมต่อแล้ว"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"ไม่มีข้อมูล"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"กำลังค้นหาอุปกรณ์..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"กำลังค้นหาอุปกรณ์"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"แคสต์ไปยัง"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"ดูข้อมูลเพิ่มเติม"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับรถคันนี้"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับโทรศัพท์เครื่องนี้"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับแท็บเล็ตเครื่องนี้"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับทีวีเครื่องนี้"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับอุปกรณ์เครื่องนี้"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"ตรวจสอบว่าอุปกรณ์อื่นๆ อยู่ในเครือข่าย Wi-Fi เดียวกันกับนาฬิกาเรือนนี้"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"ไม่มีอุปกรณ์ที่ใช้ได้"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"ปกอัลบั้ม"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"กำลังแคสต์หน้าจอ"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"ปิด"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"ยุบ"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"ยกเลิกการเชื่อมต่อ"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"ขยาย"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"ไม่มีข้อมูล"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"ไม่ได้เลือกสื่อไว้"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"หยุดชั่วคราว"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"เปิด"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"หยุด"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"หยุดแคสต์"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"แถบเลื่อนปรับระดับเสียง"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"กลุ่ม"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"เพิ่มอุปกรณ์"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"เล่นในกลุ่ม"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"ระบบ"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"อุปกรณ์"</string>
     <string name="native_body">เนื้อความ</string>
     <string name="native_headline">บรรทัดแรก</string>
     <string name="native_media_view">มุมมองสื่อ</string>

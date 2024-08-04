@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Chiamata in arrivo"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Chiamata in corso"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Applicazione filtro a chiamata in arrivo"</string>
+    <string name="cast_ad_label">Annuncio</string>
+    <string name="cast_casting_to_device">Trasmissione a %1$s</string>
+    <string name="cast_closed_captions">Sottotitoli codificati</string>
+    <string name="cast_closed_captions_unavailable">Sottotitoli codificati non disponibili</string>
+    <string name="cast_connecting_to_device">Collegamento a %1$s</string>
+    <string name="cast_disconnect">Disconnetti</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Immagine mostrata mentre il ricevitore Cast riproduce un annuncio</string>
+    <string name="cast_expanded_controller_ad_in_progress">Annuncio in corso…</string>
+    <string name="cast_expanded_controller_background_image">Copertina</string>
+    <string name="cast_expanded_controller_live_head_description">La posizione corrente è all\'inizio del live streaming</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Live stream</string>
+    <string name="cast_expanded_controller_loading">Caricamento…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Salta annuncio</string>
+    <string name="cast_expanded_controller_skip_ad_text">Puoi saltare l\'annuncio tra %1$d…</string>
+    <string name="cast_forward">Avanti</string>
+    <string name="cast_forward_10">Avanti di dieci secondi</string>
+    <string name="cast_forward_30">Avanti di trenta secondi</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">IN DIRETTA</string>
+    <string name="cast_mute">Disattiva audio</string>
+    <string name="cast_notification_connected_message">Connesso a %1$s</string>
+    <string name="cast_notification_connecting_message">Connessione a %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Disconnetti</string>
+    <string name="cast_pause">Pausa</string>
+    <string name="cast_play">Riproduci</string>
+    <string name="cast_rewind">Indietro</string>
+    <string name="cast_rewind_10">Indietro di dieci secondi</string>
+    <string name="cast_rewind_30">Indietro di 30 secondi</string>
+    <string name="cast_seek_bar">Controllo riproduzione</string>
+    <string name="cast_skip_next">Vai all\'elemento successivo</string>
+    <string name="cast_skip_prev">Vai all\'elemento precedente</string>
+    <string name="cast_stop">Interrompi</string>
+    <string name="cast_stop_live_stream">Interrompi live stream</string>
+    <string name="cast_tracks_chooser_dialog_audio">Audio</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Annulla</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Sottotitoli codificati</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Traccia %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Nessuna</string>
+    <string name="cast_tracks_chooser_dialog_ok">OK</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Sottotitoli</string>
+    <string name="cast_unmute">Riattiva audio</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Attiva</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s non funzionerà se non attivi Google Play Services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Attiva Google Play Services</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Copia link"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Apri nel browser"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Condividi link"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Scopri come trasmettere contenuti"</string>
+    <string name="media_notification_channel_name">Trasmissione</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Trasmetti"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Trasmetti. Connesso"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Trasmetti. Connessione"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Trasmetti. Disconnesso"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Nessuna informazione disponibile"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Ricerca di dispositivi in corso…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Ricerca di dispositivi"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Trasmetti a"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Scopri di più"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questa auto"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questo smartphone"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questo tablet"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questa TV"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questo dispositivo"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Assicurati che l\'altro dispositivo sia connesso alla stessa rete Wi-Fi di questo orologio"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Nessun dispositivo disponibile"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Copertina dell\'album"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Trasmissione dello schermo attiva"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Chiudi"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Comprimi"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Disconnetti"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Espandi"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Nessuna informazione disponibile"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Nessun contenuto multimediale selezionato"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Metti in pausa"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Riproduci"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Interrompi"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Interrompi trasmissione"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Cursore del volume"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Gruppo"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Aggiungi un dispositivo"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Riproduci su un gruppo"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Sistema"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Dispositivi"</string>
     <string name="native_body">Corpo</string>
     <string name="native_headline">Titolo</string>
     <string name="native_media_view">Pannello multimediale</string>

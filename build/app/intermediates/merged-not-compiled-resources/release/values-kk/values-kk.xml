@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Кіріс қоңырау"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Қоңырау"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Келген қоңырауды сүзу"</string>
+    <string name="cast_ad_label">Жарнама</string>
+    <string name="cast_casting_to_device">%1$s экранына трансляциялау</string>
+    <string name="cast_closed_captions">Субтитрлер</string>
+    <string name="cast_closed_captions_unavailable">Субтитрлер жоқ</string>
+    <string name="cast_connecting_to_device">%1$s құрылғысына қосылу</string>
+    <string name="cast_disconnect">Ажырату</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Трансляция қабылдаушысы жарнама көрсетіп жатқан кезде шығатын кескін</string>
+    <string name="cast_expanded_controller_ad_in_progress">Жарнама дайындалуда…</string>
+    <string name="cast_expanded_controller_background_image">Альбом шебері</string>
+    <string name="cast_expanded_controller_live_head_description">Қазіргі қалып трансляцияның басында орналасады</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Тікелей трансляция</string>
+    <string name="cast_expanded_controller_loading">Жүктелуде…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Жарнаманы өткізіп жіберу</string>
+    <string name="cast_expanded_controller_skip_ad_text">Жарнаманы %1$d секундтан кейін өткізіп жіберуіңізге болады…</string>
+    <string name="cast_forward">Алға</string>
+    <string name="cast_forward_10">Он секунд алға</string>
+    <string name="cast_forward_30">Отыз секунд алға</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">ТІКЕЛЕЙ ЭФИР</string>
+    <string name="cast_mute">Дыбысын өшіру</string>
+    <string name="cast_notification_connected_message">%1$s қосылу орындалды</string>
+    <string name="cast_notification_connecting_message">%1$s қосылу орындалуда</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Ажырату</string>
+    <string name="cast_pause">Кідірту</string>
+    <string name="cast_play">Ойнату</string>
+    <string name="cast_rewind">Артқа айналдыру</string>
+    <string name="cast_rewind_10">Он секунд артқа айналдыру</string>
+    <string name="cast_rewind_30">Отыз секунд артқа айналдыру</string>
+    <string name="cast_seek_bar">Айналдыру жолағы</string>
+    <string name="cast_skip_next">Келесі элементке өту</string>
+    <string name="cast_skip_prev">Алдыңғы элементке өту</string>
+    <string name="cast_stop">Тоқтату</string>
+    <string name="cast_stop_live_stream">Тікелей эфирді тоқтату</string>
+    <string name="cast_tracks_chooser_dialog_audio">Aудио</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Бас тарту</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Субтитрлер</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">%1$d-трек</string>
+    <string name="cast_tracks_chooser_dialog_none">Ешқандай</string>
+    <string name="cast_tracks_chooser_dialog_ok">Жарайды</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Субтитрлер</string>
+    <string name="cast_unmute">Дыбысын қосу</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Қосу</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play қызметтерін қоспасаңыз, %1$s жұмыс істемейді.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play қызметтерін қосу</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Сілтемені көшіру"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Браузерден ашу"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Сілтемені бөлісу"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Трансляциялау жолы"</string>
+    <string name="media_notification_channel_name">Трансляциялау</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Трансляциялау"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Трансляциялау. Қосылды."</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Трансляциялау. Қосылуда"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Трансляциялау. Ажыратылды."</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Ешқандай ақпарат жоқ"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Құрылғыларды іздеу…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Құрылғылар ізделіп жатыр"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Келесіге трансляциялау:"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Толық ақпарат"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Басқа құрылғы осы көлікпен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Басқа құрылғы осы телефонмен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Басқа құрылғы осы планшетпен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Басқа құрылғы осы теледидармен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Басқа құрылғы осы құрылғымен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Басқа құрылғы осы сағатпен бірдей Wi-Fi желісінде екеніне көз жеткізіңіз."</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Ешқандай құрылғы табылмады"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Альбомның мұқабасы"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Экран трансляциялануда"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Жабу"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Жию"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Ажырату"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Жаю"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Ешқандай ақпарат жоқ"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Ешқандай медиафайл таңдалмаған"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Кідірту"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Ойнату"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Тоқтату"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Трансляцияны тоқтату"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Дыбыс деңгейінің жүгірткісі"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Топ"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Құрылғы енгізу"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Топта ойнату"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Жүйе"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Құрылғылар"</string>
     <string name="native_body">Негізгі мәтіні</string>
     <string name="native_headline">Тақырыбы</string>
     <string name="native_media_view">Медиа көрінісі</string>

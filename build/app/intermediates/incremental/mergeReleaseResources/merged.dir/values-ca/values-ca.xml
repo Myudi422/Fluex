@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Trucada entrant"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Trucada en curs"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"S\'està filtrant una trucada entrant"</string>
+    <string name="cast_ad_label">Anunci</string>
+    <string name="cast_casting_to_device">S\'està emetent a %1$s</string>
+    <string name="cast_closed_captions">Subtítols</string>
+    <string name="cast_closed_captions_unavailable">Els subtítols no estan disponibles</string>
+    <string name="cast_connecting_to_device">S\'està connectant a %1$s</string>
+    <string name="cast_disconnect">Desconnecta</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Imatge que es mostra mentre el receptor de Google Cast està reproduint un anunci</string>
+    <string name="cast_expanded_controller_ad_in_progress">Anunci en curs…</string>
+    <string name="cast_expanded_controller_background_image">Imatge de l\'àlbum</string>
+    <string name="cast_expanded_controller_live_head_description">La posició actual és al principi de la reproducció en directe.</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Reproducció en directe</string>
+    <string name="cast_expanded_controller_loading">S\'està carregant…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Omet l\'anunci</string>
+    <string name="cast_expanded_controller_skip_ad_text">Pots ometre l\'anunci d\'aquí a %1$d…</string>
+    <string name="cast_forward">Avança</string>
+    <string name="cast_forward_10">Avança 10 segons</string>
+    <string name="cast_forward_30">Avança 30 segons</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">EN DIRECTE</string>
+    <string name="cast_mute">Silencia</string>
+    <string name="cast_notification_connected_message">S\'ha connectat a %1$s</string>
+    <string name="cast_notification_connecting_message">S\'està connectant a %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Desconnecta</string>
+    <string name="cast_pause">Posa en pausa</string>
+    <string name="cast_play">Reprodueix</string>
+    <string name="cast_rewind">Rebobina</string>
+    <string name="cast_rewind_10">Rebobina 10 segons</string>
+    <string name="cast_rewind_30">Rebobina 30 segons</string>
+    <string name="cast_seek_bar">Control lliscant de cerca</string>
+    <string name="cast_skip_next">Ves a l\'element següent</string>
+    <string name="cast_skip_prev">Ves a l\'element anterior</string>
+    <string name="cast_stop">Atura</string>
+    <string name="cast_stop_live_stream">Atura la reproducció en directe</string>
+    <string name="cast_tracks_chooser_dialog_audio">Àudio</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Cancel·la</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Subtítols</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Pista %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Cap</string>
+    <string name="cast_tracks_chooser_dialog_ok">D\'acord</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Subtítols</string>
+    <string name="cast_unmute">Deixa de silenciar</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Activa</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s no funcionarà si no actives Serveis de Google Play.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Activa Serveis de Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Copia l\'enllaç"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Obre al navegador"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Comparteix l\'enllaç"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Informació sobre com pots emetre contingut"</string>
+    <string name="media_notification_channel_name">Cast</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Emet"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Emet. Connectat."</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Emet. S\'està connectant."</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Emet. Desconnectat."</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"No hi ha informació disponible"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"S\'estan cercant dispositius..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"S\'estan cercant dispositius"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Emet contingut a"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Més informació"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquest cotxe"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquest telèfon"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquesta tauleta"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquest televisor"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquest dispositiu"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Assegura\'t que l\'altre dispositiu estigui connectat a la mateixa xarxa Wi‑Fi que aquest rellotge"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"No hi ha cap dispositiu disponible"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Imatge de l\'àlbum"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"S\'està emetent la pantalla"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Tanca"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Replega"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Desconnecta"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Desplega"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"No hi ha informació disponible"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"No hi ha contingut multimèdia seleccionat"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Posa en pausa"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Reprodueix"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Atura"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Atura l\'emissió"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Control lliscant de volum"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Grup"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Afegeix un dispositiu"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Reprodueix en un grup"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Sistema"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Dispositius"</string>
     <string name="native_body">Cos</string>
     <string name="native_headline">Títol</string>
     <string name="native_media_view">Visualització del contingut multimèdia</string>

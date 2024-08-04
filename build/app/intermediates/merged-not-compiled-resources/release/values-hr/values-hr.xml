@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Dolazni poziv"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Poziv u tijeku"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Filtriranje dolaznog poziva"</string>
+    <string name="cast_ad_label">Oglas</string>
+    <string name="cast_casting_to_device">Emitiranje na uređaj %1$s</string>
+    <string name="cast_closed_captions">Titlovi</string>
+    <string name="cast_closed_captions_unavailable">Titlovi nisu dostupni</string>
+    <string name="cast_connecting_to_device">Povezivanje s uređajem %1$s</string>
+    <string name="cast_disconnect">Prekini vezu</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Slika koja se prikazuje dok prijemnik Casta reproducira oglas</string>
+    <string name="cast_expanded_controller_ad_in_progress">Oglas u tijeku…</string>
+    <string name="cast_expanded_controller_background_image">Naslovnica albuma</string>
+    <string name="cast_expanded_controller_live_head_description">Trenutačni je položaj na početku streama uživo</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Strujanje uživo</string>
+    <string name="cast_expanded_controller_loading">Učitavanje…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Preskočite oglas</string>
+    <string name="cast_expanded_controller_skip_ad_text">Oglas možete preskočiti za %1$d…</string>
+    <string name="cast_forward">Unaprijed</string>
+    <string name="cast_forward_10">Deset sekundi unaprijed</string>
+    <string name="cast_forward_30">Trideset sekundi unaprijed</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">UŽIVO</string>
+    <string name="cast_mute">Isključi zvuk</string>
+    <string name="cast_notification_connected_message">Povezano s uređajem %1$s</string>
+    <string name="cast_notification_connecting_message">Povezivanje s uređajem %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Prekini vezu</string>
+    <string name="cast_pause">Pauziraj</string>
+    <string name="cast_play">Reproduciraj</string>
+    <string name="cast_rewind">Unatrag</string>
+    <string name="cast_rewind_10">Deset sekundi unatrag</string>
+    <string name="cast_rewind_30">Trideset sekundi unatrag</string>
+    <string name="cast_seek_bar">Upravljanje klizačem za reprodukciju</string>
+    <string name="cast_skip_next">Preskoči na sljedeću stavku</string>
+    <string name="cast_skip_prev">Preskoči na prethodnu stavku</string>
+    <string name="cast_stop">Zaustavi</string>
+    <string name="cast_stop_live_stream">Zaustavi stream uživo</string>
+    <string name="cast_tracks_chooser_dialog_audio">Audiozapis</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Odustani</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Titlovi</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Zapis %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Ništa</string>
+    <string name="cast_tracks_chooser_dialog_ok">U redu</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Titlovi</string>
+    <string name="cast_unmute">Uključi zvuk</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Omogući</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s neće funkcionirati ako ne omogućite usluge Google Playa.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Omogućivanje usluga Google Playa</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Kopiraj vezu"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Otvori u pregledniku"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Podijeli vezu"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Saznajte kako emitirati"</string>
+    <string name="media_notification_channel_name">Emitiranje</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Emitiranje"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Emitiranje. Povezano"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Emitiranje. Povezivanje"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Emitiranje. Nije povezano"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Informacije nisu dostupne"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Traženje uređaja…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Traženje uređaja"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Emitiranje na"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Saznajte više"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj automobil"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj telefon"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj tablet"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj TV"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj uređaj"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Povežite drugi uređaj s istom Wi-Fi mrežom s kojom je povezan ovaj sat"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Nema dostupnih uređaja"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Naslovnica albuma"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Emitiranje zaslona"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Zatvori"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Sažmi"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Prekini vezu"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Proširi"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Informacije nisu dostupne"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Nije odabran nijedan medij"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Pauziraj"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Reproduciraj"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Zaustavi"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Zaustavi emitiranje"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Klizač za glasnoću"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Grupa"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Dodavanje uređaja"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Reprodukcija u grupi"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Sustav"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Uređaji"</string>
     <string name="native_body">Glavni tekst</string>
     <string name="native_headline">Naslov</string>
     <string name="native_media_view">Medijski prikaz</string>

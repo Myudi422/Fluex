@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Símtal berst"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Símtal í gangi"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Síar símtal sem berst"</string>
+    <string name="cast_ad_label">Auglýsing</string>
+    <string name="cast_casting_to_device">Sendir út í %1$s</string>
+    <string name="cast_closed_captions">Skjátextar</string>
+    <string name="cast_closed_captions_unavailable">Skjátextar eru ekki í boði</string>
+    <string name="cast_connecting_to_device">Tengist við %1$s</string>
+    <string name="cast_disconnect">Aftengjast</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Mynd birt á meðan móttakari útsendingartækisins spilar auglýsingu</string>
+    <string name="cast_expanded_controller_ad_in_progress">Auglýsing í gangi…</string>
+    <string name="cast_expanded_controller_background_image">Plötuumslag</string>
+    <string name="cast_expanded_controller_live_head_description">Núverandi staða er efst á lista yfir streymi í beinni</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Straumur í beinni</string>
+    <string name="cast_expanded_controller_loading">Hleður…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Sleppa auglýsingu</string>
+    <string name="cast_expanded_controller_skip_ad_text">Þú getur sleppt auglýsingunni eftir %1$d…</string>
+    <string name="cast_forward">Áframsenda</string>
+    <string name="cast_forward_10">Áfram um tíu sekúndur</string>
+    <string name="cast_forward_30">Áfram um þrjátíu sekúndur</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">Í BEINNI</string>
+    <string name="cast_mute">Slökkva á hljóði</string>
+    <string name="cast_notification_connected_message">Tengt við %1$s</string>
+    <string name="cast_notification_connecting_message">Tengist %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Aftengjast</string>
+    <string name="cast_pause">Gera hlé</string>
+    <string name="cast_play">Spila</string>
+    <string name="cast_rewind">Spóla til baka</string>
+    <string name="cast_rewind_10">Spóla tíu sekúndur til baka</string>
+    <string name="cast_rewind_30">Spóla þrjátíu sekúndur til baka</string>
+    <string name="cast_seek_bar">Sleðastýring spilunar</string>
+    <string name="cast_skip_next">Stökkva yfir í næsta atriði</string>
+    <string name="cast_skip_prev">Stökkva yfir í fyrra atriði</string>
+    <string name="cast_stop">Stöðva</string>
+    <string name="cast_stop_live_stream">Hætta að streyma í beinni</string>
+    <string name="cast_tracks_chooser_dialog_audio">Hljóð</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Hætta við</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Skjátextar</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Rás %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Engar</string>
+    <string name="cast_tracks_chooser_dialog_ok">Í lagi</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Skjátextar</string>
+    <string name="cast_unmute">Hætta að þagga</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Kveikja</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s virkar ekki nema þú gerir þjónustu Google Play virka.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Virkja þjónustu Google Play</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"Afrita tengil"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"Opna í vafra"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"Deila tengli"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"Kynntu þér hvernig þú varpar"</string>
+    <string name="media_notification_channel_name">Senda út</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"Senda út"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"Útsending. Tengt"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"Útsending. Tengist"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"Útsending. Aftengt"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"Engar upplýsingar í boði"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"Leitar að tækjum…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"Leitað að tækjum"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"Senda út í"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"Nánar"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þessi bíll"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þessi sími"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þessi spjaldtölva"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þetta sjónvarp"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þetta tæki"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"Passaðu að hitt tækið sé tengt sama WiFi-neti og þetta úr"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"Engin tæki í boði"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"Plötuumslag"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"Skjár sendur út"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"Loka"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"Draga saman"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"Aftengja"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"Stækka"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"Engar upplýsingar í boði"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"Ekkert efni valið"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"Gera hlé"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"Spila"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"Stöðva"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"Stöðva útsendingu"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"Hljóðstyrkssleði"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"Hópur"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"Bæta tæki við"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"Spila í hóp"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"Kerfi"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"Tæki"</string>
     <string name="native_body">Meginmál</string>
     <string name="native_headline">Fyrirsögn</string>
     <string name="native_media_view">Myndskoðun</string>

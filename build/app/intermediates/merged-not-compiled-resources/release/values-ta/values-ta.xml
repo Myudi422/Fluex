@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"உள்வரும் அழைப்பு"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"செயலில் இருக்கும் அழைப்பு"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"உள்வரும் அழைப்பை மதிப்பாய்வு செய்கிறது"</string>
+    <string name="cast_ad_label">விளம்பரம்</string>
+    <string name="cast_casting_to_device">%1$sக்கு அனுப்புகிறது</string>
+    <string name="cast_closed_captions">விவரிப்பு சப்டைட்டில்கள்</string>
+    <string name="cast_closed_captions_unavailable">விவரிப்பு சப்டைட்டில்கள் இல்லை</string>
+    <string name="cast_connecting_to_device">%1$s உடன் இணைக்கிறது</string>
+    <string name="cast_disconnect">தொடர்பைத் துண்டி</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">Cast ரிசீவர் விளம்பரத்தை இயக்கும் போது காட்டப்படும் படம்</string>
+    <string name="cast_expanded_controller_ad_in_progress">விளம்பரம் செயலில் உள்ளது…</string>
+    <string name="cast_expanded_controller_background_image">ஆல்பம் ஆர்ட்</string>
+    <string name="cast_expanded_controller_live_head_description">நேரடி ஒளிபரப்பின் மேற்பகுதியில் தற்போது உள்ளது</string>
+    <string name="cast_expanded_controller_live_stream_indicator">லைவ் ஸ்ட்ரீம்</string>
+    <string name="cast_expanded_controller_loading">ஏற்றுகிறது…</string>
+    <string name="cast_expanded_controller_skip_ad_label">விளம்பரத்தைத் தவிர்</string>
+    <string name="cast_expanded_controller_skip_ad_text">%1$d இல் விளம்பரத்தைத் தவிர்க்கலாம்…</string>
+    <string name="cast_forward">முன்செல்</string>
+    <string name="cast_forward_10">பத்து வினாடிகள் முன்செல்</string>
+    <string name="cast_forward_30">முப்பது வினாடிகள் முன்செல்</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">நேரலை</string>
+    <string name="cast_mute">ஒலியடக்கு</string>
+    <string name="cast_notification_connected_message">%1$s உடன் இணைக்கப்பட்டது</string>
+    <string name="cast_notification_connecting_message">%1$s உடன் இணைக்கிறது</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">இணைப்பைத் துண்டி</string>
+    <string name="cast_pause">இடைநிறுத்து</string>
+    <string name="cast_play">இயக்கு</string>
+    <string name="cast_rewind">பின்செல்</string>
+    <string name="cast_rewind_10">பத்து வினாடிகள் பின்செல்</string>
+    <string name="cast_rewind_30">முப்பது வினாடிகள் பின்செல்</string>
+    <string name="cast_seek_bar">பிளேபேக் நகர்தல் கட்டுப்பாடு</string>
+    <string name="cast_skip_next">அடுத்த உருப்படிக்குச் செல்</string>
+    <string name="cast_skip_prev">முந்தைய உருப்படிக்குச் செல்</string>
+    <string name="cast_stop">நிறுத்து</string>
+    <string name="cast_stop_live_stream">லைவ் ஸ்ட்ரீமை நிறுத்து</string>
+    <string name="cast_tracks_chooser_dialog_audio">ஆடியோ</string>
+    <string name="cast_tracks_chooser_dialog_cancel">ரத்துசெய்</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">விவரிப்பு சப்டைட்டில்கள்</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">டிராக்: %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">ஏதுமில்லை</string>
+    <string name="cast_tracks_chooser_dialog_ok">சரி</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">சப்டைட்டில்கள்</string>
+    <string name="cast_unmute">ஒலி இயக்கு</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">இயக்கு</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play சேவைகளை இயக்கினால் மட்டுமே, %1$s செயல்படும்.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play சேவைகளை இயக்கவும்</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"இணைப்பை நகலெடு"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"உலாவியில் திற"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"இணைப்பைப் பகிர்"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"அலைபரப்புவதற்கான வழிமுறையை அறிக"</string>
+    <string name="media_notification_channel_name">அலைபரப்புதல்</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"அனுப்பும்"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"அனுப்பும். இணைக்கப்பட்டது"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"அனுப்பும். இணைக்கிறது"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"அனுப்பும். தொடர்பு துண்டிக்கப்பட்டது"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"தகவல் எதுவுமில்லை"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"சாதனங்களைத் தேடுகிறது..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"சாதனங்களைத் தேடுகிறது"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"இதற்கு அலைபரப்பு:"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"மேலும் அறிக"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"இந்தக் கார் இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"இந்த மொபைல் இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"இந்த டேப்லெட் இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"இந்த டிவி இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"இந்தச் சாதனம் இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"இந்த வாட்ச் இணைக்கப்பட்டுள்ள அதே வைஃபை நெட்வொர்க்கில் மற்றொரு சாதனமும் இணைக்கப்பட்டுள்ளதை உறுதிசெய்துகொள்ளுங்கள்"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"சாதனங்கள் இல்லை"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"ஆல்பம் ஆர்ட்"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"திரையை அலைபரப்புகிறது"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"மூடுவதற்கான பட்டன்"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"சுருக்குவதற்கான பட்டன்"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"தொடர்பைத் துண்டி"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"விரிப்பதற்கான பட்டன்"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"தகவல் எதுவுமில்லை"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"மீடியா எதுவும் தேர்ந்தெடுக்கப்படவில்லை"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"இடைநிறுத்துவதற்கான பட்டன்"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"இயக்குவதற்கான பட்டன்"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"நிறுத்துவதற்கான பட்டன்"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"அலைபரப்புவதை நிறுத்து"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"ஒலியளவு ஸ்லைடர்"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"குழு"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"சாதனத்தைச் சேர்த்தல்"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"குழுவில் இயக்கு"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"சிஸ்டம்"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"சாதனங்கள்"</string>
     <string name="native_body">உள்ளடக்கம்</string>
     <string name="native_headline">தலைப்பு</string>
     <string name="native_media_view">மீடியா காட்சி</string>

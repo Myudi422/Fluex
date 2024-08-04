@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\values-watch-v21\\values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

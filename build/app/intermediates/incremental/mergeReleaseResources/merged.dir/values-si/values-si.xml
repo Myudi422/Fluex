@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"එන ඇමතුම"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"කරගෙන යන ඇමතුම"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"එන ඇමතුමක් පරීක්ෂා කරන්න"</string>
+    <string name="cast_ad_label">වෙළඳ දැන්වීම</string>
+    <string name="cast_casting_to_device">%1$s වෙත විකාශ කරමින්</string>
+    <string name="cast_closed_captions">වැසූ සිරස්තල</string>
+    <string name="cast_closed_captions_unavailable">වැසූ සිරස්තල ලබා ගත නොහැකිය</string>
+    <string name="cast_connecting_to_device">%1$s වෙත සම්බන්ධ වෙමින්</string>
+    <string name="cast_disconnect">විසන්ධි කරන්න</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">විකාශය ලබන්නා වෙළඳ දැන්වීමක් ධාවනය කරන අතරතුර රූපය සංදර්ශනය කෙරේ</string>
+    <string name="cast_expanded_controller_ad_in_progress">වෙළඳ දැන්වීම ප්‍රගතියේය…</string>
+    <string name="cast_expanded_controller_background_image">ඇල්බම කලාව</string>
+    <string name="cast_expanded_controller_live_head_description">වත්මන් පිහිටීම සජීවි ප්‍රවාහයේ ඉදිරි කොටසේ ඇත</string>
+    <string name="cast_expanded_controller_live_stream_indicator">සජීව ප්‍රවාහය</string>
+    <string name="cast_expanded_controller_loading">පූරණය කරමින්…</string>
+    <string name="cast_expanded_controller_skip_ad_label">වෙළඳ දැන්වීම මඟ හරින්න</string>
+    <string name="cast_expanded_controller_skip_ad_text">ඔබට වෙළඳ දැන්වීම් %1$d කින් මග හැරිය හැකිය…</string>
+    <string name="cast_forward">ඉදිරියට යවන්න</string>
+    <string name="cast_forward_10">තත්පර දහයක් ඉදිරියට</string>
+    <string name="cast_forward_30">තත්පර තිහක් ඉදිරියට</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">සජීවී</string>
+    <string name="cast_mute">නිහඬ කරන්න</string>
+    <string name="cast_notification_connected_message">%1$s වෙත සම්බන්ධ වුණි</string>
+    <string name="cast_notification_connecting_message">%1$s වෙත සම්බන්ධ වෙමින්</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">විසන්ධි කරන්න</string>
+    <string name="cast_pause">විරාම කරන්න</string>
+    <string name="cast_play">ධාවනය කරන්න</string>
+    <string name="cast_rewind">නැවත ඔතන්න</string>
+    <string name="cast_rewind_10">තත්පර දහයක් නැවත ඔතන්න</string>
+    <string name="cast_rewind_30">තප්පර තිහක් නැවත ඔතන්න</string>
+    <string name="cast_seek_bar">පසුධාවනය පාලනය ඉල්ලයි</string>
+    <string name="cast_skip_next">ඊළඟ අයිතමය වෙත යන්න</string>
+    <string name="cast_skip_prev">පෙර අයිතමය වෙත යන්න</string>
+    <string name="cast_stop">නතර කරන්න</string>
+    <string name="cast_stop_live_stream">සජීවී ප්‍රවාහය නතර කරන්න</string>
+    <string name="cast_tracks_chooser_dialog_audio">ශ්‍රව්‍යය</string>
+    <string name="cast_tracks_chooser_dialog_cancel">අවලංගු කරන්න</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">වැසූ සිරස්තල</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">ශ්‍රව්‍ය ඛණ්ඩය %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">කිසිවක් නැත</string>
+    <string name="cast_tracks_chooser_dialog_ok">හරි</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">උපසිරැසි</string>
+    <string name="cast_unmute">නිහඬ කිරීම ඉවත් කරන්න</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">සබල කරන්න</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">ඔබ Google Play සේවා සබල කරන්නේ නම් මිස %1$s වැඩ නොකරනු ඇත.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play සේවා සබල කරන්න</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"සබැඳිය පිටපත් කරන්න"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"බ්‍රව්සරයේ විවෘත කරන්න"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"සබැඳිය බෙදා ගන්න"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"විකාශය කරන්නේ කෙසේ දැයි දැන ගන්න"</string>
+    <string name="media_notification_channel_name">විකාශය</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"විකාශය කරන්න"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"විකාශය කරන්න සම්බන්ධයි"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"විකාශය කරන්න සබැඳෙමින්"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"විකාශය කරන්න විසන්ධි විය"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"ලබා ගත හැකි තොරතුරු නොමැත"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"උපාංග සඳහා සොයමින්..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"උපාංග සෙවීම"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"විකාශය"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"තව දැන ගන්න"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"අනෙක් උපාංගය මෙම මෝටර් රථය මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"අනෙක් උපාංගය මෙම දුරකථනය මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"අනෙක් උපාංගය මෙම ටැබ්ලටය මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"අනෙක් උපාංගය මෙම tv මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"අනෙක් උපාංගය මෙම උපාංගය මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"අනෙක් උපාංගය මෙම ඔරලෝසුව මෙන් එකම Wi-Fi ජාලයෙහි ඇති බවට වග බලා ගන්න"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"කිසිදු උපාංගයක් නොමැත"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"ඇල්බම කලාව"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"විකාශ තිරය"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"වසන්න"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"හකුළන්න"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"විසන්ධි කරන්න"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"දිග හරින්න"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"ලබා ගත හැකි තොරතුරු නොමැත"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"මාධ්‍ය තෝරා නැත"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"විරාමය"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"ධාවනය කරන්න"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"නවත්වන්න"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"විකාශය නවතන්න"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"හඬ පරිමා ස්ලයිඩරය"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"සමූහය"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"උපාංගයක් එක් කරන්න"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"සමූහයක ධාවනය කරන්න"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"පද්ධතිය"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"උපාංග"</string>
     <string name="native_body">අන්තර්ගතය</string>
     <string name="native_headline">සිරස්තලය</string>
     <string name="native_media_view">මාධ්‍ය දසුන</string>

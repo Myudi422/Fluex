@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"ಒಳಬರುವ ಕರೆ"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ಚಾಲ್ತಿಯಲ್ಲಿರುವ ಕರೆ"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"ಒಳಬರುವ ಕರೆಯನ್ನು ಸ್ಕ್ರೀನ್ ಮಾಡಲಾಗುತ್ತಿದೆ"</string>
+    <string name="cast_ad_label">ಜಾಹೀರಾತು</string>
+    <string name="cast_casting_to_device">%1$s ಗೆ ಬಿತ್ತರಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="cast_closed_captions">ಮುಚ್ಚಿದ ಶೀರ್ಷಿಕೆಗಳು</string>
+    <string name="cast_closed_captions_unavailable">ಮುಚ್ಚಲಾಗಿರುವ ಶೀರ್ಷಿಕೆಗಳು ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="cast_connecting_to_device">%1$s ಗೆ ಸಂಪರ್ಕಪಡಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="cast_disconnect">ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">ಬಿತ್ತರಿಸುವಿಕೆ ಸ್ವೀಕರಿಸುವವರು ಜಾಹೀರಾತನ್ನು ಪ್ಲೇ ಮಾಡುತ್ತಿರುವಾಗ ಚಿತ್ರವನ್ನು ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ</string>
+    <string name="cast_expanded_controller_ad_in_progress">ಜಾಹೀರಾತು ಪ್ರಗತಿಯಲ್ಲಿದೆ...</string>
+    <string name="cast_expanded_controller_background_image">ಆಲ್ಬಮ್ ಕಲೆ</string>
+    <string name="cast_expanded_controller_live_head_description">ಪ್ರಸ್ತುತ ಸ್ಥಾನವು ಲೈವ್ ಸ್ಟ್ರೀಮ್‌ನ ಮುಖ್ಯ ಸ್ಥಳದಲ್ಲಿದೆ</string>
+    <string name="cast_expanded_controller_live_stream_indicator">ಲೈವ್ ಸ್ಟ್ರೀಮ್</string>
+    <string name="cast_expanded_controller_loading">ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
+    <string name="cast_expanded_controller_skip_ad_label">ಜಾಹೀರಾತು ಸ್ಕಿಪ್ ಮಾಡಿ</string>
+    <string name="cast_expanded_controller_skip_ad_text">ನೀವು %1$d ನಲ್ಲಿ ಜಾಹೀರಾತನ್ನು ಸ್ಕಿಪ್ ಮಾಡಬಹುದು…</string>
+    <string name="cast_forward">ಫಾರ್ವರ್ಡ್</string>
+    <string name="cast_forward_10">ಹತ್ತು ಸೆಕೆಂಡುಗಳಷ್ಟು ಫಾರ್ವರ್ಡ್ ಮಾಡು</string>
+    <string name="cast_forward_30">ಮೂವತ್ತು ಸೆಕೆಂಡುಗಳಷ್ಟು ಫಾರ್ವರ್ಡ್ ಮಾಡು</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">ಲೈವ್</string>
+    <string name="cast_mute">ಮ್ಯೂಟ್</string>
+    <string name="cast_notification_connected_message">%1$s ಗೆ ಸಂಪರ್ಕಪಡಿಸಲಾಗಿದೆ</string>
+    <string name="cast_notification_connecting_message">%1$s ಗೆ ಸಂಪರ್ಕಪಡಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="cast_notification_default_channel_name">ಬಿತ್ತರಿಸುವಿಕೆ</string>
+    <string name="cast_notification_disconnect">ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸು</string>
+    <string name="cast_pause">ವಿರಾಮ</string>
+    <string name="cast_play">ಪ್ಲೇ</string>
+    <string name="cast_rewind">ರಿವೈಂಡ್</string>
+    <string name="cast_rewind_10">ಹತ್ತು ಸೆಕೆಂಡುಗಳಷ್ಟು ರಿವೈಂಡ್ ಮಾಡು</string>
+    <string name="cast_rewind_30">ಮೂವತ್ತು ಸೆಕೆಂಡುಗಳಷ್ಟು ರಿವೈಂಡ್ ಮಾಡು</string>
+    <string name="cast_seek_bar">ಪ್ಲೇಬ್ಯಾಕ್‌ ಸೀಕ್ ನಿಯಂತ್ರಣ</string>
+    <string name="cast_skip_next">ಮುಂದಿನ ಐಟಂಗೆ ಸ್ಕಿಪ್‌ ಮಾಡಿ</string>
+    <string name="cast_skip_prev">ಹಿಂದಿನ ಐಟಂಗೆ ಸ್ಕಿಪ್‌ ಮಾಡಿ</string>
+    <string name="cast_stop">ನಿಲ್ಲಿಸಿ</string>
+    <string name="cast_stop_live_stream">ಲೈವ್ ಸ್ಟ್ರೀಮ್ ನಿಲ್ಲಿಸಿ</string>
+    <string name="cast_tracks_chooser_dialog_audio">ಆಡಿಯೋ</string>
+    <string name="cast_tracks_chooser_dialog_cancel">ರದ್ದು ಮಾಡಿ</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">ಮುಚ್ಚಿದ ಶೀರ್ಷಿಕೆಗಳು</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">%1$d ಟ್ರ್ಯಾಕ್ ಮಾಡಿ</string>
+    <string name="cast_tracks_chooser_dialog_none">ಯಾವುದೂ ಅಲ್ಲ</string>
+    <string name="cast_tracks_chooser_dialog_ok">ಸರಿ</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">ಉಪಶೀರ್ಷಿಕೆಗಳು</string>
+    <string name="cast_unmute">ಅನ್‌ಮ್ಯೂಟ್</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">ಸಕ್ರಿಯಗೊಳಿಸು</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">Google Play ಸೇವೆಗಳನ್ನು ನೀವು ಸಕ್ರಿಯಗೊಳಿಸದ ಹೊರತು %1$s ಕಾರ್ಯನಿರ್ವಹಿಸುವುದಿಲ್ಲ.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play ಸೇವೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"ಲಿಂಕ್ ನಕಲಿಸಿ"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"ಬ್ರೌಸರ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"ಲಿಂಕ್ ಹಂಚಿರಿ"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"ಬಿತ್ತರಿಸುವುದು ಹೇಗೆಂದು ತಿಳಿಯಿರಿ"</string>
+    <string name="media_notification_channel_name">ಬಿತ್ತರಿಸಿ</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"ಬಿತ್ತರಿಸಿ"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"ಬಿತ್ತರಿಸಿ. ಕನೆಕ್ಟ್ ಆಗಿದೆ"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"ಬಿತ್ತರಿಸಿ. ಕನೆಕ್ಟ್ ಮಾಡಲಾಗುತ್ತಿದೆ"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"ಬಿತ್ತರಿಸಿ. ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲಾಗಿದೆ"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"ಯಾವುದೇ ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"ಸಾಧನಗಳನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ..."</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"ಸಾಧನಗಳನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"ಇದಕ್ಕೆ ಬಿತ್ತರಿಸಿ"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ಕಾರಿನಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ಫೋನ್‌ನಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ಟ್ಯಾಬ್ಲೆಟ್‌ನಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ಟಿವಿಯಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ಸಾಧನದಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"ಇನ್ನೊಂದು ಸಾಧನವು ಈ ವಾಚ್‌ನಲ್ಲಿ ಇರುವಂತಹ ವೈ-ಫೈ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲೇ ಇದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"ಯಾವುದೇ ಸಾಧನಗಳು ಲಭ್ಯವಿಲ್ಲ"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"ಆಲ್ಬಮ್ ಕಲೆ"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"ಪರದೆಯನ್ನು ಬಿತ್ತರಿಸಲಾಗುತ್ತಿದೆ"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"ಮುಚ್ಚಿ"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"ಕುಗ್ಗಿಸಿ"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"ಹಿಗ್ಗಿಸಿ"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"ಯಾವುದೇ ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"ಯಾವುದೇ ಮಾಧ್ಯಮವನ್ನು ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"ವಿರಾಮ"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"ಪ್ಲೇ"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"ನಿಲ್ಲಿಸಿ"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"ಬಿತ್ತರಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿ"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"ವಾಲ್ಯೂಮ್ ಸ್ಲೈಡರ್"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"ಗುಂಪು"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"ಸಾಧನವನ್ನು ಸೇರಿಸಿ"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"ಗುಂಪಿನಲ್ಲಿ ಪ್ಲೇ ಮಾಡಿ"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"ಸಿಸ್ಟಂ"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"ಸಾಧನಗಳು"</string>
     <string name="native_body">ಮುಖ್ಯ ಭಾಗ</string>
     <string name="native_headline">ಶೀರ್ಷಿಕೆ</string>
     <string name="native_media_view">ಮಾಧ್ಯಮ ವೀಕ್ಷಣೆ</string>

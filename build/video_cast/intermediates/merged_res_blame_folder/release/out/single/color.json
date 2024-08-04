@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\caeb06f341f8144860e89620d6514062\\transformed\\jetified-play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Downloads\\Fluex\\build\\video_cast\\intermediates\\merged_res\\release\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-3\\5f5af2f678d1080b69b33e7c5d01e236\\transformed\\appcompat-1.1.0\\res\\color\\abc_tint_spinner.xml"
+    }
+]

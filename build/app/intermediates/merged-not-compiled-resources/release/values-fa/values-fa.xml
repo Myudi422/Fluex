@@ -34,6 +34,49 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"تماس ورودی"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"تماس درحال انجام"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"درحال غربال کردن تماس ورودی"</string>
+    <string name="cast_ad_label">آگهی</string>
+    <string name="cast_casting_to_device">درحال پخش محتوا به %1$s</string>
+    <string name="cast_closed_captions">زیرنویس ناشنوایان</string>
+    <string name="cast_closed_captions_unavailable">زیرنویس ناشنوانایان دردسترس نیست</string>
+    <string name="cast_connecting_to_device">درحال اتصال به %1$s</string>
+    <string name="cast_disconnect">قطع ارتباط</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_expanded_controller_ad_image_description">تصویری که هنگام نمایش آگهی در گیرنده محتوی نشان داده می‌شود</string>
+    <string name="cast_expanded_controller_ad_in_progress">آگهی درحال اجرا…</string>
+    <string name="cast_expanded_controller_background_image">عکس‌ سرصفحه آلبوم</string>
+    <string name="cast_expanded_controller_live_head_description">موقعیت فعلی در ابتدای جریان مستقیم است</string>
+    <string name="cast_expanded_controller_live_stream_indicator">جاری‌سازی زنده</string>
+    <string name="cast_expanded_controller_loading">درحال بار کردن…</string>
+    <string name="cast_expanded_controller_skip_ad_label">رد کردن آگهی</string>
+    <string name="cast_expanded_controller_skip_ad_text">%1$d دیگر می‌توانید آگهی را رد کنید…</string>
+    <string name="cast_forward">به جلو</string>
+    <string name="cast_forward_10">ده ثانیه به جلو</string>
+    <string name="cast_forward_30">سی ثانیه به جلو</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_live_label">زنده</string>
+    <string name="cast_mute">بی‌صدا کردن</string>
+    <string name="cast_notification_connected_message">متصل به %1$s</string>
+    <string name="cast_notification_connecting_message">درحال اتصال به %1$s</string>
+    <string name="cast_notification_default_channel_name">پخش محتوا</string>
+    <string name="cast_notification_disconnect">قطع ارتباط</string>
+    <string name="cast_pause">مکث</string>
+    <string name="cast_play">پخش</string>
+    <string name="cast_rewind">عقب بردن</string>
+    <string name="cast_rewind_10">ده ثانیه به عقب</string>
+    <string name="cast_rewind_30">سی ثانیه به عقب</string>
+    <string name="cast_seek_bar">بازپخش جستجوی کنترل</string>
+    <string name="cast_skip_next">پرش به مورد بعدی</string>
+    <string name="cast_skip_prev">پرش به مورد قبلی</string>
+    <string name="cast_stop">متوقف کردن</string>
+    <string name="cast_stop_live_stream">توقف پخش جریانی زنده</string>
+    <string name="cast_tracks_chooser_dialog_audio">صوتی</string>
+    <string name="cast_tracks_chooser_dialog_cancel">لغو</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">زیرنویس ناشنوایان</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">ردیابی %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">هیچ‌کدام</string>
+    <string name="cast_tracks_chooser_dialog_ok">تأیید</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">زیرنویس‌ها</string>
+    <string name="cast_unmute">باصدا</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">فعال کردن</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">‏تا وقتی «خدمات Google Play» را فعال نکنید، %1$s کار نمی‌کند.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">‏‫فعال کردن «خدمات Google Play»</string>
@@ -66,6 +109,42 @@
     <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"کپی پیوند"</string>
     <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"بازکردن در مرورگر"</string>
     <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"هم‌رسانی پیوند"</string>
+    <string msgid="9119039724000326934" name="ic_media_route_learn_more_accessibility">"آشنایی با نحوه پخش محتوا"</string>
+    <string name="media_notification_channel_name">پخش محتوا</string>
+    <string msgid="2939063992730535343" name="mr_button_content_description">"پخش محتوا"</string>
+    <string msgid="6073720094880410356" name="mr_cast_button_connected">"پخش محتوا. متصل است"</string>
+    <string msgid="6629927151350192407" name="mr_cast_button_connecting">"پخش محتوا. درحال متصل شدن"</string>
+    <string msgid="8071109333469380363" name="mr_cast_button_disconnected">"پخش محتوا. متصل نیست"</string>
+    <string msgid="2175930138959078155" name="mr_cast_dialog_title_view_placeholder">"اطلاعاتی در دسترس نیست"</string>
+    <string msgid="4257319068277776035" name="mr_chooser_looking_for_devices">"درحال جستجوی دستگاه‌ها…"</string>
+    <string msgid="6114250663023140921" name="mr_chooser_searching">"درحال پیدا کردن دستگاه‌ها"</string>
+    <string msgid="1419936397646839840" name="mr_chooser_title">"پخش محتوا به"</string>
+    <string msgid="3799500840179081429" name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">"بیشتر بدانید"</a></string>
+    <string msgid="2998902945608081567" name="mr_chooser_wifi_warning_description_car">"‏مطمئن شوید این خودرو و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="2555886884770958244" name="mr_chooser_wifi_warning_description_phone">"‏مطمئن شوید این تلفن و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="6038748488793588164" name="mr_chooser_wifi_warning_description_tablet">"‏مطمئن شوید این رایانه لوحی و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="5845921667085074878" name="mr_chooser_wifi_warning_description_tv">"‏مطمئن شوید این تلویزیون و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="3459891599800041449" name="mr_chooser_wifi_warning_description_unknown">"‏مطمئن شوید این دستگاه و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="5255021372884233706" name="mr_chooser_wifi_warning_description_watch">"‏مطمئن شوید این ساعت و دستگاه دیگر به شبکه Wi-Fi یکسانی متصل باشند"</string>
+    <string msgid="5213435473397442608" name="mr_chooser_zero_routes_found_title">"دستگاهی موجود نیست"</string>
+    <string msgid="3330502667672708728" name="mr_controller_album_art">"عکس روی جلد آلبوم"</string>
+    <string msgid="9171231064758955152" name="mr_controller_casting_screen">"درحال پخش محتوای صفحه‌نمایش"</string>
+    <string msgid="5684434439232634509" name="mr_controller_close_description">"بستن"</string>
+    <string msgid="2585048604188129749" name="mr_controller_collapse_group">"کوچک کردن"</string>
+    <string msgid="7812275474138309497" name="mr_controller_disconnect">"قطع اتصال"</string>
+    <string msgid="4521419834052044261" name="mr_controller_expand_group">"بزرگ کردن"</string>
+    <string msgid="855271725131981086" name="mr_controller_no_info_available">"اطلاعاتی در دسترس نیست"</string>
+    <string msgid="5495452265246139458" name="mr_controller_no_media_selected">"رسانه‌ای انتخاب نشده است"</string>
+    <string msgid="747801650871398383" name="mr_controller_pause">"مکث"</string>
+    <string msgid="1253345086594430054" name="mr_controller_play">"پخش"</string>
+    <string msgid="5497722768305745508" name="mr_controller_stop">"متوقف کردن"</string>
+    <string msgid="804210341192624074" name="mr_controller_stop_casting">"توقف پخش محتوا"</string>
+    <string msgid="2955862765169128170" name="mr_controller_volume_slider">"لغزنده میزان صدا"</string>
+    <string msgid="4115858704575247342" name="mr_dialog_default_group_name">"گروه"</string>
+    <string msgid="4307018456678388936" name="mr_dialog_groupable_header">"افزودن دستگاه"</string>
+    <string msgid="6068257520605505468" name="mr_dialog_transferable_header">"بازی در گروه"</string>
+    <string msgid="7449553026175453403" name="mr_system_route_name">"سیستم"</string>
+    <string msgid="4088331695424166162" name="mr_user_route_category_name">"دستگاه‌ها"</string>
     <string name="native_body">نوشتار اصلی</string>
     <string name="native_headline">سرخط</string>
     <string name="native_media_view">بازدید از رسانه</string>
