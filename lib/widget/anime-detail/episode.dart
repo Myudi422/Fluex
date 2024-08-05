@@ -387,4 +387,10 @@ class _EpisodeWidgetState extends State<EpisodeWidget> {
             ),
     );
   }
+
+  @override
+  void dispose() {
+    searchController.dispose(); // Pastikan untuk dispose controller
+    super.dispose();
+  }
 }

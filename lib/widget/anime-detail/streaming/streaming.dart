@@ -324,6 +324,9 @@ class _StreamingWidgetState extends State<StreamingWidget>
   void _updateVideoPlayer() async {
     if (_isDisposed) return;
 
+    // Simpan waktu video saat ini ke server sebelum memperbarui pemutar video
+    _sendVideoTimeToServer();
+
     final selectedResolutionLowerCase = _selectedResolution.toLowerCase();
 
     final selectedEpisode = _availableResolutions.firstWhere(
@@ -341,7 +344,7 @@ class _StreamingWidgetState extends State<StreamingWidget>
       return;
     }
 
-    // Show shimmer while initializing the new video player
+    // Tampilkan shimmer saat menginisialisasi pemutar video baru
     setState(() {
       _isInitialized = false;
     });
@@ -379,7 +382,7 @@ class _StreamingWidgetState extends State<StreamingWidget>
       _videoPlayerController.play();
     }
 
-    _initializeVideoPlayer(); // Initialize the listener again
+    _initializeVideoPlayer(); // Inisialisasi listener lagi
   }
 
   // Metode mengaktifkan wakelock

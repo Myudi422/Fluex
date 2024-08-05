@@ -9,6 +9,7 @@ import 'package:video_player/video_player.dart';
 import 'package:floating/floating.dart'; // Import floating package
 import 'package:google_mobile_ads/google_mobile_ads.dart'; // Import google_mobile_ads package
 import 'package:flue/color.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
