@@ -23,7 +23,8 @@ class _BeritaContentState extends State<BeritaContent> {
 
   Future<void> fetchData() async {
     try {
-      final response = await http.get(Uri.parse('https://ccgnimex.my.id/v2/android/berita/api.php'));
+      final response = await http
+          .get(Uri.parse('https://ccgnimex.my.id/v2/android/berita/api.php'));
       if (response.statusCode == 200) {
         List<dynamic> data = json.decode(response.body);
         setState(() {
@@ -37,11 +38,15 @@ class _BeritaContentState extends State<BeritaContent> {
     }
   }
 
-  void _openNewsDetail(String link, String translatedTitle) {
+  void _openNewsDetail(String link, String translatedTitle, String imageUrl) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ViewBerita(link: 'https://ccgnimex.my.id/v2/android/berita/view.php?url=$link', translated_title: translatedTitle),
+        builder: (context) => ViewBerita(
+          link: 'https://ccgnimex.my.id/v2/android/berita/view.php?url=$link',
+          translated_title: translatedTitle,
+          imageUrl: imageUrl, // Pass the imageUrl to ViewBerita
+        ),
       ),
     );
   }
@@ -56,7 +61,7 @@ class _BeritaContentState extends State<BeritaContent> {
       onRefresh: _handleRefresh,
       child: Container(
         decoration: BoxDecoration(
-          color: ColorManager.currentAccentColor,
+          color: ColorManager.currentPrimaryColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
@@ -68,7 +73,7 @@ class _BeritaContentState extends State<BeritaContent> {
           children: [
             _buildHeader(),
             SizedBox(height: 12.0),
-            _buildGridView(),
+            _buildListView(),
           ],
         ),
       ),
@@ -81,10 +86,15 @@ class _BeritaContentState extends State<BeritaContent> {
       children: [
         Text(
           'Update Berita',
-          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: ColorManager.currentHomeColor),
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: ColorManager.currentHomeColor,
+          ),
         ),
         IconButton(
-          icon: Icon(FontAwesomeIcons.sync, color: ColorManager.currentHomeColor),
+          icon:
+              Icon(FontAwesomeIcons.sync, color: ColorManager.currentHomeColor),
           onPressed: () {
             _handleRefresh();
           },
@@ -93,19 +103,14 @@ class _BeritaContentState extends State<BeritaContent> {
     );
   }
 
-  Widget _buildGridView() {
+  Widget _buildListView() {
     return beritaList.isNotEmpty
-        ? _buildNewsGridView()
-        : _buildShimmerGridView();
+        ? _buildNewsListView()
+        : _buildShimmerListView();
   }
 
-  Widget _buildNewsGridView() {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
+  Widget _buildNewsListView() {
+    return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: beritaList.length,
@@ -116,13 +121,8 @@ class _BeritaContentState extends State<BeritaContent> {
     );
   }
 
-  Widget _buildShimmerGridView() {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
+  Widget _buildShimmerListView() {
+    return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: 6,
@@ -134,18 +134,37 @@ class _BeritaContentState extends State<BeritaContent> {
 
   Widget _buildNewsCard(Map<String, dynamic> berita) {
     return Card(
-      color: ColorManager.currentPrimaryColor,
+      color: ColorManager
+          .currentPrimaryColor, // Set card color to currentPrimaryColor
+      margin: EdgeInsets.only(bottom: 12.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
       child: InkWell(
         onTap: () {
-          _openNewsDetail(berita['link'], berita['translated_title']);
+          _openNewsDetail(
+            berita['link'],
+            berita['translated_title'],
+            berita['image'], // Pass the imageUrl to _openNewsDetail
+          );
         },
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildImage(berita['image']),
-            _buildText(berita['translated_title']),
-            _buildText(berita['translated_summary'], fontSize: 12.0),
-            _buildDateAndIcon(berita['published']),
+            _buildImage(berita['image']), // Display the image
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildText(berita['translated_title']),
+                    _buildText(berita['translated_summary'], fontSize: 12.0),
+                    _buildDateAndIcon(berita['published']),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -154,54 +173,66 @@ class _BeritaContentState extends State<BeritaContent> {
 
   Widget _buildShimmerCard() {
     return Card(
-      color: ColorManager.currentAccentColor,
+      margin: EdgeInsets.only(bottom: 12.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300]!,
         highlightColor: Colors.grey[100]!,
         child: Container(
-          color: ColorManager.currentHomeColor,
+          height: 150.0,
+          decoration: BoxDecoration(
+            color: ColorManager.currentHomeColor,
+            borderRadius: BorderRadius.circular(16.0),
+          ),
         ),
       ),
     );
   }
 
-Widget _buildImage(String imageUrl) {
-  return Expanded(
-    child: Container(
+  Widget _buildImage(String imageUrl) {
+    return Container(
+      width: 100.0,
+      height: 100.0,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
+        ),
         image: DecorationImage(
           image: CachedNetworkImageProvider(imageUrl),
           fit: BoxFit.cover,
         ),
       ),
-      child: Container(), // Add an empty child to ensure BoxFit.cover works
-    ),
-  );
-}
-
-
+    );
+  }
 
   Widget _buildText(String text, {double fontSize = 16.0}) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        text,
-        style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: ColorManager.currentHomeColor),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontWeight: FontWeight.bold,
+        color: ColorManager.currentHomeColor,
       ),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 
   Widget _buildDateAndIcon(String publishedDate) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             publishedDate,
-            style: TextStyle(fontSize: 12.0, color: ColorManager.currentHomeColor),
+            style: TextStyle(
+              fontSize: 12.0,
+              color: ColorManager.currentHomeColor,
+            ),
           ),
           Icon(
             FontAwesomeIcons.newspaper,

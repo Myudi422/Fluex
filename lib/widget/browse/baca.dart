@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BacaPage extends StatefulWidget {
   final String episodeUrl;
@@ -22,18 +23,25 @@ class _BacaPageState extends State<BacaPage> {
   String prevEpisodeUrl = '';
   String nextEpisodeUrl = '';
   String chapterNumber = '';
+  String server = ''; // Default server (empty string means no server parameter)
 
   @override
   void initState() {
     super.initState();
     _fetchEpisodeDetails();
     pageController = PageController();
+    _loadPageIndex(); // Load the last page index
   }
 
   Future<void> _fetchEpisodeDetails() async {
+    // Normalisasi URL dengan menghapus garis miring di akhir
+    String normalizedUrl = widget.episodeUrl.endsWith('/')
+        ? widget.episodeUrl.substring(0, widget.episodeUrl.length - 1)
+        : widget.episodeUrl;
+
     try {
-      final response =
-          await Dio().get('https://ccgnimex.my.id/v2/android/komik/baca.php?url=${widget.episodeUrl}');
+      final response = await Dio().get(
+          'https://ccgnimex.my.id/v2/android/komik/baca.php?url=$normalizedUrl&server=$server');
 
       if (response.statusCode == 200) {
         setState(() {
@@ -48,9 +56,13 @@ class _BacaPageState extends State<BacaPage> {
           RegExp regExp = RegExp(r"Chapter (\d+)");
           Match? match = regExp.firstMatch(episodeDetails['title']);
           chapterNumber = match?.group(1) ?? "";
+
+          // Load the saved page index
+          _loadPageIndex();
         });
       } else {
-        throw Exception('Failed to load episode details. Status code: ${response.statusCode}');
+        throw Exception(
+            'Failed to load episode details. Status code: ${response.statusCode}');
       }
     } catch (error) {
       print('Error fetching episode details: $error');
@@ -58,6 +70,27 @@ class _BacaPageState extends State<BacaPage> {
         isLoading = false;
       });
     }
+  }
+
+  void _onServerSelected(String selectedServer) {
+    setState(() {
+      server = selectedServer == 'default' ? '' : selectedServer;
+      isLoading = true; // Show loading indicator while fetching new data
+    });
+    _fetchEpisodeDetails(); // Fetch data with the new server
+  }
+
+  Future<void> _savePageIndex(int index) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('currentPage_${widget.episodeUrl}', index);
+  }
+
+  Future<void> _loadPageIndex() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      currentPage = prefs.getInt('currentPage_${widget.episodeUrl}') ?? 0;
+    });
+    pageController.jumpToPage(currentPage);
   }
 
   @override
@@ -73,6 +106,19 @@ class _BacaPageState extends State<BacaPage> {
                 isHorizontalMode = !isHorizontalMode;
                 _updatePageController();
               });
+            },
+          ),
+          PopupMenuButton<String>(
+            icon: Icon(Icons.cloud),
+            onSelected: _onServerSelected,
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(value: 'default', child: Text('Default')),
+                PopupMenuItem(value: 'komiku-id1', child: Text('DEF-KOM')),
+                PopupMenuItem(value: 'komiku-id2', child: Text('01-1KOM')),
+                PopupMenuItem(value: 'komiku-id3', child: Text('KMINDO-1KOM')),
+                PopupMenuItem(value: 'komiku-id4', child: Text('1-01KOM')),
+              ];
             },
           ),
         ],
@@ -93,7 +139,8 @@ class _BacaPageState extends State<BacaPage> {
           itemCount: episodeDetails['imageUrls'].length,
           builder: (context, index) {
             return PhotoViewGalleryPageOptions(
-              imageProvider: CachedNetworkImageProvider(episodeDetails['imageUrls'][index] ?? ''),
+              imageProvider: CachedNetworkImageProvider(
+                  episodeDetails['imageUrls'][index] ?? ''),
               minScale: PhotoViewComputedScale.contained,
               maxScale: PhotoViewComputedScale.covered * 2,
             );
@@ -106,6 +153,7 @@ class _BacaPageState extends State<BacaPage> {
           onPageChanged: (index) {
             setState(() {
               currentPage = index;
+              _savePageIndex(currentPage); // Save the current page index
             });
           },
         ),
@@ -120,7 +168,8 @@ class _BacaPageState extends State<BacaPage> {
       itemBuilder: (context, index) {
         return CachedNetworkImage(
           imageUrl: episodeDetails['imageUrls'][index] ?? '',
-          placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
           errorWidget: (context, url, error) => Icon(Icons.error),
         );
       },
@@ -183,6 +232,7 @@ class _BacaPageState extends State<BacaPage> {
       );
       setState(() {
         currentPage = nextPage;
+        _savePageIndex(currentPage); // Save the current page index
       });
     }
   }

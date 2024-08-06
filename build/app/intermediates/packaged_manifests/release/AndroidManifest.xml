@@ -37,17 +37,7 @@
             <action android:name="android.intent.action.VIEW" />
         </intent>
 
-        <package android:name="com.google.android.gms.policy_cast_dynamite" />
-
-        <intent>
-            <action android:name="android.media.browse.MediaBrowserService" />
-        </intent>
-        <intent>
-            <action android:name="androidx.media2.session.MediaSessionService" />
-        </intent>
-        <intent>
-            <action android:name="androidx.media2.session.MediaLibraryService" />
-        </intent> <!-- For browser content -->
+        <package android:name="com.google.android.gms.policy_cast_dynamite" /> <!-- For browser content -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
 
@@ -57,6 +47,15 @@
         </intent>
         <intent>
             <action android:name="com.android.vending.billing.InAppBillingService.BIND" />
+        </intent>
+        <intent>
+            <action android:name="android.media.browse.MediaBrowserService" />
+        </intent>
+        <intent>
+            <action android:name="androidx.media2.session.MediaSessionService" />
+        </intent>
+        <intent>
+            <action android:name="androidx.media2.session.MediaLibraryService" />
         </intent>
     </queries> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />

@@ -762,10 +762,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.media:media:1.6.0@aar"
-      jars="C:\Users\admin\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0\jars\classes.jar"
-      resolved="androidx.media:media:1.6.0"
-      folder="C:\Users\admin\.gradle\caches\transforms-3\e00e18bc4961d8efe4e103cd7b321ed4\transformed\media-1.6.0"
+      name="androidx.media:media:1.7.0@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\0b42e81fa956cf90eb800c5b2114eda1\transformed\media-1.7.0\jars\classes.jar"
+      resolved="androidx.media:media:1.7.0"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\0b42e81fa956cf90eb800c5b2114eda1\transformed\media-1.7.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -801,10 +801,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.recyclerview:recyclerview:1.1.0@aar"
-      jars="C:\Users\admin\.gradle\caches\transforms-3\a9de274413db3ad25f50682917000c3b\transformed\recyclerview-1.1.0\jars\classes.jar"
-      resolved="androidx.recyclerview:recyclerview:1.1.0"
-      folder="C:\Users\admin\.gradle\caches\transforms-3\a9de274413db3ad25f50682917000c3b\transformed\recyclerview-1.1.0"
+      name="androidx.recyclerview:recyclerview:1.3.0@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\b6c7f67c02b1dc5686212354087c93ce\transformed\recyclerview-1.3.0\jars\classes.jar"
+      resolved="androidx.recyclerview:recyclerview:1.3.0"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\b6c7f67c02b1dc5686212354087c93ce\transformed\recyclerview-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1124,10 +1124,36 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation-experimental:1.3.0@aar"
-      jars="C:\Users\admin\.gradle\caches\transforms-3\59a6cd8b5de5b8b10e380cc64961501a\transformed\jetified-annotation-experimental-1.3.0\jars\classes.jar"
-      resolved="androidx.annotation:annotation-experimental:1.3.0"
-      folder="C:\Users\admin\.gradle\caches\transforms-3\59a6cd8b5de5b8b10e380cc64961501a\transformed\jetified-annotation-experimental-1.3.0"
+      name="androidx.media3:media3-exoplayer:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\27dbe14856ebceaecb12b75fe0b4a1b4\transformed\jetified-media3-exoplayer-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-exoplayer:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\27dbe14856ebceaecb12b75fe0b4a1b4\transformed\jetified-media3-exoplayer-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-common:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\df81680ea72460c8869979c737dbbc50\transformed\jetified-media3-common-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-common:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\df81680ea72460c8869979c737dbbc50\transformed\jetified-media3-common-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.annotation:annotation-experimental:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\d3564af5e95c3def4efef1d3625b1a64\transformed\jetified-annotation-experimental-1.3.1\jars\classes.jar"
+      resolved="androidx.annotation:annotation-experimental:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\d3564af5e95c3def4efef1d3625b1a64\transformed\jetified-annotation-experimental-1.3.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1150,9 +1176,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.collection:collection:1.1.0@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\androidx.collection\collection\1.1.0\1f27220b47669781457de0d600849a5de0e89909\collection-1.1.0.jar"
-      resolved="androidx.collection:collection:1.1.0"/>
+      name="androidx.collection:collection:1.2.0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\androidx.collection\collection\1.2.0\34dbc21d203cc4d4d623ac572a21acd4ccd716af\collection-1.2.0.jar"
+      resolved="androidx.collection:collection:1.2.0"/>
   <library
       name="com.google.android.datatransport:transport-backend-cct:3.1.8@aar"
       jars="C:\Users\admin\.gradle\caches\transforms-3\2609c19b0d627a8bad16bb84786ba5fa\transformed\jetified-transport-backend-cct-3.1.8\jars\classes.jar"
@@ -1338,6 +1364,32 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.media3:media3-exoplayer-dash:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\75f9fef72431d16612f2ef681dcd5437\transformed\jetified-media3-exoplayer-dash-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-exoplayer-dash:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\75f9fef72431d16612f2ef681dcd5437\transformed\jetified-media3-exoplayer-dash-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-ui:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\76be402a1775d269fbc10239ebc5b7b6\transformed\jetified-media3-ui-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-ui:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\76be402a1775d269fbc10239ebc5b7b6\transformed\jetified-media3-ui-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad@jar"
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_release\1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad\666908769339a27774ac74732b82a3ab7cf237c0\arm64_v8a_release-1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad.jar"
       resolved="io.flutter:arm64_v8a_release:1.0.0-f40e976bedff57e69e1b3d89a7c2a3c617a03dad"/>
@@ -1346,9 +1398,9 @@
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\23.0.0\8cc20c07506ec18e0834947b84a864bfc094484e\annotations-23.0.0.jar"
       resolved="org.jetbrains:annotations:23.0.0"/>
   <library
-      name="com.google.guava:guava:32.0.1-android@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\32.0.1-android\d3fe54a75aeaca33fc562a2a9c1dc181e54cc5e9\guava-32.0.1-android.jar"
-      resolved="com.google.guava:guava:32.0.1-android"/>
+      name="com.google.guava:guava:32.1.3-android@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\32.1.3-android\ea090dd85ca2fa12d42d054369df888665230dd7\guava-32.1.3-android.jar"
+      resolved="com.google.guava:guava:32.1.3-android"/>
   <library
       name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
@@ -1388,17 +1440,13 @@
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar"
       resolved="com.google.code.findbugs:jsr305:3.0.2"/>
   <library
-      name="org.checkerframework:checker-qual:3.33.0@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.33.0\de2b60b62da487644fc11f734e73c8b0b431238f\checker-qual-3.33.0.jar"
-      resolved="org.checkerframework:checker-qual:3.33.0"/>
+      name="org.checkerframework:checker-qual:3.37.0@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.37.0\ba74746d38026581c12166e164bb3c15e90cc4ea\checker-qual-3.37.0.jar"
+      resolved="org.checkerframework:checker-qual:3.37.0"/>
   <library
-      name="com.google.errorprone:error_prone_annotations:2.18.0@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.18.0\89b684257096f548fa39a7df9fdaa409d4d4df91\error_prone_annotations-2.18.0.jar"
-      resolved="com.google.errorprone:error_prone_annotations:2.18.0"/>
-  <library
-      name="com.google.j2objc:j2objc-annotations:2.8@jar"
-      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\2.8\c85270e307e7b822f1086b93689124b89768e273\j2objc-annotations-2.8.jar"
-      resolved="com.google.j2objc:j2objc-annotations:2.8"/>
+      name="com.google.errorprone:error_prone_annotations:2.21.1@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.21.1\6d9b10773b5237df178a7b3c1b4208df7d0e7f94\error_prone_annotations-2.21.1.jar"
+      resolved="com.google.errorprone:error_prone_annotations:2.21.1"/>
   <library
       name="com.google.firebase:firebase-annotations:16.2.0@jar"
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.firebase\firebase-annotations\16.2.0\ba0806703ca285d03fa9c888b5868f101134a501\firebase-annotations-16.2.0.jar"
@@ -1424,6 +1472,76 @@
       name="com.google.code.gson:gson:2.8.1@jar"
       jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.1\2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0\gson-2.8.1.jar"
       resolved="com.google.code.gson:gson:2.8.1"/>
+  <library
+      name="androidx.media3:media3-container:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\3e219bffb7422c410f99000008664b71\transformed\jetified-media3-container-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-container:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\3e219bffb7422c410f99000008664b71\transformed\jetified-media3-container-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-database:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\cf9152be6d23247285eb853fc40da5f0\transformed\jetified-media3-database-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-database:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\cf9152be6d23247285eb853fc40da5f0\transformed\jetified-media3-database-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-datasource:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\54865a3a22b148aedfba1750b7f8d34c\transformed\jetified-media3-datasource-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-datasource:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\54865a3a22b148aedfba1750b7f8d34c\transformed\jetified-media3-datasource-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-decoder:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\d468d8cde75eff8ec0417d828fc33ea0\transformed\jetified-media3-decoder-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-decoder:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\d468d8cde75eff8ec0417d828fc33ea0\transformed\jetified-media3-decoder-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media3:media3-extractor:1.3.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\d8c2ff4b2f3fe57bb8537a9eede01e58\transformed\jetified-media3-extractor-1.3.1\jars\classes.jar"
+      resolved="androidx.media3:media3-extractor:1.3.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\d8c2ff4b2f3fe57bb8537a9eede01e58\transformed\jetified-media3-extractor-1.3.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.j2objc:j2objc-annotations:2.8@jar"
+      jars="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\2.8\c85270e307e7b822f1086b93689124b89768e273\j2objc-annotations-2.8.jar"
+      resolved="com.google.j2objc:j2objc-annotations:2.8"
+      provided="true"/>
   <library
       name="com.google.firebase:firebase-iid:21.1.0@aar"
       jars="C:\Users\admin\.gradle\caches\transforms-3\fcf507bed380eefdf70237cf04c05b05\transformed\jetified-firebase-iid-21.1.0\jars\classes.jar"
@@ -1481,32 +1599,6 @@
       jars="C:\Users\admin\.gradle\caches\transforms-3\2986707a8eb8c753c8a917f2a75a51d0\transformed\jetified-extension-cast-2.17.1\jars\classes.jar"
       resolved="com.google.android.exoplayer:extension-cast:2.17.1"
       folder="C:\Users\admin\.gradle\caches\transforms-3\2986707a8eb8c753c8a917f2a75a51d0\transformed\jetified-extension-cast-2.17.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media2:media2-session:1.2.1@aar"
-      jars="C:\Users\admin\.gradle\caches\transforms-3\80eec6459abee07ec81ce69178aa2cfe\transformed\jetified-media2-session-1.2.1\jars\classes.jar"
-      resolved="androidx.media2:media2-session:1.2.1"
-      folder="C:\Users\admin\.gradle\caches\transforms-3\80eec6459abee07ec81ce69178aa2cfe\transformed\jetified-media2-session-1.2.1"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.media2:media2-common:1.2.1@aar"
-      jars="C:\Users\admin\.gradle\caches\transforms-3\53cdaff58058a23ea5c79439c7a25317\transformed\jetified-media2-common-1.2.1\jars\classes.jar"
-      resolved="androidx.media2:media2-common:1.2.1"
-      folder="C:\Users\admin\.gradle\caches\transforms-3\53cdaff58058a23ea5c79439c7a25317\transformed\jetified-media2-common-1.2.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1737,6 +1829,45 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.media2:media2-session:1.2.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\80eec6459abee07ec81ce69178aa2cfe\transformed\jetified-media2-session-1.2.1\jars\classes.jar"
+      resolved="androidx.media2:media2-session:1.2.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\80eec6459abee07ec81ce69178aa2cfe\transformed\jetified-media2-session-1.2.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.media2:media2-common:1.2.1@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\53cdaff58058a23ea5c79439c7a25317\transformed\jetified-media2-common-1.2.1\jars\classes.jar"
+      resolved="androidx.media2:media2-common:1.2.1"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\53cdaff58058a23ea5c79439c7a25317\transformed\jetified-media2-common-1.2.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.customview:customview-poolingcontainer:1.0.0@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\28a0e3d2dd4de15fe81a262e884e1a3c\transformed\jetified-customview-poolingcontainer-1.0.0\jars\classes.jar"
+      resolved="androidx.customview:customview-poolingcontainer:1.0.0"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\28a0e3d2dd4de15fe81a262e884e1a3c\transformed\jetified-customview-poolingcontainer-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.emoji2:emoji2-views-helper:1.2.0@aar"
       jars="C:\Users\admin\.gradle\caches\transforms-3\5f2ad825b5c9caabcfe46668dee33f3a\transformed\jetified-emoji2-views-helper-1.2.0\jars\classes.jar"
       resolved="androidx.emoji2:emoji2-views-helper:1.2.0"
@@ -1793,6 +1924,19 @@
       jars="C:\Users\admin\.gradle\caches\transforms-3\dd79a24f665edfc1c05f9d6fd8a0c69e\transformed\jetified-profileinstaller-1.3.0\jars\classes.jar"
       resolved="androidx.profileinstaller:profileinstaller:1.3.0"
       folder="C:\Users\admin\.gradle\caches\transforms-3\dd79a24f665edfc1c05f9d6fd8a0c69e\transformed\jetified-profileinstaller-1.3.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.exifinterface:exifinterface:1.3.6@aar"
+      jars="C:\Users\admin\.gradle\caches\transforms-3\7790d664acf7582e21a6fdfc57504ab7\transformed\exifinterface-1.3.6\jars\classes.jar"
+      resolved="androidx.exifinterface:exifinterface:1.3.6"
+      folder="C:\Users\admin\.gradle\caches\transforms-3\7790d664acf7582e21a6fdfc57504ab7\transformed\exifinterface-1.3.6"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

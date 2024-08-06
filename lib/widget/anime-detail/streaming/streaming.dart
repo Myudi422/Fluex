@@ -264,7 +264,10 @@ class _StreamingWidgetState extends State<StreamingWidget>
               if (_isDisposed) return;
               setState(() {
                 _selectedResolution = value as String;
+                _videoPlayerController.dispose();
+                _sendVideoTimeToServer();
                 _updateVideoPlayer();
+                _timer.cancel();
 
                 // Save selected resolution to SharedPreferences
                 _saveSelectedResolution(value as String);
@@ -324,8 +327,8 @@ class _StreamingWidgetState extends State<StreamingWidget>
   void _updateVideoPlayer() async {
     if (_isDisposed) return;
 
-    // Simpan waktu video saat ini ke server sebelum memperbarui pemutar video
-    _sendVideoTimeToServer();
+    // Simpan waktu video saat ini ke server dan tunggu hingga selesai
+    await _sendVideoTimeToServer();
 
     final selectedResolutionLowerCase = _selectedResolution.toLowerCase();
 

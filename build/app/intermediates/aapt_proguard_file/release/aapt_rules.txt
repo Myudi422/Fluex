@@ -102,6 +102,12 @@
 
 -keep class androidx.core.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }
 
+-keep class androidx.media3.ui.AspectRatioFrameLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.media3.ui.SubtitleView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.media3.ui.TrackSelectionView { <init>(android.content.Context, android.util.AttributeSet); }
+
 -keep class androidx.mediarouter.app.MediaRouteExpandCollapseButton { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.mediarouter.app.MediaRouteVolumeSlider { <init>(android.content.Context, android.util.AttributeSet); }

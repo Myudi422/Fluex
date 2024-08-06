@@ -1161,9 +1161,9 @@
     },
     {
       "name": "video_player",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/video_player-2.8.1",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/video_player-2.9.1",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "video_player_android",
@@ -1173,7 +1173,7 @@
     },
     {
       "name": "video_player_avfoundation",
-      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_avfoundation-2.5.3",
+      "rootUri": "file:///C:/Users/admin/AppData/Local/Pub/Cache/hosted/pub.dev/video_player_avfoundation-2.6.1",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -1322,7 +1322,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2024-08-04T10:01:50.371265Z",
+  "generated": "2024-08-06T03:11:19.915478Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
