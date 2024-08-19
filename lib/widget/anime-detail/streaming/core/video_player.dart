@@ -773,6 +773,22 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       child: Center(
         child: OrientationBuilder(
           builder: (context, orientation) {
+            if (orientation == Orientation.landscape) {
+              // Masuk ke mode fullscreen saat landscape
+              SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
+                  overlays: []);
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.landscapeLeft,
+                DeviceOrientation.landscapeRight,
+              ]);
+            } else {
+              // Kembalikan ke mode biasa saat portrait
+              SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.portraitUp,
+                DeviceOrientation.portraitDown,
+              ]);
+            }
             return widget.videoPlayerController.value.isInitialized
                 ? Stack(
                     children: [

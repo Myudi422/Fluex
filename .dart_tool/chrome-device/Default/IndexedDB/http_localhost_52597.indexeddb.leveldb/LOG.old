@@ -1,0 +1,25 @@
+2024/08/18-03:11:28.342 2e34 Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.62bd8d0b\flutter_tools_chrome_device.c4d35fd5\Default\IndexedDB\http_localhost_52597.indexeddb.leveldb/MANIFEST-000001
+2024/08/18-03:11:28.343 2e34 Recovering log #108
+2024/08/18-03:11:28.343 2e34 Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.62bd8d0b\flutter_tools_chrome_device.c4d35fd5\Default\IndexedDB\http_localhost_52597.indexeddb.leveldb/000108.log 
+2024/08/18-03:11:28.343 2e34 Delete type=2 #107
+2024/08/18-03:11:28.351 2e34 Level-0 table #113: started
+2024/08/18-03:11:28.355 2e34 Level-0 table #113: 830 bytes OK
+2024/08/18-03:11:28.356 2e34 Delete type=0 #108
+2024/08/18-03:11:28.357 1f4c Manual compaction at level-0 from '\x00#\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at '\x00#\x00\x00\x05' @ 903 : 1
+2024/08/18-03:11:28.357 1f4c Compacting 1@0 + 1@1 files
+2024/08/18-03:11:28.358 1f4c Generated table #114@0: 74 keys, 1691 bytes
+2024/08/18-03:11:28.358 1f4c Compacted 1@0 + 1@1 files => 1691 bytes
+2024/08/18-03:11:28.359 1f4c compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/18-03:11:28.360 1f4c Delete type=2 #113
+2024/08/18-03:11:28.360 1f4c Manual compaction at level-0 from '\x00#\x00\x00\x05' @ 903 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/08/18-03:11:29.558 2e34 Level-0 table #116: started
+2024/08/18-03:11:29.562 2e34 Level-0 table #116: 766 bytes OK
+2024/08/18-03:11:29.564 2e34 Delete type=2 #110
+2024/08/18-03:11:29.564 2e34 Delete type=0 #112
+2024/08/18-03:11:29.564 2e8c Manual compaction at level-0 from '\x00$\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00%\x00\x00\x00' @ 0 : 0; will stop at '\x00$\x00\x00\x05' @ 936 : 1
+2024/08/18-03:11:29.564 2e8c Compacting 1@0 + 1@1 files
+2024/08/18-03:11:29.567 2e8c Generated table #117@0: 74 keys, 1581 bytes
+2024/08/18-03:11:29.567 2e8c Compacted 1@0 + 1@1 files => 1581 bytes
+2024/08/18-03:11:29.568 2e8c compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/18-03:11:29.568 2e8c Delete type=2 #116
+2024/08/18-03:11:29.569 2e8c Manual compaction at level-0 from '\x00$\x00\x00\x05' @ 936 : 1 .. '\x00%\x00\x00\x00' @ 0 : 0; will stop at (end)

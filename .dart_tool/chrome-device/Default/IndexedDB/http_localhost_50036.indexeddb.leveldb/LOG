@@ -1,0 +1,25 @@
+2024/08/19-20:22:52.067 33f8 Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.64a7709e\flutter_tools_chrome_device.90a4034b\Default\IndexedDB\http_localhost_50036.indexeddb.leveldb/MANIFEST-000001
+2024/08/19-20:22:52.067 33f8 Recovering log #95
+2024/08/19-20:22:52.067 33f8 Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.64a7709e\flutter_tools_chrome_device.90a4034b\Default\IndexedDB\http_localhost_50036.indexeddb.leveldb/000095.log 
+2024/08/19-20:22:52.067 33f8 Delete type=2 #94
+2024/08/19-20:22:52.074 33f8 Level-0 table #100: started
+2024/08/19-20:22:52.077 33f8 Level-0 table #100: 845 bytes OK
+2024/08/19-20:22:52.078 33f8 Delete type=0 #95
+2024/08/19-20:22:52.078 1520 Manual compaction at level-0 from '\x00"\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00#\x00\x00\x00' @ 0 : 0; will stop at '\x00"\x00\x00\x05' @ 830 : 1
+2024/08/19-20:22:52.079 1520 Compacting 1@0 + 1@1 files
+2024/08/19-20:22:52.080 1520 Generated table #101@0: 23 keys, 754 bytes
+2024/08/19-20:22:52.080 1520 Compacted 1@0 + 1@1 files => 754 bytes
+2024/08/19-20:22:52.081 1520 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/19-20:22:52.082 1520 Delete type=2 #100
+2024/08/19-20:22:52.082 1520 Manual compaction at level-0 from '\x00"\x00\x00\x05' @ 830 : 1 .. '\x00#\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/08/19-20:22:53.265 33f8 Level-0 table #103: started
+2024/08/19-20:22:53.268 33f8 Level-0 table #103: 772 bytes OK
+2024/08/19-20:22:53.269 33f8 Delete type=2 #97
+2024/08/19-20:22:53.269 33f8 Delete type=0 #99
+2024/08/19-20:22:53.270 1520 Manual compaction at level-0 from '\x00#\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at '\x00#\x00\x00\x05' @ 863 : 1
+2024/08/19-20:22:53.270 1520 Compacting 1@0 + 1@1 files
+2024/08/19-20:22:53.273 1520 Generated table #104@0: 23 keys, 638 bytes
+2024/08/19-20:22:53.273 1520 Compacted 1@0 + 1@1 files => 638 bytes
+2024/08/19-20:22:53.274 1520 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/19-20:22:53.275 1520 Delete type=2 #103
+2024/08/19-20:22:53.275 1520 Manual compaction at level-0 from '\x00#\x00\x00\x05' @ 863 : 1 .. '\x00$\x00\x00\x00' @ 0 : 0; will stop at (end)

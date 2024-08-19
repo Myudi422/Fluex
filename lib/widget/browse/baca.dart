@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:async';
 
 class BacaPage extends StatefulWidget {
   final String episodeUrl;
@@ -18,19 +19,43 @@ class _BacaPageState extends State<BacaPage> {
   late Map<String, dynamic> episodeDetails;
   bool isLoading = true;
   late PageController pageController;
+  late ScrollController scrollController;
   int currentPage = 0;
   bool isHorizontalMode = true;
   String prevEpisodeUrl = '';
   String nextEpisodeUrl = '';
   String chapterNumber = '';
   String server = ''; // Default server (empty string means no server parameter)
+  bool showScrollToBottomButton = false;
+  Timer? autoScrollTimer;
+  double scrollSpeed = 0.0; // pixels per second
 
   @override
   void initState() {
     super.initState();
     _fetchEpisodeDetails();
     pageController = PageController();
+    scrollController = ScrollController()
+      ..addListener(() {
+        if (scrollController.offset >= 100 && !showScrollToBottomButton) {
+          setState(() {
+            showScrollToBottomButton = true;
+          });
+        } else if (scrollController.offset < 100 && showScrollToBottomButton) {
+          setState(() {
+            showScrollToBottomButton = false;
+          });
+        }
+      });
     _loadPageIndex(); // Load the last page index
+  }
+
+  @override
+  void dispose() {
+    autoScrollTimer?.cancel();
+    scrollController.dispose();
+    pageController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchEpisodeDetails() async {
@@ -93,6 +118,57 @@ class _BacaPageState extends State<BacaPage> {
     pageController.jumpToPage(currentPage);
   }
 
+  void _startAutoScroll(double speed) {
+    autoScrollTimer?.cancel();
+    autoScrollTimer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+      scrollController.animateTo(
+        scrollController.offset + (speed / 10),
+        duration: Duration(milliseconds: 100),
+        curve: Curves.linear,
+      );
+    });
+  }
+
+  void _stopAutoScroll() {
+    autoScrollTimer?.cancel();
+  }
+
+  void _toggleAutoScroll() {
+    if (scrollSpeed == 0.0) {
+      setState(() {
+        scrollSpeed = 50.0;
+        _startAutoScroll(scrollSpeed);
+      });
+    } else if (scrollSpeed == 50.0) {
+      setState(() {
+        scrollSpeed = 100.0;
+        _startAutoScroll(scrollSpeed);
+      });
+    } else if (scrollSpeed == 100.0) {
+      setState(() {
+        scrollSpeed = 200.0;
+        _startAutoScroll(scrollSpeed);
+      });
+    } else {
+      setState(() {
+        scrollSpeed = 0.0;
+        _stopAutoScroll();
+      });
+    }
+  }
+
+  String _getAutoScrollLabel() {
+    if (scrollSpeed == 0.0) {
+      return '1x';
+    } else if (scrollSpeed == 50.0) {
+      return '2x';
+    } else if (scrollSpeed == 100.0) {
+      return '4x';
+    } else {
+      return 'Pause';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,6 +204,12 @@ class _BacaPageState extends State<BacaPage> {
           : isHorizontalMode
               ? _buildHorizontalView()
               : _buildVerticalView(),
+      floatingActionButton: showScrollToBottomButton
+          ? FloatingActionButton(
+              onPressed: _toggleAutoScroll,
+              child: Text(_getAutoScrollLabel()),
+            )
+          : null,
     );
   }
 
@@ -173,7 +255,7 @@ class _BacaPageState extends State<BacaPage> {
           errorWidget: (context, url, error) => Icon(Icons.error),
         );
       },
-      controller: pageController,
+      controller: scrollController,
       scrollDirection: Axis.vertical,
     );
   }

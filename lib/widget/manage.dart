@@ -33,18 +33,21 @@ class _ManageWidgetState extends State<ManageWidget> {
                     .toList(),
               ),
               Row(
-                children: [ // Tambahkan jarak antara teks dan ikon
+                children: [
+                  // Tambahkan jarak antara teks dan ikon
                   IconButton(
-            icon: Icon(FontAwesomeIcons.trophy),
-            onPressed: () {
-              // Handle the trophy button press
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LeaderboardPage()),
-              );
-            },
-            color: Colors.white,
-          ),
+                    icon: Icon(FontAwesomeIcons.trophy),
+                    onPressed: () {
+                      // Handle the trophy button press
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                LeaderboardPage(telegramId: widget.telegramId)),
+                      );
+                    },
+                    color: Colors.white,
+                  ),
                 ],
               ),
             ],
@@ -60,8 +63,9 @@ class _ManageWidgetState extends State<ManageWidget> {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color:
-                category == selectedCategory ? ColorManager.currentPrimaryColor : Colors.transparent,
+            color: category == selectedCategory
+                ? ColorManager.currentPrimaryColor
+                : Colors.transparent,
             width: 2.0,
           ),
         ),
@@ -77,7 +81,9 @@ class _ManageWidgetState extends State<ManageWidget> {
         child: Text(
           category.toString().split('.').last,
           style: TextStyle(
-            color: category == selectedCategory ? ColorManager.currentPrimaryColor : Colors.white,
+            color: category == selectedCategory
+                ? ColorManager.currentPrimaryColor
+                : Colors.white,
           ),
         ),
       ),

@@ -1,13 +1,21 @@
-2024/08/05-20:42:50.933 43c Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.8fb37cb2\flutter_tools_chrome_device.dd5e7a4\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/05-20:42:50.939 43c Recovering log #19
-2024/08/05-20:42:50.941 43c Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.8fb37cb2\flutter_tools_chrome_device.dd5e7a4\Default\Local Storage\leveldb/000019.log 
-2024/08/05-20:42:50.942 43c Delete type=0 #3
-2024/08/05-20:42:50.942 43c Delete type=0 #4
-2024/08/05-20:42:50.942 43c Delete type=0 #7
-2024/08/05-20:42:50.942 43c Delete type=2 #8
-2024/08/05-20:42:50.942 43c Delete type=0 #10
-2024/08/05-20:42:50.942 43c Delete type=2 #11
-2024/08/05-20:42:50.942 43c Delete type=0 #13
-2024/08/05-20:42:50.942 43c Delete type=2 #14
-2024/08/05-20:42:50.943 43c Delete type=0 #16
-2024/08/05-20:42:50.943 43c Delete type=2 #17
+2024/08/19-19:48:15.680 2384 Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.64a7709e\flutter_tools_chrome_device.90a4034b\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/19-19:48:15.686 2384 Recovering log #32
+2024/08/19-19:48:15.688 2384 Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.64a7709e\flutter_tools_chrome_device.90a4034b\Default\Local Storage\leveldb/000032.log 
+2024/08/19-19:48:15.689 2384 Delete type=0 #3
+2024/08/19-19:48:15.689 2384 Delete type=0 #4
+2024/08/19-19:48:15.689 2384 Delete type=0 #7
+2024/08/19-19:48:15.690 2384 Delete type=2 #8
+2024/08/19-19:48:15.690 2384 Delete type=0 #10
+2024/08/19-19:48:15.690 2384 Delete type=2 #11
+2024/08/19-19:48:15.690 2384 Delete type=0 #13
+2024/08/19-19:48:15.690 2384 Delete type=2 #14
+2024/08/19-19:48:15.690 2384 Delete type=0 #16
+2024/08/19-19:48:15.690 2384 Delete type=2 #17
+2024/08/19-19:48:15.690 2384 Delete type=0 #19
+2024/08/19-19:48:15.690 2384 Delete type=2 #21
+2024/08/19-19:48:15.690 2384 Delete type=0 #23
+2024/08/19-19:48:15.690 2384 Delete type=2 #24
+2024/08/19-19:48:15.690 2384 Delete type=2 #26
+2024/08/19-19:48:15.690 2384 Delete type=0 #27
+2024/08/19-19:48:15.690 2384 Delete type=0 #29
+2024/08/19-19:48:15.691 2384 Delete type=2 #30

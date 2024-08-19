@@ -2,8 +2,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flue/color.dart'; // Import ColorManager
+import 'package:flue/widget/me.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Import Font Awesome Flutter
 
 class LeaderboardPage extends StatefulWidget {
+  final String telegramId;
+
+  const LeaderboardPage({super.key, required this.telegramId});
+
   @override
   _LeaderboardPageState createState() => _LeaderboardPageState();
 }
@@ -36,16 +42,44 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     }
   }
 
+  void _showInfoDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Informasi Peringkat'),
+          content: Text(
+              'Peringkat dihitung sebagai 1 XP per jam tonton dan 1 XP per 5 komentar. Contoh: Menonton anime selama 1 jam tanpa berkomentar akan menambah 1 level. Komentar sebanyak 5 kali juga akan menambah 1 level.'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Leaderboard',
+          'Peringkat User',
           style: TextStyle(color: ColorManager.currentHomeColor),
         ),
         backgroundColor: ColorManager.currentBackgroundColor,
         iconTheme: IconThemeData(color: ColorManager.currentHomeColor),
+        actions: [
+          IconButton(
+            icon: FaIcon(FontAwesomeIcons.infoCircle,
+                color: ColorManager.currentHomeColor),
+            onPressed: _showInfoDialog,
+          ),
+        ],
       ),
       backgroundColor: ColorManager.currentBackgroundColor,
       body: (leaderboardData != null && leaderboardData!.isNotEmpty)
@@ -54,7 +88,23 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
               itemBuilder: (context, index) {
                 final data = leaderboardData![index];
                 final rank = index + 1;
-                return LeaderboardItem(data: data, rank: rank);
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProfilePage(
+                          telegramId: data['telegram_id'] ?? '',
+                          mytelegram: widget.telegramId,
+                        ),
+                      ),
+                    );
+                  },
+                  child: LeaderboardItem(
+                    data: data,
+                    rank: rank,
+                  ),
+                );
               },
             )
           : Center(
@@ -70,7 +120,10 @@ class LeaderboardItem extends StatelessWidget {
   final Map<String, dynamic> data;
   final int rank;
 
-  LeaderboardItem({required this.data, required this.rank});
+  LeaderboardItem({
+    required this.data,
+    required this.rank,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -78,21 +131,21 @@ class LeaderboardItem extends StatelessWidget {
     switch (rank) {
       case 1:
         trophyIcon =
-            Icon(Icons.emoji_events, color: Colors.amber); // Piala Emas
+            Icon(Icons.emoji_events, color: Colors.amber); // Gold Trophy
         break;
       case 2:
         trophyIcon =
-            Icon(Icons.emoji_events, color: Colors.grey); // Piala Perak
+            Icon(Icons.emoji_events, color: Colors.grey); // Silver Trophy
         break;
       case 3:
         trophyIcon =
-            Icon(Icons.emoji_events, color: Colors.brown); // Piala Perunggu
+            Icon(Icons.emoji_events, color: Colors.brown); // Bronze Trophy
         break;
       default:
         trophyIcon = Text('$rank',
             style: TextStyle(
                 fontSize: 18,
-                color: ColorManager.currentHomeColor)); // Nomor urut biasa
+                color: ColorManager.currentHomeColor)); // Regular rank number
     }
 
     Color backgroundColor = rank % 2 == 0
@@ -126,7 +179,7 @@ class LeaderboardItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Total Points: ${data['total_points'] ?? '0'}',
+              'Lv: ${data['total_points'] ?? '0'}',
               style: TextStyle(
                   color: ColorManager.currentHomeColor.withOpacity(0.7)),
             ),

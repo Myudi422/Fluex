@@ -9,6 +9,7 @@ import 'package:flue/widget/settings/notifikasi.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'beli.dart';
 import '../main_page.dart';
+import 'me.dart';
 
 class ProfileMenu extends StatelessWidget {
   final String firstName;
@@ -176,6 +177,21 @@ class ProfileMenu extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.verified_user, color: Colors.white),
+                    title: Text('Profile Saya',
+                        style: TextStyle(color: Colors.white)),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfilePage(
+                                  telegramId: telegramId,
+                                  mytelegram: telegramId,
+                                )),
+                      );
+                    },
+                  ),
                   ListTile(
                     leading: Icon(Icons.notifications, color: Colors.white),
                     title: Text('Notifikasi',

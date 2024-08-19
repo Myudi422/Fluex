@@ -1,13 +1,28 @@
-2024/08/05-19:41:58.510 40d4 Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.2c46959b\flutter_tools_chrome_device.3e39c347\Default\Local Storage\leveldb/MANIFEST-000001
-2024/08/05-19:41:58.515 40d4 Recovering log #19
-2024/08/05-19:41:58.517 40d4 Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.2c46959b\flutter_tools_chrome_device.3e39c347\Default\Local Storage\leveldb/000019.log 
-2024/08/05-19:41:58.518 40d4 Delete type=0 #3
-2024/08/05-19:41:58.518 40d4 Delete type=0 #4
-2024/08/05-19:41:58.518 40d4 Delete type=0 #7
-2024/08/05-19:41:58.518 40d4 Delete type=2 #8
-2024/08/05-19:41:58.519 40d4 Delete type=0 #10
-2024/08/05-19:41:58.519 40d4 Delete type=2 #11
-2024/08/05-19:41:58.519 40d4 Delete type=0 #13
-2024/08/05-19:41:58.519 40d4 Delete type=2 #14
-2024/08/05-19:41:58.519 40d4 Delete type=0 #16
-2024/08/05-19:41:58.519 40d4 Delete type=2 #17
+2024/08/18-16:58:13.668 38d0 Reusing MANIFEST C:\Users\admin\AppData\Local\Temp\flutter_tools.ba012838\flutter_tools_chrome_device.f5d743dd\Default\Local Storage\leveldb/MANIFEST-000001
+2024/08/18-16:58:13.676 38d0 Recovering log #29
+2024/08/18-16:58:13.679 38d0 Reusing old log C:\Users\admin\AppData\Local\Temp\flutter_tools.ba012838\flutter_tools_chrome_device.f5d743dd\Default\Local Storage\leveldb/000029.log 
+2024/08/18-16:58:13.680 38d0 Delete type=0 #3
+2024/08/18-16:58:13.680 38d0 Delete type=0 #4
+2024/08/18-16:58:13.680 38d0 Delete type=0 #7
+2024/08/18-16:58:13.680 38d0 Delete type=2 #8
+2024/08/18-16:58:13.680 38d0 Delete type=0 #10
+2024/08/18-16:58:13.680 38d0 Delete type=2 #11
+2024/08/18-16:58:13.680 38d0 Delete type=0 #13
+2024/08/18-16:58:13.680 38d0 Delete type=2 #14
+2024/08/18-16:58:13.681 38d0 Delete type=0 #16
+2024/08/18-16:58:13.681 38d0 Delete type=2 #17
+2024/08/18-16:58:13.681 38d0 Delete type=0 #19
+2024/08/18-16:58:13.681 38d0 Delete type=0 #23
+2024/08/18-16:58:13.681 38d0 Delete type=0 #27
+2024/08/18-17:02:12.088 2974 Level-0 table #33: started
+2024/08/18-17:02:12.093 2974 Level-0 table #33: 29704 bytes OK
+2024/08/18-17:02:12.095 2974 Delete type=0 #29
+2024/08/18-17:02:12.096 38d0 Compacting 4@0 + 1@1 files
+2024/08/18-17:02:12.105 38d0 Generated table #34@0: 1453 keys, 195259 bytes
+2024/08/18-17:02:12.105 38d0 Compacted 4@0 + 1@1 files => 195259 bytes
+2024/08/18-17:02:12.105 38d0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/18-17:02:12.106 38d0 Delete type=2 #21
+2024/08/18-17:02:12.106 38d0 Delete type=2 #24
+2024/08/18-17:02:12.107 38d0 Delete type=2 #26
+2024/08/18-17:02:12.107 38d0 Delete type=2 #30
+2024/08/18-17:02:12.107 38d0 Delete type=2 #33

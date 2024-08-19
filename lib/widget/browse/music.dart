@@ -14,6 +14,7 @@ import 'package:collection/collection.dart';
 import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flue/color.dart';
+import 'package:audio_session/audio_session.dart';
 
 class Playlist {
   String name;
@@ -49,6 +50,7 @@ class _MusicPageState extends State<MusicPage>
     with AutomaticKeepAliveClientMixin {
   late AudioPlayer _audioPlayer;
   bool isMusicPlaying = false;
+  bool isRepeatEnabled = false;
   Duration? _duration;
   Duration _position = Duration();
   bool isLoading = true;
@@ -74,8 +76,20 @@ class _MusicPageState extends State<MusicPage>
   void initState() {
     super.initState();
     _initializeAudioPlayer();
+    initAudioSession();
     _loadVideos();
     _loadPlaylists();
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose(); // Jangan lupa membuang audio player
+    super.dispose();
+  }
+
+  Future<void> initAudioSession() async {
+    final session = await AudioSession.instance;
+    await session.configure(AudioSessionConfiguration.music());
   }
 
   Future<void> _initializeAudioPlayer() async {
@@ -92,7 +106,7 @@ class _MusicPageState extends State<MusicPage>
       })
       ..processingStateStream.listen((processingState) {
         if (processingState == ProcessingState.completed) {
-          _playNextVideo();
+          _onPlayerCompletion();
         }
       });
   }
@@ -120,7 +134,7 @@ class _MusicPageState extends State<MusicPage>
         if (searchKeyword.isNotEmpty) {
           final searchResults = await yt.search.getVideos(searchKeyword);
           videos = searchResults.where((video) {
-            return (video.duration?.inMinutes ?? 0) <= 20;
+            return (video.duration?.inMinutes ?? 0) <= 120;
           }).toList();
         }
 
@@ -652,6 +666,25 @@ class _MusicPageState extends State<MusicPage>
     }
   }
 
+  void _toggleRepeat() {
+    setState(() {
+      isRepeatEnabled = !isRepeatEnabled;
+    });
+  }
+
+  void _onPlayerCompletion() async {
+    if (isRepeatEnabled) {
+      // Jika repeat diaktifkan, mulai ulang video saat ini
+      if (_audioPlayer != null) {
+        await _audioPlayer.seek(Duration.zero); // Kembali ke awal video
+        await _audioPlayer.play(); // Mulai ulang video
+      }
+    } else {
+      // Jika tidak di-repeat, lanjutkan ke video berikutnya
+      await _playNextVideo();
+    }
+  }
+
   Future<void> _resetAudioPlayer() async {
     await _audioPlayer.stop();
     await _audioPlayer.seek(Duration.zero);
@@ -864,6 +897,19 @@ class _MusicPageState extends State<MusicPage>
                             isPlayerVisible = false;
                           });
                           _stopAudioPlayer();
+                        },
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          isRepeatEnabled
+                              ? Icons.repeat_one
+                              : Icons
+                                  .repeat, // Ubah ikon berdasarkan status repeat
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            isRepeatEnabled = !isRepeatEnabled; // Toggle repeat
+                          });
                         },
                       ),
                     ],

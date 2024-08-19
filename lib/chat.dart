@@ -7,6 +7,7 @@ import 'dart:math' as math;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flue/color.dart';
+import './widget/me.dart';
 
 class ChatRoomPage extends StatefulWidget {
   final String firstName;
@@ -91,7 +92,11 @@ class _ChatRoomPageState extends State<ChatRoomPage> {
                           controller: _scrollController,
                           itemCount: messages.length,
                           itemBuilder: (context, index) {
-                            return ChatBubble(message: messages[index]);
+                            return ChatBubble(
+                              message: messages[index],
+                              myTelegramId:
+                                  widget.telegramId, // Pass the telegramId here
+                            );
                           },
                         ),
                 ),
@@ -251,8 +256,11 @@ class ChatMessage {
 
 class ChatBubble extends StatelessWidget {
   final ChatMessage message;
+  final String myTelegramId; // Add this
 
-  const ChatBubble({Key? key, required this.message}) : super(key: key);
+  const ChatBubble(
+      {Key? key, required this.message, required this.myTelegramId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -263,8 +271,21 @@ class ChatBubble extends StatelessWidget {
         children: [
           Stack(
             children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(message.profilePicture),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePage(
+                        telegramId: message.telegramId,
+                        mytelegram: myTelegramId, // Pass the telegramId here
+                      ),
+                    ),
+                  );
+                },
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(message.profilePicture),
+                ),
               ),
               Positioned(
                 bottom: 0,

@@ -80,9 +80,23 @@ class _StreamingWidgetState extends State<StreamingWidget>
     _sendVideoTimeToServer();
     _videoPlayerController.dispose();
     _disableWakelock();
-    _timer.cancel(); // Cancel the timer
+    _resetSystemUI(); // Tambahkan ini untuk reset UI
+    _timer.cancel();
     WidgetsBinding.instance?.removeObserver(this);
     super.dispose();
+  }
+
+  void _resetSystemUI() {
+    // Reset kembali ke UI mode default
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
+    // Jika orientasi diubah, reset kembali ke default (misalnya portrait)
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+    // Atur ulang padding yang disebabkan oleh navigasi bar atau status bar
+    setState(() {
+      EdgeInsets.zero;
+    });
   }
 
   @override
@@ -130,7 +144,6 @@ class _StreamingWidgetState extends State<StreamingWidget>
 
   @override
   Widget build(BuildContext context) {
-    // Enable immersive sticky mode for full-screen
     SystemChrome.setEnabledSystemUIMode(
       _isFullScreen ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
     );
@@ -141,6 +154,7 @@ class _StreamingWidgetState extends State<StreamingWidget>
           _toggleFullScreen();
           return false;
         }
+        _resetSystemUI(); // Pastikan UI direset saat keluar
         _sendVideoTimeToServer();
         return true;
       },

@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flue/widget/me.dart';
 
 class KomenPage extends StatefulWidget {
   final int episodeNumber;
@@ -163,8 +164,15 @@ class _KomenPageState extends State<KomenPage> {
                   leading: Icon(Icons.person, color: Colors.white),
                   title: Text('Profile', style: TextStyle(color: Colors.white)),
                   onTap: () {
-                    // Handle Profile action
                     Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfilePage(
+                                telegramId: telegramId,
+                                mytelegram: widget.telegramId,
+                              )), // Pass the comment's telegramId
+                    );
                   },
                 ),
                 ListTile(
